@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="240823 13:12."/>
+  <HelloWorld msg="A whole new message at 240823.1409."/>
 </template>
 
 <script>
