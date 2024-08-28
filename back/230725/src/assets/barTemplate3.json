@@ -1,0 +1,17 @@
+[
+    {
+        "x": ["Girls", "Boys"],
+        "y": [],
+        "type": "bar",
+        "text": [],
+        "textposition": "auto",
+        "hoverinfo": "none",
+        "marker": {
+          "color": ["f8717133", "7dd3fc33"],
+          "line": {
+            "color": ["f87171", "7dd3fc"],
+            "width": 1
+          }
+        }
+    }
+]

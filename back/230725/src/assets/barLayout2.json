@@ -1,0 +1,11 @@
+{
+    "title": false,
+    "barmode": "stack",
+    "margin": {"t":10, "l":350, "b":20, "r":10},
+    "yaxis": {
+        "ticksuffix": " "
+    },
+    "xaxis": {
+        "showgrid": false
+    }
+}

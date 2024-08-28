@@ -1,0 +1,117 @@
+[
+    {
+        "code": "0033127",
+        "colour": "#e5e5e533",
+        "borderColour": "#e5e5e5"
+    },
+    {
+        "code": "0040064",
+        "colour": "#52525233",
+        "borderColour": "#525252"
+    },
+    {
+        "code": "0000707",
+        "colour": "#e9d5ff33",
+        "borderColour": "#e9d5ff"
+    },
+    {
+        "code": "0001939",
+        "colour": "#dc262633",
+        "borderColour": "#dc2626"
+    },
+    {
+        "code": "0001626",
+        "colour": "#a7f2d033",
+        "borderColour": "#a7f2d0"
+    },
+    {
+        "colour": "#ea580c33",
+        "borderColour": "#ea580c",
+        "code": "0000152"
+    },
+    {
+        "colour": "#fdba7433",
+        "borderColour": "#fdba74",
+        "code": "0000119"
+    },
+      {
+          "colour": "#05966933",
+          "borderColour": "#059669",
+          "code":  "0002715"
+      },
+      {  
+          "colour": "#38bdf833",
+          "borderColour": "#38bdf8",
+           "code":  "0000478"
+      },
+      { 
+          "colour": "#3b82f633",
+          "borderColour": "#3b82f6",
+           "code":  "0001574"
+      },
+      {
+          "colour": "#4338ca33",
+          "borderColour": "#4338ca",
+           "code": "0001871"
+      },
+      {
+          "colour": "#a5a5fc33",
+          "borderColour": "#a5a5fc",
+           "code":  "0025031"
+      },
+      {   
+          "colour": "#7e22ce33",
+          "borderColour": "#7e22ce",
+           "code": "0002664"  
+      },         
+      { 
+          "colour": "#fda4af33",
+          "borderColour": "#fda4af",
+           "code":  "0002086"
+      },
+      { 
+          "colour": "#f43f5e33",
+          "borderColour": "#f43f5e",
+           "code": "0000818"  
+      },
+      {
+          "colour": "#facc1533",
+          "borderColour": "#facc15",
+           "code": "0000598"
+      },
+      {
+          "colour": "#a3e63533",
+          "borderColour": "#a3e635",
+           "code": "0025354"
+      },
+      {
+           "colour": "#5eead433",
+           "borderColour": "#5eead4",
+            "code": "0001197"
+       },
+       {
+            "colour": "#f472b633",
+            "borderColour": "#f472b6",
+             "code": "0025142"
+       },  
+       {
+            "colour": "#36531433",
+            "borderColour": "#365314",
+             "code": "0001507"
+       },
+       {
+            "colour": "#d946ef33",
+            "borderColour": "#d946ef",
+             "code": "0000769"
+       },
+       {
+            "colour": "#4ade8033",
+            "borderColour": "#4ade80",
+             "code":  "0001608"
+       },
+       {
+            "colour": "#fef3c733",
+            "borderColour": "#fef3c7",
+             "code": "0045027"
+       }
+]

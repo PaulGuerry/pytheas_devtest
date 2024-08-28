@@ -1,0 +1,14 @@
+[
+    {
+        "y": [], 
+        "type":"box",
+        "name": "Girls" ,
+        "line": {"width": 1, "color": "#f87171"}
+    },
+    {
+        "y": [], 
+        "type":"box",
+        "name": "Boys" ,
+        "line": {"width": 2, "color": "#7dd3fc"}
+    }
+]

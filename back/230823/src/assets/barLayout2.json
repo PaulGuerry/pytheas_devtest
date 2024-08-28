@@ -1,0 +1,14 @@
+{
+    "title": false,
+    "barmode": "stack",
+    "xaxis": {
+        "ticksuffix": " ",
+	"tickangle": -25,
+    	"automargin": true
+    },
+    "yaxis": {
+        "showgrid": false,
+	"showticklabels": false,
+    	"automargin": true
+    }
+}

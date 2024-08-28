@@ -1,0 +1,24 @@
+[
+     {
+         "y": [], 
+         "type":"box",
+         "name": "",
+         "line": {"width": 1, "color": "#fca5a5"}
+     },
+     {
+         "y": [], 
+         "type":"box",
+         "name": "",
+         "line": {"width": 1, "color": "#e5e5e5"}
+     },
+     {
+         "y": [], 
+         "type":"box",
+         "name": "",
+         "line": {"width": 1, "color": "#38bdf8"}
+     },
+     {
+	"myComment": {"//comment1.2": "Solution to not show outliers but axis is still scaled to include them so not a great solution",
+                       "//comment2.2": "marker: {opacity: 0}"}
+    }
+]

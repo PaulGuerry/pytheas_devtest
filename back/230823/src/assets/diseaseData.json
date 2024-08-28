@@ -1,0 +1,32 @@
+[
+   {
+       "omim": "619662",
+       "name": "PFIC8",
+       "patientNo": 0,
+       "girlNo": 0,
+       "birthGA": [],
+       "ageAtDiag": [],
+       "ageAtLastFoUp": [],
+       "bgColor": "#fca5a5"
+   },
+   {
+       "omim": "619849",
+       "name": "PFIC9",
+       "patientNo": 0,
+       "girlNo": 0,
+       "birthGA": [],
+       "ageAtDiag": [],
+       "ageAtLastFoUp": [],
+       "bgColor": "#e5e5e5"
+   },
+   {
+       "omim": "211600",
+       "name": "PFIC1",
+       "patientNo": 0,
+       "girlNo": 0,
+       "birthGA": [],
+       "ageAtDiag": [],
+       "ageAtLastFoUp": [],
+       "bgColor": "#38bdf8"
+   }
+]

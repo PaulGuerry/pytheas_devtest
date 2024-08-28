@@ -1,0 +1,20 @@
+{
+   "xaxis": {
+	"showgrid": false,
+	"zeroline": true,
+	"range": [0, 18],
+	"title": {
+		"text": "",
+		"font": {"size": 18} 
+		}
+	},
+   "yaxis": { 
+       	"title": false,
+       	"zeroline": true,
+	"hovermode": false,
+	"showgrid": false,
+	"range": [0, 1.05]
+   },
+   "autosize": true,
+   "margin": {"t":10, "r":10, "l":30, "b":20} 
+}

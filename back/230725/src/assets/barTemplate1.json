@@ -1,0 +1,17 @@
+[
+    {
+        "x": [],
+        "y": [],
+        "type": "bar",
+        "text": [],
+        "textposition": "auto",
+        "hoverinfo": "none",
+        "marker": {
+          "color": [],
+          "line": {
+            "color": [],
+            "width": 1
+          }
+        }
+    }
+]

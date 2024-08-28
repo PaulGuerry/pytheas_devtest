@@ -1,0 +1,11 @@
+{
+    "title": false,
+    "margin": {"t":10, "b":10, "l":20, "r":20},
+    "annotations": [
+      {
+        "showarrow": false,
+        "text": ""
+      }
+    ],
+    "showlegend": false
+}
