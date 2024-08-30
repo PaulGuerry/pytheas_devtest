@@ -72,6 +72,9 @@
                                     <th scope="col" class="px-6 py-1 ">
                                         Symptoms (comma-separated 7-digit HPO codes) 
                                     </th>
+                                    <th scope="col" class="px-6 py-1 ">
+                                        Symptoms reported absent (comma-separated HPO codes)
+                                    </th>
                                     <th scope="col" class="px-6 py-1 text-center">
                                         Age at first symptoms (months)
                                     </th>
@@ -85,6 +88,9 @@
                                     </td>
                                     <td class="px-6 py-2">
                                         <input type="textarea" :placeholder=el.symptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-6 py-2">
+                                        <input type="textarea" :placeholder=el.absentsymptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2 text-center"> 
                                         <input type="number" :placeholder=el.firstsymptomagemonth v-model="el.firstsymptomagemonth" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
@@ -293,6 +299,10 @@ export default {
                             "0002240",
                             "0003077"
                 ],
+                absentsymptoms: [
+                            "0012768",
+                            "0032807"
+                ],
                 nucleotidevariant1: "NG_007374.1(NM_003742.2):c.3767C>T",
                 protvariant1: "NG_007374.1(NP_003733.2):p.(Thr1256Met)",
                 nucleotidevariant2: "WT",
@@ -329,6 +339,7 @@ export default {
                         tableel.firstsymptomagemonth = patientEntry[0].firstsymptomagemonth;
                         tableel.consanguinity = patientEntry[0].consanguinity;
                         tableel.symptoms = patientEntry[0].symptoms;
+                        tableel.absentsymptoms = patientEntry[0].absentsymptoms;
                         tableel.nucleotidevariant1 = patientEntry[0].nucleotidevariant1;
                         tableel.protvariant1 = patientEntry[0].protvariant1;
                         tableel.nucleotidevariant2 = patientEntry[0].nucleotidevariant2;
