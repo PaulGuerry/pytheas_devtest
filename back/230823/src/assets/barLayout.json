@@ -1,8 +1,0 @@
-{
-    "title": false,
-    "barmode": "stack",
-    "margin": {"t":10, "l":30},
-    "yaxis": {
-        "showgrid": false
-    }
-}

@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import Vueform from '@vueform/vueform'
+import vueformConfig from './../vueform.config'
 import './style.css'
 
 // import rubik font using fontsource
@@ -26,4 +28,4 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 /* add icons to the library */
 library.add(faUserSecret, faUser, faCartShopping, faSearch)
 
-createApp(App).use(store).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+createApp(App).use(store).use(router).use(Vueform, vueformConfig).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
