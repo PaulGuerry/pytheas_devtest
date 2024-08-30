@@ -4,38 +4,42 @@
         <p  class="text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a curated repository of clinical data on very rare Mendelian diseases. </p>
         <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
             <button     
-                    @click="isPatientID = isPatientID ? false : true"
+                    @click="isPatientID = isPatientID ? false : true; this.fetchPatient()"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ID, GENE, AGE, SEX </button> 
                 <template v-if="isPatientID">
                     <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-5"> 
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
+                            <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                                 <tr>
                                     <th scope="col" class="px-6 py-1">
-                                        PYTHEAS ID 
+                                        Pytheas ID 
                                     </th>
                                     <th scope="col" class="px-6 py-1 text-center">
-                                        SOURCE ARTICLE ID 
+                                        Source article ID 
                                     </th>
                                     <th scope="col" class="px-6 py-1 text-center">
-                                        ARTICLE DOI
+                                        Article DOI
                                     </th>
                                     <th scope="col" class="px-6 py-1 text-center">
-                                        GENE
+                                        Gene
                                     </th>
                                     <th scope="col" class="px-6 py-1 text-center">
-                                        SEX
+                                        Sex (M/F)
                                     </th>
                                     <th scope="col" class="px-6 py-1 text-center">
-                                        AGE AT FIRST SYMPTOMS (months)
+                                        GA at birth (weeks)
                                     </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        Consaguinous (Y/N) 
+                                    </th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
                                     <td class="px-6 py-2">
-                                        <input type="text" :placeholder=el.id v-model="el.id" class="outline-none bg-transparent border-none">
+                                        <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.patients v-model="el.patients" class="text-center outline-none bg-transparent border-none">
@@ -49,8 +53,11 @@
                                     <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.sex v-model="el.sex" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center"> 
-                                        <input type="number" :placeholder=el.firstsymptomagemonth v-model="el.firstsymptomagemonth" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                    <td class="px-6 py-2 text-center">
+                                        <input type="number" :placeholder=el.term v-model="el.term" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                    </td>
+                                    <td class="px-6 py-2 text-center">
+                                        <input type="text" :placeholder=el.consanguinity v-model="el.consanguinity" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
                             </tbody>
@@ -58,12 +65,12 @@
                     </div>
                 </template> 
             <button    
-                    @click="isSymptoms = isSymptoms ? false : true"
+                    @click="isSymptoms = isSymptoms ? false : true; this.fetchPatient()"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> SYMPTOMS </button> 
                 <template v-if="isSymptoms">
                     <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-5"> 
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
+                            <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                                 <tr>
                                     <th scope="col" class="px-6 py-1">
                                         PYTHEAS ID 
@@ -71,16 +78,87 @@
                                     <th scope="col" class="px-6 py-1 ">
                                         SYMPTOMS (comma-separated 7-digit HPO codes) 
                                     </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        AGE AT FIRST SYMPTOMS (months)
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
                                     <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.id v-model="el.id" class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2">
                                         <input type="textarea" :placeholder=el.symptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-6 py-2 text-center"> 
+                                        <input type="number" :placeholder=el.firstsymptomagemonth v-model="el.firstsymptomagemonth" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
+                <button     
+                    @click="isVariantData = isVariantData ? false : true; this.fetchPatient()"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> VARIANT </button> 
+                <template v-if="isVariantData">
+                    <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-5"> 
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
+                                <tr>
+                                    <th scope="col" class="px-6 py-1">
+                                        GENE
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        NUCLEOTIDE VARIANT 1 
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        PROTEIN VARIANT 1
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        NUCLEOTIDE VARIANT 2
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        PROTEIN VARIANT 2
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-xs">
+                                    <th scope="col" class="px-6 py-1">
+                                        
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        HGVS genomic or RNA description 
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        HGVS protein description
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        HGVS genomic or RNA description
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        HGVS protein description
+                                    </th>
+                                </tr>
+                                <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                                v-for="(el, i) in tableData" :key="i">
+                                    <td class="px-6 py-2">
+                                        <input type="text" :placeholder=el.gene v-model="el.gene" class="outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-6 py-2 text-center">
+                                        <input type="text" :placeholder=el.nucleotidevariant1 v-model="el.nucleotidevariant1" class="text-center outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-6 py-2 text-center">
+                                        <input type="text" :placeholder=el.protvariant1 v-model="el.protvariant1" class="text-center outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-6 py-2 text-center">
+                                        <input type="text" :placeholder=el.nucleotidevariant2 v-model="el.nucleotidevariant2" class="text-center outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-6 py-2 text-center">
+                                        <input type="text" :placeholder=el.protvariant2 v-model="el.protvariant2" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
                             </tbody>
@@ -89,7 +167,7 @@
                 </template>
         </div>
         <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
-            <button @click="this.addPatient()"
+            <button @click="this.addPatient(); isPatientID = true; this.fetchPatient()"
                     class="w-full col-start-2 py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ADD PATIENT </button> 
             <button @mouseover=this.str2Arr() 
                     @touchstart=this.str2Arr()
@@ -107,6 +185,7 @@
 
 <script>
 
+import myPatientData from '@/assets/patientData_edited.json'
 
   
 export default {
@@ -119,24 +198,10 @@ export default {
     methods: {
         initialState() {
             return {
+                patientData: myPatientData,
                 isSex: false, isAgeFirstSymp: false, isPatientID: false, 
-                isViewJSON: false, isSymptoms: false,
-                tableData: [
-                            {
-                            id: "THES123_10", 
-                            disease: "PFIC8", 
-                            doi: "https://doi.org/10.1002/hep4.2051", 
-                            gene: "ABCB4", 
-                            sex: "F", 
-                            firstsymptomagemonth: 4.0,
-                            symptoms: [
-                                "0002904",
-                                "0000952",
-                                "0030948",
-                                "0000077"
-                            ]
-                            }
-                        ]   
+                isViewJSON: false, isSymptoms: false, isVariantData: false,
+                tableData: []   
             }
         },
         falsify() {
@@ -149,12 +214,18 @@ export default {
                 doi: "https://doi.org/10.1002/hep4.2051", 
                 gene: "ABCB4", 
                 sex: "F", 
+                term: 37,
                 firstsymptomagemonth: 4.0,
+                consanguinity: "N",
                 symptoms: [
                             "0045056",
                             "0002240",
                             "0003077"
-                ]
+                ],
+                nucleotidevariant1: "NG_007374.1(NM_003742.2):c.3767C>T",
+                protvariant1: "NG_007374.1(NP_003733.2):p.(Thr1256Met)",
+                nucleotidevariant2: "WT",
+                protvariant2: "WT"
             })
         },
         str2Arr() {
@@ -162,6 +233,31 @@ export default {
                     if (typeof el.symptoms === 'string') 
                         el.symptoms = el.symptoms.split(",")
                     })
+        },
+        fetchPatient() {
+            var patientEntry = {}
+            this.tableData.forEach(tableel => {
+                patientEntry = []
+                patientEntry = this.patientData.filter((jsonel) => {return (jsonel.id == tableel.id)})
+                console.log("242", tableel.id, patientEntry, patientEntry.length)
+                if (patientEntry.length !== 0) {
+                    console.log("244", patientEntry[0])
+                    if (!Object.keys(patientEntry[0]).length !== 0) {
+                        tableel.disease = patientEntry[0].disease;
+                        tableel.doi = patientEntry[0].doi;
+                        tableel.gene = patientEntry[0].gene;
+                        tableel.sex = patientEntry[0].sex;
+                        tableel.term = patientEntry[0].term;
+                        tableel.firstsymptomagemonth = patientEntry[0].firstsymptomagemonth;
+                        tableel.consanguinity = patientEntry[0].consanguinity;
+                        tableel.symptoms = patientEntry[0].symptoms;
+                        tableel.nucleotidevariant1 = patientEntry[0].nucleotidevariant1;
+                        tableel.protvariant1 = patientEntry[0].protvariant1;
+                        tableel.nucleotidevariant2 = patientEntry[0].nucleotidevariant2;
+                        tableel.protvariant2 = patientEntry[0].protvariant2;
+                    }
+                }
+            })
         }
     }
 }
