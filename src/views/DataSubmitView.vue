@@ -87,10 +87,10 @@
                                         <input type="text" :placeholder=el.id v-model="el.id" class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2">
-                                        <input type="textarea" :placeholder=el.symptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none">
+                                        <input type="textarea" :placeholder=el.symptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none text-center">
                                     </td>
                                     <td class="px-6 py-2">
-                                        <input type="textarea" :placeholder=el.absentsymptoms v-model="el.absentsymptoms" class="w-full outline-none bg-transparent border-none">
+                                        <input type="textarea" :placeholder=el.absentsymptoms v-model="el.absentsymptoms" class="w-full outline-none bg-transparent border-none text-center">
                                     </td>
                                     <td class="px-6 py-2 text-center"> 
                                         <input type="number" :placeholder=el.firstsymptomagemonth v-model="el.firstsymptomagemonth" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
@@ -154,19 +154,19 @@
                                     <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.gene v-model="el.gene" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.nucleotidevariant1 v-model="el.nucleotidevariant1" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.protvariant1 v-model="el.protvariant1" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.nucleotidevariant2 v-model="el.nucleotidevariant2" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.protvariant2 v-model="el.protvariant2" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
@@ -212,27 +212,27 @@
                                 <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
                                     <td class="px-6 py-2">
-                                        <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none">
+                                        <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none text-left">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="number" :placeholder=el.birthweight v-model="el.birthweight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="number" :placeholder=el.birthheight v-model="el.birthheight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="number" :placeholder=el.lastweightkg v-model="el.lastweightkg" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="number" :placeholder=el.lastheightcm v-model="el.lastheightcm" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="number" :placeholder=el.term v-model="el.term" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.lastnewsageyear v-model="el.lastnewsageyear" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.alivedead v-model="el.alivedead" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
