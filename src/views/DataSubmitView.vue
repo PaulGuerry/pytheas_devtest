@@ -36,7 +36,7 @@
                                 <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
                                     <td class="px-6 py-2">
-                                        <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none">
+                                        <input type="text" :placeholder=el.id v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id" class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.patients v-model="el.patients" class="text-center outline-none bg-transparent border-none">
@@ -90,7 +90,7 @@
                                         <input type="textarea" :placeholder=el.symptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2">
-                                        <input type="textarea" :placeholder=el.absentsymptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none">
+                                        <input type="textarea" :placeholder=el.absentsymptoms v-model="el.absentsymptoms" class="w-full outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2 text-center"> 
                                         <input type="number" :placeholder=el.firstsymptomagemonth v-model="el.firstsymptomagemonth" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
@@ -215,16 +215,16 @@
                                         <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
-                                        <input type="text" :placeholder=el.birthweight v-model="el.birthweight" class="text-center outline-none bg-transparent border-none">
+                                        <input type="number" :placeholder=el.birthweight v-model="el.birthweight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
-                                        <input type="text" :placeholder=el.birthheight v-model="el.birthheight" class="text-center outline-none bg-transparent border-none">
+                                        <input type="number" :placeholder=el.birthheight v-model="el.birthheight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
-                                        <input type="text" :placeholder=el.lastweightkg v-model="el.lastweightkg" class="text-center outline-none bg-transparent border-none">
+                                        <input type="number" :placeholder=el.lastweightkg v-model="el.lastweightkg" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
-                                        <input type="text" :placeholder=el.lastheightcm v-model="el.lastheightcm" class="text-center outline-none bg-transparent border-none">
+                                        <input type="number" :placeholder=el.lastheightcm v-model="el.lastheightcm" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                     <td class="px-6 py-2 text-center">
                                         <input type="number" :placeholder=el.term v-model="el.term" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
@@ -240,14 +240,73 @@
                         </table>
                     </div>
                 </template>
+            <button     
+                    @click="isTreatments = isTreatments? false : true;"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> TREATMENTS </button> 
+                <template v-if="isTreatments">
+                    <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-5"> 
+                        <table class="w-full text-sm text-gray-500 dark:text-gray-400">
+                            <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
+                                <tr>
+                                    <th scope="col" class="px-6 py-1 text-left">
+                                        Pytheas ID 
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        Treatment name 
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        Treatment type 
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        Age at start (months)
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        Duration (months)
+                                    </th>
+                                    <th scope="col" class="px-6 py-1 text-center">
+                                        Efficacy
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template v-for="(el, i) in tableData" :key="i">
+                                    <template v-for="(tt, j) in el.treatments" :key="j">
+                                        <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            <td class="px-6 py-2">
+                                                <input type="text" :placeholder="el.id" v-model="el.id" class="outline-none bg-transparent border-none text-left">
+                                            </td>
+                                            <td class="px-6 py-2">
+                                                <input type="text" :placeholder="tt.name" v-model="tt.name" class="outline-none bg-transparent border-none text-center">
+                                            </td>
+                                            <td class="px-6 py-2">
+                                                <input type="text" :placeholder="tt.type" v-model="tt.type" class="outline-none bg-transparent border-none text-center">
+                                            </td>
+                                            <td class="px-6 py-2">
+                                                <input type="number" :placeholder="tt.ageatstart_m" v-model="tt.ageatstart_m" class="outline-none bg-transparent border-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                            </td>
+                                            <td class="px-6 py-2">
+                                                <input type="number" :placeholder="tt.duration_m" v-model="tt.duration_m" class="outline-none bg-transparent border-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                            </td>
+                                            <td class="px-6 py-2">
+                                                <input type="text" :placeholder="tt.efficacy" v-model="tt.efficacy" class="outline-none bg-transparent border-none text-center">
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                </template>
         </div>
-        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-5 gap-4 mt-40 mb-10 place-items-center"> 
             <button @click="this.addPatient(); isPatientID = true; "
-                    class="w-full col-start-2 py-4 text-xl bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> ADD PATIENT </button> 
+                    class="w-full col-start-2 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> ADD PATIENT </button> 
+            <button @click="this.addTreatment(); isTreatments = true"
+                    class="w-full col-start-3 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> ADD TREATMENT </button>
             <button @mouseover=this.str2Arr() 
                     @touchstart=this.str2Arr()
                     @click="isViewJSON = isViewJSON ? false : true; this.str2Arr()"
-                    class="w-full col-start-3 py-4 text-xl bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> VIEW JSON </button> 
+                    class="w-full col-start-4 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> VIEW JSON </button> 
                 <template v-if="isViewJSON">
                     <div  class="w-full py-4 text-center text-gray-600 col-start-1 col-span-5"> 
                         <p text-xs> {{ JSON.stringify(this.tableData) }} </p>
@@ -276,7 +335,7 @@ export default {
                 patientData: myPatientData,
                 isSex: false, isAgeFirstSymp: false, isPatientID: false, 
                 isViewJSON: false, isSymptoms: false, isVariantData: false,
-                isWeiHei: false,
+                isWeiHei: false, activeID: "", isTreatments: false,
                 tableData: []   
             }
         },
@@ -284,6 +343,7 @@ export default {
             this.isSex = false, this.isAgeFirstSymp = false, this.isPatientID = false
         },
         addPatient() {
+            this.activeID = "PFIC99_99";
             this.tableData.push({
                 id: "PFIC99_99",
                 disease: "PFIC99", 
@@ -303,6 +363,13 @@ export default {
                             "0012768",
                             "0032807"
                 ],
+                treatments: [{
+                    name: "corticosteroid",
+                    type: "anti-inflammatory",
+                    ageatstart_m: 1.0,
+                    duration_m: 5.0,
+                    efficacy: "unclear"  
+                }],
                 nucleotidevariant1: "NG_007374.1(NM_003742.2):c.3767C>T",
                 protvariant1: "NG_007374.1(NP_003733.2):p.(Thr1256Met)",
                 nucleotidevariant2: "WT",
@@ -315,6 +382,19 @@ export default {
                 alivedead: "alive"
             })
         },
+        addTreatment() {
+            if (this.tableData.length < 1) {this.addPatient()}
+            else { 
+                var i = this.tableData.findIndex((el) => {return el.id == this.activeID})
+                this.tableData[i].treatments.push({
+                    name: "corticosteroid",
+                    type: "anti-inflammatory",
+                    ageatstart_m: 1.0,
+                    duration_m: 5.0,
+                    efficacy: "unclear"  
+                })
+                }
+        },
         str2Arr() {
                 this.tableData.forEach(el => {
                     if (typeof el.symptoms === 'string') 
@@ -326,9 +406,7 @@ export default {
             this.tableData.forEach(tableel => {
                 patientEntry = []
                 patientEntry = this.patientData.filter((jsonel) => {return (jsonel.id == tableel.id)})
-                console.log("242", tableel.id, patientEntry, patientEntry.length)
                 if (patientEntry.length !== 0) {
-                    console.log("244", patientEntry[0])
                     if (!Object.keys(patientEntry[0]).length !== 0) {
                         tableel.disease = patientEntry[0].disease;
                         tableel.patients = patientEntry[0].patients;
@@ -346,7 +424,7 @@ export default {
                         tableel.protvariant2 = patientEntry[0].protvariant2;
                         tableel.birthweight = patientEntry[0].birthweight;
                         tableel.birthheight = patientEntry[0].birthheight;
-                        tableel.lastweigthkg = patientEntry[0].lastweigthkg;
+                        tableel.lastweightkg = patientEntry[0].lastweightkg;
                         tableel.lastheightcm = patientEntry[0].lastheightcm;
                         tableel.lastnewsageyear = patientEntry[0].lastnewsageyear;
                         tableel.alivedead = patientEntry[0].alivedead;
