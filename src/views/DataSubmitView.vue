@@ -194,28 +194,31 @@
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                                 <tr>
-                                    <th scope="col" class="px-6 py-1">
+                                    <th scope="col" class="px-2 py-1">
                                         Pytheas ID 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Birth weigth (kg) 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Birth length (cm) 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
+                                        Birth head c. (cm) 
+                                    </th>
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Weight at last follow-up (kg)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Height at last follow-up (cm)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         GA at birth (weeks)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Age at last follow-up (years)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Status at last follow-up (alive/dead)
                                     </th>
                                 </tr>
@@ -223,28 +226,31 @@
                             <tbody>
                                 <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.id v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id" @keypress="this.activeID = el.id" class="outline-none bg-transparent border-none text-left">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="number" :placeholder=el.birthweight v-model="el.birthweight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="number" :placeholder=el.birthheight v-model="el.birthheight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
+                                        <input type="number" :placeholder=el.birthpc v-model="el.birthpc" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+                                    </td>
+                                    <td class="px-2 py-2">
                                         <input type="number" :placeholder=el.lastweightkg v-model="el.lastweightkg" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="number" :placeholder=el.lastheightcm v-model="el.lastheightcm" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="number" :placeholder=el.term v-model="el.term" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.lastnewsageyear v-model="el.lastnewsageyear" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.alivedead v-model="el.alivedead" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
@@ -398,7 +404,8 @@ export default {
                 protvariant1: "NG_007374.1(NP_003733.2):p.(Thr1256Met)",
                 nucleotidevariant2: "WT",
                 protvariant2: "WT",
-                birthweight: 3000,
+                birthweight: 3.0,
+                birthpc: 50,
                 birthheight: 51,
                 lastweightkg: 15,
                 lastheightcm: 100,
