@@ -11,22 +11,28 @@
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                                 <tr>
-                                    <th scope="col" class="px-6 py-1">
+                                    <th scope="col" class="px-2 py-1">
                                         Pytheas ID 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1">
+                                        
+                                    </th>
+                                    <th scope="col" class="px-2 py-1 text-center">
+                                        Disease
+                                    </th>
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Source article ID 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Article DOI
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Gene
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Sex (M/F)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Consaguinous (Y/N) 
                                     </th>
                                     
@@ -35,22 +41,28 @@
                             <tbody>
                                 <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
-                                    <td class="px-6 py-2">
-                                        <input type="text" :placeholder=el.id v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id" class="outline-none bg-transparent border-none">
+                                    <td class="px-2 py-2">
+                                            <input type="text" :placeholder="el.id" v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id"  class="outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-2 py-2">
+                                        <input type="radio" name="activeID" :value="el.id" v-model="activeID" />
+                                    </td>
+                                    <td class="px-2 py-2">
+                                            <input type="text" :placeholder="el.disease" v-model="el.disease"  class="text-center outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.patients v-model="el.patients" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
-                                        <input type="text" :placeholder=el.doi v-model="el.doi" class="text-center outline-none bg-transparent border-none">
+                                    <td class="px-2 py-2">
+                                        <input type="text" :placeholder=el.doi v-model="el.doi" @change="this.fetchDOI(); this.activeDOI = el.doi" @keypress="this.activeDOI = el.doi" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.gene v-model="el.gene" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.sex v-model="el.sex" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2 text-center">
+                                    <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.consanguinity v-model="el.consanguinity" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
@@ -152,7 +164,7 @@
                                 <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
                                     <td class="px-6 py-2">
-                                        <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none">
+                                        <input type="text" :placeholder=el.id v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id" @keypress="this.activeID = el.id" class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.gene v-model="el.gene" class="text-center outline-none bg-transparent border-none">
@@ -212,7 +224,7 @@
                                 <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                                 v-for="(el, i) in tableData" :key="i">
                                     <td class="px-6 py-2">
-                                        <input type="text" :placeholder=el.id v-model="el.id" @change=this.fetchPatient() class="outline-none bg-transparent border-none text-left">
+                                        <input type="text" :placeholder=el.id v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id" @keypress="this.activeID = el.id" class="outline-none bg-transparent border-none text-left">
                                     </td>
                                     <td class="px-6 py-2">
                                         <input type="number" :placeholder=el.birthweight v-model="el.birthweight" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
@@ -248,23 +260,26 @@
                         <table class="w-full text-sm text-gray-500 dark:text-gray-400">
                             <thead class="text-sm text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                                 <tr>
-                                    <th scope="col" class="px-6 py-1 text-left">
+                                    <th scope="col" class="px-2 py-1 text-left">
                                         Pytheas ID 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Treatment name 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
+                                        
+                                    </th>
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Treatment type 
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Age at start (months)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
+                                    <th scope="col" class="px-2 py-1 text-center">
                                         Duration (months)
                                     </th>
-                                    <th scope="col" class="px-6 py-1 text-center">
-                                        Efficacy
+                                    <th scope="col" class="px-2 py-1 text-center">
+                                        Efficacy (aggravation, none, unclear, partial, overall)
                                     </th>
                                 </tr>
                             </thead>
@@ -272,22 +287,25 @@
                                 <template v-for="(el, i) in tableData" :key="i">
                                     <template v-for="(tt, j) in el.treatments" :key="j">
                                         <tr class="text-xs bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                            <td class="px-6 py-2">
+                                            <td class="px-2 py-2">
                                                 <input type="text" :placeholder="el.id" v-model="el.id" class="outline-none bg-transparent border-none text-left">
                                             </td>
-                                            <td class="px-6 py-2">
+                                            <td class="px-2 py-2">
                                                 <input type="text" :placeholder="tt.name" v-model="tt.name" class="outline-none bg-transparent border-none text-center">
                                             </td>
-                                            <td class="px-6 py-2">
+                                            <td class="px-2 py-2">
+                                                <input type="radio" name="activeTT" :value="tt.id" v-model="activeTT" />
+                                            </td>
+                                            <td class="px-2 py-2">
                                                 <input type="text" :placeholder="tt.type" v-model="tt.type" class="outline-none bg-transparent border-none text-center">
                                             </td>
-                                            <td class="px-6 py-2">
+                                            <td class="px-2 py-2">
                                                 <input type="number" :placeholder="tt.ageatstart_m" v-model="tt.ageatstart_m" class="outline-none bg-transparent border-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                             </td>
-                                            <td class="px-6 py-2">
+                                            <td class="px-2 py-2">
                                                 <input type="number" :placeholder="tt.duration_m" v-model="tt.duration_m" class="outline-none bg-transparent border-none text-center [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                             </td>
-                                            <td class="px-6 py-2">
+                                            <td class="px-2 py-2">
                                                 <input type="text" :placeholder="tt.efficacy" v-model="tt.efficacy" class="outline-none bg-transparent border-none text-center">
                                             </td>
                                         </tr>
@@ -298,15 +316,19 @@
                     </div>
                 </template>
         </div>
-        <div class="w-3/4 grid grid-cols-5 gap-4 mt-40 mb-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
             <button @click="this.addPatient(); isPatientID = true; "
-                    class="w-full col-start-2 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> ADD PATIENT </button> 
+                    class="w-full col-start-1 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> ADD PATIENT </button> 
+            <button @click="this.deletePatient(); isPatientID = true; "
+                    class="w-full col-start-2 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> DELETE PATIENT </button> 
             <button @click="this.addTreatment(); isTreatments = true"
                     class="w-full col-start-3 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> ADD TREATMENT </button>
+            <button @click="this.deleteTreatment(); isTreatments = true"
+                    class="w-full col-start-4 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> DELETE TREATMENT </button>
             <button @mouseover=this.str2Arr() 
                     @touchstart=this.str2Arr()
                     @click="isViewJSON = isViewJSON ? false : true; this.str2Arr()"
-                    class="w-full col-start-4 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> VIEW JSON </button> 
+                    class="w-full col-start-5 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> VIEW JSON </button> 
                 <template v-if="isViewJSON">
                     <div  class="w-full py-4 text-center text-gray-600 col-start-1 col-span-5"> 
                         <p text-xs> {{ JSON.stringify(this.tableData) }} </p>
@@ -335,7 +357,8 @@ export default {
                 patientData: myPatientData,
                 isSex: false, isAgeFirstSymp: false, isPatientID: false, 
                 isViewJSON: false, isSymptoms: false, isVariantData: false,
-                isWeiHei: false, activeID: "", isTreatments: false,
+                isWeiHei: false, activeID: "", activeDOI: "", 
+                isTreatments: false, activeTT: "",
                 tableData: []   
             }
         },
@@ -364,6 +387,7 @@ export default {
                             "0032807"
                 ],
                 treatments: [{
+                    id: "PFIC99_99.t0",
                     name: "corticosteroid",
                     type: "anti-inflammatory",
                     ageatstart_m: 1.0,
@@ -386,14 +410,28 @@ export default {
             if (this.tableData.length < 1) {this.addPatient()}
             else { 
                 var i = this.tableData.findIndex((el) => {return el.id == this.activeID})
-                this.tableData[i].treatments.push({
-                    name: "corticosteroid",
-                    type: "anti-inflammatory",
-                    ageatstart_m: 1.0,
-                    duration_m: 5.0,
-                    efficacy: "unclear"  
-                })
+                if ("treatments" in this.tableData[i]) {
+                    this.tableData[i].treatments.push({
+                        id: this.tableData[i].id.concat('.',"t",this.tableData[i].treatments.length.toString()),
+                        name: "corticosteroid",
+                        type: "anti-inflammatory",
+                        ageatstart_m: 1.0,
+                        duration_m: 5.0,
+                        efficacy: "unclear"  
+                    })
                 }
+                else {
+                    this.tableData[i].treatments = [];
+                    this.tableData[i].treatments.push({
+                        id: this.tableData[i].id.concat('.',"t",this.tableData[i].treatments.length.toString()),
+                        name: "corticosteroid",
+                        type: "anti-inflammatory",
+                        ageatstart_m: 1.0,
+                        duration_m: 5.0,
+                        efficacy: "unclear"  
+                    })
+                }
+            }
         },
         str2Arr() {
                 this.tableData.forEach(el => {
@@ -402,34 +440,50 @@ export default {
                     })
         },
         fetchPatient() {
-            var patientEntry = {}
-            this.tableData.forEach(tableel => {
+            let patientEntry = {}
+            this.tableData.forEach((tableel, index) => {
                 patientEntry = []
                 patientEntry = this.patientData.filter((jsonel) => {return (jsonel.id == tableel.id)})
                 if (patientEntry.length !== 0) {
-                    if (!Object.keys(patientEntry[0]).length !== 0) {
-                        tableel.disease = patientEntry[0].disease;
-                        tableel.patients = patientEntry[0].patients;
-                        tableel.doi = patientEntry[0].doi;
-                        tableel.gene = patientEntry[0].gene;
-                        tableel.sex = patientEntry[0].sex;
-                        tableel.term = patientEntry[0].term;
-                        tableel.firstsymptomagemonth = patientEntry[0].firstsymptomagemonth;
-                        tableel.consanguinity = patientEntry[0].consanguinity;
-                        tableel.symptoms = patientEntry[0].symptoms;
-                        tableel.absentsymptoms = patientEntry[0].absentsymptoms;
-                        tableel.nucleotidevariant1 = patientEntry[0].nucleotidevariant1;
-                        tableel.protvariant1 = patientEntry[0].protvariant1;
-                        tableel.nucleotidevariant2 = patientEntry[0].nucleotidevariant2;
-                        tableel.protvariant2 = patientEntry[0].protvariant2;
-                        tableel.birthweight = patientEntry[0].birthweight;
-                        tableel.birthheight = patientEntry[0].birthheight;
-                        tableel.lastweightkg = patientEntry[0].lastweightkg;
-                        tableel.lastheightcm = patientEntry[0].lastheightcm;
-                        tableel.lastnewsageyear = patientEntry[0].lastnewsageyear;
-                        tableel.alivedead = patientEntry[0].alivedead;
+                    if (Object.keys(patientEntry[0]).length !== 0) {
+                        this.tableData.splice(index, 1, patientEntry[0])
                     }
                 }
+            })
+        },
+        fetchDOI() {
+            let patientEntries = this.patientData.filter((jsonel) => {return (jsonel.doi == this.activeDOI)})
+            patientEntries.forEach((entry) => {
+                //240904: if entry contains treatment info, check that tts have ids and add them if not
+                if ("treatments" in entry)  {
+                    entry.treatments.forEach((tt, i) => {
+                        if (!("id" in tt)) {
+                            tt.id = entry.id.concat('.',"t",i.toString())
+                        }
+                    })
+                }
+                this.tableData.push(entry)
+            })
+        },
+        deletePatient() {
+            let i = this.tableData.findIndex((tableel) => {return tableel.id == this.activeID})
+            if (i > -1) {
+                this.tableData.splice(i, 1)
+                this.activeID = this.tableData[0].id
+            }
+
+        },
+        deleteTreatment() {
+            let j = -1
+            console.log("469", this.activeTT)
+            this.tableData.forEach((tableel) => {
+                j = tableel.treatments.findIndex((ttel) => {return ttel.id == this.activeTT})
+                if (j > -1) {
+                    console.log("473", this.activeTT, j)
+                    tableel.treatments.splice(j, 1)
+                    this.activeTT = ""
+                }
+                j = -1
             })
         }
     }
