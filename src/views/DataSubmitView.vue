@@ -47,22 +47,22 @@
                                     <td class="px-2 py-2">
                                         <input type="radio" name="activeID" :value="el.id" v-model="activeID" />
                                     </td>
-                                    <td class="px-2 py-2">
+                                    <td class="px-2 py-2 text-center">
                                             <input type="text" :placeholder="el.disease" v-model="el.disease"  class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-2 py-2">
+                                    <td class="px-2 py-2 text-center">
                                         <input type="text" :placeholder=el.patients v-model="el.patients" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-2 py-2">
+                                    <td class="px-2 py-2 text-center">
                                         <input type="text" :placeholder=el.doi v-model="el.doi" @change="this.fetchDOI(); this.activeDOI = el.doi" @keypress="this.activeDOI = el.doi" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-2 py-2">
+                                    <td class="px-2 py-2 text-center">
                                         <input type="text" :placeholder=el.gene v-model="el.gene" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-2 py-2">
+                                    <td class="px-2 py-2 text-center">
                                         <input type="text" :placeholder=el.sex v-model="el.sex" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-2 py-2">
+                                    <td class="px-2 py-2 text-center">
                                         <input type="text" :placeholder=el.consanguinity v-model="el.consanguinity" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
@@ -475,11 +475,9 @@ export default {
         },
         deleteTreatment() {
             let j = -1
-            console.log("469", this.activeTT)
             this.tableData.forEach((tableel) => {
                 j = tableel.treatments.findIndex((ttel) => {return ttel.id == this.activeTT})
                 if (j > -1) {
-                    console.log("473", this.activeTT, j)
                     tableel.treatments.splice(j, 1)
                     this.activeTT = ""
                 }
