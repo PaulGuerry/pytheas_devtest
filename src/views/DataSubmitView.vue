@@ -166,19 +166,19 @@
                                     <td class="px-6 py-2">
                                         <input type="text" :placeholder=el.id v-model="el.id" @change="this.fetchPatient(); this.activeID = el.id" @keypress="this.activeID = el.id" class="outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.gene v-model="el.gene" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.nucleotidevariant1 v-model="el.nucleotidevariant1" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.protvariant1 v-model="el.protvariant1" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.nucleotidevariant2 v-model="el.nucleotidevariant2" class="text-center outline-none bg-transparent border-none">
                                     </td>
-                                    <td class="px-6 py-2">
+                                    <td class="px-6 py-2 text-center">
                                         <input type="text" :placeholder=el.protvariant2 v-model="el.protvariant2" class="text-center outline-none bg-transparent border-none">
                                     </td>
                                 </tr>
@@ -447,13 +447,15 @@ export default {
                     })
         },
         fetchPatient() {
-            let patientEntry = {}
+            let patientEntry = []
             this.tableData.forEach((tableel, index) => {
                 patientEntry = []
-                patientEntry = this.patientData.filter((jsonel) => {return (jsonel.id == tableel.id)})
+                patientEntry = this.patientData.filter((jsonel) => jsonel.id == tableel.id)
                 if (patientEntry.length !== 0) {
                     if (Object.keys(patientEntry[0]).length !== 0) {
-                        this.tableData.splice(index, 1, patientEntry[0])
+                        //this.tableData.push(patientEntry[0])
+                        //240905: use structuredClone to avoid linking tableData to this.patientData
+                        this.tableData.splice(index, 1, structuredClone(patientEntry[0]))
                     }
                 }
             })
@@ -469,14 +471,19 @@ export default {
                         }
                     })
                 }
-                this.tableData.push(entry)
+                //240905: use structuredClone to avoid linking tableData to this.patientData
+                this.tableData.push(structuredClone(entry))
             })
         },
         deletePatient() {
             let i = this.tableData.findIndex((tableel) => {return tableel.id == this.activeID})
             if (i > -1) {
                 this.tableData.splice(i, 1)
-                this.activeID = this.tableData[0].id
+                if (this.tableData.length !== 0) {
+                    if ("id" in this.tableData[0]) {
+                        this.activeID = this.tableData[0].id
+                    }
+                }
             }
 
         },
