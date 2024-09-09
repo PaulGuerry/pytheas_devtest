@@ -99,7 +99,7 @@
                                         <input type="text" :placeholder=el.id v-model="el.id" class="outline-none bg-transparent border-none">
                                     </td>
                                     <td class="px-6 py-2">
-                                        <input type="textarea" :placeholder=el.symptoms v-model="el.symptoms" class="w-full outline-none bg-transparent border-none text-center">
+                                        <input type="textarea" :placeholder=el.symptoms v-model=el.symptoms class="w-full outline-none bg-transparent border-none text-center">
                                     </td>
                                     <td class="px-6 py-2">
                                         <input type="textarea" :placeholder=el.absentsymptoms v-model="el.absentsymptoms" class="w-full outline-none bg-transparent border-none text-center">
@@ -384,13 +384,13 @@ export default {
                 firstsymptomagemonth: 4.0,
                 consanguinity: "N",
                 symptoms: [
-                            "0045056",
-                            "0002240",
-                            "0003077"
+                            "xxxxxxx",
+                            "yyyyyyy",
+                            "zzzzzzz"
                 ],
                 absentsymptoms: [
-                            "0012768",
-                            "0032807"
+                            "#######",
+                            "-------"
                 ],
                 treatments: [{
                     id: "PFIC99_99.t0",
@@ -442,8 +442,10 @@ export default {
         },
         str2Arr() {
                 this.tableData.forEach(el => {
-                    if (typeof el.symptoms === 'string') 
+                    if (typeof el.symptoms == 'string') 
                         el.symptoms = el.symptoms.split(",")
+                    if (typeof el.absentsymptoms == 'string') 
+                        el.absentsymptoms = el.absentsymptoms.split(",")
                     })
         },
         fetchPatient() {
@@ -454,6 +456,31 @@ export default {
                 if (patientEntry.length !== 0) {
                     if (Object.keys(patientEntry[0]).length !== 0) {
                         //this.tableData.push(patientEntry[0])
+                        //240909: check symptoms and absentsymptoms are in correct format
+                        //        symptoms & absentsymptoms should be arrays of strings, not strings
+                        if ("symptoms" in patientEntry[0]) {
+                            if (!Array.isArray(patientEntry[0].symptoms)) {
+                                if (typeof patientEntry[0].symptoms == "string") {
+                                    patientEntry[0].symptoms = patientEntry[0].symptoms.split(",")
+                                } else {
+                                    patientEntry[0].symptoms = ["xxxxxxx", "yyyyyyy"]
+                                }
+                            }
+                        } else {
+                            patientEntry[0].symptoms = ["xxxxxxx", "yyyyyyy"]
+                        }
+                        if ("absentsymptoms" in patientEntry[0]) {
+                            if (!Array.isArray(patientEntry[0].absentsymptoms)) {
+                                if (typeof patientEntry[0].absentsymptoms == "string") {
+                                    patientEntry[0].absentsymptoms = patientEntry[0].absentsymptoms.split(",")
+                                } else {
+                                    patientEntry[0].absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                                }
+                            }
+                        } else {
+                            patientEntry[0].absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                        }
+                        
                         //240905: use structuredClone to avoid linking tableData to this.patientData
                         this.tableData.splice(index, 1, structuredClone(patientEntry[0]))
                     }
@@ -471,6 +498,31 @@ export default {
                         }
                     })
                 }
+                //240909: check symptoms and absentsymptoms are in correct format
+                //        symptoms & absentsymptoms should be arrays of strings, not strings
+                if ("symptoms" in entry) {
+                    if (!Array.isArray(entry.symptoms)) {
+                        if (typeof entry.symptoms == "string") {
+                            entry.symptoms = entry.symptoms.split(",")
+                        } else {
+                            entry.symptoms = ["xxxxxxx", "yyyyyyy"]
+                        }
+                    }
+                } else {
+                    entry.symptoms = ["xxxxxxx", "yyyyyyy"]
+                }
+                if ("absentsymptoms" in entry) {
+                    if (!Array.isArray(entry.absentsymptoms)) {
+                        if (typeof entry.absentsymptoms == "string") {
+                            entry.absentsymptoms = entry.absentsymptoms.split(",")
+                        } else {
+                            entry.absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                        }
+                    }
+                } else {
+                    entry.absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                }
+
                 //240905: use structuredClone to avoid linking tableData to this.patientData
                 this.tableData.push(structuredClone(entry))
             })
