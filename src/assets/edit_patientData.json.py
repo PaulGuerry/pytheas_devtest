@@ -87,6 +87,45 @@ for object in patient_dict:
   else:
     print('No alive/dead information for patient {0:s}.'.format(object["id"]))
 
+  # 240913
+  if 'gene' in object.keys():
+      if object["gene"] == "ATP8B1":
+        object["disease"] = "PFIC1"
+        #print('Gene, {0:s}; Disease, {1:s}; ID, {2:s}.'.format(str(object["gene"]), object["disease"], object["id"]))
+      elif object["gene"] == "ABCB11":
+        object["disease"] = "PFIC2"
+      elif object["gene"] == "ABCB4":
+        object["disease"] = "PFIC3"
+      elif object["gene"] == "TJP2":
+        object["disease"] = "PFIC4"
+      elif object["gene"] == "NR1H4":
+        object["disease"] = "PFIC5"
+      elif object["gene"] == "SLC51A":
+        object["disease"] = "PFIC6"
+      elif object["gene"] == "USP53":
+        object["disease"] = "PFIC7"
+      elif object["gene"] == "KIF12":
+        object["disease"] = "PFIC8"
+      elif object["gene"] == "ZFYVE19":
+        object["disease"] = "PFIC9"
+      elif object["gene"] == "MYO5B":
+        object["disease"] = "PFIC10"
+      elif object["gene"] == "SEMA7A":
+        object["disease"] = "PFIC11"
+      elif object["gene"] == "TMEM199":
+        object["disease"] = "CDG2P"
+      elif object["gene"] == "SKIC3":
+        object["disease"] = "THES1"
+      elif object["gene"] == "SKIC2":
+        object["disease"] = "THES2"
+      elif object["gene"] == "FOCAD":
+        object["disease"] = "FOCADS"
+      
+      if 'disease' not in object.keys(): 
+        print('No disease specified for patient {0:s}.'.format(str(object["id"])))
+
+  else:
+    print('No gene specified for patient {0:s}.'.format(str(object["id"])))
 
 print('{0:4d} lists of symptoms with duplicate entries were corrected.'.format(count_sympdup))
 
