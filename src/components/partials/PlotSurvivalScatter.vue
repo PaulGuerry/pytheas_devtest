@@ -98,6 +98,7 @@ export default {
             }
         },
         gatherStats() {
+            console.log("gene, ", this.propData.gene)
             var stats_disease = this.diseaseArray.filter((item) => {return (item.gene == this.propData.gene)})
             this.patientTotal = stats_disease[0].age_at_last_news.all.array.length 
             this.girlNo = stats_disease[0].age_at_last_news.girls.array.length
