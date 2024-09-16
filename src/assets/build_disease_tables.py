@@ -4,24 +4,41 @@ import json
 import numpy
 
 json_data = ""
+#for line in fileinput.input(files="epdj_output.json"):
 for line in fileinput.input(files="patientData_edited.json"):
     json_data = json_data + line
 patient_list = json.loads(json_data)
 
-
-
-genes = ["KIF12", "ZFYVE19", "ATP8B1", "SKIC3", "SKIC2", "ABCB11", "ABCB4", "TJP2", "NR1H4", "SLC51A", "USP53", "MYO5B", "SEMA7A", "TMEM199"]
-names = ["PFIC8", "PFIC9", "PFIC1", "THES1", "THES2", "PFIC2", "PFIC3", "PFIC4", "PFIC5", "PFIC6", "PFIC7", "PFIC10", "PFIC11", "CDG2P"]
 # 20 colours taken from https://tailwindcss.com/docs/customizing-colors 
 # starting from neutral and working down, every second row, opacity 300 and 700
 colours = ["#d4d4d4", "#404040", "#fca5a5", "#b91c1c", "#fcd34d", "#b45309", "#bef264", "#4d7c0f",
            "#6ee7b7", "#047857", "#67e8f9", "#0e7490", "#93c5fd", "#1d4ed8", "#c4b5fd", "#6d28d9",
            "#f0abfc", "#a21caf", "#fda4af", "#be123c"]
-analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8]   
+
+
+diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"], colour = colours[0]),
+            dict(name = "PFIC2", gene = "ABCB11", matches = ["PFIC2"], colour = colours[1]),
+            dict(name = "PFIC3", gene = "ABCB4", matches = ["PFIC3"], colour = colours[2]),
+            dict(name = "PFIC4", gene = "TJP2", matches = ["PFIC4"], colour = colours[3]),
+            dict(name = "PFIC5", gene = "NR1H4", matches = ["PFIC5"], colour = colours[4]),
+            dict(name = "PFIC6", gene = "SLC51A", matches = ["PFIC6"], colour = colours[5]),
+            dict(name = "PFIC7", gene = "USP53", matches = ["PFIC7"], colour = colours[6]),
+            dict(name = "PFIC8", gene = "KIF12", matches = ["PFIC8"], colour = colours[7]),
+            dict(name = "PFIC9", gene = "ZFYVE19", matches = ["PFIC9"], colour = colours[8]),
+            dict(name = "PFIC10", gene = "MYO5B", matches = ["PFIC10"], colour = colours[9]),
+            dict(name = "PFIC11", gene = "SEMA7A", matches = ["PFIC11"], colour = colours[10]),
+            dict(name = "CDG2P", gene = "TMEM199", matches = ["CDG2P"], colour = colours[11]),
+            dict(name = "THES1", gene = "SKIC3", matches = ["THES1"], colour = colours[12]),
+            dict(name = "THES2", gene = "SKIC2", matches = ["THES2"], colour = colours[13]),
+            dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"], colour = colours[14]),
+]
+
+
+
 disease_table = []
 
-for gene in genes:
-   print("Building disease table for gene {0:s}".format(gene))
+for disease in diseases:
+   print("Building disease table for disease {0:s}".format(disease['name']))
    ages_first = dict(all = dict(array = [], median = 0, iqr = 0),
                boys = dict(array = [], median = 0, iqr = 0),
                girls = dict(array = [], median = 0, iqr = 0))
@@ -43,8 +60,8 @@ for gene in genes:
    presentVarCount = 0
 
    for object in patient_list: 
-      if ('gene' in object.keys()):
-         if (object["gene"] == gene):
+      if ('disease' in object.keys()):
+         if (object["disease"] in disease['matches']):
             count_patients["total"] += 1
             if 'sex' in object.keys():
                presentVarCount += 1
@@ -303,7 +320,7 @@ for gene in genes:
                   v = round(v)
 
          except:
-            print("119 - Unable to round {2:s}, for gene {0:s}, ages_first {1:s}".format(gene, dict_val, v))
+            print("119 - Unable to round {2:s}, for disease {0:s}, ages_first {1:s}".format(disease['name'], dict_val, v))
 
   
    #round values to two digits and output information in R-readable format
@@ -319,7 +336,7 @@ for gene in genes:
                   v = round(v)
 
             except:
-               print("290 - Unable to round {2:s}, for gene {0:s}, ages_last {1:s}".format(gene, dict_val, v))
+               print("290 - Unable to round {2:s}, for disease {0:s}, ages_last {1:s}".format(disease['name'], dict_val, v))
          
    
    #round values to two digits and output information in R-readable format
@@ -337,7 +354,7 @@ for gene in genes:
                   v = round(v)
 
             except:
-               print("305 - Unable to round {2:s}, for gene {0:s}, ages_last {1:s}".format(gene, dict_val, v))
+               print("305 - Unable to round {2:s}, for disease {0:s}, ages_last {1:s}".format(disease['name'], dict_val, v))
          
          if k == "status":
                for s in v:
@@ -351,16 +368,16 @@ for gene in genes:
       time_string += ")" 
       status_string += ")"
       print("   ")
-      print(gene + "---------------------") 
+      print(disease['name'] + "---------------------") 
       print(dict_key)
       print(time_string)
       print(status_string)
 
 
    
-   disease_table.append(dict(gene = gene, 
-                             name = names[genes.index(gene)],
-                             colour = colours[genes.index(gene)], 
+   disease_table.append(dict(gene = disease['gene'],
+                             name = disease['name'],
+                             colour = disease['colour'],
                              patients = count_patients,
                              articles = len(set(articles)),
                              datapoints = presentVarCount + symptomCount,
