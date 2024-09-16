@@ -28,7 +28,24 @@ genes = ["KIF12", "ZFYVE19", "ATP8B1", "SKIC3", "SKIC2", "ABCB11", "ABCB4", "TJP
 analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8]   
 symptom_table = []
 
-for gene in genes:
+diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
+            dict(name = "PFIC2", gene = "ABCB11", matches = ["PFIC2"]),
+            dict(name = "PFIC3", gene = "ABCB4", matches = ["PFIC3"]),
+            dict(name = "PFIC4", gene = "TJP2", matches = ["PFIC4"]),
+            dict(name = "PFIC5", gene = "NR1H4", matches = ["PFIC5"]),
+            dict(name = "PFIC6", gene = "SLC51A", matches = ["PFIC6"]),
+            dict(name = "PFIC7", gene = "USP53", matches = ["PFIC7"]),
+            dict(name = "PFIC8", gene = "KIF12", matches = ["PFIC8"]),
+            dict(name = "PFIC9", gene = "ZFYVE19", matches = ["PFIC9"]),
+            dict(name = "PFIC10", gene = "MYO5B", matches = ["PFIC10"]),
+            dict(name = "PFIC11", gene = "SEMA7A", matches = ["PFIC11"]),
+            dict(name = "CDG2P", gene = "TMEM199", matches = ["CDG2P"]),
+            dict(name = "THES1", gene = "SKIC3", matches = ["THES1"]),
+            dict(name = "THES2", gene = "SKIC2", matches = ["THES2"]),
+            dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"])
+]
+
+for disease in diseases:
   
    colour = "#9ca3af33" # default colour is grey
    
@@ -42,7 +59,7 @@ for gene in genes:
         
          if "gene" in object.keys():
 
-            if (object["gene"] == gene and 'symptoms' in object.keys()):
+            if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
                count_patients += 1 
                 
                if ("sex" in object.keys() and object["sex"] == "F"):
@@ -124,15 +141,15 @@ for gene in genes:
                                        unique_symptoms += 1
          else:
             if analysis_level == 8:
-               print("No gene information for patient {0:s}".format(object["id"]))
+               print("No disease information for patient {0:s}".format(object["id"]))
                  
   
       #for each analysis level, sort the counts from most to least frequent
       counts = sorted(counts, key=lambda d: d["n"], reverse = True)
       #add an entry to the symptom_table dictionary
-      symptom_table.append(dict(gene = gene, analysis_level = analysis_level, patients = count_patients, girls = count_girls, counts = counts))
+      symptom_table.append(dict(gene = disease['gene'], disease = disease['name'], analysis_level = analysis_level, patients = count_patients, girls = count_girls, counts = counts))
 
-      print("Gene, ", gene, "; level, ", analysis_level, "; unique symptoms, ", unique_symptoms)
+      print("Disease, ", disease['name'], "; level, ", analysis_level, "; unique symptoms, ", unique_symptoms)
 
 
 
