@@ -10229,7 +10229,8 @@
         "symptoms": [
             "0001396",
             "0001744",
-            "0000989 0002240",
+            "0000989",
+            "0002240",
             "000952",
             "0002028"
         ],
@@ -10256,8 +10257,9 @@
         "lastpccm": "Jaundice, pruritus, hepatomegaly",
         "symptoms": [
             "0001396",
-            "000952",
-            "0000989 0002240"
+            "0000952",
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT  1272UI/L, ASAT  756UI/L,  GGT51  ui/L, Bilirubine tot 113umol/L",
         "disease": "PFIC2"
@@ -10283,7 +10285,8 @@
         "symptoms": [
             "0001396",
             "000952",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT  302UI/L, ASAT 4985 UI/L,  GGT  6 ui/L, Bilirubine tot  127umol/L",
         "disease": "PFIC2"
@@ -10307,7 +10310,8 @@
         "symptoms": [
             "0001396",
             "000952",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT 396 UI/L, ASAT 362 UI/L,  GGT 10 ui/L, Bilirubine ctot 83 umol/L",
         "transplantEvolution": "yes_L",
@@ -10333,7 +10337,8 @@
             "000952",
             "0001396",
             "0001744",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT  267UI/L, ASAT 170 UI/L,  GGT 42  ui/L, Bilirubine TOT 187 umol/L",
         "disease": "PFIC2"
@@ -10359,7 +10364,8 @@
         "symptoms": [
             "0001396",
             "000952",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT 114  UI/L, ASAT 328 UI/L,  GGT  213ui/L, Bilirubine tot 92umol/L",
         "ggt": "elev\u00e9e",
@@ -10386,7 +10392,8 @@
         "symptoms": [
             "0001396",
             "000952",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT  164 UI/L, ASAT  406 UI/L,  GGT 196 ui/L, Bilirubine 128 umol/L",
         "ggt": "elev\u00e9e",
@@ -10437,7 +10444,8 @@
         "symptoms": [
             "0001396",
             "000952",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "ALAT  359 UI/L, ASAT  826UI/L,  GGT 153 ui/L, Bilirubine tot 206 umol/L",
         "ggt": "elev\u00e9e",
@@ -17866,7 +17874,8 @@
         "gastrointestDiseaseMvidSoitCodeHpo0011473": "None",
         "symptoms": [
             "0001508",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "alat 357 UI/L GGT 24 UI/L BT BD 5.1/4.9 mg/dl",
         "treatments": "A05AA02_J04AB02"
@@ -19951,7 +19960,8 @@
         "gastrointestDiseaseMvidSoitCodeHpo0011473": "None",
         "symptoms": [
             "0001508",
-            "0000989 0002240"
+            "0000989",
+            "0002240"
         ],
         "labfindingsAtDiagn0": "alat 357 UI/L GGT 24 UI/L BT BD 5.1/4.9 mg/dl",
         "treatments": "A05AA02_J04AB02"
@@ -23082,7 +23092,7 @@
         "alivedead": "alive"
     },
     {
-        "id": "FOCAD_03",
+        "id": "FOCAD_003",
         "disease": "FOCADS",
         "patients": "F3-II:1",
         "doi": "https://doi.org/10.1038/s41588-022-01120-0",
@@ -23244,38 +23254,5 @@
         "lastnewsageyear": "0.58",
         "alivedead": "dead"
     },
-    {
-        "id": "FOCAD_004",
-        "disease": "FOCADS",
-        "patients": "F4-II:1",
-        "doi": "https://doi.org/10.1038/s41588-022-01120-0",
-        "gene": "FOCAD",
-        "sex": "M",
-        "term": "",
-        "firstsymptomagemonth": "",
-        "consanguinity": "N",
-        "symptoms": "",
-        "absentsymptoms": "",
-        "treatments": [
-            {
-                "id": "FOCAD_004.t1",
-                "name": "corticosteroid",
-                "type": "anti-inflammatory",
-                "ageatstart_m": 1,
-                "duration_m": 5,
-                "efficacy": "unclear"
-            }
-        ],
-        "nucleotidevariant1": "NM_017794.4:c.5339T>C",
-        "protvariant1": "NM_017794.4(NP_060264.4):p.(Leu1780Pro)",
-        "nucleotidevariant2": "NM_017794.4:c.5339T>C",
-        "protvariant2": "NM_017794.4(NP_060264.4):p.(Leu1780Pro)",
-        "birthweight": "",
-        "birthpc": "",
-        "birthheight": "",
-        "lastweightkg": "",
-        "lastheightcm": "",
-        "lastnewsageyear": "0.29",
-        "alivedead": "dead"
-    }
+    {"id":"FOCAD_004","disease":"FOCADS","patients":"F4-II:1","doi":"https://doi.org/10.1038/s41588-022-01120-0","gene":"FOCAD","sex":"M","term":35,"firstsymptomagemonth":3,"consanguinity":"N","symptoms":["0000007","0001511","0001394","0002910","0003073","0001744","0001406","0000952","0006254","0001541","0006560","0033196","0033193","0012465","0000023","0001537","0003281","0000825","0001987","0001928","0100598","0006698","0005162","0031295","0001640","0000126","0004719","0012448","0012708","0001508","0100814"],"absentsymptoms":["0002240","0031142","0001397","0006568","0002480","0001399","0003270","0002014","0033994","0011968","0002013","0004395","0100327","0005231","0002020","0002243","0002586","0001738","0100800","0002904","0031508","0001942","0100512","0004905","0100513","0025631","0003355","0003348","0002901","0002902","0002900","0003075","0001903","0001873","0100827","0012234","0001882","0012735","0002090","0012653","0031664","0001655","0001643","0001629","0001631","0004381","0000034","0000010","0000047","0000286","0005280","0000418","0000347","0000325","0000348","0001357","0004488","0000520","0007010","0000639","0012758","0001388","0100806","0001954","0000403","0009797","0030215","0000737","0000736","0000750","0011359","0008404","0001252","0000964","0010648"],"treatments":[{"id":"FOCAD_004.t0","name":"bilateral inguinal hernia repair","type":"general surgery","ageatstart_m":3,"duration_m":0.1,"efficacy":"partial"},{"id":"FOCAD_004.t1","name":"umbilical hernia repair","type":"general surgery","ageatstart_m":3,"duration_m":0.1,"efficacy":"partial"}],"nucleotidevariant1":"NM_017794.4:c.5339T>C","protvariant1":"NM_017794.4(NP_060264.4):p.(Leu1780Pro)","nucleotidevariant2":"NM_017794.4:c.5339T>C","protvariant2":"NM_017794.4(NP_060264.4):p.(Leu1780Pro)","birthweight":1.5,"birthpc":34,"birthheight":41,"lastweightkg":4,"lastheightcm":41,"lastnewsageyear":"0.29","alivedead":"dead"}
 ]

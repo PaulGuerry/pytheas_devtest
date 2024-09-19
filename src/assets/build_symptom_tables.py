@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import fileinput
 import json
+import numpy as np
 
 json_data = ""
 for line in fileinput.input(files="patientData_edited.json"):
@@ -42,8 +43,9 @@ diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "CDG2P", gene = "TMEM199", matches = ["CDG2P"]),
             dict(name = "THES1", gene = "SKIC3", matches = ["THES1"]),
             dict(name = "THES2", gene = "SKIC2", matches = ["THES2"]),
-            dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"])
-]
+            dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"]),
+            dict(name = "CLUST", gene = "#####", matches = ["THES", "THES1", "THES2", "PFIC2"])
+            ]
 
 for disease in diseases:
   
@@ -148,8 +150,84 @@ for disease in diseases:
       counts = sorted(counts, key=lambda d: d["n"], reverse = True)
       #add an entry to the symptom_table dictionary
       symptom_table.append(dict(gene = disease['gene'], disease = disease['name'], analysis_level = analysis_level, patients = count_patients, girls = count_girls, counts = counts))
-
+      symptom_matrix = np.array(" disease")
+      symptom_matrix = np.append(symptom_matrix, [code["HPO_code"] for code in counts])
       print("Disease, ", disease['name'], "; level, ", analysis_level, "; unique symptoms, ", unique_symptoms)
+
+      if analysis_level > 2:
+
+         #print(symptom_matrix, symptom_matrix.shape, symptom_matrix.shape[0], np.argwhere(symptom_matrix == '0025032'))
+         
+
+         # Now write each patient as a row vector in a matrix where the columns are the unique HPO codes for that level
+         for object in patient_list: 
+            
+            
+            if "gene" in object.keys():
+
+               if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+                   
+                  # Only include patients with more than a certain number of symptoms
+                  # (i.e cycle current loop if no more than N symptoms in current patient entry)
+                  if len(object['symptoms']) < 5: 
+                     continue 
+                  
+                  # Initialize each patient as a row of zeros
+                  # .. with the name of the disease as the first column
+                  row = np.array(f"{object['disease']:>8}")
+                  row = np.append(row, np.zeros(unique_symptoms, dtype = int))
+                  # np.vstack appends the second argument (array) to the first 
+                  symptom_matrix = np.vstack((symptom_matrix, row))
+                  #print(symptom_matrix, symptom_matrix.shape, symptom_matrix.shape[0], np.argwhere(symptom_matrix == '0025032')) 
+                   
+                  for HPO_code in object["symptoms"]:
+                     #find this symptom in the tree 
+                     for branch in hp_tree_list:
+
+                        if branch["code"] == HPO_code:
+                        
+                           #if the symptom matches, search all the parent_branches of this code 
+                           #pb means parent_branch
+                           for i in range(0, len(branch["parent_branches"]), 1):
+                              parent_branch = branch["parent_branches"][i]
+                              pb_length = branch["branch_lengths"][i]
+                              #initialized at -1 to make code more readable (so that increment statement appears at the start of the loop)
+                              pb_level = -1
+                              found = False
+                              level2_code = ""
+                              lbl = "<--BLANK-->"
+
+                              #go through all codes in the parent_branch 
+                              #starting from the top and working down (from the end of the list and work backwards)
+                              #The convention I have chosen to follow is 
+                              #pb_level = 0 corresponds to 0000001: All
+                              #         = 1 corresponds to 0000118: Phenotypic abnormality
+                              #         = 2 gives the colour of all codes lower down the hierarchy
+                              for j in range(pb_length, 1, -1):
+                                 #codes are stored from the end to the start of a branch
+                                 #so have to reverse the count
+                                 pb_level += 1
+
+                                 if pb_level == 2:
+                                    level2_code = parent_branch[j]
+
+                                 if pb_level == analysis_level:
+                                    #find the label of the parent code at the chosen analysis level
+                                    pb_code = parent_branch[j]
+                                    #if the code at the chosen level is not blank
+                                    if pb_code != "-------":
+                                       #set the value of the corresponding column to 1
+                                       symptom_matrix[-1, np.argwhere(symptom_matrix == pb_code)[0][1]] = 1
+
+         #Write the symptom_matrix to the output file
+         with open("hp_symptom_matrix.txt", "a") as outfile:
+            outfile.write("Disease, " + disease['name'] + "; level, " + str(analysis_level) + "; unique symptoms, " + str(unique_symptoms) + "\n")
+            outfile.write(f", ".join(symptom_matrix[0]) + "\n")
+            for row in symptom_matrix[1:]:
+               outfile.write(",       ".join(row) + "\n")
+            
+            outfile.write("\n\n\n")
+
 
 
 

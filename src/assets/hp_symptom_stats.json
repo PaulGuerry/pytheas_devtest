@@ -10,7 +10,7 @@
                 "HPO_code": "0000118",
                 "HPO_term": "Phenotypic abnormality",
                 "HPO_acronym": "PA",
-                "n": 227,
+                "n": 230,
                 "colour": "#9ca3af33"
             }
         ]
@@ -26,14 +26,14 @@
                 "HPO_code": "0025031",
                 "HPO_term": "Abnormality of the digestive system",
                 "HPO_acronym": "AotDS",
-                "n": 133,
+                "n": 135,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0001574",
                 "HPO_term": "Abnormality of the integument",
                 "HPO_acronym": "AotI",
-                "n": 63,
+                "n": 64,
                 "colour": "#3b82f633"
             },
             {
@@ -91,14 +91,14 @@
                 "HPO_code": "0002012",
                 "HPO_term": "Abnormality of the abdominal organs",
                 "HPO_acronym": "AotAO",
-                "n": 88,
+                "n": 89,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0000951",
                 "HPO_term": "Abnormality of the skin",
                 "HPO_acronym": "AotS",
-                "n": 63,
+                "n": 64,
                 "colour": "#3b82f633"
             },
             {
@@ -112,7 +112,7 @@
                 "HPO_code": "0001438",
                 "HPO_term": "Abnormal abdomen morphology",
                 "HPO_acronym": "AAM",
-                "n": 13,
+                "n": 14,
                 "colour": "#a5a5fc33"
             },
             {
@@ -184,7 +184,7 @@
                 "HPO_code": "0001392",
                 "HPO_term": "Abnormality of the liver",
                 "HPO_acronym": "AotL",
-                "n": 85,
+                "n": 86,
                 "colour": "#a5a5fc33"
             },
             {
@@ -353,7 +353,7 @@
                 "HPO_code": "0000118",
                 "HPO_term": "Phenotypic abnormality",
                 "HPO_acronym": "PA",
-                "n": 433,
+                "n": 447,
                 "colour": "#9ca3af33"
             }
         ]
@@ -369,14 +369,14 @@
                 "HPO_code": "0025031",
                 "HPO_term": "Abnormality of the digestive system",
                 "HPO_acronym": "AotDS",
-                "n": 296,
+                "n": 305,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0001574",
                 "HPO_term": "Abnormality of the integument",
                 "HPO_acronym": "AotI",
-                "n": 75,
+                "n": 80,
                 "colour": "#3b82f633"
             },
             {
@@ -420,21 +420,21 @@
                 "HPO_code": "0002012",
                 "HPO_term": "Abnormality of the abdominal organs",
                 "HPO_acronym": "AotAO",
-                "n": 206,
+                "n": 211,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0000951",
                 "HPO_term": "Abnormality of the skin",
                 "HPO_acronym": "AotS",
-                "n": 75,
+                "n": 80,
                 "colour": "#3b82f633"
             },
             {
                 "HPO_code": "0001438",
                 "HPO_term": "Abnormal abdomen morphology",
                 "HPO_acronym": "AAM",
-                "n": 65,
+                "n": 69,
                 "colour": "#a5a5fc33"
             },
             {
@@ -506,7 +506,7 @@
                 "HPO_code": "0001392",
                 "HPO_term": "Abnormality of the liver",
                 "HPO_acronym": "AotL",
-                "n": 188,
+                "n": 193,
                 "colour": "#a5a5fc33"
             },
             {
@@ -520,7 +520,7 @@
                 "HPO_code": "0011121",
                 "HPO_term": "Abnormality of skin morphology",
                 "HPO_acronym": "AoSM",
-                "n": 33,
+                "n": 34,
                 "colour": "#3b82f633"
             },
             {
@@ -571,14 +571,14 @@
                 "HPO_code": "0011354",
                 "HPO_term": "Generalized abnormality of skin",
                 "HPO_acronym": "GAoS",
-                "n": 33,
+                "n": 34,
                 "colour": "#3b82f633"
             },
             {
                 "HPO_code": "0004297",
                 "HPO_term": "Abnormality of the biliary system",
                 "HPO_acronym": "AotBS",
-                "n": 33,
+                "n": 34,
                 "colour": "#a5a5fc33"
             },
             {
@@ -639,7 +639,7 @@
                 "HPO_code": "0000118",
                 "HPO_term": "Phenotypic abnormality",
                 "HPO_acronym": "PA",
-                "n": 476,
+                "n": 485,
                 "colour": "#9ca3af33"
             }
         ]
@@ -655,14 +655,14 @@
                 "HPO_code": "0025031",
                 "HPO_term": "Abnormality of the digestive system",
                 "HPO_acronym": "AotDS",
-                "n": 313,
+                "n": 319,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0001574",
                 "HPO_term": "Abnormality of the integument",
                 "HPO_acronym": "AotI",
-                "n": 69,
+                "n": 72,
                 "colour": "#3b82f633"
             },
             {
@@ -713,21 +713,21 @@
                 "HPO_code": "0002012",
                 "HPO_term": "Abnormality of the abdominal organs",
                 "HPO_acronym": "AotAO",
-                "n": 207,
+                "n": 210,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0000951",
                 "HPO_term": "Abnormality of the skin",
                 "HPO_acronym": "AotS",
-                "n": 69,
+                "n": 72,
                 "colour": "#3b82f633"
             },
             {
                 "HPO_code": "0001438",
                 "HPO_term": "Abnormal abdomen morphology",
                 "HPO_acronym": "AAM",
-                "n": 68,
+                "n": 71,
                 "colour": "#a5a5fc33"
             },
             {
@@ -799,7 +799,7 @@
                 "HPO_code": "0001392",
                 "HPO_term": "Abnormality of the liver",
                 "HPO_acronym": "AotL",
-                "n": 176,
+                "n": 179,
                 "colour": "#a5a5fc33"
             },
             {
@@ -2579,7 +2579,7 @@
                 "HPO_code": "0000118",
                 "HPO_term": "Phenotypic abnormality",
                 "HPO_acronym": "PA",
-                "n": 396,
+                "n": 402,
                 "colour": "#9ca3af33"
             }
         ]
@@ -2595,14 +2595,14 @@
                 "HPO_code": "0025031",
                 "HPO_term": "Abnormality of the digestive system",
                 "HPO_acronym": "AotDS",
-                "n": 250,
+                "n": 254,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0001574",
                 "HPO_term": "Abnormality of the integument",
                 "HPO_acronym": "AotI",
-                "n": 78,
+                "n": 80,
                 "colour": "#3b82f633"
             },
             {
@@ -2674,14 +2674,14 @@
                 "HPO_code": "0002012",
                 "HPO_term": "Abnormality of the abdominal organs",
                 "HPO_acronym": "AotAO",
-                "n": 130,
+                "n": 132,
                 "colour": "#a5a5fc33"
             },
             {
                 "HPO_code": "0000951",
                 "HPO_term": "Abnormality of the skin",
                 "HPO_acronym": "AotS",
-                "n": 78,
+                "n": 80,
                 "colour": "#3b82f633"
             },
             {
@@ -2695,7 +2695,7 @@
                 "HPO_code": "0001438",
                 "HPO_term": "Abnormal abdomen morphology",
                 "HPO_acronym": "AAM",
-                "n": 46,
+                "n": 48,
                 "colour": "#a5a5fc33"
             },
             {
@@ -2781,7 +2781,7 @@
                 "HPO_code": "0001392",
                 "HPO_term": "Abnormality of the liver",
                 "HPO_acronym": "AotL",
-                "n": 118,
+                "n": 120,
                 "colour": "#a5a5fc33"
             },
             {
@@ -7904,6 +7904,2066 @@
         "analysis_level": 8,
         "patients": 199,
         "girls": 77,
+        "counts": [
+            {
+                "HPO_code": "0000164",
+                "HPO_term": "Abnormality of the dentition",
+                "HPO_acronym": "AotD",
+                "n": 5,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0004942",
+                "HPO_term": "Aortic aneurysm",
+                "HPO_acronym": "AA",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0004313",
+                "HPO_term": "Decreased circulating antibody level",
+                "HPO_acronym": "DCAL",
+                "n": 3,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0001371",
+                "HPO_term": "Flexion contracture",
+                "HPO_acronym": "FC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002583",
+                "HPO_term": "Colitis",
+                "HPO_acronym": "C",
+                "n": 3,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0011830",
+                "HPO_term": "Abnormal oral mucosa morphology",
+                "HPO_acronym": "AOMM",
+                "n": 2,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0002823",
+                "HPO_term": "Abnormality of femur morphology",
+                "HPO_acronym": "AoFM",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0006499",
+                "HPO_term": "Abnormality of femoral epiphysis",
+                "HPO_acronym": "AoFE",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0012785",
+                "HPO_term": "Flexion contracture of finger",
+                "HPO_acronym": "FCoF",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0030044",
+                "HPO_term": "Flexion contracture of digit",
+                "HPO_acronym": "FCoD",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0032076",
+                "HPO_term": "Abnormal male urethral meatus morphology",
+                "HPO_acronym": "AMUMM",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0012727",
+                "HPO_term": "Thoracic aortic aneurysm",
+                "HPO_acronym": "TAA",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0011750",
+                "HPO_term": "Neoplasm of the anterior pituitary",
+                "HPO_acronym": "NotAP",
+                "n": 2,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0006500",
+                "HPO_term": "Abnormality of lower limb epiphysis morphology",
+                "HPO_acronym": "AoLLEM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0006505",
+                "HPO_term": "Abnormal limb epiphysis morphology",
+                "HPO_acronym": "ALEM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003366",
+                "HPO_term": "Abnormal femoral neck/head morphology",
+                "HPO_acronym": "AFNM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003368",
+                "HPO_term": "Abnormal femoral head morphology",
+                "HPO_acronym": "AFHM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0001220",
+                "HPO_term": "Interphalangeal joint contracture of finger",
+                "HPO_acronym": "IJCoF",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0009473",
+                "HPO_term": "Joint contracture of the hand",
+                "HPO_acronym": "JCotH",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0001167",
+                "HPO_term": "Abnormality of finger",
+                "HPO_acronym": "AoF",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0012385",
+                "HPO_term": "Camptodactyly",
+                "HPO_acronym": "C",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0005918",
+                "HPO_term": "Abnormal finger phalanx morphology",
+                "HPO_acronym": "AFPM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0006261",
+                "HPO_term": "Abnormal phalangeal joint morphology of the hand",
+                "HPO_acronym": "APJMotH",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0100360",
+                "HPO_term": "Upper-limb joint contracture",
+                "HPO_acronym": "UJC",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003121",
+                "HPO_term": "Limb joint contracture",
+                "HPO_acronym": "LJC",
+                "n": 1,
+                "colour": "#e5e5e533"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 1,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0000118",
+                "HPO_term": "Phenotypic abnormality",
+                "HPO_acronym": "PA",
+                "n": 1905,
+                "colour": "#9ca3af33"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 2,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0025031",
+                "HPO_term": "Abnormality of the digestive system",
+                "HPO_acronym": "AotDS",
+                "n": 783,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0001574",
+                "HPO_term": "Abnormality of the integument",
+                "HPO_acronym": "AotI",
+                "n": 329,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0002715",
+                "HPO_term": "Abnormality of the immune system",
+                "HPO_acronym": "AotIS",
+                "n": 149,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0000152",
+                "HPO_term": "Abnormality of head or neck",
+                "HPO_acronym": "AoHON",
+                "n": 145,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0001507",
+                "HPO_term": "Growth abnormality",
+                "HPO_acronym": "GA",
+                "n": 107,
+                "colour": "#36531433"
+            },
+            {
+                "HPO_code": "0001626",
+                "HPO_term": "Abnormality of the cardiovascular system",
+                "HPO_acronym": "AotCS",
+                "n": 86,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0000707",
+                "HPO_term": "Abnormality of the nervous system",
+                "HPO_acronym": "AotNS",
+                "n": 83,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0033127",
+                "HPO_term": "Abnormality of the musculoskeletal system",
+                "HPO_acronym": "AotMS",
+                "n": 30,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002086",
+                "HPO_term": "Abnormality of the respiratory system",
+                "HPO_acronym": "AotRS",
+                "n": 30,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0001871",
+                "HPO_term": "Abnormality of blood and blood-forming tissues",
+                "HPO_acronym": "AoBABT",
+                "n": 23,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0001939",
+                "HPO_term": "Abnormality of metabolism/homeostasis",
+                "HPO_acronym": "AoM",
+                "n": 14,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0025354",
+                "HPO_term": "Abnormal cellular phenotype",
+                "HPO_acronym": "ACP",
+                "n": 10,
+                "colour": "#a3e63533"
+            },
+            {
+                "HPO_code": "0040064",
+                "HPO_term": "Abnormality of limbs",
+                "HPO_acronym": "AoL",
+                "n": 10,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000119",
+                "HPO_term": "Abnormality of the genitourinary system",
+                "HPO_acronym": "AotGS",
+                "n": 9,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0000598",
+                "HPO_term": "Abnormality of the ear",
+                "HPO_acronym": "AotE",
+                "n": 7,
+                "colour": "#facc1533"
+            },
+            {
+                "HPO_code": "0000818",
+                "HPO_term": "Abnormality of the endocrine system",
+                "HPO_acronym": "AotES",
+                "n": 4,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0000478",
+                "HPO_term": "Abnormality of the eye",
+                "HPO_acronym": "AotE",
+                "n": 2,
+                "colour": "#38bdf833"
+            },
+            {
+                "HPO_code": "0002664",
+                "HPO_term": "Neoplasm",
+                "HPO_acronym": "N",
+                "n": 1,
+                "colour": "#7e22ce33"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 3,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0002012",
+                "HPO_term": "Abnormality of the abdominal organs",
+                "HPO_acronym": "AotAO",
+                "n": 285,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0025032",
+                "HPO_term": "Abnormality of digestive system physiology",
+                "HPO_acronym": "AoDSP",
+                "n": 237,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0000234",
+                "HPO_term": "Abnormality of the head",
+                "HPO_acronym": "AotH",
+                "n": 145,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0000951",
+                "HPO_term": "Abnormality of the skin",
+                "HPO_acronym": "AotS",
+                "n": 128,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0010978",
+                "HPO_term": "Abnormality of immune system physiology",
+                "HPO_acronym": "AoISP",
+                "n": 97,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0001438",
+                "HPO_term": "Abnormal abdomen morphology",
+                "HPO_acronym": "AAM",
+                "n": 96,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0011138",
+                "HPO_term": "Abnormality of skin adnexa morphology",
+                "HPO_acronym": "AoSAM",
+                "n": 85,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0011024",
+                "HPO_term": "Abnormality of the gastrointestinal tract",
+                "HPO_acronym": "AotGT",
+                "n": 84,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0012638",
+                "HPO_term": "Abnormal nervous system physiology",
+                "HPO_acronym": "ANSP",
+                "n": 81,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0025033",
+                "HPO_term": "Abnormality of digestive system morphology",
+                "HPO_acronym": "AoDSM",
+                "n": 74,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0002597",
+                "HPO_term": "Abnormality of the vasculature",
+                "HPO_acronym": "AotV",
+                "n": 38,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0030680",
+                "HPO_term": "Abnormality of cardiovascular system morphology",
+                "HPO_acronym": "AoCSM",
+                "n": 35,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0004323",
+                "HPO_term": "Abnormality of body weight",
+                "HPO_acronym": "AoBW",
+                "n": 31,
+                "colour": "#36531433"
+            },
+            {
+                "HPO_code": "0012252",
+                "HPO_term": "Abnormal respiratory system morphology",
+                "HPO_acronym": "ARSM",
+                "n": 28,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0100763",
+                "HPO_term": "Abnormality of the lymphatic system",
+                "HPO_acronym": "AotLS",
+                "n": 27,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011017",
+                "HPO_term": "Abnormal cellular physiology",
+                "HPO_acronym": "ACP",
+                "n": 20,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0000924",
+                "HPO_term": "Abnormality of the skeletal system",
+                "HPO_acronym": "AotSS",
+                "n": 20,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011025",
+                "HPO_term": "Abnormal cardiovascular system physiology",
+                "HPO_acronym": "ACSP",
+                "n": 13,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0033796",
+                "HPO_term": "Abnormal leukocyte physiology",
+                "HPO_acronym": "ALP",
+                "n": 10,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0031703",
+                "HPO_term": "Abnormal ear morphology",
+                "HPO_acronym": "AEM",
+                "n": 7,
+                "colour": "#facc1533"
+            },
+            {
+                "HPO_code": "0003549",
+                "HPO_term": "Abnormality of connective tissue",
+                "HPO_acronym": "AoCT",
+                "n": 7,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0000078",
+                "HPO_term": "Abnormality of the genital system",
+                "HPO_acronym": "AotGS",
+                "n": 5,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0000079",
+                "HPO_term": "Abnormality of the urinary system",
+                "HPO_acronym": "AotUS",
+                "n": 4,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0040068",
+                "HPO_term": "Abnormality of limb bone",
+                "HPO_acronym": "AoLB",
+                "n": 4,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0001881",
+                "HPO_term": "Abnormal leukocyte morphology",
+                "HPO_acronym": "ALM",
+                "n": 4,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0032251",
+                "HPO_term": "Abnormal immune system morphology",
+                "HPO_acronym": "AISM",
+                "n": 4,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0001892",
+                "HPO_term": "Abnormal bleeding",
+                "HPO_acronym": "AB",
+                "n": 4,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0002814",
+                "HPO_term": "Abnormality of the lower limb",
+                "HPO_acronym": "AotLL",
+                "n": 3,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0002817",
+                "HPO_term": "Abnormality of the upper limb",
+                "HPO_acronym": "AotUL",
+                "n": 3,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0003011",
+                "HPO_term": "Abnormality of the musculature",
+                "HPO_acronym": "AotM",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0012337",
+                "HPO_term": "Abnormal homeostasis",
+                "HPO_acronym": "AH",
+                "n": 3,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0004298",
+                "HPO_term": "Abnormality of the abdominal wall",
+                "HPO_acronym": "AotAW",
+                "n": 3,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0002795",
+                "HPO_term": "Abnormal respiratory system physiology",
+                "HPO_acronym": "ARSP",
+                "n": 2,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0000864",
+                "HPO_term": "Abnormality of the hypothalamus-pituitary axis",
+                "HPO_acronym": "AotHA",
+                "n": 2,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0012639",
+                "HPO_term": "Abnormal nervous system morphology",
+                "HPO_acronym": "ANSM",
+                "n": 2,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0001872",
+                "HPO_term": "Abnormality of thrombocytes",
+                "HPO_acronym": "AoT",
+                "n": 2,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0012373",
+                "HPO_term": "Abnormal eye physiology",
+                "HPO_acronym": "AEP",
+                "n": 1,
+                "colour": "#38bdf833"
+            },
+            {
+                "HPO_code": "0012372",
+                "HPO_term": "Abnormal eye morphology",
+                "HPO_acronym": "AEM",
+                "n": 1,
+                "colour": "#38bdf833"
+            },
+            {
+                "HPO_code": "0100568",
+                "HPO_term": "Neoplasm of the endocrine system",
+                "HPO_acronym": "NotES",
+                "n": 1,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0011793",
+                "HPO_term": "Neoplasm by anatomical site",
+                "HPO_acronym": "NBAS",
+                "n": 1,
+                "colour": "#7e22ce33"
+            },
+            {
+                "HPO_code": "0003117",
+                "HPO_term": "Abnormal circulating hormone concentration",
+                "HPO_acronym": "ACHC",
+                "n": 1,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0032245",
+                "HPO_term": "Abnormal metabolism",
+                "HPO_acronym": "AM",
+                "n": 1,
+                "colour": "#dc262633"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 4,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0001392",
+                "HPO_term": "Abnormality of the liver",
+                "HPO_acronym": "AotL",
+                "n": 258,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0011458",
+                "HPO_term": "Abdominal symptom",
+                "HPO_acronym": "AS",
+                "n": 198,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0012718",
+                "HPO_term": "Morphological abnormality of the gastrointestinal tract",
+                "HPO_acronym": "MAotGT",
+                "n": 148,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0001595",
+                "HPO_term": "Abnormal hair morphology",
+                "HPO_acronym": "AHaM",
+                "n": 82,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0011121",
+                "HPO_term": "Abnormality of skin morphology",
+                "HPO_acronym": "AoSM",
+                "n": 75,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0001743",
+                "HPO_term": "Abnormality of the spleen",
+                "HPO_acronym": "AotS",
+                "n": 54,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0012647",
+                "HPO_term": "Abnormal inflammatory response",
+                "HPO_acronym": "AIR",
+                "n": 32,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0031409",
+                "HPO_term": "Abnormal lymphocyte physiology",
+                "HPO_acronym": "ALP",
+                "n": 30,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0025155",
+                "HPO_term": "Abnormality of hepatobiliary system physiology",
+                "HPO_acronym": "AoHSP",
+                "n": 29,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0001627",
+                "HPO_term": "Abnormal heart morphology",
+                "HPO_acronym": "AHeM",
+                "n": 28,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0032101",
+                "HPO_term": "Unusual infection",
+                "HPO_acronym": "UI",
+                "n": 28,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0100763",
+                "HPO_term": "Abnormality of the lymphatic system",
+                "HPO_acronym": "AotLS",
+                "n": 27,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0002088",
+                "HPO_term": "Abnormal lung morphology",
+                "HPO_acronym": "ALM",
+                "n": 25,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0012759",
+                "HPO_term": "Neurodevelopmental abnormality",
+                "HPO_acronym": "NA",
+                "n": 24,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0000271",
+                "HPO_term": "Abnormality of the face",
+                "HPO_acronym": "AotF",
+                "n": 21,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0025015",
+                "HPO_term": "Abnormal vascular morphology",
+                "HPO_acronym": "AVM",
+                "n": 14,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0012719",
+                "HPO_term": "Functional abnormality of the gastrointestinal tract",
+                "HPO_acronym": "FAotGT",
+                "n": 12,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0011842",
+                "HPO_term": "Abnormal skeletal morphology",
+                "HPO_acronym": "ASM",
+                "n": 11,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0005368",
+                "HPO_term": "Abnormality of humoral immunity",
+                "HPO_acronym": "AoHuI",
+                "n": 10,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0033796",
+                "HPO_term": "Abnormal leukocyte physiology",
+                "HPO_acronym": "ALP",
+                "n": 10,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0031653",
+                "HPO_term": "Abnormal heart valve physiology",
+                "HPO_acronym": "AHeVP",
+                "n": 6,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0011843",
+                "HPO_term": "Abnormal musculoskeletal physiology",
+                "HPO_acronym": "AMP",
+                "n": 4,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0040068",
+                "HPO_term": "Abnormality of limb bone",
+                "HPO_acronym": "AoLB",
+                "n": 4,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002813",
+                "HPO_term": "Abnormality of limb bone morphology",
+                "HPO_acronym": "AoLBM",
+                "n": 4,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0010974",
+                "HPO_term": "Abnormal myeloid leukocyte morphology",
+                "HPO_acronym": "AMLM",
+                "n": 4,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0010987",
+                "HPO_term": "Abnormal cellular immune system morphology",
+                "HPO_acronym": "ACISM",
+                "n": 4,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011028",
+                "HPO_term": "Abnormality of blood circulation",
+                "HPO_acronym": "AoBC",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0012243",
+                "HPO_term": "Abnormal reproductive system morphology",
+                "HPO_acronym": "ARSM",
+                "n": 4,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0031404",
+                "HPO_term": "Impaired antigen-specific response",
+                "HPO_acronym": "IAR",
+                "n": 3,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011122",
+                "HPO_term": "Abnormality of skin physiology",
+                "HPO_acronym": "AoSP",
+                "n": 3,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0030972",
+                "HPO_term": "Abnormal systemic blood pressure",
+                "HPO_acronym": "ASBP",
+                "n": 3,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0034392",
+                "HPO_term": "Joint contracture",
+                "HPO_acronym": "JC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011805",
+                "HPO_term": "Abnormal skeletal muscle morphology",
+                "HPO_acronym": "ASMM",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0100326",
+                "HPO_term": "Immunologic hypersensitivity",
+                "HPO_acronym": "IH",
+                "n": 3,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011014",
+                "HPO_term": "Abnormal glucose homeostasis",
+                "HPO_acronym": "AGH",
+                "n": 3,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0010866",
+                "HPO_term": "Abdominal wall defect",
+                "HPO_acronym": "AWD",
+                "n": 3,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0100790",
+                "HPO_term": "Hernia",
+                "HPO_acronym": "H",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002087",
+                "HPO_term": "Abnormality of the upper respiratory tract",
+                "HPO_acronym": "AotURT",
+                "n": 3,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0008047",
+                "HPO_term": "Abnormality of the vasculature of the eye",
+                "HPO_acronym": "AotVotE",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0010935",
+                "HPO_term": "Abnormality of the upper urinary tract",
+                "HPO_acronym": "AotUUT",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0040069",
+                "HPO_term": "Abnormal lower limb bone morphology",
+                "HPO_acronym": "ALLBM",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0010936",
+                "HPO_term": "Abnormality of the lower urinary tract",
+                "HPO_acronym": "AotLUT",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0001155",
+                "HPO_term": "Abnormality of the hand",
+                "HPO_acronym": "AotH",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "3000050",
+                "HPO_term": "Abnormal odontoid tissue morphology",
+                "HPO_acronym": "AOTM",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0012503",
+                "HPO_term": "Abnormality of the pituitary gland",
+                "HPO_acronym": "AotPG",
+                "n": 2,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0002011",
+                "HPO_term": "Morphological central nervous system abnormality",
+                "HPO_acronym": "MCNSA",
+                "n": 2,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0011875",
+                "HPO_term": "Abnormal platelet morphology",
+                "HPO_acronym": "APM",
+                "n": 2,
+                "colour": "#4338ca33"
+            },
+            {
+                "HPO_code": "0006500",
+                "HPO_term": "Abnormality of lower limb epiphysis morphology",
+                "HPO_acronym": "AoLLEM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0002793",
+                "HPO_term": "Abnormal pattern of respiration",
+                "HPO_acronym": "APoR",
+                "n": 1,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0009810",
+                "HPO_term": "Abnormality of upper limb joint",
+                "HPO_acronym": "AoULJ",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000080",
+                "HPO_term": "Abnormality of reproductive system physiology",
+                "HPO_acronym": "AoRSP",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0040277",
+                "HPO_term": "Neoplasm of the pituitary gland",
+                "HPO_acronym": "NotPG",
+                "n": 1,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0100568",
+                "HPO_term": "Neoplasm of the endocrine system",
+                "HPO_acronym": "NotES",
+                "n": 1,
+                "colour": "#7e22ce33"
+            },
+            {
+                "HPO_code": "0040214",
+                "HPO_term": "Abnormal circulating insulin concentration",
+                "HPO_acronym": "ACIC",
+                "n": 1,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0100508",
+                "HPO_term": "Abnormality of vitamin metabolism",
+                "HPO_acronym": "AoVM",
+                "n": 1,
+                "colour": "#dc262633"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 5,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0002242",
+                "HPO_term": "Abnormal intestine morphology",
+                "HPO_acronym": "AIM",
+                "n": 136,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0011354",
+                "HPO_term": "Generalized abnormality of skin",
+                "HPO_acronym": "GAoS",
+                "n": 37,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0004297",
+                "HPO_term": "Abnormality of the biliary system",
+                "HPO_acronym": "AotBS",
+                "n": 37,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0005372",
+                "HPO_term": "Abnormality of B cell physiology",
+                "HPO_acronym": "AoBCP",
+                "n": 30,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0001743",
+                "HPO_term": "Abnormality of the spleen",
+                "HPO_acronym": "AotS",
+                "n": 27,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0001410",
+                "HPO_term": "Decreased liver function",
+                "HPO_acronym": "DLF",
+                "n": 22,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0002719",
+                "HPO_term": "Recurrent infections",
+                "HPO_acronym": "RI",
+                "n": 19,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011947",
+                "HPO_term": "Respiratory tract infection",
+                "HPO_acronym": "RTI",
+                "n": 16,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0033353",
+                "HPO_term": "Abnormal blood vessel morphology",
+                "HPO_acronym": "ABVM",
+                "n": 14,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0012649",
+                "HPO_term": "Increased inflammatory response",
+                "HPO_acronym": "IIR",
+                "n": 12,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0000153",
+                "HPO_term": "Abnormality of the mouth",
+                "HPO_acronym": "AotM",
+                "n": 12,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0001671",
+                "HPO_term": "Abnormal cardiac septum morphology",
+                "HPO_acronym": "ACSM",
+                "n": 11,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0031409",
+                "HPO_term": "Abnormal lymphocyte physiology",
+                "HPO_acronym": "ALP",
+                "n": 10,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0002577",
+                "HPO_term": "Abnormal stomach morphology",
+                "HPO_acronym": "ASM",
+                "n": 10,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0004386",
+                "HPO_term": "Gastrointestinal inflammation",
+                "HPO_acronym": "GI",
+                "n": 8,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0410042",
+                "HPO_term": "Abnormal liver morphology",
+                "HPO_acronym": "ALM",
+                "n": 6,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0011844",
+                "HPO_term": "Abnormal appendicular skeleton morphology",
+                "HPO_acronym": "AASM",
+                "n": 5,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0000606",
+                "HPO_term": "Abnormality of the periorbital region",
+                "HPO_acronym": "AotPR",
+                "n": 5,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0001713",
+                "HPO_term": "Abnormal cardiac ventricle morphology",
+                "HPO_acronym": "ACVM",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0002813",
+                "HPO_term": "Abnormality of limb bone morphology",
+                "HPO_acronym": "AoLBM",
+                "n": 4,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0001881",
+                "HPO_term": "Abnormal leukocyte morphology",
+                "HPO_acronym": "ALM",
+                "n": 4,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0001654",
+                "HPO_term": "Abnormal heart valve morphology",
+                "HPO_acronym": "AHeVM",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0010701",
+                "HPO_term": "Abnormal immunoglobulin level",
+                "HPO_acronym": "AIL",
+                "n": 3,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0001371",
+                "HPO_term": "Flexion contracture",
+                "HPO_acronym": "FC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0034430",
+                "HPO_term": "Abnormal joint physiology",
+                "HPO_acronym": "AJP",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0034392",
+                "HPO_term": "Joint contracture",
+                "HPO_acronym": "JC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0100261",
+                "HPO_term": "Abnormal tendon morphology",
+                "HPO_acronym": "ATM",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0000366",
+                "HPO_term": "Abnormality of the nose",
+                "HPO_acronym": "AotN",
+                "n": 3,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0000600",
+                "HPO_term": "Abnormality of the pharynx",
+                "HPO_acronym": "AotP",
+                "n": 3,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0011545",
+                "HPO_term": "Abnormal connection of the cardiac segments",
+                "HPO_acronym": "ACotCS",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0002823",
+                "HPO_term": "Abnormality of femur morphology",
+                "HPO_acronym": "AoFM",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0040069",
+                "HPO_term": "Abnormal lower limb bone morphology",
+                "HPO_acronym": "ALLBM",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0011123",
+                "HPO_term": "Inflammatory abnormality of the skin",
+                "HPO_acronym": "IAotS",
+                "n": 2,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0031650",
+                "HPO_term": "Abnormal atrioventricular valve physiology",
+                "HPO_acronym": "AAVP",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0011362",
+                "HPO_term": "Abnormal hair quantity",
+                "HPO_acronym": "AHaQ",
+                "n": 2,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0009473",
+                "HPO_term": "Joint contracture of the hand",
+                "HPO_acronym": "JCotH",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000811",
+                "HPO_term": "Abnormal external genitalia",
+                "HPO_acronym": "AEG",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0010461",
+                "HPO_term": "Abnormality of the male genitalia",
+                "HPO_acronym": "AotMG",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0020100",
+                "HPO_term": "Unusual fungal infection",
+                "HPO_acronym": "UFI",
+                "n": 2,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0012393",
+                "HPO_term": "Allergy",
+                "HPO_acronym": "A",
+                "n": 2,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0002589",
+                "HPO_term": "Gastrointestinal atresia",
+                "HPO_acronym": "GA",
+                "n": 2,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0003330",
+                "HPO_term": "Abnormal bone structure",
+                "HPO_acronym": "ABS",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0040277",
+                "HPO_term": "Neoplasm of the pituitary gland",
+                "HPO_acronym": "NotPG",
+                "n": 2,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0012443",
+                "HPO_term": "Abnormality of brain morphology",
+                "HPO_acronym": "AoBM",
+                "n": 2,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0000315",
+                "HPO_term": "Abnormality of the orbital region",
+                "HPO_acronym": "AotOR",
+                "n": 1,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0000077",
+                "HPO_term": "Abnormality of the kidney",
+                "HPO_acronym": "AotK",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0010885",
+                "HPO_term": "Avascular necrosis",
+                "HPO_acronym": "AN",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0006499",
+                "HPO_term": "Abnormality of femoral epiphysis",
+                "HPO_acronym": "AoFE",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0006505",
+                "HPO_term": "Abnormal limb epiphysis morphology",
+                "HPO_acronym": "ALEM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000014",
+                "HPO_term": "Abnormality of the bladder",
+                "HPO_acronym": "AotB",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0000069",
+                "HPO_term": "Abnormality of the ureter",
+                "HPO_acronym": "AotU",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0011355",
+                "HPO_term": "Localized skin lesion",
+                "HPO_acronym": "LSL",
+                "n": 1,
+                "colour": "#3b82f633"
+            },
+            {
+                "HPO_code": "0001167",
+                "HPO_term": "Abnormality of finger",
+                "HPO_acronym": "AoF",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0001367",
+                "HPO_term": "Abnormal joint morphology",
+                "HPO_acronym": "AJM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011297",
+                "HPO_term": "Abnormal digit morphology",
+                "HPO_acronym": "ADM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000795",
+                "HPO_term": "Abnormality of the urethra",
+                "HPO_acronym": "AotU",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0032169",
+                "HPO_term": "Severe infection",
+                "HPO_acronym": "SI",
+                "n": 1,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0030012",
+                "HPO_term": "Abnormal female reproductive system physiology",
+                "HPO_acronym": "AFRSP",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0011747",
+                "HPO_term": "Abnormality of the anterior pituitary",
+                "HPO_acronym": "AotAP",
+                "n": 1,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0011750",
+                "HPO_term": "Neoplasm of the anterior pituitary",
+                "HPO_acronym": "NotAP",
+                "n": 1,
+                "colour": "#f43f5e33"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 6,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0002244",
+                "HPO_term": "Abnormality of the small intestine",
+                "HPO_acronym": "AotSI",
+                "n": 122,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0031816",
+                "HPO_term": "Abnormal oral morphology",
+                "HPO_acronym": "AOM",
+                "n": 12,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0005372",
+                "HPO_term": "Abnormality of B cell physiology",
+                "HPO_acronym": "AoBCP",
+                "n": 10,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0004295",
+                "HPO_term": "Abnormal gastric mucosa morphology",
+                "HPO_acronym": "AGMM",
+                "n": 10,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0010701",
+                "HPO_term": "Abnormal immunoglobulin level",
+                "HPO_acronym": "AIL",
+                "n": 9,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0030962",
+                "HPO_term": "Abnormal morphology of the great vessels",
+                "HPO_acronym": "AMotGV",
+                "n": 8,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0002250",
+                "HPO_term": "Abnormal large intestine morphology",
+                "HPO_acronym": "ALIM",
+                "n": 8,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0002037",
+                "HPO_term": "Inflammation of the large intestine",
+                "HPO_acronym": "IotLI",
+                "n": 8,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0002813",
+                "HPO_term": "Abnormality of limb bone morphology",
+                "HPO_acronym": "AoLBM",
+                "n": 4,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0010974",
+                "HPO_term": "Abnormal myeloid leukocyte morphology",
+                "HPO_acronym": "AMLM",
+                "n": 4,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011004",
+                "HPO_term": "Abnormal systemic arterial morphology",
+                "HPO_acronym": "ASAM",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0000032",
+                "HPO_term": "Abnormality of male external genitalia",
+                "HPO_acronym": "AoMEG",
+                "n": 4,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0004386",
+                "HPO_term": "Gastrointestinal inflammation",
+                "HPO_acronym": "GI",
+                "n": 4,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0002205",
+                "HPO_term": "Recurrent respiratory infections",
+                "HPO_acronym": "RRI",
+                "n": 4,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0001646",
+                "HPO_term": "Abnormal aortic valve morphology",
+                "HPO_acronym": "AAVM",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0004313",
+                "HPO_term": "Decreased circulating antibody level",
+                "HPO_acronym": "DCAL",
+                "n": 3,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0011729",
+                "HPO_term": "Abnormality of joint mobility",
+                "HPO_acronym": "AoJM",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0001371",
+                "HPO_term": "Flexion contracture",
+                "HPO_acronym": "FC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0034392",
+                "HPO_term": "Joint contracture",
+                "HPO_acronym": "JC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011750",
+                "HPO_term": "Neoplasm of the anterior pituitary",
+                "HPO_acronym": "NotAP",
+                "n": 3,
+                "colour": "#f43f5e33"
+            },
+            {
+                "HPO_code": "0033151",
+                "HPO_term": "Abnormal pharynx morphology",
+                "HPO_acronym": "APM",
+                "n": 3,
+                "colour": "#fda4af33"
+            },
+            {
+                "HPO_code": "0011563",
+                "HPO_term": "Abnormal ventriculoarterial connection",
+                "HPO_acronym": "AVC",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0040069",
+                "HPO_term": "Abnormal lower limb bone morphology",
+                "HPO_acronym": "ALLBM",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002823",
+                "HPO_term": "Abnormality of femur morphology",
+                "HPO_acronym": "AoFM",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0011123",
+                "HPO_term": "Inflammatory abnormality of the skin",
+                "HPO_acronym": "IAotS",
+                "n": 2,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0012785",
+                "HPO_term": "Flexion contracture of finger",
+                "HPO_acronym": "FCoF",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0030044",
+                "HPO_term": "Flexion contracture of digit",
+                "HPO_acronym": "FCoD",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0031137",
+                "HPO_term": "Storage in hepatocytes",
+                "HPO_acronym": "SIH",
+                "n": 2,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0002617",
+                "HPO_term": "Vascular dilatation",
+                "HPO_acronym": "VD",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0500093",
+                "HPO_term": "Food allergy",
+                "HPO_acronym": "FA",
+                "n": 2,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0010438",
+                "HPO_term": "Abnormal ventricular septum morphology",
+                "HPO_acronym": "AVSM",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0011849",
+                "HPO_term": "Abnormal bone ossification",
+                "HPO_acronym": "ABO",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0012503",
+                "HPO_term": "Abnormality of the pituitary gland",
+                "HPO_acronym": "AotPG",
+                "n": 2,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0032039",
+                "HPO_term": "Abnormality of the ocular adnexa",
+                "HPO_acronym": "AotOA",
+                "n": 1,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0006499",
+                "HPO_term": "Abnormality of femoral epiphysis",
+                "HPO_acronym": "AoFE",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0011314",
+                "HPO_term": "Abnormal long bone morphology",
+                "HPO_acronym": "ALBM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003366",
+                "HPO_term": "Abnormal femoral neck/head morphology",
+                "HPO_acronym": "AFNM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0006505",
+                "HPO_term": "Abnormal limb epiphysis morphology",
+                "HPO_acronym": "ALEM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0006500",
+                "HPO_term": "Abnormality of lower limb epiphysis morphology",
+                "HPO_acronym": "AoLLEM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000009",
+                "HPO_term": "Functional abnormality of the bladder",
+                "HPO_acronym": "FAotB",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0025634",
+                "HPO_term": "Abnormal ureter physiology",
+                "HPO_acronym": "AUP",
+                "n": 1,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0005918",
+                "HPO_term": "Abnormal finger phalanx morphology",
+                "HPO_acronym": "AFPM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0009810",
+                "HPO_term": "Abnormality of upper limb joint",
+                "HPO_acronym": "AoULJ",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003121",
+                "HPO_term": "Limb joint contracture",
+                "HPO_acronym": "LJC",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011297",
+                "HPO_term": "Abnormal digit morphology",
+                "HPO_acronym": "ADM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0001167",
+                "HPO_term": "Abnormality of finger",
+                "HPO_acronym": "AoF",
+                "n": 1,
+                "colour": "#52525233"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 7,
+        "patients": 346,
+        "girls": 142,
+        "counts": [
+            {
+                "HPO_code": "0002037",
+                "HPO_term": "Inflammation of the large intestine",
+                "HPO_acronym": "IotLI",
+                "n": 12,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0004313",
+                "HPO_term": "Decreased circulating antibody level",
+                "HPO_acronym": "DCAL",
+                "n": 9,
+                "colour": "#dc262633"
+            },
+            {
+                "HPO_code": "0000163",
+                "HPO_term": "Abnormal oral cavity morphology",
+                "HPO_acronym": "AOCM",
+                "n": 7,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0011603",
+                "HPO_term": "Congenital malformation of the great arteries",
+                "HPO_acronym": "CMotGA",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0001679",
+                "HPO_term": "Abnormal aortic morphology",
+                "HPO_acronym": "AAM",
+                "n": 4,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0010701",
+                "HPO_term": "Abnormal immunoglobulin level",
+                "HPO_acronym": "AIL",
+                "n": 3,
+                "colour": "#05966933"
+            },
+            {
+                "HPO_code": "0034392",
+                "HPO_term": "Joint contracture",
+                "HPO_acronym": "JC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0001371",
+                "HPO_term": "Flexion contracture",
+                "HPO_acronym": "FC",
+                "n": 3,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0040069",
+                "HPO_term": "Abnormal lower limb bone morphology",
+                "HPO_acronym": "ALLBM",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002823",
+                "HPO_term": "Abnormality of femur morphology",
+                "HPO_acronym": "AoFM",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0006499",
+                "HPO_term": "Abnormality of femoral epiphysis",
+                "HPO_acronym": "AoFE",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0000076",
+                "HPO_term": "Vesicoureteral reflux",
+                "HPO_acronym": "VR",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0001220",
+                "HPO_term": "Interphalangeal joint contracture of finger",
+                "HPO_acronym": "IJCoF",
+                "n": 2,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0030044",
+                "HPO_term": "Flexion contracture of digit",
+                "HPO_acronym": "FCoD",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0000795",
+                "HPO_term": "Abnormality of the urethra",
+                "HPO_acronym": "AotU",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0000036",
+                "HPO_term": "Abnormal penis morphology",
+                "HPO_acronym": "APM",
+                "n": 2,
+                "colour": "#fdba7433"
+            },
+            {
+                "HPO_code": "0006561",
+                "HPO_term": "Lipid accumulation in hepatocytes",
+                "HPO_acronym": "LAIH",
+                "n": 2,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0004942",
+                "HPO_term": "Aortic aneurysm",
+                "HPO_acronym": "AA",
+                "n": 2,
+                "colour": "#a7f2d033"
+            },
+            {
+                "HPO_code": "0004348",
+                "HPO_term": "Abnormality of bone mineral density",
+                "HPO_acronym": "AoBMD",
+                "n": 2,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0002583",
+                "HPO_term": "Colitis",
+                "HPO_acronym": "C",
+                "n": 2,
+                "colour": "#a5a5fc33"
+            },
+            {
+                "HPO_code": "0030669",
+                "HPO_term": "Abnormal ocular adnexa morphology",
+                "HPO_acronym": "AOAM",
+                "n": 1,
+                "colour": "#ea580c33"
+            },
+            {
+                "HPO_code": "0006505",
+                "HPO_term": "Abnormal limb epiphysis morphology",
+                "HPO_acronym": "ALEM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0005930",
+                "HPO_term": "Abnormal epiphysis morphology",
+                "HPO_acronym": "AEM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003368",
+                "HPO_term": "Abnormal femoral head morphology",
+                "HPO_acronym": "AFHM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0006500",
+                "HPO_term": "Abnormality of lower limb epiphysis morphology",
+                "HPO_acronym": "AoLLEM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0003366",
+                "HPO_term": "Abnormal femoral neck/head morphology",
+                "HPO_acronym": "AFNM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0006261",
+                "HPO_term": "Abnormal phalangeal joint morphology of the hand",
+                "HPO_acronym": "APJMotH",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0012385",
+                "HPO_term": "Camptodactyly",
+                "HPO_acronym": "C",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0012785",
+                "HPO_term": "Flexion contracture of finger",
+                "HPO_acronym": "FCoF",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0009473",
+                "HPO_term": "Joint contracture of the hand",
+                "HPO_acronym": "JCotH",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0100360",
+                "HPO_term": "Upper-limb joint contracture",
+                "HPO_acronym": "UJC",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011297",
+                "HPO_term": "Abnormal digit morphology",
+                "HPO_acronym": "ADM",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0001167",
+                "HPO_term": "Abnormality of finger",
+                "HPO_acronym": "AoF",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0005918",
+                "HPO_term": "Abnormal finger phalanx morphology",
+                "HPO_acronym": "AFPM",
+                "n": 1,
+                "colour": "#52525233"
+            },
+            {
+                "HPO_code": "0003121",
+                "HPO_term": "Limb joint contracture",
+                "HPO_acronym": "LJC",
+                "n": 1,
+                "colour": "#e5e5e533"
+            },
+            {
+                "HPO_code": "0011747",
+                "HPO_term": "Abnormality of the anterior pituitary",
+                "HPO_acronym": "AotAP",
+                "n": 1,
+                "colour": "#e9d5ff33"
+            },
+            {
+                "HPO_code": "0040277",
+                "HPO_term": "Neoplasm of the pituitary gland",
+                "HPO_acronym": "NotPG",
+                "n": 1,
+                "colour": "#e9d5ff33"
+            }
+        ]
+    },
+    {
+        "gene": "#####",
+        "disease": "CLUST",
+        "analysis_level": 8,
+        "patients": 346,
+        "girls": 142,
         "counts": [
             {
                 "HPO_code": "0000164",
