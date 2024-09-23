@@ -31,7 +31,8 @@ diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"], colour = 
             dict(name = "THES1", gene = "SKIC3", matches = ["THES1"], colour = colours[12]),
             dict(name = "THES2", gene = "SKIC2", matches = ["THES2"], colour = colours[13]),
             dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"], colour = colours[14]),
-]
+            dict(name = "FOCADS", gene = "FOCAD", matches = ["FOCADS"], colour = colours[15])
+            ]
 
 
 
@@ -108,15 +109,23 @@ for disease in diseases:
                      print("Exception 70 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
             else:
                missingVarCount += 1
-         
-            #if age at last follow-up is specified 
-            if 'lastnewsageyear' in object.keys():
-               presentVarCount += 1
-               try:
-                  ages_last["all"]["array"].append(float(object["lastnewsageyear"]))
-                  ages_surv["all"]["array"].append(float(object["lastnewsageyear"]))
-               except:
-                  print("Exception 78 at, '{0:s}', for patient {1:s}".format(object["lastnewsageyear"]), object["id"])
+            
+            
+            # If last known age is specified (separately from age at last follow-up)
+            if 'alivedeadage' in object.keys():
+               if object["alivedeadage"] is not None:
+                  presentVarCount += 1
+                  try:
+                     ages_last["all"]["array"].append(float(object["alivedeadage"]))
+                     ages_surv["all"]["array"].append(float(object["alivedeadage"]))
+                     if ('sex' in object.keys() and object["sex"] == "F"):
+                        ages_last["girls"]["array"].append(float(object["alivedeadage"]))
+                        ages_surv["girls"]["array"].append(float(object["alivedeadage"]))
+                     if ('sex' in object.keys() and object["sex"] == "M"):
+                        ages_last["boys"]["array"].append(float(object["alivedeadage"]))
+                        ages_surv["boys"]["array"].append(float(object["alivedeadage"]))
+                  except:
+                     print("Exception 128 at, '{0:s}', for patient {1:s}".format(object["alivedeadage"]), object["id"])
                
                #fetch survival status
                if 'alivedead' in object.keys():
@@ -124,18 +133,67 @@ for disease in diseases:
                      if object["alivedead"] == "alive":
                         ages_last["all"]["status"].append("0")
                         ages_surv["all"]["status"].append("0")
+                        if ('sex' in object.keys() and object["sex"] == "F"):
+                           ages_last["girls"]["status"].append("0")
+                           ages_surv["girls"]["status"].append("0")
+                        if ('sex' in object.keys() and object["sex"] == "M"):
+                           ages_last["boys"]["status"].append("0")
+                           ages_surv["boys"]["status"].append("0")
                      elif object["alivedead"] == "dead": 
                         ages_last["all"]["status"].append("1")
                         ages_surv["all"]["status"].append("1")
-                        # if patient has died, check if the age of death is specified and if it is, use that rather than the age at last fo for survival analysis
-                        # do the same for boys and girls below
-                        if 'ageofdeathy' in object.keys():
-                           ages_surv["all"]["array"].pop()
-                           ages_surv["all"]["array"].append(float(object['ageofdeathy']))
+                        if ('sex' in object.keys() and object["sex"] == "F"):
+                           ages_last["girls"]["status"].append("1")
+                           ages_surv["girls"]["status"].append("1")
+                        if ('sex' in object.keys() and object["sex"] == "M"):
+                           ages_last["boys"]["status"].append("1")
+                           ages_surv["boys"]["status"].append("1")
                      else:
-                        print("Exception 87 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
+                        print("Exception 152 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
                   except:
-                     print("Exception 89 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
+                     print("Exception 154 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
+
+            #if last known age is not specified, use age at last follow-up 
+            elif 'lastnewsageyear' in object.keys():
+               if object["lastnewsageyear"] is not None:
+                  presentVarCount += 1
+                  try:
+                     ages_last["all"]["array"].append(float(object["lastnewsageyear"]))
+                     ages_surv["all"]["array"].append(float(object["lastnewsageyear"]))
+                     if ('sex' in object.keys() and object["sex"] == "F"):
+                        ages_last["girls"]["array"].append(float(object["lastnewsageyear"]))
+                        ages_surv["girls"]["array"].append(float(object["lastnewsageyear"]))
+                     if ('sex' in object.keys() and object["sex"] == "M"):
+                        ages_last["boys"]["array"].append(float(object["lastnewsageyear"]))
+                        ages_surv["boys"]["array"].append(float(object["lastnewsageyear"]))
+                  except:
+                     print("Exception 170 at, '{0:s}', for patient {1:s}".format(object["lastnewsageyear"]), object["id"])
+               
+               #fetch survival status
+               if 'alivedead' in object.keys():
+                  try:
+                     if object["alivedead"] == "alive":
+                        ages_last["all"]["status"].append("0")
+                        ages_surv["all"]["status"].append("0")
+                        if ('sex' in object.keys() and object["sex"] == "F"):
+                           ages_last["girls"]["status"].append("0")
+                           ages_surv["girls"]["status"].append("0")
+                        if ('sex' in object.keys() and object["sex"] == "M"):
+                           ages_last["boys"]["status"].append("0")
+                           ages_surv["boys"]["status"].append("0")
+                     elif object["alivedead"] == "dead": 
+                        ages_last["all"]["status"].append("1")
+                        ages_surv["all"]["status"].append("1")
+                        if ('sex' in object.keys() and object["sex"] == "F"):
+                           ages_last["girls"]["status"].append("1")
+                           ages_surv["girls"]["status"].append("1")
+                        if ('sex' in object.keys() and object["sex"] == "M"):
+                           ages_last["boys"]["status"].append("1")
+                           ages_surv["boys"]["status"].append("1")
+                     else:
+                        print("Exception 194 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
+                  except:
+                     print("Exception 196 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
                
                #if no survival status is specified (but age at last follow-up is specified) assume the patient was alive      
                else:  
@@ -143,68 +201,6 @@ for disease in diseases:
                   ages_surv["all"]["status"].append("0")      
                
                
-               if ('sex' in object.keys() and object["sex"] == "F"):
-                  try:
-                     ages_last["girls"]["array"].append(float(object["lastnewsageyear"])) 
-                     ages_surv["girls"]["array"].append(float(object["lastnewsageyear"]))
-                  except:
-                     pass
-
-                  if 'alivedead' in object.keys():
-                     try:
-                        if object["alivedead"] == "alive":
-                           ages_last["girls"]["status"].append("0")
-                           ages_surv["girls"]["status"].append("0")
-                        elif object["alivedead"] == "dead": 
-                           ages_last["girls"]["status"].append("1")
-                           ages_surv["girls"]["status"].append("1")
-                           # casewhen dead & age of death specified   
-                           if 'ageofdeathy' in object.keys():
-                              ages_surv["girls"]["array"].pop()
-                              ages_surv["girls"]["array"].append(float(object['ageofdeathy']))
-                        else:
-                           print("Exception 107 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
-                     except:
-                        print("Exception 109 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
-                  else:  
-                     ages_last["girls"]["status"].append("0")      
-                     ages_surv["girls"]["status"].append("0")      
-               
-
-               elif ('sex' in object.keys() and object["sex"] == "M"):
-                  try:
-                     ages_last["boys"]["array"].append(float(object["lastnewsageyear"])) 
-                     ages_surv["boys"]["array"].append(float(object["lastnewsageyear"])) 
-                  except:
-                     pass
-                  
-                  if 'alivedead' in object.keys():
-                     try:
-                        if object["alivedead"] == "alive":
-                           ages_last["boys"]["status"].append("0")
-                           ages_surv["boys"]["status"].append("0")
-                        elif object["alivedead"] == "dead": 
-                           ages_last["boys"]["status"].append("1")
-                           ages_surv["boys"]["status"].append("1")
-                           # casewhen dead & age of death specified   
-                           if 'ageofdeathy' in object.keys():
-                              ages_surv["boys"]["array"].pop()
-                              ages_surv["boys"]["array"].append(float(object['ageofdeathy']))
-                        else:
-                           print("Exception 107 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
-                     except:
-                        print("Exception 109 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
-                  else:  
-                     ages_last["boys"]["status"].append("0")      
-                     ages_surv["boys"]["status"].append("0")      
-               
-               else:
-                  missingVarCount += 1
-                  if 'sex' in object.keys():
-                     print("Unrecognised sex for patient {0:s}".format(object["id"]))
-                  else:
-                     print("Missing sex for patient {0:s}".format(object["id"]))
-         
             # if age at last fo is not specified, use age at molecular diagnostic instead and define patient as alive at this age
             elif 'ageatmoleculardiagnostic' in object.keys():
                presentVarCount += 1
@@ -245,9 +241,9 @@ for disease in diseases:
 
             if 'consanguinity' in object.keys():
                presentVarCount += 1
-               if object["consanguinity"] == "yes":
+               if object["consanguinity"] == "yes" or object["consanguinity"] == "Y":
                   count_inbred["yes"] += 1
-               else:
+               elif object["consanguinity"] == "non" or object["consanguinity"] == "N": 
                   count_inbred["no"] += 1 
             else:
                count_inbred["missing"] += 1

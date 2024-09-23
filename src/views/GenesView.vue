@@ -115,6 +115,14 @@
                 <template v-if="isTHES2">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
+            <button  @mouseover="isFOCADS = true; tableData.gene = 'FOCAD'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isFOCADS = true; tableData.gene = 'FOCAD'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/FOCADS')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 italic rounded-full"> FOCAD </button> 
+                <template v-if="isFOCADS">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
+
         </div>
     </div>
 </template>
@@ -140,14 +148,14 @@ export default {
                 diseaseArray: myDiseaseData,
                 isPFIC1: false, isPFIC2: false, isPFIC3: false, isPFIC4: false, isPFIC5: false,
                 isPFIC6: false, isPFIC7: false, isPFIC8: false, isPFIC9: false, isPFIC10: false,
-                isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false,
+                isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isFOCAD: false,
                 tableData: {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
             }
         },
         falsify() {
             this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
             this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
-            this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false,
+            this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isFOCAD = false
             this.tableData = {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
         },
         getDiseaseStats() {

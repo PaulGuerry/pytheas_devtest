@@ -47,21 +47,30 @@ for object in patient_dict:
      except:
       print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["ageatmoleculardiagnostic"]), object["id"]))
 
-  if 'ageatfirstsymptoms' in object.keys():
+  if 'firstsymptomagemonth' in object.keys():
      try:
-      float(object["ageatfirstsymptoms"])
-      if (float(object["ageatfirstsymptoms"]) > 999.):
-        print('Age {0:s} months for patient {1:s} does not seem reasonable'.format(str(object["ageatfirstsymptoms"]), object["id"])) 
+      float(object["firstsymptomagemonth"])
+      object["firstsymptomagemonth"] = float(object["firstsymptomagemonth"])
+      if (float(object["firstsymptomagemonth"]) > 999.):
+        print('Age {0:s} months for patient {1:s} does not seem reasonable'.format(str(object["firstsymptomagemonth"]), object["id"])) 
      except:
-      print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["ageatfirstsymptoms"]), object["id"]))
+      if object["firstsymptomagemonth"] is not None:
+        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
+        print('Setting firstsymptomagemonth to null/none.')
+        object["firstsymptomagemonth"] = None
 
   if 'lastnewsageyear' in object.keys():
      try:
       float(object["lastnewsageyear"])
-      if (float(object["lastnewsageyear"]) > 200.):
-        print('Age {0:s} months for patient {1:s} does not seem reasonable'.format(str(object["lastnewsageyear"]), object["id"])) 
+      object["lastnewsageyear"] = float(object["lastnewsageyear"])
+      if (float(object["lastnewsageyear"]) > 80.):
+        print('Age {0:s} years  for patient {1:s} does not seem reasonable'.format(str(object["lastnewsageyear"]), object["id"])) 
      except:
-      print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["lastnewsageyear"]), object["id"]))
+      if object["lastnewsageyear"] is not None:
+        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["lastnewsageyear"]), object["id"]))
+        print('Setting lastnewsageyear to null/none.')
+        object["lastnewsageyear"] = None
+
   elif 'ageatmoleculardiagnostic' in object.keys():
       try:
         float(object["ageatmoleculardiagnostic"])
@@ -71,6 +80,7 @@ for object in patient_dict:
         print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["ageatmoleculardiagnostic"]), object["id"]))
       else:
         object["lastnewsageyear"] = round(float(object["ageatmoleculardiagnostic"]), 2)
+  
   elif 'firstsymptomagemonth' in object.keys():
       try:
         float(object["firstsymptomagemonth"])
