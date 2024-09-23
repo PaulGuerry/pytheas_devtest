@@ -219,7 +219,10 @@
                                         Age at last follow-up (years)
                                     </th>
                                     <th scope="col" class="px-2 py-1 text-center">
-                                        Status at last follow-up (alive/dead)
+                                        Last known status (alive/dead)
+                                    </th>
+                                    <th scope="col" class="px-2 py-1 text-center">
+                                        Last known age (years)
                                     </th>
                                 </tr>
                             </thead>
@@ -248,10 +251,13 @@
                                         <input type="number" :placeholder=el.term v-model="el.term" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                     <td class="px-2 py-2">
-                                        <input type="text" :placeholder=el.lastnewsageyear v-model="el.lastnewsageyear" class="text-center outline-none bg-transparent border-none">
+                                        <input type="number" :placeholder=el.lastnewsageyear v-model="el.lastnewsageyear" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                     <td class="px-2 py-2">
                                         <input type="text" :placeholder=el.alivedead v-model="el.alivedead" class="text-center outline-none bg-transparent border-none">
+                                    </td>
+                                    <td class="px-2 py-2">
+                                        <input type="number" :placeholder=el.alivedeadage v-model="el.alivedeadage" class="text-center outline-none bg-transparent border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
                                     </td>
                                 </tr>
                             </tbody>
@@ -410,7 +416,8 @@ export default {
                 lastweightkg: 15,
                 lastheightcm: 100,
                 lastnewsageyear: 12,
-                alivedead: "alive"
+                alivedead: "alive",
+                alivedeadage: 12
             })
         },
         addTreatment() {

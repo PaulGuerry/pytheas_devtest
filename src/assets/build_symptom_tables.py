@@ -44,7 +44,8 @@ diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "THES1", gene = "SKIC3", matches = ["THES1"]),
             dict(name = "THES2", gene = "SKIC2", matches = ["THES2"]),
             dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"]),
-            dict(name = "CLUST", gene = "#####", matches = ["THES", "THES1", "THES2", "PFIC2"])
+            dict(name = "CLUST", gene = "#####", matches = ["THES", "THES1", "THES2", "PFIC2"]),
+            dict(name = "FOCADS", gene = "FOCAD", matches = ["FOCADS"])
             ]
 
 for disease in diseases:
