@@ -23,16 +23,19 @@ for line in fileinput.input(files="colourScheme.json"):
     json_data = json_data + line
 colour_list = json.loads(json_data)
 
+with open("hp_symptom_matrix.txt", "w") as outfile:
+   outfile.write("Ouput from build_symptom_tables.py") 
+   outfile.write("\n")
 
 
 genes = ["KIF12", "ZFYVE19", "ATP8B1", "SKIC3", "SKIC2", "ABCB11", "ABCB4", "TJP2", "NR1H4", "SLC51A", "USP53", "MYO5B", "SEMA7A", "TMEM199"]
-analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8]   
+analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]   
 symptom_table = []
 
 diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "PFIC2", gene = "ABCB11", matches = ["PFIC2"]),
             dict(name = "PFIC3", gene = "ABCB4", matches = ["PFIC3"]),
-            dict(name = "PFIC4", gene = "TJP2", matches = ["PFIC4"]),
+            dict(name = "PFIC4", gene = "TJP2", matches = ["PFIC4"]), 
             dict(name = "PFIC5", gene = "NR1H4", matches = ["PFIC5"]),
             dict(name = "PFIC6", gene = "SLC51A", matches = ["PFIC6"]),
             dict(name = "PFIC7", gene = "USP53", matches = ["PFIC7"]),
@@ -45,6 +48,7 @@ diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "THES2", gene = "SKIC2", matches = ["THES2"]),
             dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"]),
             dict(name = "CLUST", gene = "#####", matches = ["THES", "THES1", "THES2", "PFIC2"]),
+            dict(name = "PFIC1-11", gene = "$$$$$", matches = ["PFIC1", "PFIC2", "PFIC3", "PFIC4", "PFIC5", "PFIC6", "PFIC7", "PFIC8", "PFIC9", "PFIC10", "PFIC11"]),
             dict(name = "FOCADS", gene = "FOCAD", matches = ["FOCADS"])
             ]
 
@@ -143,7 +147,7 @@ for disease in diseases:
                                        counts.append(dict(HPO_code = pb_code, HPO_term = lbl, HPO_acronym = short_lbl, n=1, colour = colour))
                                        unique_symptoms += 1
          else:
-            if analysis_level == 8:
+            if analysis_level == 13:
                print("No disease information for patient {0:s}".format(object["id"]))
                  
   
@@ -151,7 +155,7 @@ for disease in diseases:
       counts = sorted(counts, key=lambda d: d["n"], reverse = True)
       #add an entry to the symptom_table dictionary
       symptom_table.append(dict(gene = disease['gene'], disease = disease['name'], analysis_level = analysis_level, patients = count_patients, girls = count_girls, counts = counts))
-      symptom_matrix = np.array(" disease")
+      symptom_matrix = np.array([f"{'ID':>15}",f"{'disease':>10}"])
       symptom_matrix = np.append(symptom_matrix, [code["HPO_code"] for code in counts])
       print("Disease, ", disease['name'], "; level, ", analysis_level, "; unique symptoms, ", unique_symptoms)
 
@@ -170,13 +174,13 @@ for disease in diseases:
                    
                   # Only include patients with more than a certain number of symptoms
                   # (i.e cycle current loop if no more than N symptoms in current patient entry)
-                  if len(object['symptoms']) < 5: 
+                  if len(object['symptoms']) < 3: 
                      continue 
                   
                   # Initialize each patient as a row of zeros
                   # .. with the name of the disease as the first column
-                  row = np.array(f"{object['disease']:>8}")
-                  row = np.append(row, np.zeros(unique_symptoms, dtype = int))
+                  row = np.array([f"{object['id']:>15}",f"{object['disease']:>10}"])
+                  row = np.append(row, np.zeros(unique_symptoms, dtype = 'int'))
                   # np.vstack appends the second argument (array) to the first 
                   symptom_matrix = np.vstack((symptom_matrix, row))
                   #print(symptom_matrix, symptom_matrix.shape, symptom_matrix.shape[0], np.argwhere(symptom_matrix == '0025032')) 
@@ -221,11 +225,15 @@ for disease in diseases:
                                        symptom_matrix[-1, np.argwhere(symptom_matrix == pb_code)[0][1]] = 1
 
          #Write the symptom_matrix to the output file
+         nl = "\n"
          with open("hp_symptom_matrix.txt", "a") as outfile:
             outfile.write("Disease, " + disease['name'] + "; level, " + str(analysis_level) + "; unique symptoms, " + str(unique_symptoms) + "\n")
-            outfile.write(f", ".join(symptom_matrix[0]) + "\n")
+            outfile.write(f",".join(f'{col:>8}' for col in symptom_matrix[0]))
+            outfile.write("\n")
             for row in symptom_matrix[1:]:
-               outfile.write(",       ".join(row) + "\n")
+               #join each column (0 or 1, integer), right-aligned to 8 characters (:>8), separated by a comma  
+               outfile.write(",".join(f'{str(col):>8}' for col in row))
+               outfile.write("\n")
             
             outfile.write("\n\n\n")
 

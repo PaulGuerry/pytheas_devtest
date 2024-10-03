@@ -64,14 +64,17 @@ for patient in patient_list:
 
       edge_list = (item["obj"] for item in HPO_edges_list["graphs"][0]["edges"] if child_code == item["sub"][34:]) 
       edge_array = numpy.array(list(edge_list))
-      edge_array.shape = (edge_array.shape[0], 1)
-      parent_code = edge_array[0, 0][34:]
+      print("Test 71. Patient, ", patient["id"], "; child code, ", child_code)
+      print("Test 71. edge_array, ", edge_array)
+      print("Test 71. edge_array.shape, ", edge_array.shape[0])
+      parent_code = edge_array[0][34:]
       append_array[0, 0] = parent_code
+
 
       #add extra rows to the parent_branches array if more than one parent_codes are found
       if (edge_array.shape[0] > 1):
          for j in range(1, edge_array.shape[0]):
-            parent_code = edge_array[j, 0][34:]
+            parent_code = edge_array[j][34:]
             extra_row = numpy.array([parent_branches[0, :]])
             #print(parent_code, [parent_code], numpy.full((1, 1), parent_code), parent_branches[0, :], extra_row)
             #print(numpy.full((1, 1), parent_code).shape, parent_branches[0, :].shape, extra_row.shape)
@@ -233,5 +236,3 @@ json_data = json.dumps(HPO_code_list, indent=4, sort_keys=True)
 # Writing to hp_trees.json
 with open("hp_trees.json", "w") as outfile:
     outfile.write(json_data)
-
-

@@ -16,19 +16,44 @@ patient_dict = json.loads(json_data)
 count_sympdate = 0
 count_sympdup = 0
 for object in patient_dict:
+  
+  
+  #
+  # Check/curate symptoms
+  #
   subs = 0
   res = []
   if 'symptoms' in object.keys():
     for symptom_code in object["symptoms"]:
       if substring in symptom_code:
         subs = 1
-        res.append(re.sub(r'\([^()]*\)', '', symptom_code))
+        candidate_code = re.sub(r'\([^()]*\)', '', symptom_code)
+        if len(candidate_code) == 7:
+          res.append(candidate_code)
+        else:
+          print('Error 29: Unrecognised HPO code, ' + candidate_code + ', for patient ', object['id'] + '.')
       else:
-        res.append(symptom_code)
+        if len(symptom_code) == 7:
+          res.append(symptom_code)
+        else: 
+          print('Error 34: Unrecognised HPO code, ' + symptom_code + ', for patient ', object['id'] + '.')
+
     
   # also save symptom_codes saved under "biology" key  
   if 'labfindings' in object.keys():
     for symptom_code in object["labfindings"]:
+      if substring in symptom_code:
+        subs = 1
+        candidate_code = re.sub(r'\([^()]*\)', '', symptom_code)
+        if len(candidate_code) == 7:
+          res.append(candidate_code)
+        else:
+          print('Error 51: Unrecognised HPO code, ' + candidate_code + ', for patient ', object['id'] + '.')
+      else:
+        if len(symptom_code) == 7:
+          res.append(symptom_code)
+        else: 
+          print('Error 56: Unrecognised HPO code, ' + symptom_code + ', for patient ', object['id'] + '.')
       res.append(symptom_code)  
   
   if (len(res) > 0): 
@@ -38,6 +63,38 @@ for object in patient_dict:
     if (len(symptom_set) < len(symptom_list)):
         count_sympdup+=1
     object["symptoms"] = list(symptom_set)
+
+
+
+  # Check/curate absent symptoms
+  #
+  subs = 0
+  res = []
+  if 'absentsymptoms' in object.keys():
+    for symptom_code in object["absentsymptoms"]:
+      if substring in symptom_code:
+        subs = 1
+        candidate_code = re.sub(r'\([^()]*\)', '', symptom_code)
+        if len(candidate_code) == 7:
+          res.append(candidate_code)
+        elif len(candidate_code) > 1:
+          print('Error 81: Unrecognised HPO code, ' + candidate_code + ', for patient ', object['id'] + '.')
+      else:
+        if len(symptom_code) == 7:
+          res.append(symptom_code)
+        elif len(symptom_code) > 1: 
+          print('Error 86: Unrecognised HPO code, ' + symptom_code + ', for patient ', object['id'] + '.')
+
+    
+  if (len(res) > 0): 
+    #remove duplicates
+    symptom_set = set(res)
+    symptom_list = res
+    if (len(symptom_set) < len(symptom_list)):
+        count_sympdup+=1
+    object["absentsymptoms"] = list(symptom_set)
+
+
 
   if 'ageatmoleculardiagnostic' in object.keys():
      try:

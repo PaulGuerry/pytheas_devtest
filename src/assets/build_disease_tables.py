@@ -390,8 +390,9 @@ for disease in diseases:
 # Serialize the python dictionnary to json
 json_data = json.dumps(disease_table, indent = 4)
 
-# Writing to hp_trees.json
-with open("bpt_out.json", "w") as outfile:
+# Writing to bdt_out.json
+# Check output before copying to hp_disease_stats.json
+with open("bdt_out.json", "w") as outfile:
     outfile.write(json_data)
 
 
