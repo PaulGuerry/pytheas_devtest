@@ -116,6 +116,19 @@ for object in patient_dict:
         print('Setting firstsymptomagemonth to null/none.')
         object["firstsymptomagemonth"] = None
 
+  if 'alivedeadage' in object.keys():
+     try:
+      float(object["alivedeadage"])
+      object["alivedeadage"] = float(object["alivedeadage"])
+      if (float(object["alivedeadage"]) > 80.):
+        print('Age {0:s} years  for patient {1:s} does not seem reasonable'.format(str(object["alivedeadage"]), object["id"])) 
+     except:
+      if object["alivedeadage"] is not None:
+        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["alivedeadage"]), object["id"]))
+        print('Setting alivedeadage to null/none.')
+        object["alivedeadage"] = None
+
+
   if 'lastnewsageyear' in object.keys():
      try:
       float(object["lastnewsageyear"])

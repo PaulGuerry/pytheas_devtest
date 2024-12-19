@@ -239,6 +239,28 @@ for disease in diseases:
 
 
 
+# 241218: stats of symptoms as reported
+for disease in diseases:
+  
+   colour = "#9ca3af33" # default colour is grey
+   
+   unique_symptoms = 0
+   counts = []
+   count_patients = 0
+   count_girls = 0
+
+   for object in patient_list: 
+        
+      if "gene" in object.keys():
+
+         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+            count_patients += 1 
+             
+            if ("sex" in object.keys() and object["sex"] == "F"):
+               count_girls += 1
+
+            for HPO_code in object["symptoms"]:
+ 
 
 # Serialize the python dictionnary to json
 json_data = json.dumps(symptom_table, indent = 4)
