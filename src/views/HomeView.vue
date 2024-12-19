@@ -20,77 +20,77 @@
             <button  @mouseover="isPFIC1 = true; tableData.gene = 'ATP8B1'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC1 = true; tableData.gene = 'ATP8B1'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC1')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 1 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC1 </button> 
                 <template v-if="isPFIC1">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC2 = true; tableData.gene = 'ABCB11'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC2 = true; tableData.gene = 'ABCB11'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC2')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 2 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC2 </button> 
                 <template v-if="isPFIC2">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC3 = true; tableData.gene = 'ABCB4'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC3 = true; tableData.gene = 'ABCB4'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC3')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 3 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC3 </button> 
                 <template v-if="isPFIC3">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC4 = true; tableData.gene = 'TJP2'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC4 = true; tableData.gene = 'TJP2'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC4')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 4 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC4 </button> 
                 <template v-if="isPFIC4">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC5 = true; tableData.gene = 'NR1H4'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC5 = true; tableData.gene = 'NR1H4'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC5')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 5 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC5 </button> 
                 <template v-if="isPFIC5">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC6 = true; tableData.gene = 'SLC51A'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC6 = true; tableData.gene = 'SLC51A'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC6')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 6 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC6 </button> 
                 <template v-if="isPFIC6">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC7 = true; tableData.gene = 'USP53'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC7 = true; tableData.gene = 'USP53'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC7')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 7 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC7 </button> 
                 <template v-if="isPFIC7">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC8 = true; tableData.gene = 'KIF12'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC8 = true; tableData.gene = 'KIF12'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC8')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 8 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC8 </button> 
                 <template v-if="isPFIC8">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC9 = true; tableData.gene = 'ZFYVE19'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC9 = true; tableData.gene = 'ZFYVE19'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC9')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 9 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC9 </button> 
                 <template v-if="isPFIC9">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC10 = true; tableData.gene = 'MYO5B'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC10 = true; tableData.gene = 'MYO5B'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC10')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 10 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC10 </button> 
                 <template v-if="isPFIC10">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isPFIC11 = true; tableData.gene = 'SEMA7A'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC11 = true; tableData.gene = 'SEMA7A'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC11')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC 11 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC11 </button> 
                 <template v-if="isPFIC11">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
@@ -104,14 +104,14 @@
             <button  @mouseover="isTHES1 = true; tableData.gene = 'SKIC3'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isTHES1 = true; tableData.gene = 'SKIC3'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/THES1')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES 1 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES1 </button> 
                 <template v-if="isTHES1">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
             <button  @mouseover="isTHES2 = true; tableData.gene = 'SKIC2'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isTHES2 = true; tableData.gene = 'SKIC2'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/THES2')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES 2 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES2 </button> 
                 <template v-if="isTHES2">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
@@ -127,6 +127,27 @@
                     @click="$router.push('/FOCADS')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> FOCAD deficiency </button> 
                 <template v-if="isFOCADS">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
+            <button  @mouseover="isARCS = true; tableData.gene = 'VPSVIPAS?'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS = true; tableData.gene = 'VPSVIPAS?'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/ARCS')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS </button> 
+                <template v-if="isARCS">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
+            <button  @mouseover="isARCS1 = true; tableData.gene = 'VPS33B'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS1 = true; tableData.gene = 'VPS33B'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/ARCS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS1 </button> 
+                <template v-if="isARCS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
+            <button  @mouseover="isARCS2 = true; tableData.gene = 'VIPAS39'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS2 = true; tableData.gene = 'VIPAS39'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/ARCS2')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS2 </button> 
+                <template v-if="isARCS2">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
         </div>
@@ -155,6 +176,7 @@ export default {
                 isPFIC1: false, isPFIC2: false, isPFIC3: false, isPFIC4: false, isPFIC5: false,
                 isPFIC6: false, isPFIC7: false, isPFIC8: false, isPFIC9: false, isPFIC10: false,
                 isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isTHESall: false, isFOCADS: false,
+                isARCS: false, isARCS1: false, isARCS2: false,
                 tableData: {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
             }
         },
@@ -162,6 +184,7 @@ export default {
             this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
             this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
             this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
+            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false,
             this.tableData = {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
         },
         getDiseaseStats() {

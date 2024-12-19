@@ -150,6 +150,30 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/CDG2PView.vue')
   },
   {
+    path: '/ARCS',
+    name: 'ARCS',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/ARCSView.vue')
+  },
+  {
+    path: '/ARCS1',
+    name: 'ARCS1',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/ARCS1View.vue')
+  },
+    {
+    path: '/ARCS2',
+    name: 'ARCS2',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/ARCS2View.vue')
+  },
+  {
     path: '/diseases',
     name: 'diseases',
     // route level code-splitting
