@@ -35,12 +35,9 @@
             </tbody>
         </table>
         <div class="mt-10 mb-0 flex flex-row w-full">
-            <div class="w-1/4"></div>
-            <div class="chart-container w-1/2"><VuePlotly :data="scatterSurvival" :layout="survLayout" :config="plotConfig"></VuePlotly></div>
-            <div class="w-1/4"></div>
-        </div>
-        <div class="mt-0 mb-0 flex flex-row w-full">
-            <p class="text-sm text-center w-full">Years of age </p>
+            <div class="w-1/6"></div>
+            <div class="chart-container w-full"><VuePlotly :data="scatterSurvival" :layout="survLayout" :config="plotConfig"></VuePlotly></div>
+            <div class="w-1/6"></div>
         </div>
     </div>
         
@@ -98,16 +95,17 @@ export default {
             }
         },
         gatherStats() {
+            console.log("gene, ", this.propData.gene)
             var stats_disease = this.diseaseArray.filter((item) => {return (item.gene == this.propData.gene)})
             this.patientTotal = stats_disease[0].age_at_last_news.all.array.length 
             this.girlNo = stats_disease[0].age_at_last_news.girls.array.length
             this.boyNo = stats_disease[0].age_at_last_news.boys.array.length
             this.girlsDead = stats_disease[0].age_at_last_news.girls.status.filter((val) => val == 1).length
             this.boysDead = stats_disease[0].age_at_last_news.boys.status.filter((val) => val == 1).length
-            this.scatterSurvival[0].x = stats_disease[0].age_at_last_news.girls.surv_x
-            this.scatterSurvival[0].y = stats_disease[0].age_at_last_news.girls.surv_y
-            this.scatterSurvival[1].x = stats_disease[0].age_at_last_news.boys.surv_x
-            this.scatterSurvival[1].y = stats_disease[0].age_at_last_news.boys.surv_y
+            this.scatterSurvival[0].x = stats_disease[0].survival.girls_surv_x
+            this.scatterSurvival[0].y = stats_disease[0].survival.girls_surv_y
+            this.scatterSurvival[1].x = stats_disease[0].survival.boys_surv_x
+            this.scatterSurvival[1].y = stats_disease[0].survival.boys_surv_y
         }
     },
     props: {

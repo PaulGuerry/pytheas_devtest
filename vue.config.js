@@ -1,7 +1,8 @@
 
 module.exports = {
-<<<<<<< HEAD
-  publicPath: '/',
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/pytheas-db/'
+    : '/',
   configureWebpack: {
         module: {
             rules: [ // proper handle of .mjs files
@@ -13,10 +14,5 @@ module.exports = {
             ]
         }
     }
-=======
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/13_devtest/'
-    : '/'
->>>>>>> e5809672622a4ac99f3f3368870f01e26ccbcb86
 }
 

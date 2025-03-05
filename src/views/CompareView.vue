@@ -3,94 +3,134 @@
         <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
         <p  class="text-xl  text-gray-400 mt-10 mb-2"> Select the diseases to compare. </p>
         <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
-            <button  v-if="!selPFIC1"  
+                <button  v-if="!selPFIC1"  
                     @click="selPFIC1 = true; tableData.genes.push('ATP8B1')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 1 </button> 
-            <button  v-if="selPFIC1" 
+                <button  v-if="selPFIC1" 
                     @click="selPFIC1 = false; removeGene('ATP8B1')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 1 </button>
-            <button  v-if="!selPFIC2"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC1 </button>
+                <button  v-if="!selPFIC2"  
                     @click="selPFIC2 = true; tableData.genes.push('ABCB11')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 2 </button> 
-            <button  v-if="selPFIC2" 
+                <button  v-if="selPFIC2" 
                     @click="selPFIC2 = false; removeGene('ABCB11')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 2 </button> 
-            <button  v-if="!selPFIC3"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC2 </button> 
+                <button  v-if="!selPFIC3"  
                     @click="selPFIC3 = true; tableData.genes.push('ABCB4')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 3 </button> 
-            <button  v-if="selPFIC3" 
+                <button  v-if="selPFIC3" 
                     @click="selPFIC3 = false; removeGene('ABCB4')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 3 </button> 
-            <button  v-if="!selPFIC4"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC3 </button> 
+                <button  v-if="!selPFIC4"  
                     @click="selPFIC4 = true; tableData.genes.push('TJP2')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 4 </button> 
-            <button  v-if="selPFIC4" 
+                <button  v-if="selPFIC4" 
                     @click="selPFIC4 = false; removeGene('TJP2')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 4 </button> 
-            <button  v-if="!selPFIC5"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC4 </button> 
+                <button  v-if="!selPFIC5"  
                     @click="selPFIC5 = true; tableData.genes.push('NR1H4')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 5 </button> 
-            <button  v-if="selPFIC5" 
+                <button  v-if="selPFIC5" 
                     @click="selPFIC5 = false; removeGene('NR1H4')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 5 </button>
-            <button  v-if="!selPFIC6"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC5 </button>
+                <button  v-if="!selPFIC6"  
                     @click="selPFIC6 = true; tableData.genes.push('SLC51A')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 6 </button> 
-            <button  v-if="selPFIC6" 
+                <button  v-if="selPFIC6" 
                     @click="selPFIC6 = false; removeGene('SLC51A')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 6 </button>
-            <button  v-if="!selPFIC7"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC6 </button>
+                <button  v-if="!selPFIC7"  
                     @click="selPFIC7 = true; tableData.genes.push('USP53')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 7 </button> 
-            <button  v-if="selPFIC7" 
+                <button  v-if="selPFIC7" 
                     @click="selPFIC7 = false; removeGene('USP53')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 7 </button>
-            <button  v-if="!selPFIC8"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC7 </button>
+                <button  v-if="!selPFIC8"  
                     @click="selPFIC8 = true; tableData.genes.push('KIF12')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 8 </button> 
-            <button  v-if="selPFIC8" 
+                <button  v-if="selPFIC8" 
                     @click="selPFIC8 = false; removeGene('KIF12')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 8 </button>
-            <button  v-if="!selPFIC9"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC8 </button>
+                <button  v-if="!selPFIC9"  
                     @click="selPFIC9 = true; tableData.genes.push('ZFYVE19')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 9 </button> 
-            <button  v-if="selPFIC9" 
+                <button  v-if="selPFIC9" 
                     @click="selPFIC9 = false; removeGene('ZFYVE19')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 9 </button>
-            <button  v-if="!selPFIC10"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC9 </button>
+                <button  v-if="!selPFIC10"  
                     @click="selPFIC10 = true; tableData.genes.push('MYO5B')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 10 </button> 
-            <button  v-if="selPFIC10" 
+                <button  v-if="selPFIC10" 
                     @click="selPFIC10 = false; removeGene('MYO5B')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 10 </button>
-            <button  v-if="!selPFIC11"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC10 </button>
+                <button  v-if="!selPFIC11"  
                     @click="selPFIC11 = true; tableData.genes.push('SEMA7A')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 11 </button> 
-            <button  v-if="selPFIC11" 
+                <button  v-if="selPFIC11" 
                     @click="selPFIC11 = false; removeGene('SEMA7A')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC 11 </button>
-            <button  v-if="!selCDG2P"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> PFIC11 </button>
+
+                <button  v-if="!selCDG2P"  
                     @click="selCDG2P = true; tableData.genes.push('TMEM199')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> CDG2P </button> 
-            <button  v-if="selCDG2P" 
+                <button  v-if="selCDG2P" 
                     @click="selCDG2P = false; removeGene('TMEM199')"
                     class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> CDG2P </button>
-            <button  v-if="!selTHES1"  
+
+                <button  v-if="!selTHES1"  
                     @click="selTHES1 = true; tableData.genes.push('SKIC3')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> THES 1 </button> 
-            <button  v-if="selTHES1" 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> THES1 </button> 
+                <button  v-if="selTHES1" 
                     @click="selTHES1 = false; removeGene('SKIC3')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> THES 1 </button>
-            <button  v-if="!selTHES2"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> THES1 </button>
+
+                <button  v-if="!selTHES2"  
                     @click="selTHES2 = true; tableData.genes.push('SKIC2')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> THES 2 </button> 
-            <button  v-if="selTHES2" 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> THES2 </button> 
+                <button  v-if="selTHES2" 
                     @click="selTHES2 = false; removeGene('SKIC2')"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> THES 2 </button>
-            <button  v-if="!selAll"  
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> THES2 </button>
+                
+                <button  v-if="!selTHESall"  
+                    @click="selTHESall = true; tableData.genes.push('SKIC3,SKIC2')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> THES </button> 
+                <button  v-if="selTHESall" 
+                    @click="selTHESall = false; removeGene('SKIC3,SKIC2')"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> THES </button>
+               
+                <button  v-if="!selFOCADS"  
+                    @click="selFOCADS = true; tableData.genes.push('FOCAD')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> FOCAD deficiency </button> 
+                <button  v-if="selFOCADS" 
+                    @click="selFOCADS = false; removeGene('FOCAD')"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> FOCAD deficiency </button>
+ 
+                <button  v-if="!selARCS1"  
+                    @click="selARCS1 = true; tableData.genes.push('VPS33B')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> ARCS1 </button> 
+                <button  v-if="selARCS1" 
+                    @click="selARCS1 = false; removeGene('VPS33B')"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> ARCS1 </button>
+
+                <button  v-if="!selARCS2"  
+                    @click="selARCS2 = true; tableData.genes.push('VIPAS39')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> ARCS2 </button> 
+                <button  v-if="selARCS2" 
+                    @click="selARCS2 = false; removeGene('VIPAS39')"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> ARCS2 </button>
+                
+                <button  v-if="!selARCS"  
+                    @click="selARCS = true; tableData.genes.push('VPS33B,VIPAS39')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> ARCS </button> 
+                <button  v-if="selARCS" 
+                    @click="selARCS = false; removeGene('VPS33B,VIPAS39')"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> ARCS </button>
+
+
+                <button  v-if="!selAll"  
                     @click="selAll = true; addAll();"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> ALL </button> 
-            <button  v-if="selAll" 
+                <button  v-if="selAll" 
                     @click="selAll = false;  tableData.genes = []"
                     class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> ALL </button>
         </div>
@@ -169,10 +209,15 @@ export default {
     methods: {
         initialState() {
             return {
-                geneList: ["KIF12", "ZFYVE19", "ATP8B1", "SKIC3", "SKIC2", "ABCB11", "ABCB4", "TJP2", "NR1H4", "SLC51A", "USP53", "MYO5B", "SEMA7A", "TMEM199"],
+                geneList: ["KIF12", "ZFYVE19", "ATP8B1", "SKIC3", "SKIC2", 
+                          "ABCB11", "ABCB4", "TJP2", "NR1H4", "SLC51A", 
+                          "USP53", "MYO5B", "SEMA7A", "TMEM199", "SKIC2,3,?", 
+                          "FOCAD", "VPS33B", "VIPAS39", "VPSVIPAS?"],
                 selPFIC1: false, selPFIC2: false, selPFIC3: false, selPFIC4: false, selPFIC5: false,
                 selPFIC6: false, selPFIC7: false, selPFIC8: false, selPFIC9: false, selPFIC10: false,
-                selPFIC11: false, selCDG2P: false, selTHES1: false, selTHES2: false, selAll: false,
+                selPFIC11: false, selCDG2P: false, selTHES1: false, selTHES2: false, 
+                selARCS1: false, selARCS2: false, selARCS: false, selAll: false,
+                selTHESall: false, selFOCADS: false,
                 isBarSymptoms: false, isSexRatio: false, isFirstSymptoms: false, isSurvival: false, isConsanguinity: false, 
                 tableData: {genes: []}
             }
