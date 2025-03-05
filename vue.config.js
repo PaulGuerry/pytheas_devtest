@@ -1,5 +1,6 @@
 
 module.exports = {
+<<<<<<< HEAD
   publicPath: '/',
   configureWebpack: {
         module: {
@@ -12,5 +13,10 @@ module.exports = {
             ]
         }
     }
+=======
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/13_devtest/'
+    : '/'
+>>>>>>> e5809672622a4ac99f3f3368870f01e26ccbcb86
 }
 
