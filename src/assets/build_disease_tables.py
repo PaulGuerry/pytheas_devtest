@@ -2,6 +2,13 @@
 import fileinput
 import json
 import numpy
+import pandas
+from lifelines import KaplanMeierFitter
+
+
+# This function searches for a DOI in a dictionnary
+def search_in_dict(search_string, search_dict):
+    return [el for el in search_dict if el['articledoi'] == search_string]
 
 json_data = ""
 #for line in fileinput.input(files="epdj_output.json"):
@@ -16,30 +23,1187 @@ colours = ["#d4d4d4", "#404040", "#fca5a5", "#b91c1c", "#fcd34d", "#b45309", "#b
            "#f0abfc", "#a21caf", "#fda4af", "#be123c"]
 
 
-diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"], colour = colours[0]),
-            dict(name = "PFIC2", gene = "ABCB11", matches = ["PFIC2"], colour = colours[1]),
-            dict(name = "PFIC3", gene = "ABCB4", matches = ["PFIC3"], colour = colours[2]),
-            dict(name = "PFIC4", gene = "TJP2", matches = ["PFIC4"], colour = colours[3]),
-            dict(name = "PFIC5", gene = "NR1H4", matches = ["PFIC5"], colour = colours[4]),
-            dict(name = "PFIC6", gene = "SLC51A", matches = ["PFIC6"], colour = colours[5]),
-            dict(name = "PFIC7", gene = "USP53", matches = ["PFIC7"], colour = colours[6]),
-            dict(name = "PFIC8", gene = "KIF12", matches = ["PFIC8"], colour = colours[7]),
-            dict(name = "PFIC9", gene = "ZFYVE19", matches = ["PFIC9"], colour = colours[8]),
-            dict(name = "PFIC10", gene = "MYO5B", matches = ["PFIC10"], colour = colours[9]),
-            dict(name = "PFIC11", gene = "SEMA7A", matches = ["PFIC11"], colour = colours[10]),
-            dict(name = "CDG2P", gene = "TMEM199", matches = ["CDG2P"], colour = colours[11]),
-            dict(name = "THES1", gene = "SKIC3", matches = ["THES1"], colour = colours[12]),
-            dict(name = "THES2", gene = "SKIC2", matches = ["THES2"], colour = colours[13]),
-            dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"], colour = colours[14]),
-            dict(name = "FOCADS", gene = "FOCAD", matches = ["FOCADS"], colour = colours[15]),
-            dict(name = "ARCS1", gene = "VPS33B", matches = ["ARCS1"], colour = colours[16]),
-            dict(name = "ARCS2", gene = "VIPAS39", matches = ["ARCS2"], colour = colours[17]),
-            dict(name = "ARCS", gene = "VPSVIPAS?", matches = ["ARCS", "ARCS1", "ARCS2"], colour = colours[18])
-            ]
-
+diseases = [
+   dict(
+      name = "PFIC1", 
+      gene = "ATP8B1", 
+      matches = ["PFIC1"], 
+      colour = colours[0],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "ATP8B1",
+            link = "https://www.alliancegenome.org/gene/HGNC:3706",
+            uniprot = dict(
+               code = "O43520",
+               link = "https://www.uniprot.org/uniprotkb/O43520/entry"
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Atp8b1",
+            link = "https://www.alliancegenome.org/gene/MGI:1859665",
+            uniprot = dict(
+               code = "Q148W0",
+               link = "https://www.uniprot.org/uniprotkb/Q148W0/entry"
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "atp8b1",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-091116-14",
+            uniprot = dict(
+               code = "F1R881",
+               link = "https://www.uniprot.org/uniprotkb/F1R881/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "ATP8B",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0037989",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "tat-2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00019166",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "DNF1",
+            link = "https://www.alliancegenome.org/gene/SGD:S000000968",
+            uniprot = dict(
+               code = "P32660",
+               link = "https://www.uniprot.org/uniprotkb/P32660/entry"
+            )
+         )
+      ]
+   ), 
+   dict(
+      name = "PFIC2", 
+      gene = "ABCB11", 
+      matches = ["PFIC2"], 
+      colour = colours[1],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "ABCB11",
+            link = "https://www.alliancegenome.org/gene/HGNC:42",
+            uniprot = dict(
+               code = "O95342",
+               link = "https://www.uniprot.org/uniprotkb/O95342/entry"
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Abcb11",
+            link = "https://www.mousephenotype.org/data/genes/MGI:1351619",
+            uniprot = dict(
+               code = "Q9JL39",
+               link = "https://www.uniprot.org/uniprotkb/Q9JL39/entry"
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "abcb11a",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-050517-13",
+            uniprot = dict(
+               code = "F1QSX6",
+               link = "https://www.uniprot.org/uniprotkb/F1QSX6/entry"
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "abcb11b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-050517-14",
+            uniprot = dict(
+               code = "A0A8M1RNN7",
+               link = "https://www.uniprot.org/uniprotkb/A0A8M1RNN7/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Mdr50",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0010241",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "Multiple orthologs",
+            link = "https://www.alliancegenome.org/gene/HGNC:42",
+            uniprot = dict(
+               code = "",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "STE6",
+            link = "https://www.alliancegenome.org/gene/SGD:S000001692",
+            uniprot = dict(
+               code = "P12866",
+               link = "https://www.uniprot.org/uniprotkb/P12866/entry"
+            )
+         )
+      ]   
+   ),
+   dict(
+      name = "PFIC3", 
+      gene = "ABCB4", 
+      matches = ["PFIC3"], 
+      colour = colours[2],
+      link = "https://www.alliancegenome.org/gene/HGNC:45",
+      uniprot = dict(
+         code = "P21439",
+         link = "https://www.uniprot.org/uniprotkb/P21439/entry"
+         ),
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "ABCB4",
+            link = "https://www.alliancegenome.org/gene/HGNC:45",
+            uniprot = dict(
+               code = "P21439",
+               link = "https://www.uniprot.org/uniprotkb/P21439/entry"
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Abcb4",
+            link = "https://www.mousephenotype.org/data/genes/MGI:97569",
+            uniprot = dict(
+               code = "P21440",
+               link = "https://www.uniprot.org/uniprotkb/P21440/entry"
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "abcb4",
+            link = "https://zfin.org/ZDB-GENE-080204-52",
+            uniprot = dict(
+               code = "E7F1E3",
+               link = "https://www.uniprot.org/uniprotkb/E7F1E3/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Multiple orthologs",
+            link = "https://www.alliancegenome.org/gene/HGNC:45",
+            uniprot = dict(
+               code = "",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "Multiple orthologs",
+            link = "https://www.alliancegenome.org/gene/HGNC:45",
+            uniprot = dict(
+               code = "",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "STE6",
+            link = "https://www.alliancegenome.org/gene/SGD:S000001692",
+            uniprot = dict(
+               code = "P12866",
+               link = "https://www.uniprot.org/uniprotkb/P12866/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC4", 
+      gene = "TJP2", 
+      matches = ["PFIC4"], 
+      colour = colours[3],
+      link = "https://www.alliancegenome.org/gene/HGNC:11828",
+      uniprot = dict(
+         code = "Q9UDY2",
+         link = "https://www.uniprot.org/uniprotkb/Q9UDY2/entry",
+         ),
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "TJP2",
+            link = "https://www.alliancegenome.org/gene/HGNC:11828",
+            uniprot = dict(
+               code = "Q9UDY2",
+               link = "https://www.uniprot.org/uniprotkb/Q9UDY2/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Tjp2",
+            link = "https://www.alliancegenome.org/gene/MGI:1341872",
+            uniprot = dict(
+               code = "Q9Z0U1",
+               link = "https://www.uniprot.org/uniprotkb/Q9Z0U1/entry"
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "tjp2a",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-070925-2",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "tjp2b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-040718-58",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "pyd",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0262614",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "zoo-1",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00013683",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC5", 
+      gene = "NR1H4", 
+      matches = ["PFIC5"], 
+      colour = colours[4],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "NR1H4",
+            link = "https://www.alliancegenome.org/gene/HGNC:7967",
+            uniprot = dict(
+               code = "Q96RI1",
+               link = "https://www.uniprot.org/uniprotkb/Q96RI1/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Nr1h4",
+            link = "https://www.alliancegenome.org/gene/MGI:1352464",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "nr1h4",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-040718-313",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "nhr-166",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00016772",
+            uniprot = dict(
+               code = "O16609",
+               link = "https://www.uniprot.org/uniprotkb/O16609/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "nhr-253",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00022639",
+            uniprot = dict(
+               code = "O61869",
+               link = "https://www.uniprot.org/uniprotkb/O61869/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC6",
+      gene = "SLC51A",
+      matches = ["PFIC6"],
+      colour = colours[5],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "SLC51A",
+            link = "https://www.alliancegenome.org/gene/HGNC:29955",
+            uniprot = dict(
+               code = "Q86UW1",
+               link = "https://www.uniprot.org/uniprotkb/Q86UW1/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Slc51a",
+            link = "https://www.alliancegenome.org/gene/MGI:2146634",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "slc51a",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-040912-10",
+            uniprot = dict(
+               code = "Q66I08",
+               link = "https://www.uniprot.org/uniprotkb/Q66I08/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "CG6836",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0036834",
+            uniprot = dict(
+               code = "Q9VVV2",
+               link = "https://www.uniprot.org/uniprotkb/Q9VVV2/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "osta-1",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00015287",
+            uniprot = dict(
+               code = "O17204",
+               link = "https://www.uniprot.org/uniprotkb/O17204/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "osta-2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00015942",
+            uniprot = dict(
+               code = "Q18071",
+               link = "https://www.uniprot.org/uniprotkb/Q18071/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "osta-3",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00012182",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC7",
+      gene = "USP53",
+      matches = ["PFIC7"],
+      colour = colours[6],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "USP53",
+            link = "https://www.alliancegenome.org/gene/HGNC:29255",
+            uniprot = dict(
+               code = "Q70EK8",
+               link = "https://www.uniprot.org/uniprotkb/Q70EK8/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Usp53",
+            link = "https://www.alliancegenome.org/gene/MGI:2139607",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "usp53b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-090312-168",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "ec",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0000542",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC8", 
+      gene = "KIF12", 
+      matches = ["PFIC8"], 
+      colour = colours[7],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "KIF12",
+            link = "https://www.alliancegenome.org/gene/HGNC:21495",
+            uniprot = dict(
+               code = "Q96FN5",
+               link = "https://www.uniprot.org/uniprotkb/Q96FN5/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Kif12",
+            link = "https://www.alliancegenome.org/gene/MGI:1098232",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Klp54D",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0263076",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC9", 
+      gene = "ZFYVE19", 
+      matches = ["PFIC9"], 
+      colour = colours[8],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "ZFYVE9",
+            link = "https://www.alliancegenome.org/gene/HGNC:6775",
+            uniprot = dict(
+               code = "O95405",
+               link = "https://www.uniprot.org/uniprotkb/O95405/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Zfyve9",
+            link = "https://www.alliancegenome.org/gene/MGI:2652838",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "zfyve9a",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-070705-182",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "zfyve9b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-110825-2",
+            uniprot = dict(
+               code = "A0A8M3BDK8",
+               link = "https://www.uniprot.org/uniprotkb/A0A8M3BDK8/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Sara",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0026369",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "aka-1",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00000101",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC10", 
+      gene = "MYO5B", 
+      matches = ["PFIC10"], 
+      colour = colours[9],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "MYO5B",
+            link = "https://www.alliancegenome.org/gene/HGNC:7603",
+            uniprot = dict(
+               code = "Q9ULV0",
+               link = "https://www.uniprot.org/uniprotkb/Q9ULV0/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Myo5b",
+            link = "https://www.alliancegenome.org/gene/MGI:106598",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "myo5b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-031219-7",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "didum",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0261397",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "hum-2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00002036",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "MYO4",
+            link = "https://www.alliancegenome.org/gene/SGD:S000000027",
+            uniprot = dict(
+               code = "P32492",
+               link = "https://www.uniprot.org/uniprotkb/P32492/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "PFIC11", 
+      gene = "SEMA7A", 
+      matches = ["PFIC11"], 
+      colour = colours[10],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "SEMA7A",
+            link = "https://www.alliancegenome.org/gene/HGNC:10741",
+            uniprot = dict(
+               code = "O75326",
+               link = "https://www.uniprot.org/uniprotkb/O75326/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Sema7a",
+            link = "https://www.alliancegenome.org/gene/MGI:1306826",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "sema7a",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-030131-3633",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "CDG2P", 
+      gene = "TMEM199", 
+      matches = ["CDG2P"], 
+      colour = colours[11],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "TMEM199",
+            link = "https://www.alliancegenome.org/gene/HGNC:18085",
+            uniprot = dict(
+               code = "Q8N511",
+               link = "https://www.uniprot.org/uniprotkb/Q8N511/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Tmem199",
+            link = "https://www.alliancegenome.org/gene/MGI:2144113",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "tmem199",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-050522-150",
+            uniprot = dict(
+               code = "A8E5C6",
+               link = "https://www.uniprot.org/uniprotkb/A8E5C6/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "CG7071",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0260467",
+            uniprot = dict(
+               code = "Q8SXS0",
+               link = "https://www.uniprot.org/uniprotkb/Q8SXS0/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "F09E5.11",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00017289",
+            uniprot = dict(
+               code = "Q19259",
+               link = "https://www.uniprot.org/uniprotkb/Q19259/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "THES1", 
+      gene = "SKIC3", 
+      matches = ["THES1"], 
+      colour = colours[12],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "SKIC3",
+            link = "https://www.alliancegenome.org/gene/HGNC:23639",
+            uniprot = dict(
+               code = "Q6PGP7",
+               link = "https://www.uniprot.org/uniprotkb/Q6PGP7/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Skic3",
+            link = "https://www.alliancegenome.org/gene/MGI:2679923",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "skic3",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-110125-2",
+            uniprot = dict(
+               code = "E7F2R1",
+               link = "https://www.uniprot.org/uniprotkb/E7F2R1/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "CG8777",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0033376",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "ttc-37",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00021613",
+            uniprot = dict(
+               code = "Q9BKR2",
+               link = "https://www.uniprot.org/uniprotkb/Q9BKR2/entry"
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "SKI3",
+            link = "https://www.alliancegenome.org/gene/SGD:S000006393",
+            uniprot = dict(
+               code = "P17883",
+               link = "https://www.uniprot.org/uniprotkb/P17883/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "THES2", 
+      gene = "SKIC2", 
+      matches = ["THES2"], 
+      colour = colours[13],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "SKIC2",
+            link = "https://www.alliancegenome.org/gene/HGNC:10898",
+            uniprot = dict(
+               code = "Q15477",
+               link = "https://www.uniprot.org/uniprotkb/Q15477/entry",
+               )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "skic2",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-010430-5",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "tst",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0039117",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "skih-2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00008502",
+            uniprot = dict(
+               code = "Q19103",
+               link = "https://www.uniprot.org/uniprotkb/Q19103/entry"
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "SKI2",
+            link = "https://www.alliancegenome.org/gene/SGD:S000004390",
+            uniprot = dict(
+               code = "P35207",
+               link = "https://www.uniprot.org/uniprotkb/P35207/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "THES", 
+      gene = "SKIC3,SKIC2", 
+      matches = ["THES", "THES1", "THES2"], 
+      colour = colours[14],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "SKIC3",
+            link = "https://www.alliancegenome.org/gene/HGNC:23639",
+            uniprot = dict(
+               code = "Q6PGP7",
+               link = "https://www.uniprot.org/uniprotkb/Q6PGP7/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Skic3",
+            link = "https://www.alliancegenome.org/gene/MGI:2679923",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "skic3",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-110125-2",
+            uniprot = dict(
+               code = "E7F2R1",
+               link = "https://www.uniprot.org/uniprotkb/E7F2R1/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "CG8777",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0033376",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "ttc-37",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00021613",
+            uniprot = dict(
+               code = "Q9BKR2",
+               link = "https://www.uniprot.org/uniprotkb/Q9BKR2/entry"
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "SKI3",
+            link = "https://www.alliancegenome.org/gene/SGD:S000006393",
+            uniprot = dict(
+               code = "P17883",
+               link = "https://www.uniprot.org/uniprotkb/P17883/entry"
+            )
+         ),
+         dict(
+            species = "Homo sapiens",
+            gene = "SKIC2",
+            link = "https://www.alliancegenome.org/gene/HGNC:10898",
+            uniprot = dict(
+               code = "Q15477",
+               link = "https://www.uniprot.org/uniprotkb/Q15477/entry",
+               )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "skic2",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-010430-5",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "tst",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0039117",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "skih-2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00008502",
+            uniprot = dict(
+               code = "Q19103",
+               link = "https://www.uniprot.org/uniprotkb/Q19103/entry"
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "SKI2",
+            link = "https://www.alliancegenome.org/gene/SGD:S000004390",
+            uniprot = dict(
+               code = "P35207",
+               link = "https://www.uniprot.org/uniprotkb/P35207/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "FOCADS", 
+      gene = "FOCAD", 
+      matches = ["FOCADS"], 
+      colour = colours[15],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "FOCAD",
+            link = "https://www.alliancegenome.org/gene/HGNC:23377",
+            uniprot = dict(
+               code = "Q5VW36",
+               link = "https://www.uniprot.org/uniprotkb/Q5VW36/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Focad",
+            link = "https://www.alliancegenome.org/gene/MGI:2676921",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "focad",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-080213-1",
+            uniprot = dict(
+               code = "",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "CG3520",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0034859",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "ARCS1", 
+      gene = "VPS33B", 
+      matches = ["ARCS1"], 
+      colour = colours[16],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "VPS33B",
+            link = "https://www.alliancegenome.org/gene/HGNC:12712",
+            uniprot = dict(
+               code = "Q9H267",
+               link = "https://www.uniprot.org/uniprotkb/Q9H267/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Vps33b",
+            link = "https://www.alliancegenome.org/gene/MGI:2446237",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "vps33b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-050327-73",
+            uniprot = dict(
+               code = "Q58EN8",
+               link = "https://www.uniprot.org/uniprotkb/Q58EN8/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Vps33B",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0039335",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "vps-33.2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00016960",
+            uniprot = dict(
+               code = "Q18891",
+               link = "https://www.uniprot.org/uniprotkb/Q18891/entry"
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "VPS33",
+            link = "https://www.alliancegenome.org/gene/SGD:S000004388",
+            uniprot = dict(
+               code = "P20795",
+               link = "https://www.uniprot.org/uniprotkb/P20795/entry"
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "ARCS2", 
+      gene = "VIPAS39", 
+      matches = ["ARCS2"], 
+      colour = colours[17],
+      animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "VIPAS39",
+            link = "https://www.alliancegenome.org/gene/HGNC:20347",
+            uniprot = dict(
+               code = "Q9H9C1",
+               link = "https://www.uniprot.org/uniprotkb/Q9H9C1/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Vipas39",
+            link = "https://www.alliancegenome.org/gene/MGI:2144805",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "vipas39",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-040520-1",
+            uniprot = dict(
+               code = "Q5TYV4",
+               link = "https://www.uniprot.org/uniprotkb/Q5TYV4/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Vps16B",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0039702",
+            uniprot = dict(
+               code = "Q9VAG4",
+               link = "https://www.uniprot.org/uniprotkb/Q9VAG4/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "spe-39",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00004975",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ]
+   ),
+   dict(
+      name = "ARCS", 
+      gene = "VPS33B,VIPAS39", 
+      matches = ["ARCS", "ARCS1", "ARCS2"], 
+      colour = colours[18],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+         dict(
+            species = "Homo sapiens",
+            gene = "VPS33B",
+            link = "https://www.alliancegenome.org/gene/HGNC:12712",
+            uniprot = dict(
+               code = "Q9H267",
+               link = "https://www.uniprot.org/uniprotkb/Q9H267/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Vps33b",
+            link = "https://www.alliancegenome.org/gene/MGI:2446237",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "vps33b",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-050327-73",
+            uniprot = dict(
+               code = "Q58EN8",
+               link = "https://www.uniprot.org/uniprotkb/Q58EN8/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Vps33B",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0039335",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "vps-33.2",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00016960",
+            uniprot = dict(
+               code = "Q18891",
+               link = "https://www.uniprot.org/uniprotkb/Q18891/entry"
+            )
+         ),
+         dict(
+            species = "Saccharomyces cerevisiae",
+            gene = "VPS33",
+            link = "https://www.alliancegenome.org/gene/SGD:S000004388",
+            uniprot = dict(
+               code = "P20795",
+               link = "https://www.uniprot.org/uniprotkb/P20795/entry"
+            )
+         ),
+         dict(
+            species = "Homo sapiens",
+            gene = "VIPAS39",
+            link = "https://www.alliancegenome.org/gene/HGNC:20347",
+            uniprot = dict(
+               code = "Q9H9C1",
+               link = "https://www.uniprot.org/uniprotkb/Q9H9C1/entry",
+               )
+         ),
+         dict(
+            species = "Mus musculus",
+            gene = "Vipas39",
+            link = "https://www.alliancegenome.org/gene/MGI:2144805",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         ),
+         dict(
+            species = "Danio rerio",
+            gene = "vipas39",
+            link = "https://www.alliancegenome.org/gene/ZFIN:ZDB-GENE-040520-1",
+            uniprot = dict(
+               code = "Q5TYV4",
+               link = "https://www.uniprot.org/uniprotkb/Q5TYV4/entry"
+            )
+         ),
+         dict(
+            species = "Drosophila melanogaster",
+            gene = "Vps16B",
+            link = "https://www.alliancegenome.org/gene/FB:FBgn0039702",
+            uniprot = dict(
+               code = "Q9VAG4",
+               link = "https://www.uniprot.org/uniprotkb/Q9VAG4/entry"
+            )
+         ),
+         dict(
+            species = "Caenorhabditis elegans",
+            gene = "spe-39",
+            link = "https://www.alliancegenome.org/gene/WB:WBGene00004975",
+            uniprot = dict(
+               code = "Multiple",
+               link = ""
+            )
+         )
+      ] 
+   )
+]
 
 
 disease_table = []
+articles = []
 
 for disease in diseases:
    print("Building disease table for disease {0:s}".format(disease['name']))
@@ -52,13 +1216,13 @@ for disease in diseases:
                girls = dict(array = [], status = [], median = 0, iqr = 0))
    
    # need to account for the fact that in some cases, the age of death is different from the age at last follow-up
-   ages_surv = dict(all = dict(array = [], status = [], median = 0, iqr = 0),
-               boys = dict(array = [], status = [], median = 0, iqr = 0),
-               girls = dict(array = [], status = [], median = 0, iqr = 0))
+   ages_surv = dict(all = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               boys = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               girls = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0))
 
    count_patients = dict(total = 0, girls = 0, boys = 0)
    count_inbred = dict(yes = 0, no = 0, missing = 0)
-   articles = []
+   article_count = 0
    symptomCount = 0
    missingVarCount = 0
    presentVarCount = 0
@@ -205,6 +1369,14 @@ for disease in diseases:
                else:  
                   ages_last["all"]["status"].append("0")      
                   ages_surv["all"]["status"].append("0")      
+                  
+                  if ('sex' in object.keys() and object["sex"] == "F"):
+                     ages_last["girls"]["status"].append("0")      
+                     ages_surv["girls"]["status"].append("0")      
+                  elif ('sex' in object.keys() and object["sex"] == "M"):
+                     ages_last["boys"]["status"].append("0")      
+                     ages_surv["boys"]["status"].append("0")      
+
                
                
             # if age at last fo is not specified, use age at molecular diagnostic instead and define patient as alive at this age
@@ -256,7 +1428,10 @@ for disease in diseases:
                missingVarCount += 1
 
             if 'doi' in object.keys():
-               articles.append(object["doi"])
+               # Check definition of search_in_dict function at top of script
+               if (len(search_in_dict(object["doi"],  articles)) == 0):
+                  article_count += 1
+                  articles.append(dict(articlenumber = article_count, articledoi = object["doi"], disease = object["disease"]))
 
             if 'symptoms' in object.keys():
                presentVarCount += 1
@@ -311,85 +1486,145 @@ for disease in diseases:
    if len(ages_surv["boys"]["array"]) > 1:
       ages_surv["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["boys"]["array"], [75, 25]))
    
- 
-   for dict_key, dict_val in ages_first.items():
-      for k, v in dict_val.items():
-         try:
-            #230822: Round (with round rather than numpy.round) and allow for single valued arrays (check that v is a list before interating to avoid crash)
-               if type(v) is list:
-                  v = [round(x, 2) for x in v] 
-               else: 
-                  v = round(v)
+   # 250305: perform survival analysis directly in Python
+   # all
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["all"]["array"]], 
+                          'S': [float(i) for i in ages_surv["all"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["all"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["all"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
 
-         except:
-            print("119 - Unable to round {2:s}, for disease {0:s}, ages_first {1:s}".format(disease['name'], dict_val, v))
+   # girls
+   #print("length array ", len(ages_surv["girls"]["array"]))
+   #print("length status ", len(ages_surv["girls"]["status"]))
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["girls"]["array"]], 
+                          'S': [float(i) for i in ages_surv["girls"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["girls"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["girls"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+   # boys
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["boys"]["array"]], 
+                          'S': [float(i) for i in ages_surv["boys"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["boys"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["boys"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+
+
+ 
+   #for dict_key, dict_val in ages_first.items():
+   #   for k, v in dict_val.items():
+   #      try:
+   #         #230822: Round (with round rather than numpy.round) and allow for single valued arrays (check that v is a list before interating to avoid crash)
+   #            if type(v) is list:
+   #               v = [round(x, 2) for x in v] 
+   #            else: 
+   #               v = round(v)
+
+   #      except:
+   #         print("119 - Unable to round {2:s}, for disease {0:s}, ages_first {1:s}".format(disease['name'], dict_val, v))
 
   
-   #round values to two digits and output information in R-readable format
-   for dict_key, dict_val in ages_last.items():
-      
-      for k, v in dict_val.items():
-         if k != "status":
-            try:
-               #230822: Round (with round rather than numpy.round) and allow for single valued arrays (check that v is a list before interating to avoid crash)
-               if type(v) is list:
-                  v = [round(x, 2) for x in v] 
-               else: 
-                  v = round(v)
+   ##round values to two digits and output information in R-readable format
+   #for dict_key, dict_val in ages_last.items():
+   #   
+   #   for k, v in dict_val.items():
+   #      if k != "status":
+   #         try:
+   #            #230822: Round (with round rather than numpy.round) and allow for single valued arrays (check that v is a list before interating to avoid crash)
+   #            if type(v) is list:
+   #               v = [round(x, 2) for x in v] 
+   #            else: 
+   #               v = round(v)
 
-            except:
-               print("290 - Unable to round {2:s}, for disease {0:s}, ages_last {1:s}".format(disease['name'], dict_val, v))
-         
+   #         except:
+   #            print("290 - Unable to round {2:s}, for disease {0:s}, ages_last {1:s}".format(disease['name'], dict_val, v))
+   #      
    
-   #round values to two digits and output information in R-readable format
-   for dict_key, dict_val in ages_surv.items():
-      time_string = "time <- c("
-      status_string = "status <-c("
-      
-      for k, v in dict_val.items():
-         if k != "status":
-            try:
-               #230822: Round (with round rather than numpy.round) and allow for single valued arrays (check that v is a list before interating to avoid crash)
-               if type(v) is list:
-                  v = [round(x, 2) for x in v] 
-               else: 
-                  v = round(v)
+   ##round values to two digits and output information in R-readable format
+   #for dict_key, dict_val in ages_surv.items():
+   #   time_string = "time <- c("
+   #   status_string = "status <-c("
+   #   
+   #   for k, v in dict_val.items():
+   #      if k != "status":
+   #         try:
+   #            #230822: Round (with round rather than numpy.round) and allow for single valued arrays (check that v is a list before interating to avoid crash)
+   #            if type(v) is list:
+   #               v = [round(x, 2) for x in v] 
+   #            else: 
+   #               v = round(v)
 
-            except:
-               print("305 - Unable to round {2:s}, for disease {0:s}, ages_last {1:s}".format(disease['name'], dict_val, v))
-         
-         if k == "status":
-               for s in v:
-                     status_string += str(s)+", "
-                     
-         elif k == "array":
-               for t in v:
-                  time_string += str(t)+", "     
+   #         except:
+   #            print("305 - Unable to round {2:s}, for disease {0:s}, ages_last {1:s}".format(disease['name'], dict_val, v))
+   #      
+   #      if k == "status":
+   #            for s in v:
+   #                  status_string += str(s)+", "
+   #                  
+   #      elif k == "array":
+   #            for t in v:
+   #               time_string += str(t)+", "     
 
 
-      time_string += ")" 
-      status_string += ")"
-      print("   ")
-      print(disease['name'] + "---------------------") 
-      print(dict_key)
-      print(time_string)
-      print(status_string)
+   #   time_string += ")" 
+   #   status_string += ")"
+   #   print("   ")
+   #   print(disease['name'] + "---------------------") 
+   #   print(dict_key)
+   #   print(time_string)
+   #   print(status_string)
 
 
    
    disease_table.append(dict(gene = disease['gene'],
                              name = disease['name'],
                              colour = disease['colour'],
+                             animals = disease['animals'],
                              patients = count_patients,
-                             articles = len(set(articles)),
+                             articles = article_count,
                              datapoints = presentVarCount + symptomCount,
                              variables = dict(present = presentVarCount, missing = missingVarCount),
                              consanguinous = count_inbred, 
                              age_at_first_symp = ages_first,
-                             age_at_last_news = ages_last))
-   
+                             age_at_last_news = ages_last,
+                             survival = dict(all_surv_x = ages_surv["all"]["surv_x"],
+                                             all_surv_y = ages_surv["all"]["surv_y"],
+                                             boys_surv_x = ages_surv["boys"]["surv_x"],
+                                             boys_surv_y = ages_surv["boys"]["surv_y"],
+                                             girls_surv_x = ages_surv["girls"]["surv_x"],
+                                             girls_surv_y = ages_surv["girls"]["surv_y"]
+                                             )
+                              )
+   )
 
 
+
+# Serialize the article dictionnary to json
+json_data = json.dumps(articles, indent = 4)
+# Writing (append) to articles_out.json
+# Check output before copying to articles_DOI.json
+with open("articles_out.json", "w") as outfile:
+   outfile.write(json_data)
+outfile.close()
 
 
 
@@ -401,7 +1636,7 @@ json_data = json.dumps(disease_table, indent = 4)
 with open("bdt_out.json", "w") as outfile:
     outfile.write(json_data)
 
-
+outfile.close()
    
 
 

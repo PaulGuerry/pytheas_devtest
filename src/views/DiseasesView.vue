@@ -115,8 +115,8 @@
                 <template v-if="isTHES2">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
-            <button  @mouseover="isTHESall = true; tableData.gene = 'SKIC2,3,?'; tableData.disease = 'THES'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isTHESall = true; tableData.gene = 'SKIC2,3,?'; tableData.disease = 'THES'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isTHESall = true; tableData.gene = 'SKIC3,SKIC2'; tableData.disease = 'THES'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isTHESall = true; tableData.gene = 'SKIC3,SKIC2'; tableData.disease = 'THES'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/THESall')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES </button> 
                 <template v-if="isTHESall">
@@ -129,8 +129,8 @@
                 <template v-if="isFOCADS">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
-            <button  @mouseover="isARCS = true; tableData.gene = 'VPSVIPAS?'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isARCS = true; tableData.gene = 'VPSVIPAS?'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isARCS = true; tableData.gene = 'VPS33B,VIPAS39'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS = true; tableData.gene = 'VPS33B,VIPAS39'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/ARCS')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS </button> 
                 <template v-if="isARCS">
@@ -188,7 +188,7 @@ export default {
             this.tableData = {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
         },
         getDiseaseStats() {
-            var stats_disease = this.diseaseArray.filter((item) => {return (item.name == this.tableData.disease)})
+            var stats_disease = this.diseaseArray.filter((item) => {return (item.gene == this.tableData.gene)})
             if (typeof stats_disease !== 'undefined' && typeof stats_disease[0] !== 'undefined') {
                 if ('patients' in stats_disease[0]) this.tableData.patientCount = stats_disease[0].patients.total;
                 if ('articles' in stats_disease[0]) this.tableData.articleCount = stats_disease[0].articles;

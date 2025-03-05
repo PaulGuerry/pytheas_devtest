@@ -17,7 +17,7 @@ for line in fileinput.input(files="hp_edges.json"):
 HPO_edges_list = json.loads(json_data)
 
 json_data=""
-for line in fileinput.input(files="hp_nodes.json"):
+for line in fileinput.input(files="hp_nodes_modPG.json"):
     json_data = json_data + line
 HPO_nodes_list = json.loads(json_data)
 
@@ -38,7 +38,7 @@ for patient in patient_list:
 
   for child_code in patient_symptoms:   
 
-    print(symptom_no, " unique symptoms, ", added_no, " HPO branches.")
+    #print(symptom_no, " unique symptoms, ", added_no, " HPO branches.")
     if (len(child_code) != 7):
        print("Warning: ", child_code, " is not a valid HPO code! Skipping")
        already_in_library = True
@@ -64,9 +64,9 @@ for patient in patient_list:
 
       edge_list = (item["obj"] for item in HPO_edges_list["graphs"][0]["edges"] if child_code == item["sub"][34:]) 
       edge_array = numpy.array(list(edge_list))
-      print("Test 71. Patient, ", patient["id"], "; child code, ", child_code)
-      print("Test 71. edge_array, ", edge_array)
-      print("Test 71. edge_array.shape, ", edge_array.shape[0])
+      #print("Test 71. Patient, ", patient["id"], "; child code, ", child_code)
+      #print("Test 71. edge_array, ", edge_array)
+      #print("Test 71. edge_array.shape, ", edge_array.shape[0])
       parent_code = edge_array[0][34:]
       append_array[0, 0] = parent_code
 
@@ -148,8 +148,8 @@ for patient in patient_list:
       HPO_code_library[symptom_no]["branch_lengths"] = branch_lengths.tolist()
       added_no += branch_no        
       symptom_no += 1
-      for i in range(branch_no):
-        print("branch ", i, " --> ", parent_branches[i, :])
+      #for i in range(branch_no):
+      #  print("branch ", i, " --> ", parent_branches[i, :])
     
 
 

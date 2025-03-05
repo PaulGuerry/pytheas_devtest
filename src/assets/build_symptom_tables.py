@@ -14,7 +14,7 @@ for line in fileinput.input(files="hp_trees.json"):
 hp_tree_list = json.loads(json_data)
 
 json_data=""
-for line in fileinput.input(files="hp_nodes.json"):
+for line in fileinput.input(files="hp_nodes_modPG.json"):
     json_data = json_data + line
 HPO_nodes_list = json.loads(json_data)
 
@@ -28,8 +28,9 @@ with open("hp_symptom_matrix.txt", "w") as outfile:
    outfile.write("\n")
 
 
-analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]   
-#analysis_levels = [4, 5, 6]   
+#analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]   
+analysis_levels = [1, 2, 3, 4, 5, 6, 7]   
+#analysis_levels = [1, 2]   
 symptom_table = []
 
 diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
@@ -46,24 +47,28 @@ diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "CDG2P", gene = "TMEM199", matches = ["CDG2P"]),
             dict(name = "THES1", gene = "SKIC3", matches = ["THES1"]),
             dict(name = "THES2", gene = "SKIC2", matches = ["THES2"]),
-            dict(name = "THES", gene = "SKIC2,3,?", matches = ["THES", "THES1", "THES2"]),
+            dict(name = "THES", gene = "SKIC3,SKIC2", matches = ["THES", "THES1", "THES2"]),
             #dict(name = "CLUST", gene = "#####", matches = ["THES", "THES1", "THES2", "PFIC2"]),
             #dict(name = "PFIC1-11", gene = "$$$$$", matches = ["PFIC1", "PFIC2", "PFIC3", "PFIC4", "PFIC5", "PFIC6", "PFIC7", "PFIC8", "PFIC9", "PFIC10", "PFIC11"]),
             dict(name = "FOCADS", gene = "FOCAD", matches = ["FOCADS"]),
             dict(name = "ARCS1", gene = "VPS33B", matches = ["ARCS1"]),
             dict(name = "ARCS2", gene = "VIPAS39", matches = ["ARCS2"]),
-            dict(name = "ARCS", gene = "VPSVIPAS?", matches = ["ARCS", "ARCS1", "ARCS2"])
+            dict(name = "ARCS", gene = "VPS33B,VIPAS39", matches = ["ARCS", "ARCS1", "ARCS2"])
             ]
+
+#diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"])]
 
 for disease in diseases:
   
-   colour = "#9ca3af33" # default colour is grey
    
    for analysis_level in analysis_levels: 
       unique_symptoms = 0
       counts = []
       count_patients = 0
       count_girls = 0
+      colour = "#9ca3af33" # default colour is grey
+      category = ""
+      category_n = 0
 
       for object in patient_list: 
         
@@ -144,10 +149,18 @@ for disease in diseases:
                                        for colour_el in colour_list:
                                           if colour_el["code"] == level2_code:
                                              colour = str(colour_el["colour"])
+                                             category = str(colour_el["label"])
+                                             category_n = colour_el["category"]
                                              break
                                           
                                        #add an entry to the count dictionnary
-                                       counts.append(dict(HPO_code = pb_code, HPO_term = lbl, HPO_acronym = short_lbl, n=1, colour = colour))
+                                       counts.append(dict(HPO_code = pb_code, 
+                                                          HPO_term = lbl, 
+                                                          HPO_acronym = short_lbl, 
+                                                          n=1, 
+                                                          colour = colour,
+                                                          category = category,
+                                                          category_n = category_n * 100))
                                        unique_symptoms += 1
          else:
             if analysis_level == 13:
@@ -226,6 +239,10 @@ for disease in diseases:
                                     if pb_code != "-------":
                                        #set the value of the corresponding column to 1
                                        symptom_matrix[-1, np.argwhere(symptom_matrix == pb_code)[0][1]] = 1
+
+                           # Once the branches of the code have been found, stop searching through the branches               
+                           # .. i.e. break the for branch in hp_tree_list loop
+                           break               
                                        
 
          #Write the symptom_matrix to the output file
@@ -248,7 +265,8 @@ for disease in diseases:
 for disease in diseases:
   
     colour = "#9ca3af33" # default colour is grey
-   
+    category = ""
+    category_n = 0
     unique_symptoms = 0
     counts = []
     count_patients = 0
@@ -272,28 +290,35 @@ for disease in diseases:
 
                 #find this symptom in the tree (here, only to get the appropriate labeling colour)
                 for branch in hp_tree_list:
-                    #if the symptom matches, search all the parent_branches of this code 
-                    #pb means parent_branch
-                    for i in range(0, len(branch["parent_branches"]), 1):
-                        parent_branch = branch["parent_branches"][i]
-                        pb_length = branch["branch_lengths"][i]
-                        #initialized at -1 to make code more readable (so that increment statement appears at the start of the loop)
-                        pb_level = -1
-                        level2_code = ""
-                        
-                        #go through all codes in the parent_branch 
-                        #starting from the top and working down (from the end of the list and work backwards)
-                        #The convention I have chosen to follow is 
-                        #pb_level = 0 corresponds to 0000001: All
-                        #         = 1 corresponds to 0000118: Phenotypic abnormality
-                        #         = 2 gives the colour of all codes lower down the hierarchy
-                        for j in range(pb_length, 1, -1):
-                            #codes are stored from the end to the start of a branch
-                            #so have to reverse the count
-                            pb_level += 1
-
-                            if pb_level == 2:
-                               level2_code = parent_branch[j]
+                    
+                    if branch["code"] == HPO_code:
+                      #if the symptom matches, search all the parent_branches of this code 
+                      #pb means parent_branch
+                      for i in range(0, len(branch["parent_branches"]), 1):
+                          parent_branch = branch["parent_branches"][i]
+                          #if HPO_code == "0001892": print("Parent branch, ", parent_branch)
+                          pb_length = branch["branch_lengths"][i]
+                          #initialized at -1 to make code more readable (so that increment statement appears at the start of the loop)
+                          pb_level = -1
+                          level2_code = ""
+                          
+                          #go through all codes in the parent_branch 
+                          #starting from the top and working down (from the end of the list and work backwards)
+                          #The convention I have chosen to follow is 
+                          #pb_level = 0 corresponds to 0000001: All
+                          #         = 1 corresponds to 0000118: Phenotypic abnormality
+                          #         = 2 gives the colour of all codes lower down the hierarchy
+                          for j in range(pb_length, 0, -1):
+                              #codes are stored from the end to the start of a branch
+                              #so have to reverse the count
+                              pb_level += 1
+                              #if HPO_code == "0001395": print(HPO_code, j, pb_level, parent_branch[j])
+                              if pb_level == 2:
+                                 level2_code = parent_branch[j]
+                                 break
+                      # Once the branches of the code have been found, stop searching through the branches               
+                      # .. i.e. break the for branch in hp_tree_list loop
+                      break                               
 
 
                 #find the corresponding label
@@ -323,6 +348,11 @@ for disease in diseases:
                       # .. so to account for this possibility, increment unique_symptoms if n == 0
                       if item["n"] == 0: unique_symptoms += 1
                       item["n"] += 1
+                      item["n_pct"] = "{0:.0f}".format(100 * item["n"] / count_patients)
+                      if item["n_absent"] > 0:
+                        item["pres_abs_ratio"] = "{0:.1f}".format(item["n"] / item["n_absent"])
+                      else:
+                        item["pres_abs_ratio"] = "-"
                       break
 
                 #if having searched through the entire count dictionary, no matching entries have been found   
@@ -332,10 +362,25 @@ for disease in diseases:
                    for colour_el in colour_list:
                       if colour_el["code"] == level2_code:
                          colour = str(colour_el["colour"])
+                         category = str(colour_el["label"])
+                         category_n = colour_el["category"]
                          break
                       
+                   #print("** As reported; symptom,", lbl, HPO_code, "; level 2 code, ", level2_code,",  colour, ", colour, ", category, ", category)      
                    #add an entry to the count dictionnary
-                   counts.append(dict(HPO_code = HPO_code, HPO_term = lbl, HPO_acronym = short_lbl, n=1, n_absent=0, n_sometimes=0, colour = colour))
+                   counts.append(dict(HPO_code = HPO_code, 
+                                      HPO_term = lbl, 
+                                      HPO_acronym = short_lbl, 
+                                      n=1, 
+                                      n_pct="{0:.1f}".format(100 / count_patients),
+                                      n_pct_scaled="0",
+                                      n_absent=0, 
+                                      n_sometimes=0, 
+                                      pres_abs_ratio = "-", 
+                                      colour = colour,
+                                      category = category,
+                                      category_n = category_n,
+                                      category_n_scaled = "0"))
                    unique_symptoms += 1
  
             # Symptoms reported absent
@@ -348,6 +393,9 @@ for disease in diseases:
 
                     #find this symptom in the tree (here, only to get the appropriate labeling colour)
                     for branch in hp_tree_list:
+
+
+                      if branch["code"] == HPO_code:
                         #if the symptom matches, search all the parent_branches of this code 
                         #pb means parent_branch
                         for i in range(0, len(branch["parent_branches"]), 1):
@@ -363,13 +411,18 @@ for disease in diseases:
                             #pb_level = 0 corresponds to 0000001: All
                             #         = 1 corresponds to 0000118: Phenotypic abnormality
                             #         = 2 gives the colour of all codes lower down the hierarchy
-                            for j in range(pb_length, 1, -1):
+                            for j in range(pb_length, 0, -1):
                                 #codes are stored from the end to the start of a branch
                                 #so have to reverse the count
                                 pb_level += 1
 
                                 if pb_level == 2:
                                    level2_code = parent_branch[j]
+                                   break
+                        
+                        # Once the branches of the code have been found, stop searching through the branches               
+                        # .. i.e. break the for branch in hp_tree_list loop
+                        break         
 
 
                     #find the corresponding label
@@ -408,8 +461,16 @@ for disease in diseases:
                                 item["n_sometimes"] += 1
                              else:
                                 item["n_absent"] += 1
+                                if item["n_absent"] > 0:
+                                  item["pres_abs_ratio"] = "{0:.1f}".format(item["n"] / item["n_absent"])
+                                else:
+                                  item["pres_abs_ratio"] = "-"
                           else:
                              item["n_absent"] += 1
+                             if item["n_absent"] > 0:
+                               item["pres_abs_ratio"] = "{0:.1f}".format(item["n"] / item["n_absent"])
+                             else:
+                               item["pres_abs_ratio"] = "-"
                           break
 
                     # If having searched through the entire count dictionary, no matching entries have been found   
@@ -419,8 +480,11 @@ for disease in diseases:
                        for colour_el in colour_list:
                           if colour_el["code"] == level2_code:
                              colour = str(colour_el["colour"])
+                             category = str(colour_el["label"])
+                             category_n = colour_el["category"]
                              break
                           
+                       #print("** As reported absent; symptom,", lbl, HPO_code, "; level 2 code, ", level2_code,",  colour, ", colour, ", category, ", category)      
                        # Add an entry to the count dictionnary 
                        #.. !!as reported absent!! 
                        #.. !!and do not count it as a unique symptom!!
@@ -429,18 +493,75 @@ for disease in diseases:
                        # .. increment n_sometimes and not n_absent or n
                        if ('symptoms' in object.keys()):
                           if HPO_code in object["symptoms"]:
-                            counts.append(dict(HPO_code = HPO_code, HPO_term = lbl, HPO_acronym = short_lbl, n=0, n_absent=0, n_sometimes=1, colour = colour))
+                            counts.append(dict(HPO_code = HPO_code, 
+                                               HPO_term = lbl, 
+                                               HPO_acronym = short_lbl, 
+                                               n=0, 
+                                               n_pct="0",
+                                               n_pct_scaled="0",
+                                               n_absent=0, 
+                                               n_sometimes=1, 
+                                               pres_abs_ratio = "-", 
+                                               colour = colour,
+                                               category = category,
+                                               category_n = category_n,
+                                               category_n_scaled = "0"))
                           else:
-                            counts.append(dict(HPO_code = HPO_code, HPO_term = lbl, HPO_acronym = short_lbl, n=0, n_absent=1, n_sometimes=0, colour = colour))
+                            counts.append(dict(HPO_code = HPO_code, 
+                                               HPO_term = lbl, 
+                                               HPO_acronym = short_lbl, 
+                                               n=0, 
+                                               n_pct="0",
+                                               n_pct_scaled="0",
+                                               n_absent=1, 
+                                               n_sometimes=0, 
+                                               pres_abs_ratio = "-", 
+                                               colour = colour,
+                                               category_n = category_n,
+                                               category_n_scaled = "0"))
                        else:
-                          counts.append(dict(HPO_code = HPO_code, HPO_term = lbl, HPO_acronym = short_lbl, n=0, n_absent=1, n_sometimes=0, colour = colour))
+                          counts.append(dict(HPO_code = HPO_code, 
+                                             HPO_term = lbl, 
+                                             HPO_acronym = short_lbl, 
+                                             n=0, 
+                                             n_pct="0",
+                                             n_pct_scaled="0",
+                                             n_absent=1, 
+                                             n_sometimes=0, 
+                                             pres_abs_ratio = "-", 
+                                             colour = colour,
+                                             category_n = category_n,
+                                             category_n_scaled = "0"))
 
     
 
 
- 
-  
-   
+    #Calculate n_pct for the symptom counts
+    #.. and present/absent ratios
+    category_n_max = 0.
+    n_pct_max = 0.
+    for item in counts:
+       item["n_pct"] = "{0:.0f}".format(100 * item["n"] / count_patients)
+       pa_ratio = item["pres_abs_ratio"]
+       category_n_scaled = item["category_n"] 
+       if pa_ratio == "-":
+          pa_ratio = 1.
+       else:
+          pa_ratio = min(99., float(pa_ratio)) 
+
+       n_pct_max = max(n_pct_max, float(item["n_pct"])) 
+       # add random jitter (for x dimension of symptom plots)
+       category_n_scaled = category_n_scaled + np.random.rand()
+       category_n_max = max(category_n_scaled, category_n_max)
+       item["category_n_scaled"] = "{0:.0f}".format(category_n_scaled)
+       
+      
+
+    #Normalize category offsets and n_pct
+    for item in counts:
+       item["category_n_scaled"] = "{0:.3f}".format(float(item["category_n_scaled"])/category_n_max)
+       item["n_pct_scaled"] = "{0:.3f}".format(float(item["n_pct"])/n_pct_max)
+    
     #sort the counts from most to least frequent
     counts = sorted(counts, key=lambda d: d["n"], reverse = True)
     #add an entry to the symptom_table dictionary
@@ -514,7 +635,7 @@ for disease in diseases:
 # Serialize the python dictionnary to json
 json_data = json.dumps(symptom_table, indent = 4)
 
-# Writing to hp_trees.json
+# Writing to hp_symptom_stats.json
 with open("hp_symptom_stats.json", "w") as outfile:
     outfile.write(json_data)
 

@@ -1,9 +1,19 @@
 {
     "title": false,
     "barmode": "stack",
+    "barcornerradius": 15,
+    "font": {
+        "size": 10
+    },
+    "margin": {
+         "l": 10,
+         "r": 10,
+         "b": 10,
+         "t": 10
+    },
     "xaxis": {
         "ticksuffix": " ",
-	"tickangle": -25,
+	"tickangle": 0,
     	"automargin": true
     },
     "yaxis": {
