@@ -44,7 +44,7 @@
 </template>
 <script>
 
-import mySymptomStats from '@/assets/hp_symptom_stats.json'
+import myDiseaseStats from '@/assets/hp_disease_stats.json'
 import myBarLayout3 from '@/assets/barLayout3.json'
 import { VuePlotly } from 'vue3-plotly'
 
@@ -64,7 +64,7 @@ export default {
         },
         initialState() {
             return {
-                symptomArray: mySymptomStats,
+                diseaseArray: myDiseaseStats,
                 barLayout3: myBarLayout3,
                 patientTotal: 0,
                 girlNo: 0,
@@ -92,10 +92,11 @@ export default {
             }
         },
         gatherStats() {
-            var stats = this.symptomArray.filter((item) => {return (item.gene == this.propData.gene && item.analysis_level == this.propData.branchLevel)})
-            this.girlNo = stats[0].girls;
-            this.patientTotal = stats[0].patients;
-            this.boyNo = this.patientTotal - this.girlNo;
+            console.log("gene, ", this.propData.gene)
+            var stats = this.diseaseArray.filter((item) => {return (item.gene == this.propData.gene)})
+            this.girlNo = stats[0].patients.girls;
+            this.patientTotal = stats[0].patients.total;
+            this.boyNo = stats[0].patients.boys;
             this.sexRatio = this.boyNo / this.girlNo
             this.sexRatio = Math.round((this.sexRatio * 100) * (1 + Number.EPSILON)) / 100
             this.barDataSexRatio[0].y = [this.girlNo, this.boyNo];

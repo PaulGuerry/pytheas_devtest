@@ -1,742 +1,1152 @@
 [
-        {
-            "articlenumber": "0",
-            "articledoi": "https://doi.org/10.1002/hep4.2051",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "1",
-            "articledoi": "https://doi.org/10.3389/fgene.2022.941027",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "2",
-            "articledoi": "https://doi.org/10.3390/cancers14143421",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "3",
-            "articledoi": "https://doi.org/10.3389/fmed.2022.897108",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "4",
-            "articledoi": "https://doi.org/10.1016/j.transproceed.2022.04.007",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "5",
-            "articledoi": "https://doi.org/10.1111/liv.15200",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "6",
-            "articledoi": "https://doi.org/10.3389/fmed.2022.891659",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "7",
-            "articledoi": "https://doi.org/10.4285/kjt.21.0007",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "8",
-            "articledoi": "https://doi.org/10.1159/000522145",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "9",
-            "articledoi": "https://doi.org/10.1016/j.jceh.2021.04.010",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "10",
-            "articledoi": "https://doi.org/10.12998/wjcc.v10.i6.1998",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "11",
-            "articledoi": "https://doi.org/10.1111/1751-2980.13078",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "12",
-            "articledoi": "https://doi.org/10.1016/j.jmoldx.2021.07.028",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "13",
-            "articledoi": "https://doi.org/10.1016/j.aohep.2021.100342",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "14",
-            "articledoi": "https://doi.org/10.1016/j.jpeds.2021.04.040",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "15",
-            "articledoi": "https://doi.org/10.12659/AJCR.932374",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "16",
-            "articledoi": "https://doi.org/10.4103/IJPM.IJPM_254_20",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "17",
-            "articledoi": "https://doi.org/10.21037/atm-20-3747",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "18",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MPG.0000000000002983",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "19",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.14744/TurkPediatriArs.2020.74507",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "20",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1186/s12881-020-01173-0",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "21",
-            "articledoi": "https://doi.org/10.5223/pghn.2020.23.6.558",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "22",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1186/s12887-020-02201-x",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "23",
-            "articledoi": "https://doi.org/10.3389/fped.2020.00414",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "24",
-            "articledoi": "https://doi.org/10.1186/s13000-020-00955-7",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "25",
-            "articledoi": "https://doi.org/10.21037/atm.2020.01.103",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "26",
-            "articledoi": "https://doi.org/10.5507/bp.2019.054",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "27",
-            "articledoi": "https://doi.org/10.4254/wjh.v12.i2.64",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "28",
-            "articledoi": "http://dx.doi.org/10.1136/bcr-2019-230152",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "29",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.5223/pghn.2019.22.5.479",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "30",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.4132/jptm.2019.05.03",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "31",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MD.0000000000015593",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "32",
-            "articledoi": "https://doi.org/10.1542/peds.2018-2146",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "33",
-            "articledoi": "https://doi.org/10.1097/MPG.0000000000002200",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "34",
-            "articledoi": "https://doi.org/10.1186/s12876-018-0835-6",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "35",
-            "articledoi": "https://doi.org/10.1002/hep4.2051",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "36",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.34763/devperiodmed.20182204.385389",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "37",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MD.0000000000009158",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "38",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/00005176-200305000-00012",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "39",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/00005176-200305000-00012",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "40",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1016/j.jhep.2005.09.013.",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "41",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MEG.0b013e3282ef4795",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "42",
-            "articledoi": "https://doi.org/10.1016/j.metabol.2008.08.005",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "43",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3748/wjg.15.4339",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "44",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.4103/sjg.SJG_178_17",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "45",
-            "articledoi": " https://doi.org/ 10.1055/s-0036-1597912",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "46",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.12890/2016_000537",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "47",
-            "articledoi": "https://doi.org/10.1155/2020/6292818",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "48",
-            "articledoi": "https://doi.org/10.1038/s41431-020-0613-0",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "49",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.7499/j.issn.1008-8830.2018.09.013",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "50",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.5604/16652681.1235494",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "51",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.7499/j.issn.1008-8830.2016.08.016",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "52",
-            "articledoi": "https://doi.org/10.1038/s10038-018-0431-1",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "53",
-            "articledoi": "https://doi.org/10.1046/j.1440-1746.1999.01921.x",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "54",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.5223/pghn.2015.18.3.202",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "55",
-            "articledoi": "https://doi.org/10.1097/MPG.0000000000000650",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "56",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3748/wjg.v21.i2.699",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "57",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1186/1750-1172-9-89",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "58",
-            "articledoi": "https://doi.org/10.1002/lt.22074",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "59",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.4103/0971-6866.120813",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "60",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MPG.0b013e31824ef36f",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "61",
-            "articledoi": "https://doi.org/10.21037/atm-20-37470.1016/s0168-8278(03)00286-1",
-            "disease": "PFIC1-3"
-        },
-        {
-            "articlenumber": "62",
-            "articledoi": "https://doi.org/10.1016/j.jceh.2021.06.006",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "63",
-            "articledoi": "https://doi.org/10.1111/liv.15200",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "64",
-            "articledoi": "https://doi.org/10.1186/s40792-022-01365-1",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "65",
-            "articledoi": "https://doi.org/10.3389/fped.2020.00414",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "66",
-            "articledoi": "https://doi.org/10.3389/fcell.2021.661599",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "67",
-            "articledoi": "https://doi.org/10.1016/j.hbpd.2020.10.004",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "68",
-            "articledoi": "http://dx.doi.org/10.1136/bcr-2019-234193",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "69",
-            "articledoi": "https://doi.org/10.1002/humu.23947",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "70",
-            "articledoi": "https://doi.org/10.1111/cge.13638",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "71",
-            "articledoi": "https://doi.org/10.1186/s12881-019-0753-7",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "72",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1016/j.jpeds.2018.09.028",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "73",
-            "articledoi": "https://doi.org/10.1007/s00535-017-1423-1",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "74",
-            "articledoi": "https://doi.org/10.1038/s41598-017-11626-x",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "75",
-            "articledoi": "https://doi.org/10.1111/cge.12959",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "76",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.4103/0366-6999.171440",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "77",
-            "articledoi": "https://doi.org/10.1080/21688370.2015.1026537",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "78",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1038/ng.2918",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "79",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1038/ng1147",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": "80",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3748/wjg.v26.i5.550",
-            "disease": "PFIC4"
-        },
-        {
-            "articlenumber": 81,
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MPG.0000000000002670",
-            "disease": "PFIC5"
-        },
-        {
-            "articlenumber": 82,
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1111/liv.15200",
-            "disease": "PFIC5"
-        },
-        {
-            "articlenumber": 83,
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.12998/wjcc.v9.i15.3631",
-            "disease": "PFIC5"
-        },
-        {
-            "articlenumber": 84,
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1038/ncomms10713",
-            "disease": "PFIC5"
-        },
-        {
-            "articlenumber": "85",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/PG9.0000000000000229",
-            "disease": "PFIC6"
-        },
-        {
-            "articlenumber": "86",
-            "articledoi": "https://doi.org/10.1097/MPG.0000000000002926",
-            "disease": "PFIC7"
-        },
-        {
-            "articlenumber": "87",
-            "articledoi": "https://doi.org/10.1038/s10038-020-0811-1",
-            "disease": "PFIC7"
-        },
-        {
-            "articlenumber": "88",
-            "articledoi": "https://doi.org/10.1097/MPG.0000000000003110",
-            "disease": "PFIC7"
-        },
-        {
-            "articlenumber": "89",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3390/genes12101618",
-            "disease": "PFIC7"
-        },
-        {
-            "articlenumber": "90",
-            "articledoi": "https://doi.org/10.1002/hep4.1320",
-            "disease": "PFIC8"
-        },
-        {
-            "articlenumber": "91",
-            "articledoi": "https://doi.org/10.1016/j.jpeds.2021.09.019",
-            "disease": "PFIC8"
-        },
-        {
-            "articlenumber": "92",
-            "articledoi": "https://doi.org/10.1016/j.jpeds.2021.09.019",
-            "disease": "PFIC8"
-        },
-        {
-            "articlenumber": "93",
-            "articledoi": "https://doi.org/10.1038/s41436-018-0288-x",
-            "disease": "PFIC8"
-        },
-        {
-            "articlenumber": "94",
-            "articledoi": "https://doi.org/10.1136/0000952medgenet-2019-106706",
-            "disease": "PFIC9"
-        },
-        {
-            "articlenumber": "95",
-            "articledoi": "https://doi/org/10.1186/s13023-021-01775-8",
-            "disease": "PFIC9"
-        },
-        {
-            "articlenumber": "96",
-            "articledoi": "https://doi.org/10.3390/jcm10030481",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "97",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1038/ng.225 / https://doi.org/10.3390/jcm10030481",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "98",
-            "articledoi": "https://doi.org/10.3390/jcm10030481",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "99",
-            "articledoi": "https://doi.org/10.3390/jcm10030481",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "100",
-            "articledoi": "https://doi.org/10.1002/hep.28779",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "101",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1002/hep.29020",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "102",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1002/hep.26974",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "103",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1101/mcs.a006103",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "104",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MPG.0000000000003399",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "105",
-            "articledoi": "https://doi.org/10.1080/15513815.2021.1959690",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "106",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3389/fgene.2022.872836",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "107",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MPG.0000000000002792",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "108",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.7759/cureus.19326",
-            "disease": "PFIC10"
-        },
-        {
-            "articlenumber": "109",
-            "articledoi": "https://doi.org/10.15252/emmm.202114563",
-            "disease": "PFIC11"
-        },
-        {
-            "articlenumber": "110",
-            "articledoi": "https://doi.org/10.21037/tp-21-574",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "111",
-            "articledoi": "https://doi.org/10.3389/fped.2015.00002",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "112",
-            "articledoi": "http://doi.org/10.1016/j.gene.2016.03.049",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "113",
-            "articledoi": "https://doi.org/10.1002/ajmg.a.38618",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "114",
-            "articledoi": "https://doi.org/10.18176/jiaci.0418",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "115",
-            "articledoi": "https://doi.org/10.4103/sjg.sjg_200_21",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "116",
-            "articledoi": "https://doi.org/10.3389/fimmu.2018.01036",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "117",
-            "articledoi": "http://dx.doi.org/10.1136/archdischild-2013-304016",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "118",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1097/MD.0000000000002918",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "119",
-            "articledoi": "https://doi.org/10.1186/s12881-017-0388-5",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "120",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.29271/jcpsp.2022.02.242",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "121",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1007/s00431-015-2563-z",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "122",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1002/ajmg.a.62354",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "123",
-            "articledoi": "https://doi.org/10.1080/08820139.2020.1776725",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "124",
-            "articledoi": "https://doi.org/10.1159/000339896",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "125",
-            "articledoi": "https://doi.org/10.1016/j.ejmg.2017.11.014",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "126",
-            "articledoi": "https://doi.org/10.1002/(sici)1096-8628(19970211)68:4<391::aid-ajmg3>3.0.co;2-p",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "127",
-            "articledoi": "https://doi.org/10.4103/sjg.sjg_200_21",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "128",
-            "articledoi": "https://doi.org/10.1097/MPG.0000000000000630",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "129",
-            "articledoi": "http://dx.doi.org/10.1016/j.gene.2016.03.049",
-            "disease": "THES1"
-        },
-        {
-            "articlenumber": "130",
-            "articledoi": "http://doi.org/10.1016/j.gene.2019.02.059",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "131",
-            "articledoi": "https://doi.org/10.3389/fimmu.2018.01036",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "132",
-            "articledoi": "https://doi.org/10.3389/fgene.2022.879899",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "133",
-            "articledoi": "https://doi.org/10.7759/cureus.19404",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "134",
-            "articledoi": "https://doi.org/10.3389/fgene.2021.756451",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "135",
-            "articledoi": "https://doi.org/10.4103/sjg.sjg_200_21",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "136",
-            "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.009",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "137",
-            "articledoi": "https://doi.org/10.1097/MPG.0000000000000627",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "138",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1007/s10620-018-4983-x",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "139",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1016/j.gene.2019.02.059",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "140",
-            "articledoi": "https://doi.org/10.1016/j.jaci.2021.04.005",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "141",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1177/2050313X18807795",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "142",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3390/pediatric12030021",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "143",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.1186/1750-1172-8-74",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "144",
-            "articledoi": "https://doi.org/10.1007/s10875-017-0460-0",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "145",
-            "articledoi": "http://dx.doi.org/10.1097/MD.0000000000008601",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "146",
-            "articledoi": "https://doi.org/10.21037/atm-20-374710.3389/fimmu.2018.01036",
-            "disease": "THES2"
-        },
-        {
-            "articlenumber": "147",
-            "articledoi": "http://dx.doi.org/10.1016/j.gene.2016.03.049",
-            "disease": "THES2"
-        }
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1002/hep.21160",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1002/hep.23539",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1016/j.jmoldx.2021.07.028",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.5223/pghn.2020.23.6.558",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1002/hep4.2051",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.3389/fgene.2022.941027",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.3389/fmed.2022.897108",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.1111/liv.15200",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "https://doi.org/10.3389/fmed.2022.891659",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1159/000522145",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1111/1751-2980.13078",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1016/j.jpeds.2021.04.040",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "https://doi.org/10.12659/AJCR.932374",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.12659/AJCR.932375",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "10.1097/MPG.0000000000002983",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/33899189/",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "https://doi.org/10.4254/wjh.v12.i2.64",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "10.5223/pghn.2019.22.5.479",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 19,
+        "articledoi": "10.4132/jptm.2019.05.03",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 20,
+        "articledoi": "https://doi.org/10.1186/s12876-018-0835-6",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 21,
+        "articledoi": "10.4103/sjg.SJG_178_17",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 22,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/28064265/",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 23,
+        "articledoi": "10.7499/j.issn.1008-8830.2016.08.016",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 24,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000650",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 25,
+        "articledoi": "10.1186/1750-1172-9-89",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 26,
+        "articledoi": "0.1016/s0168-8278(03)00286-1",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.3390/cancers14143421",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1016/j.transproceed.2022.04.007",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.4285/kjt.21.0007",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "10.4103/IJPM.IJPM_254_20",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "10.14744/TurkPediatriArs.2020.74507",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "10.1186/s12887-020-02201-x",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.3389/fped.2020.00414",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.21037/atm.2020.01.103",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "http://dx.doi.org/10.1136/bcr-2019-230152",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1542/peds.2018-2146",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000002200",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "10.1097/00005176-200305000-00012",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "10.1016/j.jhep.2005.09.013.",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "10.1097/MEG.0b013e3282ef4795",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "https://doi.org/10.1016/j.metabol.2008.08.005",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "10.3748/wjg.15.4339",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "I https://doi.org/ 10.1055/s-0036-1597912",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "https://doi.org/10.1038/s41431-020-0613-0",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 19,
+        "articledoi": "10.7499/j.issn.1008-8830.2018.09.013",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 20,
+        "articledoi": "10.5604/16652681.1235494",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 21,
+        "articledoi": "https://doi.org/10.1038/s10038-018-0431-1",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 22,
+        "articledoi": "https://doi.org/10.1002/lt.22074",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 23,
+        "articledoi": "10.4103/0971-6866.120813",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 24,
+        "articledoi": "10.1097/MPG.0b013e31822f2bda",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1016/j.jceh.2021.06.009",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1016/j.jceh.2021.04.010",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.12998/wjcc.v10.i6.1998\n",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "10.1016/j.aohep.2021.100342",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "10.21037/atm-20-3747",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "10.1186/s12881-020-01173-0",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1186/s13000-020-00955-7",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.5507/bp.2019.054",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "10.1097/MD.0000000000015593",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "10.34763/devperiodmed.20182204.385389",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "10.1097/MD.0000000000009158",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "10.12890/2016_000537",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "https://doi.org/10.1155/2020/6292818",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.1046/j.1440-1746.1999.01921.x",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "10.5223/pghn.2015.18.3.202",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "10.3748/wjg.v21.i2.699",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "10.1097/MPG.0b013e31824ef36f",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1016/j.jceh.2021.06.006",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1186/s40792-022-01365-1",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.3389/fcell.2021.661599",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.1016/j.hbpd.2020.10.004",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "http://dx.doi.org/10.1136/bcr-2019-234193",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.1002/humu.23947",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1111/cge.13638",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.1186/s12881-019-0753-7",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "10.1016/j.jpeds.2018.09.028",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1007/s00535-017-1423-1",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1038/s41598-017-11626-x",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1111/cge.12959",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "10.4103/0366-6999.171440",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.1080/21688370.2015.1026537",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "10.1038/ng.2918",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "10.1038/ng1147",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "10.3748/wjg.v26.i5.550",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "10.1097/MPG.0000000000002670",
+        "disease": "PFIC5"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "10.1111/liv.15200",
+        "disease": "PFIC5"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "10.12998/wjcc.v9.i15.3631",
+        "disease": "PFIC5"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "10.1038/ncomms10713",
+        "disease": "PFIC5"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "10.1097/PG9.0000000000000229",
+        "disease": "PFIC6"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000002926",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1038/s10038-020-0811-1",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000003110",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "10.3390/genes12101618",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": " https://doi.org/10.1002/hep4.1320",
+        "disease": "PFIC8"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1016/j.jpeds.2021.09.019",
+        "disease": "PFIC8"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1038/s41436-018-0288-x",
+        "disease": "PFIC8"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1136/0000952medgenet-2019-106706",
+        "disease": "PFIC9"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "10.1186/s13023-021-01775-8",
+        "disease": "PFIC9"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.3390/jcm10030481",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "10.1038/ng.225 / https://doi.org/10.3390/jcm10030481",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1002/hep.28779",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "10.1002/hep.29020",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "10.1002/hep.26974",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "10.1101/mcs.a006103",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "10.1097/MPG.0000000000003399",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.1080/15513815.2021.1959690",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "10.3389/fgene.2022.872836",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "10.1097/MPG.0000000000002792",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "10.7759/cureus.19326",
+        "disease": "PFIC10"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.15252/emmm.202114563",
+        "disease": "PFIC11"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.3389/fgene.2022.833495",
+        "disease": "CDG2P"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "10.1186/s13023-017-0757-3",
+        "disease": "CDG2P"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "10.1016/j.ajhg.2015.12.011",
+        "disease": "CDG2P"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "0.1016/j.ejmg.2023.104709",
+        "disease": "CDG2P"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.21037/tp-21-574",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.3389/fped.2015.00002",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "http://doi.org/10.1016/j.gene.2016.03.049",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.1002/ajmg.a.38618",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.18176/jiaci.0418",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.4103/sjg.sjg_200_21",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.3389/fimmu.2018.01036",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "http://dx.doi.org/10.1136/archdischild-2013-304016",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "10.1097/MD.0000000000002918",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1186/s12881-017-0388-5",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "10.29271/jcpsp.2022.02.242",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "10.1007/s00431-015-2563-z",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "10.1002/ajmg.a.62354",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.1080/08820139.2020.1776725",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "https://doi.org/10.1159/000339896",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "https://doi.org/ 10.1016/j.ejmg.2017.11.014\n\n",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "https://doi.org/10.1002/(sici)1096-8628(19970211)68:4<391::aid-ajmg3>3.0.co;2-p",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000630",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 19,
+        "articledoi": "http://dx.doi.org/10.1016/j.gene.2016.03.049",
+        "disease": "THES1"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "http://doi.org/10.1016/j.gene.2019.02.059",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.3389/fgene.2022.879899",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.7759/cureus.19404",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.3389/fgene.2021.756451",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.009",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.010",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.011",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.012",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.013",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1016/j.ajhg.2012.02.014",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000627",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000628",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000629",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000631",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000000632",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "10.1007/s10620-018-4983-x",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "10.1016/j.gene.2019.02.059",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "10.1016/j.jaci.2021.04.005.",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 19,
+        "articledoi": "10.1177/2050313X18807795",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 20,
+        "articledoi": "10.3390/pediatric12030021",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 21,
+        "articledoi": "10.1186/1750-1172-8-74",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 22,
+        "articledoi": "https://doi.org/10.1007/s10875-017-0460-0",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 23,
+        "articledoi": "http://dx.doi.org/10.1097/MD.0000000000008601",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 24,
+        "articledoi": "10.3389/fimmu.2018.01036",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 25,
+        "articledoi": "https://doi.org/10.1111/ijd.13820",
+        "disease": "THES2"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1136/adc.57.3.212",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1016/S0022-3476(94)70118-0",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1002/(SICI)1096-8628(19970211)68:4%3C391::AID-AJMG3%3E3.0.CO;2-P",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.1097/00005176-200003000-00030",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1046/j.1525-1470.2003.20514.x",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.1016/j.jpeds.2004.01.026",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1002/ajmg.a.31583",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.1002/ajmg.a.31634",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "https://doi.org/10.1186%2F1750-1172-3-6",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1007/s00431-008-0861-4",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1155/2016/9684910",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "http://dx.doi.org/10.18203/2349-3291.ijcp20163698",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1038/s41588-022-01120-0",
+        "disease": "FOCADS"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1007/BF01959793",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1111/j.1460-9592.2004.01301.x",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1007/s00439-006-0232-z",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.1016/j.jpeds.2005.10.005",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1002/uog.2822",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.1002/ajmg.a.32051",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1001/archderm.144.3.334",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.1097/mpg.0b013e31817fcb3f",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "https://doi.org/10.1002/humu.22155",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.1016/j.ajg.2013.01.001",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1093/ckj/sfs182",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.3748/wjg.v20.i16.4830",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "https://doi.org/10.1111/cge.12442",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "http://dx.doi.org/10.3748/wjg.v20.i1.326",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "https://www.ijcasereportsandimages.com/archive/2016/004-2016-ijcri/CR-10623-04-2016-conkar/ijcri-1062304201623-conkar.pdf",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "http://dx.doi.org/10.1016/j.arcped.2016.11.004",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "https://doi.org/10.24953/turkjped.2017.04.019",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "https://doi.org/10.1111/pde.13156",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 19,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/29046204/",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 20,
+        "articledoi": "https://doi.org/10.4274/jpr.38257",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 21,
+        "articledoi": "https://doi.org/10.1002/pbc.25814",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 22,
+        "articledoi": "https://doi.org/10.1002/humu.23770",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 23,
+        "articledoi": "https://doi.org/10.1186/s12882-018-0926-1",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 24,
+        "articledoi": "http://dx.doi.org/10.1097/MPG.0000000000002306",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 25,
+        "articledoi": "https://doi.org/10.1002/jmd2.12027",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 26,
+        "articledoi": "https://doi.org/10.5223/pghn.2019.22.6.581",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 27,
+        "articledoi": "https://doi.org/10.1155/2020/8872294",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 28,
+        "articledoi": "https://sarpublication.com/media/articles/SARJPM_11_34-37.pdf",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 29,
+        "articledoi": "https://doi.org/10.3389/fgene.2022.796759",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 30,
+        "articledoi": "https://doi.org/10.1186/s13256-022-03279-w",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 31,
+        "articledoi": "https://doi.org/10.12998/wjcc.v10.i30.11016",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 32,
+        "articledoi": "https://doi.org/10.4103/ajpn.ajpn_36_21",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 33,
+        "articledoi": "https://doi.org/10.4103/jmms.jmms_20_22",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 34,
+        "articledoi": "https://doi.org/10.1007/s12098-020-03248-5",
+        "disease": "ARCS1"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1038/jp.2013.62",
+        "disease": "ARCS2"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1136/bcr-2023-254822",
+        "disease": "ARCS2"
+    },
+    {
+        "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1136/jmg.31.1.62",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1016/S0022-3476(79)80839-2",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/6543856/",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.1002/ajmg.1320370214",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1016/s0022-3476(05)83339-6",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.1007/bf00862505",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1111/j.1399-0004.1996.tb03785.x",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/9332665/",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "https://doi.org/10.1055/s-2000-9656",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/11533803",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1136/adc.85.5.415",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1136/adc.87.2.170-c",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/16155421/",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.1111/j.1525-1470.2005.00135.x",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 15,
+        "articledoi": "https://doi.org/10.1111/j.1442-200X.2006.02230.x",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 16,
+        "articledoi": "https://www.neo-med.org/upload/pdf/NM.14.1.103-108.PDF",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 17,
+        "articledoi": "https://doi.org/10.1002/humu.20900",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/15884633/",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 19,
+        "articledoi": "https://doi.org/10.1097/mph.0b013e3181c3a8d0",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 20,
+        "articledoi": "https://doi.org/10.1136/bcr-2017-223715",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 21,
+        "articledoi": "https://doi.org/10.6002/ect.2012.0202",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 22,
+        "articledoi": "https://doi.org/10.5812/numonthly.90091.",
+        "disease": "ARCS"
+    },
+    {
+        "articlenumber": 23,
+        "articledoi": "https://cdn.publisher.gn1.link/residenciapediatrica.com.br/pdf/en_v12n3aop352.pdf",
+        "disease": "ARCS"
+    }
 ]

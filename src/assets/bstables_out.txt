@@ -1,0 +1,270 @@
+Disease,  PFIC1 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC1 ; level,  2 ; unique symptoms,  12
+Disease,  PFIC1 ; level,  3 ; unique symptoms,  18
+Disease,  PFIC1 ; level,  4 ; unique symptoms,  18
+Disease,  PFIC1 ; level,  5 ; unique symptoms,  9
+Disease,  PFIC1 ; level,  6 ; unique symptoms,  1
+Disease,  PFIC1 ; level,  7 ; unique symptoms,  0
+Disease,  PFIC1 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC1 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC1 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC1 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC1 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC1 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC2 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC2 ; level,  2 ; unique symptoms,  14
+Disease,  PFIC2 ; level,  3 ; unique symptoms,  20
+Disease,  PFIC2 ; level,  4 ; unique symptoms,  16
+Disease,  PFIC2 ; level,  5 ; unique symptoms,  9
+Disease,  PFIC2 ; level,  6 ; unique symptoms,  1
+Disease,  PFIC2 ; level,  7 ; unique symptoms,  1
+Disease,  PFIC2 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC2 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC2 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC2 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC2 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC2 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC3 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC3 ; level,  2 ; unique symptoms,  10
+Disease,  PFIC3 ; level,  3 ; unique symptoms,  18
+Disease,  PFIC3 ; level,  4 ; unique symptoms,  17
+Disease,  PFIC3 ; level,  5 ; unique symptoms,  9
+Disease,  PFIC3 ; level,  6 ; unique symptoms,  2
+Disease,  PFIC3 ; level,  7 ; unique symptoms,  1
+Disease,  PFIC3 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC3 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC3 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC3 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC3 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC3 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC4 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC4 ; level,  2 ; unique symptoms,  13
+Disease,  PFIC4 ; level,  3 ; unique symptoms,  20
+Disease,  PFIC4 ; level,  4 ; unique symptoms,  18
+Disease,  PFIC4 ; level,  5 ; unique symptoms,  12
+Disease,  PFIC4 ; level,  6 ; unique symptoms,  3
+Disease,  PFIC4 ; level,  7 ; unique symptoms,  0
+Disease,  PFIC4 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC4 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC4 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC4 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC4 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC4 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC5 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC5 ; level,  2 ; unique symptoms,  12
+Disease,  PFIC5 ; level,  3 ; unique symptoms,  24
+Disease,  PFIC5 ; level,  4 ; unique symptoms,  26
+Disease,  PFIC5 ; level,  5 ; unique symptoms,  19
+Disease,  PFIC5 ; level,  6 ; unique symptoms,  6
+Disease,  PFIC5 ; level,  7 ; unique symptoms,  2
+Disease,  PFIC5 ; level,  8 ; unique symptoms,  1
+Disease,  PFIC5 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC5 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC5 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC5 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC5 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC6 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC6 ; level,  2 ; unique symptoms,  8
+Disease,  PFIC6 ; level,  3 ; unique symptoms,  12
+Disease,  PFIC6 ; level,  4 ; unique symptoms,  8
+Disease,  PFIC6 ; level,  5 ; unique symptoms,  5
+Disease,  PFIC6 ; level,  6 ; unique symptoms,  4
+Disease,  PFIC6 ; level,  7 ; unique symptoms,  3
+Disease,  PFIC6 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC6 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC6 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC6 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC6 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC6 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC7 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC7 ; level,  2 ; unique symptoms,  10
+Disease,  PFIC7 ; level,  3 ; unique symptoms,  17
+Disease,  PFIC7 ; level,  4 ; unique symptoms,  14
+Disease,  PFIC7 ; level,  5 ; unique symptoms,  8
+Disease,  PFIC7 ; level,  6 ; unique symptoms,  3
+Disease,  PFIC7 ; level,  7 ; unique symptoms,  0
+Disease,  PFIC7 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC7 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC7 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC7 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC7 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC7 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC8 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC8 ; level,  2 ; unique symptoms,  7
+Disease,  PFIC8 ; level,  3 ; unique symptoms,  15
+Disease,  PFIC8 ; level,  4 ; unique symptoms,  10
+Disease,  PFIC8 ; level,  5 ; unique symptoms,  6
+Disease,  PFIC8 ; level,  6 ; unique symptoms,  2
+Disease,  PFIC8 ; level,  7 ; unique symptoms,  0
+Disease,  PFIC8 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC8 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC8 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC8 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC8 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC8 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC9 ; level,  2 ; unique symptoms,  6
+Disease,  PFIC9 ; level,  3 ; unique symptoms,  12
+Disease,  PFIC9 ; level,  4 ; unique symptoms,  10
+Disease,  PFIC9 ; level,  5 ; unique symptoms,  4
+Disease,  PFIC9 ; level,  6 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  7 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC9 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC9 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC10 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC10 ; level,  2 ; unique symptoms,  15
+Disease,  PFIC10 ; level,  3 ; unique symptoms,  24
+Disease,  PFIC10 ; level,  4 ; unique symptoms,  29
+Disease,  PFIC10 ; level,  5 ; unique symptoms,  21
+Disease,  PFIC10 ; level,  6 ; unique symptoms,  17
+Disease,  PFIC10 ; level,  7 ; unique symptoms,  11
+Disease,  PFIC10 ; level,  8 ; unique symptoms,  1
+Disease,  PFIC10 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC10 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC10 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC10 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC10 ; level,  13 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC11 ; level,  2 ; unique symptoms,  2
+Disease,  PFIC11 ; level,  3 ; unique symptoms,  2
+Disease,  PFIC11 ; level,  4 ; unique symptoms,  2
+Disease,  PFIC11 ; level,  5 ; unique symptoms,  2
+Disease,  PFIC11 ; level,  6 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  7 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  8 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC11 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC11 ; level,  13 ; unique symptoms,  0
+Disease,  CDG2P ; level,  1 ; unique symptoms,  1
+Disease,  CDG2P ; level,  2 ; unique symptoms,  9
+Disease,  CDG2P ; level,  3 ; unique symptoms,  14
+Disease,  CDG2P ; level,  4 ; unique symptoms,  16
+Disease,  CDG2P ; level,  5 ; unique symptoms,  8
+Disease,  CDG2P ; level,  6 ; unique symptoms,  4
+Disease,  CDG2P ; level,  7 ; unique symptoms,  1
+Disease,  CDG2P ; level,  8 ; unique symptoms,  0
+Disease,  CDG2P ; level,  9 ; unique symptoms,  0
+Disease,  CDG2P ; level,  10 ; unique symptoms,  0
+Disease,  CDG2P ; level,  11 ; unique symptoms,  0
+Disease,  CDG2P ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  CDG2P ; level,  13 ; unique symptoms,  0
+Disease,  THES1 ; level,  1 ; unique symptoms,  1
+Disease,  THES1 ; level,  2 ; unique symptoms,  17
+Disease,  THES1 ; level,  3 ; unique symptoms,  36
+Disease,  THES1 ; level,  4 ; unique symptoms,  50
+Disease,  THES1 ; level,  5 ; unique symptoms,  55
+Disease,  THES1 ; level,  6 ; unique symptoms,  42
+Disease,  THES1 ; level,  7 ; unique symptoms,  33
+Disease,  THES1 ; level,  8 ; unique symptoms,  25
+Disease,  THES1 ; level,  9 ; unique symptoms,  16
+Disease,  THES1 ; level,  10 ; unique symptoms,  9
+Disease,  THES1 ; level,  11 ; unique symptoms,  4
+Disease,  THES1 ; level,  12 ; unique symptoms,  3
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  THES1 ; level,  13 ; unique symptoms,  2
+Disease,  THES2 ; level,  1 ; unique symptoms,  1
+Disease,  THES2 ; level,  2 ; unique symptoms,  16
+Disease,  THES2 ; level,  3 ; unique symptoms,  32
+Disease,  THES2 ; level,  4 ; unique symptoms,  39
+Disease,  THES2 ; level,  5 ; unique symptoms,  26
+Disease,  THES2 ; level,  6 ; unique symptoms,  17
+Disease,  THES2 ; level,  7 ; unique symptoms,  11
+Disease,  THES2 ; level,  8 ; unique symptoms,  4
+Disease,  THES2 ; level,  9 ; unique symptoms,  0
+Disease,  THES2 ; level,  10 ; unique symptoms,  0
+Disease,  THES2 ; level,  11 ; unique symptoms,  0
+Disease,  THES2 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  THES2 ; level,  13 ; unique symptoms,  0
+Disease,  THES ; level,  1 ; unique symptoms,  1
+Disease,  THES ; level,  2 ; unique symptoms,  19
+Disease,  THES ; level,  3 ; unique symptoms,  53
+Disease,  THES ; level,  4 ; unique symptoms,  84
+Disease,  THES ; level,  5 ; unique symptoms,  89
+Disease,  THES ; level,  6 ; unique symptoms,  68
+Disease,  THES ; level,  7 ; unique symptoms,  54
+Disease,  THES ; level,  8 ; unique symptoms,  38
+Disease,  THES ; level,  9 ; unique symptoms,  20
+Disease,  THES ; level,  10 ; unique symptoms,  9
+Disease,  THES ; level,  11 ; unique symptoms,  4
+Disease,  THES ; level,  12 ; unique symptoms,  3
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  THES ; level,  13 ; unique symptoms,  2
+Disease,  CLUST ; level,  1 ; unique symptoms,  1
+Disease,  CLUST ; level,  2 ; unique symptoms,  19
+Disease,  CLUST ; level,  3 ; unique symptoms,  54
+Disease,  CLUST ; level,  4 ; unique symptoms,  84
+Disease,  CLUST ; level,  5 ; unique symptoms,  89
+Disease,  CLUST ; level,  6 ; unique symptoms,  68
+Disease,  CLUST ; level,  7 ; unique symptoms,  55
+Disease,  CLUST ; level,  8 ; unique symptoms,  38
+Disease,  CLUST ; level,  9 ; unique symptoms,  20
+Disease,  CLUST ; level,  10 ; unique symptoms,  9
+Disease,  CLUST ; level,  11 ; unique symptoms,  4
+Disease,  CLUST ; level,  12 ; unique symptoms,  3
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  CLUST ; level,  13 ; unique symptoms,  2
+Disease,  PFIC1-11 ; level,  1 ; unique symptoms,  1
+Disease,  PFIC1-11 ; level,  2 ; unique symptoms,  17
+Disease,  PFIC1-11 ; level,  3 ; unique symptoms,  36
+Disease,  PFIC1-11 ; level,  4 ; unique symptoms,  52
+Disease,  PFIC1-11 ; level,  5 ; unique symptoms,  42
+Disease,  PFIC1-11 ; level,  6 ; unique symptoms,  28
+Disease,  PFIC1-11 ; level,  7 ; unique symptoms,  14
+Disease,  PFIC1-11 ; level,  8 ; unique symptoms,  2
+Disease,  PFIC1-11 ; level,  9 ; unique symptoms,  0
+Disease,  PFIC1-11 ; level,  10 ; unique symptoms,  0
+Disease,  PFIC1-11 ; level,  11 ; unique symptoms,  0
+Disease,  PFIC1-11 ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  PFIC1-11 ; level,  13 ; unique symptoms,  0
+Disease,  FOCADS ; level,  1 ; unique symptoms,  2
+Disease,  FOCADS ; level,  2 ; unique symptoms,  16
+Disease,  FOCADS ; level,  3 ; unique symptoms,  38
+Disease,  FOCADS ; level,  4 ; unique symptoms,  56
+Disease,  FOCADS ; level,  5 ; unique symptoms,  44
+Disease,  FOCADS ; level,  6 ; unique symptoms,  26
+Disease,  FOCADS ; level,  7 ; unique symptoms,  14
+Disease,  FOCADS ; level,  8 ; unique symptoms,  5
+Disease,  FOCADS ; level,  9 ; unique symptoms,  1
+Disease,  FOCADS ; level,  10 ; unique symptoms,  0
+Disease,  FOCADS ; level,  11 ; unique symptoms,  0
+Disease,  FOCADS ; level,  12 ; unique symptoms,  0
+No disease information for patient THES123_152
+No disease information for patient THES123_158
+Disease,  FOCADS ; level,  13 ; unique symptoms,  0

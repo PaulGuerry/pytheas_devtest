@@ -1,13 +1,13 @@
 <template lang="html">    
     <div class="w-full grid grid-cols-1 place-items-center mx-auto">
         <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
-        <p  class="text-xl  text-gray-400 my-10"> PFIC5 </p>
+        <p  class="text-xl  text-gray-400 my-10"> PFIC5 (NR1H4 deficiency) </p>
         <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
-            <button @click="isBarSymptoms = !isBarSymptoms"
+            <button @click="isBubbleSymptoms = !isBubbleSymptoms"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Symptoms 
             </button> 
-            <template v-if="isBarSymptoms">
-                <PlotSymptomBarDoughnut :propData="propData"  :key="propData.branchLevel" @update-br-lvl="(n) => n >= 2 && n <= 6 ? propData.branchLevel = n : propData.branchLevel = 3" />
+            <template v-if="isBubbleSymptoms">
+                <PlotSymptomBubble :propData="propData"  :key="propData.branchLevel" @update-br-lvl="(n) => n >= 2 && n <= 6 ? propData.branchLevel = n : propData.branchLevel = 3" />
             </template>
             <button @click="isSexRatio = !isSexRatio"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Sex ratio 
@@ -33,27 +33,34 @@
             <template v-if="isConsanguinity">
                 <PlotConsanguinityBar :propData="propData"  :key="propData.branchLevel" />
             </template>
+            <button @click="isOrthologs = !isOrthologs"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Orthologs
+            </button> 
+            <template v-if="isOrthologs">
+                <ShowOrthologTable :propData="propData"  :key="propData.branchLevel" />
+            </template>
         </div>
     </div>
 </template>
 <script>
 
-import PlotSymptomBarDoughnut from '@/components/partials/PlotSymptomBarDoughnut.vue';
+import PlotSymptomBubble from '@/components/partials/PlotSymptomBubble.vue';
 import PlotSexRatioBar from '@/components/partials/PlotSexRatioBar.vue';
 import PlotFirstSymptomBox from '@/components/partials/PlotFirstSymptomBox.vue';
 import PlotSurvivalScatter from '@/components/partials/PlotSurvivalScatter.vue';
 import PlotConsanguinityBar from '@/components/partials/PlotConsanguinityBar.vue';
+import ShowOrthologTable from '@/components/partials/ShowOrthologTable.vue';
 
 export default {
     name: 'PFIC5',
     components: {
-    PlotSymptomBarDoughnut, PlotSexRatioBar, PlotFirstSymptomBox, PlotSurvivalScatter,
-    PlotConsanguinityBar
+    PlotSymptomBubble, PlotSexRatioBar, PlotFirstSymptomBox, PlotSurvivalScatter,
+    PlotConsanguinityBar, ShowOrthologTable
 },
     data: () => ({
         propData: {gene: "NR1H4", disease: "PFIC5", branchLevel: 3},
-        isBarSymptoms: false, isSexRatio: false, isFirstSymptoms: false,
-        isSurvival: false, isConsanguinity: false
+        isBubbleSymptoms: false, isSexRatio: false, isFirstSymptoms: false,
+        isSurvival: false, isConsanguinity: false, isOrthologs: false
     }),
 }    
 </script>

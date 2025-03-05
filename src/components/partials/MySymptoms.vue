@@ -282,7 +282,7 @@ export default {
     branchLevel: {
         type: String,
         required: true,
-        default: "12"
+        default: "999"
         }
     },
 }
