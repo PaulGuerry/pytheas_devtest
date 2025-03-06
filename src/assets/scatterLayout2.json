@@ -1,0 +1,50 @@
+{
+    "margin": {"t":10, "l":10, "b": 10, "r": 10},
+    "xaxis": {
+        "showline": false,
+        "showgrid": false,
+        "zeroline": false,
+	"showticklabels": false,
+	"range": [-0.08, 1.18],
+	"title": "Symptom category"
+    },
+    "yaxis": {
+	"showline": false,
+        "showgrid": false,
+        "zeroline": false,
+        "showticklabels": false,
+	"range": [-0.05, 1.25],
+	"title": "Reportedness"
+    },
+    "legend": {
+        "x": 1,
+        "xanchor": "right",
+        "y": 0.2,
+        "yanchor": "bottom"
+    },
+    "annotations":[
+	{
+	"x": -0.03,
+      	"y": 0.8,
+	"ax": 0,
+	"ay": 140,
+      	"xref": "x",
+      	"yref": "y",
+      	"showarrow": true,
+      	"arrowhead": 3
+	},
+	{
+	"x": 0.38,
+      	"y": -0.02,
+	"ax": 250,
+	"ay": 0,
+      	"xref": "x",
+      	"yref": "y",
+      	"showarrow": true,
+	"arrowside": "start",
+      	"arrowhead": 3
+	}
+    ],
+    "paper_bgcolor": "#FFFFFF22",
+    "plot_bgcolor": "#FFFFFF22"
+}

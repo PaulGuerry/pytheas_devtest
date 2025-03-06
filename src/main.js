@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-<<<<<<< HEAD
 import router from './router'
 import store from './store'
 import './style.css'
@@ -28,7 +27,3 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 library.add(faUserSecret, faUser, faCartShopping, faSearch)
 
 createApp(App).use(store).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
-=======
-
-createApp(App).mount('#app')
->>>>>>> e5809672622a4ac99f3f3368870f01e26ccbcb86
