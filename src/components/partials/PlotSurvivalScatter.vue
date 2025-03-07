@@ -39,6 +39,9 @@
             <div class="chart-container w-full"><VuePlotly :data="scatterSurvival" :layout="survLayout" :config="plotConfig"></VuePlotly></div>
             <div class="w-1/6"></div>
         </div>
+        <div class="mt-0 mb-0 flex flex-row w-full">
+            <p class="text-sm text-center w-full">Years of age </p>
+        </div>
     </div>
         
 </template>

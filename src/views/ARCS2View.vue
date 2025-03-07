@@ -19,7 +19,7 @@
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Age at first symptoms 
             </button> 
             <template v-if="isFirstSymptoms">
-                <PlotFirstSymptomBox :propData="propData"  :key="propData.branchLevel" />
+                <PlotFirstSymptomSurv :propData="propData"  :key="propData.branchLevel" />
             </template>
             <button @click="isSurvival = !isSurvival"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Survival
@@ -46,7 +46,7 @@
 
 import PlotSymptomBubble from '@/components/partials/PlotSymptomBubble.vue';
 import PlotSexRatioBar from '@/components/partials/PlotSexRatioBar.vue';
-import PlotFirstSymptomBox from '@/components/partials/PlotFirstSymptomBox.vue';
+import PlotFirstSymptomSurv from '@/components/partials/PlotFirstSymptomSurv.vue';
 import PlotSurvivalScatter from '@/components/partials/PlotSurvivalScatter.vue';
 import PlotConsanguinityBar from '@/components/partials/PlotConsanguinityBar.vue';
 import ShowOrthologTable from '@/components/partials/ShowOrthologTable.vue';
@@ -54,7 +54,7 @@ import ShowOrthologTable from '@/components/partials/ShowOrthologTable.vue';
 export default {
     name: 'ARCS2',
     components: {
-    PlotSymptomBubble, PlotSexRatioBar, PlotFirstSymptomBox, PlotSurvivalScatter,
+    PlotSymptomBubble, PlotSexRatioBar, PlotFirstSymptomSurv, PlotSurvivalScatter,
     PlotConsanguinityBar, ShowOrthologTable
 },
     data: () => ({

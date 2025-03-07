@@ -1207,9 +1207,9 @@ articles = []
 
 for disease in diseases:
    print("Building disease table for disease {0:s}".format(disease['name']))
-   ages_first = dict(all = dict(array = [], median = 0, iqr = 0),
-               boys = dict(array = [], median = 0, iqr = 0),
-               girls = dict(array = [], median = 0, iqr = 0))
+   ages_first = dict(all = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               boys = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               girls = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []))
 
    ages_last = dict(all = dict(array = [], status = [], median = 0, iqr = 0),
                boys = dict(array = [], status = [], median = 0, iqr = 0),
@@ -1528,6 +1528,47 @@ for disease in diseases:
       ages_surv["boys"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
 
 
+   # 250307: perform survival analysis for age at first symptoms
+   # all
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["all"]["array"]], 
+                          'S': [float(1) for i in ages_first["all"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["all"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["all"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+  # boys
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["boys"]["array"]], 
+                          'S': [float(1) for i in ages_first["boys"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["boys"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["boys"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+  # girls
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["girls"]["array"]], 
+                          'S': [float(1) for i in ages_first["girls"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["girls"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["girls"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+ 
 
  
    #for dict_key, dict_val in ages_first.items():
