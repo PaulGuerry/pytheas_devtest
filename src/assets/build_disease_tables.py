@@ -221,7 +221,17 @@ diseases = [
                code = "P12866",
                link = "https://www.uniprot.org/uniprotkb/P12866/entry"
             )
+         ),
+         dict(
+            species = "Dictyostelium discoideum",
+            gene = "abcB4",
+            link = "http://dictybase.org/gene/DDB_G0279915",
+            uniprot = dict(
+               code = "Q54W24",
+               link = "https://www.uniprot.org/uniprotkb/Q54W24/entry"
+            )
          )
+
       ]
    ),
    dict(
@@ -491,7 +501,17 @@ diseases = [
                code = "Multiple",
                link = ""
             )
+         ),
+         dict(
+            species = "Dictyostelium discoideum",
+            gene = "kif12",
+            link = "http://dictybase.org/gene/DDB_G0268258",
+            uniprot = dict(
+               code = "Q6S000",
+               link = "https://www.uniprot.org/uniprotkb/Q6S000/entry"
+            )
          )
+
       ]
    ),
    dict(
@@ -614,6 +634,15 @@ diseases = [
             uniprot = dict(
                code = "P32492",
                link = "https://www.uniprot.org/uniprotkb/P32492/entry"
+            )
+         ),
+         dict(
+            species = "Dictyostelium discoideum",
+            gene = "myoJ",
+            link = "http://dictybase.org/gene/DDB_G0272112",
+            uniprot = dict(
+               code = "P54697",
+               link = "https://www.uniprot.org/uniprotkb/P54697/entry"
             )
          )
       ]
