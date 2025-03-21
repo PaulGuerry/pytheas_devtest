@@ -29,7 +29,7 @@ with open("hp_symptom_matrix.txt", "w") as outfile:
 
 
 #analysis_levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]   
-analysis_levels = [1, 2, 3, 4, 5, 6, 7]   
+analysis_levels = [1, 2, 3]   
 #analysis_levels = [1, 2]   
 symptom_table = []
 
