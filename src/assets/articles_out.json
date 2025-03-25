@@ -366,82 +366,67 @@
     },
     {
         "articlenumber": 7,
-        "articledoi": "https://doi.org/10.1111/cge.13638",
-        "disease": "PFIC4"
-    },
-    {
-        "articlenumber": 8,
         "articledoi": "https://doi.org/10.1186/s12881-019-0753-7",
         "disease": "PFIC4"
     },
     {
-        "articlenumber": 9,
-        "articledoi": "10.1016/j.jpeds.2018.09.028",
-        "disease": "PFIC4"
-    },
-    {
-        "articlenumber": 10,
+        "articlenumber": 8,
         "articledoi": "https://doi.org/10.1007/s00535-017-1423-1",
         "disease": "PFIC4"
     },
     {
-        "articlenumber": 11,
+        "articlenumber": 9,
         "articledoi": "https://doi.org/10.1038/s41598-017-11626-x",
         "disease": "PFIC4"
     },
     {
-        "articlenumber": 12,
+        "articlenumber": 10,
         "articledoi": "https://doi.org/10.1111/cge.12959",
         "disease": "PFIC4"
     },
     {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1038/ng.2918",
+        "disease": "PFIC4"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1038/ng1147",
+        "disease": "PFIC4"
+    },
+    {
         "articlenumber": 13,
-        "articledoi": "10.4103/0366-6999.171440",
-        "disease": "PFIC4"
-    },
-    {
-        "articlenumber": 14,
-        "articledoi": "https://doi.org/10.1080/21688370.2015.1026537",
-        "disease": "PFIC4"
-    },
-    {
-        "articlenumber": 15,
-        "articledoi": "10.1038/ng.2918",
-        "disease": "PFIC4"
-    },
-    {
-        "articlenumber": 16,
-        "articledoi": "10.1038/ng1147",
-        "disease": "PFIC4"
-    },
-    {
-        "articlenumber": 17,
-        "articledoi": "10.3748/wjg.v26.i5.550",
+        "articledoi": "https://doi.org/10.3748/wjg.v26.i5.550",
         "disease": "PFIC4"
     },
     {
         "articlenumber": 1,
-        "articledoi": "10.1097/MPG.0000000000002670",
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000002670",
         "disease": "PFIC5"
     },
     {
         "articlenumber": 2,
-        "articledoi": "10.1111/liv.15200",
+        "articledoi": "10.1097/MPG.0000000000002670",
         "disease": "PFIC5"
     },
     {
         "articlenumber": 3,
-        "articledoi": "10.12998/wjcc.v9.i15.3631",
+        "articledoi": "https://doi.org/10.12998/wjcc.v9.i15.3631",
         "disease": "PFIC5"
     },
     {
         "articlenumber": 4,
-        "articledoi": "10.1038/ncomms10713",
+        "articledoi": "https://doi.org/10.1038/ncomms10713",
         "disease": "PFIC5"
     },
     {
         "articlenumber": 1,
-        "articledoi": "10.1097/PG9.0000000000000229",
+        "articledoi": "https://doi.org/10.1097/PG9.0000000000000229",
+        "disease": "PFIC6"
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.1002/hep.31087",
         "disease": "PFIC6"
     },
     {
@@ -456,12 +441,52 @@
     },
     {
         "articlenumber": 3,
-        "articledoi": "https://doi.org/10.1097/MPG.0000000000003110",
+        "articledoi": "https://doi.org/10.1038/s41436-018-0288-x",
         "disease": "PFIC7"
     },
     {
         "articlenumber": 4,
-        "articledoi": "10.3390/genes12101618",
+        "articledoi": "https://doi.org/10.1111/liv.14422",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000003110",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 6,
+        "articledoi": "https://doi.org/10.3390/genes12101618",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 7,
+        "articledoi": "https://doi.org/10.1159/000523937",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 8,
+        "articledoi": "https://doi.org/10.3349/ymj.2023.0161",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 9,
+        "articledoi": "https://doi.org/10.1038/s41525-020-00150-z",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 10,
+        "articledoi": "https://doi.org/10.6002/ect.pedsymp2024.o25",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 11,
+        "articledoi": "https://doi.org/10.1016/j.jceh.2023.10.001",
+        "disease": "PFIC7"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1002/jpn3.12392",
         "disease": "PFIC7"
     },
     {
@@ -472,11 +497,6 @@
     {
         "articlenumber": 2,
         "articledoi": "https://doi.org/10.1016/j.jpeds.2021.09.019",
-        "disease": "PFIC8"
-    },
-    {
-        "articlenumber": 3,
-        "articledoi": "https://doi.org/10.1038/s41436-018-0288-x",
         "disease": "PFIC8"
     },
     {
@@ -492,57 +512,72 @@
     {
         "articlenumber": 1,
         "articledoi": "https://doi.org/10.3390/jcm10030481",
-        "disease": "PFIC10"
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 2,
-        "articledoi": "10.1038/ng.225 / https://doi.org/10.3390/jcm10030481",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1038/ng.225",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 3,
-        "articledoi": "https://doi.org/10.1002/hep.28779",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1002/humu.21224",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 4,
-        "articledoi": "10.1002/hep.29020",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.3760/cma.j.issn.1003-9406.2016.06.010",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 5,
-        "articledoi": "10.1002/hep.26974",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1073/pnas.1516672112",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 6,
-        "articledoi": "10.1101/mcs.a006103",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1002/hep.26974",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 7,
-        "articledoi": "10.1097/MPG.0000000000003399",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1101/mcs.a006103",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 8,
-        "articledoi": "https://doi.org/10.1080/15513815.2021.1959690",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000003399",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 9,
-        "articledoi": "10.3389/fgene.2022.872836",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.31729/jnma.7860",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 10,
-        "articledoi": "10.1097/MPG.0000000000002792",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1080/15513815.2021.1959690",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 11,
-        "articledoi": "10.7759/cureus.19326",
-        "disease": "PFIC10"
+        "articledoi": "https://doi.org/10.1007/s12098-021-03848-9",
+        "disease": "MYO5B deficiency"
+    },
+    {
+        "articlenumber": 12,
+        "articledoi": "https://doi.org/10.3389/fgene.2022.872836",
+        "disease": "MYO5B deficiency"
+    },
+    {
+        "articlenumber": 13,
+        "articledoi": "https://doi.org/10.1097/MPG.0000000000002792",
+        "disease": "MYO5B deficiency"
+    },
+    {
+        "articlenumber": 14,
+        "articledoi": "https://doi.org/10.7759/cureus.19326",
+        "disease": "MYO5B deficiency"
     },
     {
         "articlenumber": 1,

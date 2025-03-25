@@ -102,6 +102,34 @@ for object in patient_dict:
     if (len(res) > 0):
       object["transientsymptoms"] = list(res)
 
+  # 250322: classify MYO5B deficiency as PFIC10, MVID or MIXED based on symptoms
+  try: 
+
+    if object["gene"] == "MYO5B":
+
+      if ("0011473" in object["symptoms"] and 
+          ("0001396" in object["symptoms"] or "0002611" in object["symptoms"])):
+
+        object["phenotype"] = "PFIC10+MVID"
+    
+      elif ("0011473" in object["symptoms"] and 
+          ("0001396" not in object["symptoms"] and "0002611" not in object["symptoms"])): 
+
+        object["phenotype"] = "MVID"
+
+      elif ("0011473" not in object["symptoms"] and 
+            ("0001396" in object["symptoms"] or "0002611" in object["symptoms"])):
+
+        object["phenotype"] = "PFIC10"
+
+      else:
+
+        object["phenotype"] = "UNCLEAR"
+
+  except:
+
+    print('No gene for patient {0:s}'.format(str(object["id"])))
+  
 
   if 'ageatmoleculardiagnostic' in object.keys():
      try:
@@ -122,6 +150,10 @@ for object in patient_dict:
         print('Non-numeric firstsymptomagemonth, {0:s}, for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
         print('Setting firstsymptomagemonth to null/none.')
         object["firstsymptomagemonth"] = None
+  else:
+    if 'ageatmoleculardiagnostic' in object.keys():
+      object['firstsymptomagemonth'] = float(object['ageatmoleculardiagnostic']) * 12.
+      print('Setting firstsymptomagemonth to {0:s} (from ageatmoleculardiagnostic) for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
 
   if 'alivedeadage' in object.keys():
      try:
@@ -134,7 +166,6 @@ for object in patient_dict:
         print('Non-numeric alivedeadage, {0:s}, for patient {1:s}'.format(str(object["alivedeadage"]), object["id"]))
         print('Setting alivedeadage to null/none.')
         object["alivedeadage"] = None
-
 
   if 'lastnewsageyear' in object.keys():
     try:
@@ -179,6 +210,14 @@ for object in patient_dict:
         print('unrecognised alive/dead status, {0:s}, for patient {1:s}.'.format(str(object["alivedead"]), object["id"])) 
   else:
     print('No alive/dead information for patient {0:s}.'.format(object["id"]))
+
+
+  if 'alivedeadage' not in object.keys():
+    if 'lastnewsageyear' in object.keys():
+      object['alivedeadage'] = object['lastnewsageyear']
+    else:
+      print('No alivedeadage for patient {0:s}.'.format(object['id'])) 
+
 
   # 240913
   if 'gene' in object.keys():

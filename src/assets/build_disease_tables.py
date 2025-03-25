@@ -3,6 +3,7 @@ import fileinput
 import json
 import numpy
 import pandas
+import math
 from lifelines import KaplanMeierFitter
 
 
@@ -577,9 +578,9 @@ diseases = [
       ]
    ),
    dict(
-      name = "PFIC10", 
+      name = "MYO5B deficiency", 
       gene = "MYO5B", 
-      matches = ["PFIC10"], 
+      matches = ["MYO5B deficiency"], 
       colour = colours[9],
       animals = [
          dict(
@@ -1227,6 +1228,20 @@ diseases = [
             )
          )
       ] 
+   ),
+   dict(
+      name = "PFIC", 
+      gene = "AllPFIC", 
+      matches = ["PFIC1", "PFIC2", "PFIC3", "PFIC4", "PFIC5", "PFIC6",
+                 "PFIC7", "PFIC8", "PFIC9", "MYO5B deficiency", "PFIC11"], 
+      colour = colours[19],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
    )
 ]
 
@@ -1238,29 +1253,70 @@ for disease in diseases:
    print("Building disease table for disease {0:s}".format(disease['name']))
    ages_first = dict(all = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
                boys = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               girls = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []))
+               girls = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               LoF_LoF = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               LoF_Mis = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               Mis_Mis = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               LoF_Het = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               Mis_Het = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []))
 
-   ages_last = dict(all = dict(array = [], status = [], median = 0, iqr = 0),
-               boys = dict(array = [], status = [], median = 0, iqr = 0),
-               girls = dict(array = [], status = [], median = 0, iqr = 0))
+
+   #ages_last = dict(all = dict(array = [], status = [], median = 0, iqr = 0),
+   #            boys = dict(array = [], status = [], median = 0, iqr = 0),
+   #            girls = dict(array = [], status = [], median = 0, iqr = 0))
    
    # need to account for the fact that in some cases, the age of death is different from the age at last follow-up
    ages_surv = dict(all = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
                boys = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               girls = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0))
+               girls = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               LoF_LoF = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               LoF_Mis = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               Mis_Mis = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               LoF_Het = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               Mis_Het = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0)
+               )
 
    count_patients = dict(total = 0, girls = 0, boys = 0)
-   count_inbred = dict(yes = 0, no = 0, missing = 0)
+   count_consang = dict(yes = 0, no = 0, missing = 0)
    article_count = 0
    symptomCount = 0
    missingVarCount = 0
    presentVarCount = 0
+   zygosity = dict(homo = 0, compound = 0, hetero = 0, unknown = 0,
+                   hompct = 0., compct = 0., hetpct = 0.)
+   protvartypes = dict(
+      LoF_LoF = 0, 
+      LLpct = 0., 
+      LoF_Mis = 0, 
+      LMpct = 0.,
+      Mis_Mis = 0,
+      MMpct = 0.,
+      LoF_Het = 0, 
+      LHpct = 0.,
+      Mis_Het = 0, 
+      MHpct = 0.,
+      Unknown = 0)
 
    for object in patient_list: 
+      
       #if (disease["name"] == "ARCS1"): print(object["id"])
       if ('disease' in object.keys()):
+         
          if (object["disease"] in disease['matches']):
+
+            # Exception for PFIC, need to exclude pure MVID patients
+            if 'phenotype' in object.keys():
+            
+               if (disease['name'] == "PFIC" and 
+                   object["disease"] == "MYO5B deficiency" and
+                   object["phenotype"] == "MVID"):
+                  
+                  print("Not counting patient {0:s} as PFIC".format(object["id"]))
+                  continue
+               
+            
             count_patients["total"] += 1
+            
             if 'sex' in object.keys():
                presentVarCount += 1
                if object["sex"] == "F":
@@ -1269,6 +1325,54 @@ for disease in diseases:
                   count_patients["boys"] += 1
             else:
                missingVarCount += 1
+
+            if 'zygosity' in object.keys():
+
+               if object["zygosity"] == "homozygous":
+
+                  zygosity["homo"] += 1
+
+               elif object["zygosity"] == "compound":
+
+                  zygosity["compound"] += 1
+
+               elif object["zygosity"] == "heterozygous":
+
+                  zygosity["hetero"] += 1
+
+               else:
+
+                  zygosity["unknown"] += 1
+
+
+            if 'protvartypes' in object.keys():
+
+               if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
+
+                  protvartypes["LoF_LoF"] += 1
+
+               elif ((object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'missense') or
+                     (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'LoF')):
+                  
+                  protvartypes["LoF_Mis"] += 1
+               
+               elif (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'missense'):
+                  
+                  protvartypes["Mis_Mis"] += 1
+               
+               elif ((object["protvartypes"][0] == 'LoF' or object["protvartypes"][1] == 'LoF') and object["zygosity"] == 'heterozygous'):
+                  
+                  protvartypes["LoF_Het"] += 1
+
+               elif ((object["protvartypes"][0] == 'missense' or object["protvartypes"][1] == 'missense') and object["zygosity"] == 'heterozygous'):
+                  
+                  protvartypes["Mis_Het"] += 1
+
+               else:
+                  
+                  protvartypes["Unknown"] += 1
+                  
+
 
             if 'firstsymptomagemonth' in object.keys():
                presentVarCount += 1
@@ -1287,23 +1391,60 @@ for disease in diseases:
                   except:
                      pass
         
+               if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
+
+                  try:
+                     ages_first["LoF_LoF"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+
+               elif ((object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'missense') or
+                     (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'LoF')):
+                  
+                  try:
+                     ages_first["LoF_Mis"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+               
+               elif (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'missense'):
+                  
+                  try:
+                     ages_first["Mis_Mis"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+               
+               elif ((object["protvartypes"][0] == 'LoF' or object["protvartypes"][1] == 'LoF') and object["zygosity"] == 'heterozygous'):
+                  
+                  try:
+                     ages_first["LoF_Het"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+
+               elif ((object["protvartypes"][0] == 'missense' or object["protvartypes"][1] == 'missense') and object["zygosity"] == 'heterozygous'):
+                  
+                  try:
+                     ages_first["Mis_Het"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+
         
-            elif 'ageatmoleculardiagnostic' in object.keys():
-               presentVarCount += 1
-               try:
-                  ages_first["all"]["array"].append(float(object["ageatmoleculardiagnostic"]) * 12)
-               except:
-                     print("Exception 65 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
-               if ('sex' in object.keys() and object["sex"] == "F"):
-                  try:
-                     ages_first["girls"]["array"].append(float(object["ageatmoleculardiagnostic"]) * 12) 
-                  except:
-                     print("Exception 65 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
-               else:
-                  try:
-                     ages_first["boys"]["array"].append(float(object["ageatmoleculardiagnostic"]) * 12) 
-                  except:
-                     print("Exception 70 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #elif 'ageatmoleculardiagnostic' in object.keys():
+            #   presentVarCount += 1
+            #   print("Exception 65 at, '{0:s}', for Patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #   try:
+            #      ages_first["all"]["array"].append(float(object["ageatmoleculardiagnostic"]) * 12)
+            #   except:
+            #         print("Exception 65 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #   if ('sex' in object.keys() and object["sex"] == "F"):
+            #      try:
+            #         ages_first["girls"]["array"].append(float(object["ageatmoleculardiagnostic"]) * 12) 
+            #      except:
+            #         print("Exception 65 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #   else:
+            #      try:
+            #         ages_first["boys"]["array"].append(float(object["ageatmoleculardiagnostic"]) * 12) 
+            #      except:
+            #         print("Exception 70 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
             else:
                missingVarCount += 1
             
@@ -1315,14 +1456,37 @@ for disease in diseases:
                   #if (disease["name"] == "ARCS1"):
                   #   print(object["id"], object["alivedeadage"])
                   try:
-                     ages_last["all"]["array"].append(float(object["alivedeadage"]))
                      ages_surv["all"]["array"].append(float(object["alivedeadage"]))
                      if ('sex' in object.keys() and object["sex"] == "F"):
-                        ages_last["girls"]["array"].append(float(object["alivedeadage"]))
+
                         ages_surv["girls"]["array"].append(float(object["alivedeadage"]))
+
                      if ('sex' in object.keys() and object["sex"] == "M"):
-                        ages_last["boys"]["array"].append(float(object["alivedeadage"]))
+
                         ages_surv["boys"]["array"].append(float(object["alivedeadage"]))
+
+                     if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
+
+                        ages_surv["LoF_LoF"]["array"].append(float(object["alivedeadage"]))
+
+                     elif ((object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'missense') or
+                           (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'LoF')):
+                        
+                        ages_surv["LoF_Mis"]["array"].append(float(object["alivedeadage"]))
+                     
+                     elif (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'missense'):
+                        
+                        ages_surv["Mis_Mis"]["array"].append(float(object["alivedeadage"]))
+                     
+                     elif ((object["protvartypes"][0] == 'LoF' or object["protvartypes"][1] == 'LoF') and object["zygosity"] == 'heterozygous'):
+                        
+                        ages_surv["LoF_Het"]["array"].append(float(object["alivedeadage"]))
+
+                     elif ((object["protvartypes"][0] == 'missense' or object["protvartypes"][1] == 'missense') and object["zygosity"] == 'heterozygous'):
+                        
+                        ages_surv["Mis_Het"]["array"].append(float(object["alivedeadage"]))
+
+
                   except:
                      print("Exception 128 at, '{0:s}', for patient {1:s}".format(object["alivedeadage"]), object["id"])
                
@@ -1330,116 +1494,156 @@ for disease in diseases:
                   if 'alivedead' in object.keys():
                      try:
                         if object["alivedead"] == "alive":
-                           ages_last["all"]["status"].append("0")
                            ages_surv["all"]["status"].append("0")
                            if ('sex' in object.keys() and object["sex"] == "F"):
-                              ages_last["girls"]["status"].append("0")
                               ages_surv["girls"]["status"].append("0")
                            if ('sex' in object.keys() and object["sex"] == "M"):
-                              ages_last["boys"]["status"].append("0")
                               ages_surv["boys"]["status"].append("0")
+                           
+                           if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
+
+                              ages_surv["LoF_LoF"]["status"].append("0")
+
+                           elif ((object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'missense') or
+                                 (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'LoF')):
+
+                              ages_surv["LoF_Mis"]["status"].append("0")
+                     
+                           elif (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'missense'):
+
+                              ages_surv["Mis_Mis"]["status"].append("0")
+                     
+                           elif ((object["protvartypes"][0] == 'LoF' or object["protvartypes"][1] == 'LoF') and object["zygosity"] == 'heterozygous'):
+
+                              ages_surv["LoF_Het"]["status"].append("0")
+
+                           elif ((object["protvartypes"][0] == 'missense' or object["protvartypes"][1] == 'missense') and object["zygosity"] == 'heterozygous'):
+
+                              ages_surv["Mis_Het"]["status"].append("0")
+
+
+                           
                         elif object["alivedead"] == "dead": 
-                           ages_last["all"]["status"].append("1")
                            ages_surv["all"]["status"].append("1")
                            if ('sex' in object.keys() and object["sex"] == "F"):
-                              ages_last["girls"]["status"].append("1")
                               ages_surv["girls"]["status"].append("1")
                            if ('sex' in object.keys() and object["sex"] == "M"):
-                              ages_last["boys"]["status"].append("1")
                               ages_surv["boys"]["status"].append("1")
+                           
+                           if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
+
+                              ages_surv["LoF_LoF"]["status"].append("1")
+
+                           elif ((object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'missense') or
+                                 (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'LoF')):
+
+                              ages_surv["LoF_Mis"]["status"].append("1")
+                     
+                           elif (object["protvartypes"][0] == 'missense' and object["protvartypes"][1] == 'missense'):
+
+                              ages_surv["Mis_Mis"]["status"].append("1")
+                     
+                           elif ((object["protvartypes"][0] == 'LoF' or object["protvartypes"][1] == 'LoF') and object["zygosity"] == 'heterozygous'):
+
+                              ages_surv["LoF_Het"]["status"].append("1")
+
+                           elif ((object["protvartypes"][0] == 'missense' or object["protvartypes"][1] == 'missense') and object["zygosity"] == 'heterozygous'):
+
+                              ages_surv["Mis_Het"]["status"].append("1")
+
                         else:
                            print("Exception 152 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
                      except:
                         print("Exception 154 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
 
             #if last known age is not specified, use age at last follow-up 
-            elif 'lastnewsageyear' in object.keys():
-               if object["lastnewsageyear"] is not None:
-                  presentVarCount += 1
-                  try:
-                     ages_last["all"]["array"].append(float(object["lastnewsageyear"]))
-                     ages_surv["all"]["array"].append(float(object["lastnewsageyear"]))
-                     if ('sex' in object.keys() and object["sex"] == "F"):
-                        ages_last["girls"]["array"].append(float(object["lastnewsageyear"]))
-                        ages_surv["girls"]["array"].append(float(object["lastnewsageyear"]))
-                     if ('sex' in object.keys() and object["sex"] == "M"):
-                        ages_last["boys"]["array"].append(float(object["lastnewsageyear"]))
-                        ages_surv["boys"]["array"].append(float(object["lastnewsageyear"]))
-                  except:
-                     print("Exception 170 at, '{0:s}', for patient {1:s}".format(object["lastnewsageyear"]), object["id"])
-               
-               #fetch survival status
-               if 'alivedead' in object.keys():
-                  try:
-                     if object["alivedead"] == "alive":
-                        ages_last["all"]["status"].append("0")
-                        ages_surv["all"]["status"].append("0")
-                        if ('sex' in object.keys() and object["sex"] == "F"):
-                           ages_last["girls"]["status"].append("0")
-                           ages_surv["girls"]["status"].append("0")
-                        if ('sex' in object.keys() and object["sex"] == "M"):
-                           ages_last["boys"]["status"].append("0")
-                           ages_surv["boys"]["status"].append("0")
-                     elif object["alivedead"] == "dead": 
-                        ages_last["all"]["status"].append("1")
-                        ages_surv["all"]["status"].append("1")
-                        if ('sex' in object.keys() and object["sex"] == "F"):
-                           ages_last["girls"]["status"].append("1")
-                           ages_surv["girls"]["status"].append("1")
-                        if ('sex' in object.keys() and object["sex"] == "M"):
-                           ages_last["boys"]["status"].append("1")
-                           ages_surv["boys"]["status"].append("1")
-                     else:
-                        print("Exception 194 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
-                  except:
-                     print("Exception 196 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
-               
-               #if no survival status is specified (but age at last follow-up is specified) assume the patient was alive      
-               else:  
-                  ages_last["all"]["status"].append("0")      
-                  ages_surv["all"]["status"].append("0")      
-                  
-                  if ('sex' in object.keys() and object["sex"] == "F"):
-                     ages_last["girls"]["status"].append("0")      
-                     ages_surv["girls"]["status"].append("0")      
-                  elif ('sex' in object.keys() and object["sex"] == "M"):
-                     ages_last["boys"]["status"].append("0")      
-                     ages_surv["boys"]["status"].append("0")      
+            #elif 'lastnewsageyear' in object.keys():
+            #   if object["lastnewsageyear"] is not None:
+            #      presentVarCount += 1
+            #      try:
+            #         ages_last["all"]["array"].append(float(object["lastnewsageyear"]))
+            #         ages_surv["all"]["array"].append(float(object["lastnewsageyear"]))
+            #         if ('sex' in object.keys() and object["sex"] == "F"):
+            #            ages_last["girls"]["array"].append(float(object["lastnewsageyear"]))
+            #            ages_surv["girls"]["array"].append(float(object["lastnewsageyear"]))
+            #         if ('sex' in object.keys() and object["sex"] == "M"):
+            #            ages_last["boys"]["array"].append(float(object["lastnewsageyear"]))
+            #            ages_surv["boys"]["array"].append(float(object["lastnewsageyear"]))
+            #      except:
+            #         print("Exception 170 at, '{0:s}', for patient {1:s}".format(object["lastnewsageyear"]), object["id"])
+            #   
+            #   #fetch survival status
+            #   if 'alivedead' in object.keys():
+            #      try:
+            #         if object["alivedead"] == "alive":
+            #            ages_last["all"]["status"].append("0")
+            #            ages_surv["all"]["status"].append("0")
+            #            if ('sex' in object.keys() and object["sex"] == "F"):
+            #               ages_last["girls"]["status"].append("0")
+            #               ages_surv["girls"]["status"].append("0")
+            #            if ('sex' in object.keys() and object["sex"] == "M"):
+            #               ages_last["boys"]["status"].append("0")
+            #               ages_surv["boys"]["status"].append("0")
+            #         elif object["alivedead"] == "dead": 
+            #            ages_last["all"]["status"].append("1")
+            #            ages_surv["all"]["status"].append("1")
+            #            if ('sex' in object.keys() and object["sex"] == "F"):
+            #               ages_last["girls"]["status"].append("1")
+            #               ages_surv["girls"]["status"].append("1")
+            #            if ('sex' in object.keys() and object["sex"] == "M"):
+            #               ages_last["boys"]["status"].append("1")
+            #               ages_surv["boys"]["status"].append("1")
+            #         else:
+            #            print("Exception 194 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
+            #      except:
+            #         print("Exception 196 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
+            #   
+            #   #if no survival status is specified (but age at last follow-up is specified) assume the patient was alive      
+            #   else:  
+            #      ages_last["all"]["status"].append("0")      
+            #      ages_surv["all"]["status"].append("0")      
+            #      
+            #      if ('sex' in object.keys() and object["sex"] == "F"):
+            #         ages_last["girls"]["status"].append("0")      
+            #         ages_surv["girls"]["status"].append("0")      
+            #      elif ('sex' in object.keys() and object["sex"] == "M"):
+            #         ages_last["boys"]["status"].append("0")      
+            #         ages_surv["boys"]["status"].append("0")      
 
-               
-               
-            # if age at last fo is not specified, use age at molecular diagnostic instead and define patient as alive at this age
-            elif 'ageatmoleculardiagnostic' in object.keys():
-               presentVarCount += 1
-               try:
-                  ages_last["all"]["array"].append(float(object["ageatmoleculardiagnostic"]))
-                  ages_surv["all"]["array"].append(float(object["ageatmoleculardiagnostic"]))
-                  ages_last["all"]["status"].append("0")
-                  ages_surv["all"]["status"].append("0")
-               except:
-                     print("Exception 191 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
-               if ('sex' in object.keys() and object["sex"] == "F"):
-                  try:
-                     ages_last["girls"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
-                     ages_surv["girls"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
-                     ages_last["girls"]["status"].append("0")
-                     ages_surv["girls"]["status"].append("0")
-                  except:
-                     print("Exception 196 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
-               elif ('sex' in object.keys() and object["sex"] == "M"):
-                  try:
-                     ages_last["boys"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
-                     ages_surv["boys"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
-                     ages_last["boys"]["status"].append("0")
-                     ages_surv["boys"]["status"].append("0")
-                  except:
-                     print("Exception 106 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
-               else:
-                  missingVarCount += 1
-                  if 'sex' in object.keys():
-                     print("Unrecognised sex for patient {0:s}".format(object["id"]))
-                  else:
-                     print("Missing sex for patient {0:s}".format(object["id"]))
+            #   
+            #   
+            ## if age at last fo is not specified, use age at molecular diagnostic instead and define patient as alive at this age
+            #elif 'ageatmoleculardiagnostic' in object.keys():
+            #   presentVarCount += 1
+            #   try:
+            #      ages_last["all"]["array"].append(float(object["ageatmoleculardiagnostic"]))
+            #      ages_surv["all"]["array"].append(float(object["ageatmoleculardiagnostic"]))
+            #      ages_last["all"]["status"].append("0")
+            #      ages_surv["all"]["status"].append("0")
+            #   except:
+            #         print("Exception 191 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #   if ('sex' in object.keys() and object["sex"] == "F"):
+            #      try:
+            #         ages_last["girls"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
+            #         ages_surv["girls"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
+            #         ages_last["girls"]["status"].append("0")
+            #         ages_surv["girls"]["status"].append("0")
+            #      except:
+            #         print("Exception 196 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #   elif ('sex' in object.keys() and object["sex"] == "M"):
+            #      try:
+            #         ages_last["boys"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
+            #         ages_surv["boys"]["array"].append(float(object["ageatmoleculardiagnostic"])) 
+            #         ages_last["boys"]["status"].append("0")
+            #         ages_surv["boys"]["status"].append("0")
+            #      except:
+            #         print("Exception 106 at, '{0:s}', for patient {1:s}".format(object["ageatmoleculardiagnostic"]), object["id"])
+            #   else:
+            #      missingVarCount += 1
+            #      if 'sex' in object.keys():
+            #         print("Unrecognised sex for patient {0:s}".format(object["id"]))
+            #      else:
+            #         print("Missing sex for patient {0:s}".format(object["id"]))
 
             else:
                missingVarCount += 1
@@ -1449,11 +1653,11 @@ for disease in diseases:
             if 'consanguinity' in object.keys():
                presentVarCount += 1
                if object["consanguinity"] == "yes" or object["consanguinity"] == "Y":
-                  count_inbred["yes"] += 1
+                  count_consang["yes"] += 1
                elif object["consanguinity"] == "non" or object["consanguinity"] == "N": 
-                  count_inbred["no"] += 1 
+                  count_consang["no"] += 1 
             else:
-               count_inbred["missing"] += 1
+               count_consang["missing"] += 1
                missingVarCount += 1
 
             if 'doi' in object.keys():
@@ -1472,12 +1676,41 @@ for disease in diseases:
             #print(gene, count_patients["total"], object["id"], len(ages_last["all"]["array"]), len(ages_last["all"]["status"]) )         
 
 
+   # 250323: add percentage counts for variants
+   zygosity["hompct"] = math.floor(zygosity["homo"] / (zygosity["homo"] + zygosity["hetero"] + zygosity["compound"]) * 100 * 10) / 10
+   zygosity["compct"] = math.floor(zygosity["compound"] / (zygosity["homo"] + zygosity["hetero"] + zygosity["compound"]) * 100 * 10) / 10
+   zygosity["hetpct"] = math.floor(zygosity["hetero"] / (zygosity["homo"] + zygosity["hetero"] + zygosity["compound"]) * 100 * 10) / 10
+
+   protvartypes["LLpct"] = math.floor(protvartypes["LoF_LoF"] / (protvartypes["LoF_LoF"] + protvartypes["LoF_Mis"] + protvartypes["Mis_Mis"] + protvartypes["LoF_Het"] + protvartypes["Mis_Het"]) * 100 * 10) / 10
+   protvartypes["LMpct"] = math.floor(protvartypes["LoF_Mis"] / (protvartypes["LoF_LoF"] + protvartypes["LoF_Mis"] + protvartypes["Mis_Mis"] + protvartypes["LoF_Het"] + protvartypes["Mis_Het"]) * 100 * 10) / 10
+   protvartypes["MMpct"] = math.floor(protvartypes["Mis_Mis"] / (protvartypes["LoF_LoF"] + protvartypes["LoF_Mis"] + protvartypes["Mis_Mis"] + protvartypes["LoF_Het"] + protvartypes["Mis_Het"]) * 100 * 10) / 10
+   protvartypes["LHpct"] = math.floor(protvartypes["LoF_Het"] / (protvartypes["LoF_LoF"] + protvartypes["LoF_Mis"] + protvartypes["Mis_Mis"] + protvartypes["LoF_Het"] + protvartypes["Mis_Het"]) * 100 * 10) / 10
+   protvartypes["MHpct"] = math.floor(protvartypes["Mis_Het"] / (protvartypes["LoF_LoF"] + protvartypes["LoF_Mis"] + protvartypes["Mis_Mis"] + protvartypes["LoF_Het"] + protvartypes["Mis_Het"]) * 100 * 10) / 10
+   
    if len(ages_first["all"]["array"]) > 0:
       ages_first["all"]["median"] = numpy.median(ages_first["all"]["array"])        
+
    if len(ages_first["girls"]["array"]) > 0:
-      ages_first["girls"]["median"] = numpy.median(ages_first["girls"]["array"])        
+      ages_first["girls"]["median"] = numpy.median(ages_first["girls"]["array"])  
+
    if len(ages_first["boys"]["array"]) > 0:
-      ages_first["boys"]["median"] = numpy.median(ages_first["boys"]["array"])        
+      ages_first["boys"]["median"] = numpy.median(ages_first["boys"]["array"])  
+
+   if len(ages_first["LoF_LoF"]["array"]) > 0:
+      ages_first["LoF_LoF"]["median"] = numpy.median(ages_first["LoF_LoF"]["array"])
+
+   if len(ages_first["LoF_Mis"]["array"]) > 0:
+      ages_first["LoF_Mis"]["median"] = numpy.median(ages_first["LoF_Mis"]["array"])  
+
+   if len(ages_first["Mis_Mis"]["array"]) > 0:
+      ages_first["Mis_Mis"]["median"] = numpy.median(ages_first["Mis_Mis"]["array"]) 
+
+   if len(ages_first["LoF_Het"]["array"]) > 0:
+      ages_first["LoF_Het"]["median"] = numpy.median(ages_first["LoF_Het"]["array"]) 
+
+   if len(ages_first["Mis_Het"]["array"]) > 0:
+      ages_first["Mis_Het"]["median"] = numpy.median(ages_first["Mis_Het"]["array"])        
+
 
    if len(ages_first["all"]["array"]) > 1:
       ages_first["all"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["all"]["array"], [75, 25]))
@@ -1485,28 +1718,56 @@ for disease in diseases:
       ages_first["girls"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["girls"]["array"], [75, 25]))
    if len(ages_first["boys"]["array"]) > 1:
       ages_first["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["boys"]["array"], [75, 25]))
+   if len(ages_first["LoF_LoF"]["array"]) > 1:
+      ages_first["LoF_LoF"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["LoF_LoF"]["array"], [75, 25]))
+   if len(ages_first["LoF_Mis"]["array"]) > 1:
+      ages_first["LoF_Mis"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["LoF_Mis"]["array"], [75, 25]))
+   if len(ages_first["Mis_Mis"]["array"]) > 1:
+      ages_first["Mis_Mis"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["Mis_Mis"]["array"], [75, 25]))
+   if len(ages_first["LoF_Het"]["array"]) > 1:
+      ages_first["LoF_Het"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["LoF_Het"]["array"], [75, 25]))
+   if len(ages_first["Mis_Het"]["array"]) > 1:
+      ages_first["Mis_Het"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["Mis_Het"]["array"], [75, 25]))
   
-   if len(ages_last["all"]["array"]) > 0:
-      ages_last["all"]["median"] = numpy.median(ages_last["all"]["array"])        
-   if len(ages_last["girls"]["array"]) > 0:
-      ages_last["girls"]["median"] = numpy.median(ages_last["girls"]["array"])        
-   if len(ages_last["boys"]["array"]) > 0:
-      ages_last["boys"]["median"] = numpy.median(ages_last["boys"]["array"])        
+   #if len(ages_last["all"]["array"]) > 0:
+   #   ages_last["all"]["median"] = numpy.median(ages_last["all"]["array"])        
+   #if len(ages_last["girls"]["array"]) > 0:
+   #   ages_last["girls"]["median"] = numpy.median(ages_last["girls"]["array"])        
+   #if len(ages_last["boys"]["array"]) > 0:
+   #   ages_last["boys"]["median"] = numpy.median(ages_last["boys"]["array"])        
 
-   if len(ages_last["all"]["array"]) > 1:
-      ages_last["all"]["iqr"] = numpy.subtract(*numpy.percentile(ages_last["all"]["array"], [75, 25]))
-   if len(ages_last["girls"]["array"]) > 1:
-      ages_last["girls"]["iqr"] = numpy.subtract(*numpy.percentile(ages_last["girls"]["array"], [75, 25]))
-   if len(ages_last["boys"]["array"]) > 1:
-      ages_last["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_last["boys"]["array"], [75, 25]))
+   #if len(ages_last["all"]["array"]) > 1:
+   #   ages_last["all"]["iqr"] = numpy.subtract(*numpy.percentile(ages_last["all"]["array"], [75, 25]))
+   #if len(ages_last["girls"]["array"]) > 1:
+   #   ages_last["girls"]["iqr"] = numpy.subtract(*numpy.percentile(ages_last["girls"]["array"], [75, 25]))
+   #if len(ages_last["boys"]["array"]) > 1:
+   #   ages_last["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_last["boys"]["array"], [75, 25]))
  
  
    if len(ages_surv["all"]["array"]) > 0:
       ages_surv["all"]["median"] = numpy.median(ages_surv["all"]["array"])        
+
    if len(ages_surv["girls"]["array"]) > 0:
-      ages_surv["girls"]["median"] = numpy.median(ages_surv["girls"]["array"])        
+      ages_surv["girls"]["median"] = numpy.median(ages_surv["girls"]["array"])   
+
    if len(ages_surv["boys"]["array"]) > 0:
-      ages_surv["boys"]["median"] = numpy.median(ages_surv["boys"]["array"])        
+      ages_surv["boys"]["median"] = numpy.median(ages_surv["boys"]["array"])     
+
+   if len(ages_surv["LoF_LoF"]["array"]) > 0:
+      ages_surv["LoF_LoF"]["median"] = numpy.median(ages_surv["LoF_LoF"]["array"])  
+
+   if len(ages_surv["LoF_Mis"]["array"]) > 0:
+      ages_surv["LoF_Mis"]["median"] = numpy.median(ages_surv["LoF_Mis"]["array"])  
+
+   if len(ages_surv["Mis_Mis"]["array"]) > 0:
+      ages_surv["Mis_Mis"]["median"] = numpy.median(ages_surv["Mis_Mis"]["array"])  
+
+   if len(ages_surv["LoF_Het"]["array"]) > 0:
+      ages_surv["LoF_Het"]["median"] = numpy.median(ages_surv["LoF_Het"]["array"])
+
+   if len(ages_surv["Mis_Het"]["array"]) > 0:
+      ages_surv["Mis_Het"]["median"] = numpy.median(ages_surv["LoF_Het"]["array"])        
+
 
    if len(ages_surv["all"]["array"]) > 1:
       ages_surv["all"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["all"]["array"], [75, 25]))
@@ -1514,6 +1775,21 @@ for disease in diseases:
       ages_surv["girls"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["girls"]["array"], [75, 25]))
    if len(ages_surv["boys"]["array"]) > 1:
       ages_surv["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["boys"]["array"], [75, 25]))
+   if len(ages_surv["LoF_LoF"]["array"]) > 1:
+      ages_surv["LoF_LoF"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["LoF_LoF"]["array"], [75, 25]))
+   if len(ages_surv["LoF_Mis"]["array"]) > 1:
+      ages_surv["LoF_Mis"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["LoF_Mis"]["array"], [75, 25]))
+   if len(ages_surv["Mis_Mis"]["array"]) > 1:
+      ages_surv["Mis_Mis"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["Mis_Mis"]["array"], [75, 25]))
+   if len(ages_surv["LoF_Het"]["array"]) > 1:
+      ages_surv["LoF_Het"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["LoF_Het"]["array"], [75, 25]))
+   if len(ages_surv["Mis_Het"]["array"]) > 1:
+      ages_surv["Mis_Het"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["Mis_Het"]["array"], [75, 25]))
+  
+
+
+
+
    
    # 250305: perform survival analysis directly in Python
    # all
@@ -1556,6 +1832,72 @@ for disease in diseases:
       ages_surv["boys"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
       ages_surv["boys"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
 
+   # LoF_LoF
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["LoF_LoF"]["array"]], 
+                          'S': [float(i) for i in ages_surv["LoF_LoF"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["LoF_LoF"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["LoF_LoF"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+   # LoF_Mis
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["LoF_Mis"]["array"]], 
+                          'S': [float(i) for i in ages_surv["LoF_Mis"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["LoF_Mis"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["LoF_Mis"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+   # Mis_Mis
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["Mis_Mis"]["array"]], 
+                          'S': [float(i) for i in ages_surv["Mis_Mis"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["Mis_Mis"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["Mis_Mis"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+   # LoF_Het
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["LoF_Het"]["array"]], 
+                          'S': [float(i) for i in ages_surv["LoF_Het"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["LoF_Het"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["LoF_Het"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+   # Mis_Het
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["Mis_Het"]["array"]], 
+                          'S': [float(i) for i in ages_surv["Mis_Het"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["Mis_Het"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["Mis_Het"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+
 
    # 250307: perform survival analysis for age at first symptoms
    # all
@@ -1596,6 +1938,71 @@ for disease in diseases:
       kmf.fit(time, status)
       ages_first["girls"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
       ages_first["girls"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # LoF_LoF
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["LoF_LoF"]["array"]], 
+                          'S': [float(1) for i in ages_first["LoF_LoF"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["LoF_LoF"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["LoF_LoF"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # LoF_Mis
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["LoF_Mis"]["array"]], 
+                          'S': [float(1) for i in ages_first["LoF_Mis"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["LoF_Mis"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["LoF_Mis"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # Mis_Mis
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["Mis_Mis"]["array"]], 
+                          'S': [float(1) for i in ages_first["Mis_Mis"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["Mis_Mis"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["Mis_Mis"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # LoF_Het
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["LoF_Het"]["array"]], 
+                          'S': [float(1) for i in ages_first["LoF_Het"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["LoF_Het"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["LoF_Het"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # Mis_Het
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["Mis_Het"]["array"]], 
+                          'S': [float(1) for i in ages_first["Mis_Het"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["Mis_Het"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["Mis_Het"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
 
  
 
@@ -1673,15 +2080,26 @@ for disease in diseases:
                              articles = article_count,
                              datapoints = presentVarCount + symptomCount,
                              variables = dict(present = presentVarCount, missing = missingVarCount),
-                             consanguinous = count_inbred, 
+                             consanguinous = count_consang, 
+                             zygosity = zygosity,
+                             protvartypes = protvartypes,
                              age_at_first_symp = ages_first,
-                             age_at_last_news = ages_last,
                              survival = dict(all_surv_x = ages_surv["all"]["surv_x"],
                                              all_surv_y = ages_surv["all"]["surv_y"],
                                              boys_surv_x = ages_surv["boys"]["surv_x"],
                                              boys_surv_y = ages_surv["boys"]["surv_y"],
                                              girls_surv_x = ages_surv["girls"]["surv_x"],
-                                             girls_surv_y = ages_surv["girls"]["surv_y"]
+                                             girls_surv_y = ages_surv["girls"]["surv_y"],
+                                             LoF_LoF_surv_x = ages_surv["LoF_LoF"]["surv_x"],
+                                             LoF_LoF_surv_y = ages_surv["LoF_LoF"]["surv_y"],
+                                             LoF_Mis_surv_x = ages_surv["LoF_Mis"]["surv_x"],
+                                             LoF_Mis_surv_y = ages_surv["LoF_Mis"]["surv_y"],
+                                             Mis_Mis_surv_x = ages_surv["Mis_Mis"]["surv_x"],
+                                             Mis_Mis_surv_y = ages_surv["Mis_Mis"]["surv_y"],
+                                             LoF_Het_surv_x = ages_surv["LoF_Het"]["surv_x"],
+                                             LoF_Het_surv_y = ages_surv["LoF_Het"]["surv_y"],
+                                             Mis_Het_surv_x = ages_surv["Mis_Het"]["surv_x"],
+                                             Mis_Het_surv_y = ages_surv["Mis_Het"]["surv_y"]
                                              )
                               )
    )

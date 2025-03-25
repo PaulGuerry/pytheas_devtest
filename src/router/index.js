@@ -110,6 +110,13 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/PFIC11View.vue')
   },
   {
+    path: '/PFICall',
+    name: 'PFICall',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/PFICallView.vue')
+  },{
     path: '/THES1',
     name: 'THES1',
     // route level code-splitting
