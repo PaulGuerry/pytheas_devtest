@@ -64,11 +64,14 @@ for patient in patient_list:
 
       edge_list = (item["obj"] for item in HPO_edges_list["graphs"][0]["edges"] if child_code == item["sub"][34:]) 
       edge_array = numpy.array(list(edge_list))
-      #print("Test 71. Patient, ", patient["id"], "; child code, ", child_code)
-      #print("Test 71. edge_array, ", edge_array)
-      #print("Test 71. edge_array.shape, ", edge_array.shape[0])
-      parent_code = edge_array[0][34:]
-      append_array[0, 0] = parent_code
+      try:
+         parent_code = edge_array[0][34:]
+         append_array[0, 0] = parent_code
+      except:
+         print("Test 71. Patient, ", patient["id"], "; child code, ", child_code)
+         print("Test 71. edge_array, ", edge_array)
+         print("Test 71. edge_array.shape, ", edge_array.shape[0])
+
 
 
       #add extra rows to the parent_branches array if more than one parent_codes are found

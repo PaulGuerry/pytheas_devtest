@@ -9,6 +9,7 @@ json_data = ""
 # 
 substring = '('
 
+print("Remember that this script reads temp.txt and outputs epdj_output.txt")
 for line in fileinput.input(files="temp.txt"):
     json_data = json_data + line
 
@@ -95,6 +96,40 @@ for object in patient_dict:
     object["absentsymptoms"] = list(symptom_set)
 
 
+  # 250320: define transient symptoms as those reported both present and absent
+  if "symptoms" in object.keys() and "absentsymptoms" in object.keys():
+    res = set(object["symptoms"]).intersection(object["absentsymptoms"])
+    if (len(res) > 0):
+      object["transientsymptoms"] = list(res)
+
+  # 250322: classify MYO5B deficiency as PFIC10, MVID or MIXED based on symptoms
+  try: 
+
+    if object["gene"] == "MYO5B":
+
+      if ("0011473" in object["symptoms"] and 
+          ("0001396" in object["symptoms"] or "0002611" in object["symptoms"])):
+
+        object["phenotype"] = "PFIC10+MVID"
+    
+      elif ("0011473" in object["symptoms"] and 
+          ("0001396" not in object["symptoms"] and "0002611" not in object["symptoms"])): 
+
+        object["phenotype"] = "MVID"
+
+      elif ("0011473" not in object["symptoms"] and 
+            ("0001396" in object["symptoms"] or "0002611" in object["symptoms"])):
+
+        object["phenotype"] = "PFIC10"
+
+      else:
+
+        object["phenotype"] = "UNCLEAR"
+
+  except:
+
+    print('No gene for patient {0:s}'.format(str(object["id"])))
+  
 
   if 'ageatmoleculardiagnostic' in object.keys():
      try:
@@ -102,7 +137,7 @@ for object in patient_dict:
       if (float(object["ageatmoleculardiagnostic"]) > 999.):
         print('Age {0:s} months for patient {1:s} does not seem reasonable'.format(str(object["ageatmoleculardiagnostic"]), object["id"])) 
      except:
-      print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["ageatmoleculardiagnostic"]), object["id"]))
+      print('Non-numeric ageatmoleculardiagnostic, {0:s}, for patient {1:s}'.format(str(object["ageatmoleculardiagnostic"]), object["id"]))
 
   if 'firstsymptomagemonth' in object.keys():
      try:
@@ -112,9 +147,13 @@ for object in patient_dict:
         print('Age {0:s} months for patient {1:s} does not seem reasonable'.format(str(object["firstsymptomagemonth"]), object["id"])) 
      except:
       if object["firstsymptomagemonth"] is not None:
-        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
+        print('Non-numeric firstsymptomagemonth, {0:s}, for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
         print('Setting firstsymptomagemonth to null/none.')
         object["firstsymptomagemonth"] = None
+  else:
+    if 'ageatmoleculardiagnostic' in object.keys():
+      object['firstsymptomagemonth'] = float(object['ageatmoleculardiagnostic']) * 12.
+      print('Setting firstsymptomagemonth to {0:s} (from ageatmoleculardiagnostic) for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
 
   if 'alivedeadage' in object.keys():
      try:
@@ -124,22 +163,27 @@ for object in patient_dict:
         print('Age {0:s} years  for patient {1:s} does not seem reasonable'.format(str(object["alivedeadage"]), object["id"])) 
      except:
       if object["alivedeadage"] is not None:
-        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["alivedeadage"]), object["id"]))
+        print('Non-numeric alivedeadage, {0:s}, for patient {1:s}'.format(str(object["alivedeadage"]), object["id"]))
         print('Setting alivedeadage to null/none.')
         object["alivedeadage"] = None
 
-
   if 'lastnewsageyear' in object.keys():
-     try:
+    try:
       float(object["lastnewsageyear"])
       object["lastnewsageyear"] = float(object["lastnewsageyear"])
+      if 'alivedeadage' not in object.keys():
+        object['alivedeadage'] = float(object['lastnewsageyear'])
+      if 'alivedead' not in object.keys():
+        object['alivedead'] = 'alive'
       if (float(object["lastnewsageyear"]) > 80.):
         print('Age {0:s} years  for patient {1:s} does not seem reasonable'.format(str(object["lastnewsageyear"]), object["id"])) 
-     except:
+    except:
       if object["lastnewsageyear"] is not None:
-        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["lastnewsageyear"]), object["id"]))
+        print('Non-numeric lastnewsageyear, {0:s}, for patient {1:s}'.format(str(object["lastnewsageyear"]), object["id"]))
         print('Setting lastnewsageyear to null/none.')
-        object["lastnewsageyear"] = None
+        object["lastnewsageyear"] = None 
+
+    
 
   elif 'ageatmoleculardiagnostic' in object.keys():
       try:
@@ -147,7 +191,7 @@ for object in patient_dict:
         if (float(object["ageatmoleculardiagnostic"]) > 200.):
           print('Age {0:s} months for patient {1:s} does not seem reasonable'.format(str(object["ageatmoleculardiagnostic"]), object["id"])) 
       except:
-        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["ageatmoleculardiagnostic"]), object["id"]))
+        print('Non-numeric ageatmoleculardiagnostic, {0:s}, for patient {1:s}'.format(str(object["ageatmoleculardiagnostic"]), object["id"]))
       else:
         object["lastnewsageyear"] = round(float(object["ageatmoleculardiagnostic"]), 2)
   
@@ -157,7 +201,7 @@ for object in patient_dict:
         if (float(object["firstsymptomagemonth"]) > 100.):
           print('Check age {0:s} months for patient {1:s}.'.format(str(object["firstsymptomagemonth"]), object["id"])) 
       except:
-        print('Non-numeric age, {0:s}, for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
+        print('Non-numeric firstsymptomagemonth, {0:s}, for patient {1:s}'.format(str(object["firstsymptomagemonth"]), object["id"]))
       else:
         object["lastnewsageyear"] = round(float(object["firstsymptomagemonth"]) / 12., 2)
 
@@ -167,39 +211,47 @@ for object in patient_dict:
   else:
     print('No alive/dead information for patient {0:s}.'.format(object["id"]))
 
+
+  if 'alivedeadage' not in object.keys():
+    if 'lastnewsageyear' in object.keys():
+      object['alivedeadage'] = object['lastnewsageyear']
+    else:
+      print('No alivedeadage for patient {0:s}.'.format(object['id'])) 
+
+
   # 240913
   if 'gene' in object.keys():
-      if object["gene"] == "ATP8B1":
-        object["disease"] = "PFIC1"
-        #print('Gene, {0:s}; Disease, {1:s}; ID, {2:s}.'.format(str(object["gene"]), object["disease"], object["id"]))
-      elif object["gene"] == "ABCB11":
-        object["disease"] = "PFIC2"
-      elif object["gene"] == "ABCB4":
-        object["disease"] = "PFIC3"
-      elif object["gene"] == "TJP2":
-        object["disease"] = "PFIC4"
-      elif object["gene"] == "NR1H4":
-        object["disease"] = "PFIC5"
-      elif object["gene"] == "SLC51A":
-        object["disease"] = "PFIC6"
-      elif object["gene"] == "USP53":
-        object["disease"] = "PFIC7"
-      elif object["gene"] == "KIF12":
-        object["disease"] = "PFIC8"
-      elif object["gene"] == "ZFYVE19":
-        object["disease"] = "PFIC9"
-      elif object["gene"] == "MYO5B":
-        object["disease"] = "PFIC10"
-      elif object["gene"] == "SEMA7A":
-        object["disease"] = "PFIC11"
-      elif object["gene"] == "TMEM199":
-        object["disease"] = "CDG2P"
-      elif object["gene"] == "SKIC3":
-        object["disease"] = "THES1"
-      elif object["gene"] == "SKIC2":
-        object["disease"] = "THES2"
-      elif object["gene"] == "FOCAD":
-        object["disease"] = "FOCADS"
+      #if object["gene"] == "ATP8B1":
+      #  object["disease"] = "PFIC1"
+      #  #print('Gene, {0:s}; Disease, {1:s}; ID, {2:s}.'.format(str(object["gene"]), object["disease"], object["id"]))
+      #elif object["gene"] == "ABCB11":
+      #  object["disease"] = "PFIC2"
+      #elif object["gene"] == "ABCB4":
+      #  object["disease"] = "PFIC3"
+      #elif object["gene"] == "TJP2":
+      #  object["disease"] = "PFIC4"
+      #elif object["gene"] == "NR1H4":
+      #  object["disease"] = "PFIC5"
+      #elif object["gene"] == "SLC51A":
+      #  object["disease"] = "PFIC6"
+      #elif object["gene"] == "USP53":
+      #  object["disease"] = "PFIC7"
+      #elif object["gene"] == "KIF12":
+      #  object["disease"] = "PFIC8"
+      #elif object["gene"] == "ZFYVE19":
+      #  object["disease"] = "PFIC9"
+      if object["gene"] == "MYO5B":
+        object['disease'] = 'MYO5B deficiency'
+      #elif object["gene"] == "SEMA7A":
+      #  object["disease"] = "PFIC11"
+      #elif object["gene"] == "TMEM199":
+      #  object["disease"] = "CDG2P"
+      #elif object["gene"] == "SKIC3":
+      #  object["disease"] = "THES1"
+      #elif object["gene"] == "SKIC2":
+      #  object["disease"] = "THES2"
+      #elif object["gene"] == "FOCAD":
+      #  object["disease"] = "FOCADS"
       
       if 'disease' not in object.keys(): 
         print('No disease specified for patient {0:s}.'.format(str(object["id"])))

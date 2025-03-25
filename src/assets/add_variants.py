@@ -25,7 +25,7 @@ with open('variant1Data.txt') as fobj:
             ids.append(row[0])
             variant["n1"] = row[1]
             variant["p1"] = row[2]
-            print(index, len(row), variant["label"], variant["n1"], variant["p1"])
+            #print(index, len(row), variant["label"], variant["n1"], variant["p1"])
         else:
             print("Check input on line ", index, "of variant1Data.txt")
 
@@ -93,6 +93,8 @@ for object in patient_list:
     #Add variant classification    
     #Possible types are LoF, missense, synonymous, WT, other
     protvartypes = ["",""]    
+    #Possible zygocities are homozygous, compound, heterozygous or unknown
+    zygosity = "unknown"
     if 'protvariant1' in object.keys():
         #search1 is for a sequence of three letters followed by a number of any length, followed by three letters != del
         search1 = re.search(r'[A-Za-z][A-Za-z][A-Za-z][0-9]+(?!del)[A-Za-z][A-Za-z][A-Za-z]', object["protvariant1"])
@@ -106,6 +108,7 @@ for object in patient_list:
             'Ter' in object["protvariant1"] or 
             'Splice' in object["protvariant1"] or 
             'Xaa' in object["protvariant1"] or
+            '?' in object["protvariant1"] or
             object["protvariant1"] == "No_protein"):
             protvartypes[0] = "LoF" 
         
@@ -133,6 +136,7 @@ for object in patient_list:
             'Ter' in object["protvariant2"] or 
             'Splice' in object["protvariant2"] or 
             'Xaa' in object["protvariant2"] or
+            '?' in object["protvariant2"] or
             object["protvariant2"] == "No_protein"):
             protvartypes[1] = "LoF" 
         
@@ -160,6 +164,7 @@ for object in patient_list:
             'Ter' in object["otherprotvariant"] or 
             'Splice' in object["otherprotvariant"] or 
             'Xaa' in object["otherprotvariant"] or
+            '?' in object["otherprotvariant"] or
             object["otherprotvariant"] == "No_protein"):
             protvartypes.append("LoF") 
         
@@ -185,6 +190,8 @@ for object in patient_list:
 
         elif ('*' in object["otherprotvariant2"] or 
             'Ter' in object["otherprotvariant2"] or 
+            'Splice' in object["otherprotvariant2"] or 
+            '?' in object["otherprotvariant2"] or 
             'Xaa' in object["otherprotvariant2"]):
             protvartypes.append("LoF") 
         
@@ -200,16 +207,44 @@ for object in patient_list:
             protvartypes.append("other")    
 
     # Add phenotype classification (if absent, set to disease name)
+    if 'protvariant1' in object.keys() and 'protvariant2' in object.keys():
+        
+        if object['protvariant1'] == object['protvariant2']:
+            
+            if protvartypes[0] != "other":
+                
+                zygosity = "homozygous"
+
+            elif ("Hom" in object['protvariant1'] and "Hom" in object['protvariant2']):
+
+                zygosity = "homozygous"
+
+            else:
+
+                zygosity = "unknown"
+
+        elif protvartypes[0] != 'WT' and protvartypes[0] != 'other' and protvartypes[1] != 'WT' and protvartypes[1] != 'other':
+            
+            zygosity = "compound"
+        
+        elif ("Het1" in object['protvariant1'] and "Het2" in object['protvariant2']):
+
+            zygosity = "compound"
+
+        else:
+
+            zygosity = "heterozygous"
+
 
     object["protvartypes"] = protvartypes
+    object["zygosity"] = zygosity
 
-
-
+    
 # Serialize the python dictionnary to json
 json_data = json.dumps(patient_list, indent=4)
 
 # Writing to bdt_out.json
-# Check output before copying to hp_disease_stats.json
+# Check output before copying to patientData_edited.json
 with open("adv_out.json", "w") as outfile:
     outfile.write(json_data)
 

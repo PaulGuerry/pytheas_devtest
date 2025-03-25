@@ -80,10 +80,10 @@
                 <template v-if="isPFIC9">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
-            <button  @mouseover="isPFIC10 = true; tableData.gene = 'MYO5B'; tableData.disease = 'PFIC10'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isPFIC10 = true; tableData.gene = 'MYO5B'; tableData.disease = 'PFIC11'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isPFIC10 = true; tableData.gene = 'MYO5B'; tableData.disease = 'MYO5B deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isPFIC10 = true; tableData.gene = 'MYO5B'; tableData.disease = 'MYO5B deficiency'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC10')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC10 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> MYO5B deficiency </button> 
                 <template v-if="isPFIC10">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
@@ -94,6 +94,13 @@
                 <template v-if="isPFIC11">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
+            <button  @mouseover="isPFICall = true; tableData.gene = 'Multiple'; tableData.disease = 'PFIC'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isPFICall = true; tableData.gene = 'Multiple'; tableData.disease = 'PFIC'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/PFICall')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC1&#8211;11 </button> 
+                <template v-if="isPFICall">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
             <button  @mouseover="isCDG2P = true; tableData.gene = 'TMEM199'; tableData.disease = 'CDG2P'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isCDG2P = true; tableData.gene = 'TMEM199'; tableData.disease = 'CDG2P'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/CDG2P')"
@@ -118,7 +125,7 @@
             <button  @mouseover="isTHESall = true; tableData.gene = 'SKIC3,SKIC2'; tableData.disease = 'THES'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isTHESall = true; tableData.gene = 'SKIC3,SKIC2'; tableData.disease = 'THES'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/THESall')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> THES1&#8211;2 </button> 
                 <template v-if="isTHESall">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
@@ -129,22 +136,22 @@
                 <template v-if="isFOCADS">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
-            <button  @mouseover="isARCS = true; tableData.gene = 'VPS33B,VIPAS39'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isARCS = true; tableData.gene = 'VPS33B,VIPAS39'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isARCS = true; tableData.gene = 'VPS33B,VIPAS39'; tableData.disease = 'ARCS'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS = true; tableData.gene = 'VPS33B,VIPAS39'; tableData.disease = 'ARCS'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/ARCS')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS </button> 
                 <template v-if="isARCS">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
-            <button  @mouseover="isARCS1 = true; tableData.gene = 'VPS33B'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isARCS1 = true; tableData.gene = 'VPS33B'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isARCS1 = true; tableData.gene = 'VPS33B'; tableData.disease = 'ARCS1'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS1 = true; tableData.gene = 'VPS33B'; tableData.disease = 'ARCS1'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/ARCS1')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS1 </button> 
                 <template v-if="isARCS1">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
-            <button  @mouseover="isARCS2 = true; tableData.gene = 'VIPAS39'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isARCS2 = true; tableData.gene = 'VIPAS39'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isARCS2 = true; tableData.gene = 'VIPAS39'; tableData.disease = 'ARCS2'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isARCS2 = true; tableData.gene = 'VIPAS39'; tableData.disease = 'ARCS2'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/ARCS2')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS2 </button> 
                 <template v-if="isARCS2">
@@ -176,19 +183,73 @@ export default {
                 isPFIC1: false, isPFIC2: false, isPFIC3: false, isPFIC4: false, isPFIC5: false,
                 isPFIC6: false, isPFIC7: false, isPFIC8: false, isPFIC9: false, isPFIC10: false,
                 isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isTHESall: false, isFOCADS: false,
-                isARCS: false, isARCS1: false, isARCS2: false,
-                tableData: {gene: "", disease: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
+                isARCS: false, isARCS1: false, isARCS2: false, isPFICall: false,
+                tableData: {
+                    gene: "", disease: "", 
+                    patientCount: 0, articleCount: 0, 
+                    varCount: 0, dataptCount: 0, 
+                    completeness: 0.001, 
+                    zigosity: {
+                        homo: 0,
+                        hompct: 0.0,
+                        compound: 0,
+                        compct: 0.0,
+                        hetero: 0,
+                        hetpct: 0.0,
+                        unknown: 0
+                    },
+                    protvartypes: {
+                        LoF_LoF: 0,
+                        LLpct: 0.,
+                        LoF_Mis: 0,
+                        LMpct: 0.,
+                        Mis_Mis: 0,
+                        MMpct: 0.,
+                        LoF_Het: 0,
+                        LHpct: 0.,
+                        Mis_Het: 0,
+                        MHpct: 0.,
+                        Unkown: 0
+                    }
+                } 
             }
         },
         falsify() {
             this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
             this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
             this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
-            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false,
-            this.tableData = {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
+            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.PFICall = false,
+            this.tableData = {
+                gene: "", disease: "", 
+                patientCount: 0, articleCount: 0, 
+                varCount: 0, dataptCount: 0, 
+                completeness: 0.001,
+                zigosity: {
+                        homo: 0,
+                        hompct: 0.0,
+                        compound: 0,
+                        compct: 0.0,
+                        hetero: 0,
+                        hetpct: 0.0,
+                        unknown: 0
+                    },
+                    protvartypes: {
+                        LoF_LoF: 0,
+                        LLpct: 0.,
+                        LoF_Mis: 0,
+                        LMpct: 0.,
+                        Mis_Mis: 0,
+                        MMpct: 0.,
+                        LoF_Het: 0,
+                        LHpct: 0.,
+                        Mis_Het: 0,
+                        MHpct: 0.,
+                        Unkown: 0
+                    }
+            } 
         },
         getDiseaseStats() {
-            var stats_disease = this.diseaseArray.filter((item) => {return (item.gene == this.tableData.gene)})
+            var stats_disease = this.diseaseArray.filter((item) => {return (item.name == this.tableData.disease)})
             if (typeof stats_disease !== 'undefined' && typeof stats_disease[0] !== 'undefined') {
                 if ('patients' in stats_disease[0]) this.tableData.patientCount = stats_disease[0].patients.total;
                 if ('articles' in stats_disease[0]) this.tableData.articleCount = stats_disease[0].articles;
@@ -198,6 +259,8 @@ export default {
                     this.tableData.completeness = this.tableData.completeness.toFixed(1)
                 }
                 if ('datapoints' in stats_disease[0]) this.tableData.dataptCount = stats_disease[0].datapoints;
+                if ('zygosity' in stats_disease[0]) this.tableData.zygosity = stats_disease[0].zygosity;
+                if ('protvartypes' in stats_disease[0]) this.tableData.protvartypes = stats_disease[0].protvartypes;
             }
         }
     }
