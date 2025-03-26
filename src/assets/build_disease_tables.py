@@ -4,6 +4,7 @@ import json
 import numpy
 import pandas
 import math
+import simplejson
 from lifelines import KaplanMeierFitter
 
 
@@ -1251,14 +1252,14 @@ articles = []
 
 for disease in diseases:
    print("Building disease table for disease {0:s}".format(disease['name']))
-   ages_first = dict(all = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               boys = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               girls = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               LoF_LoF = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               LoF_Mis = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               Mis_Mis = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               LoF_Het = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               Mis_Het = dict(array = [], median = 0, iqr = 0, surv_x = [], surv_y = []))
+   ages_first = dict(all = dict(name = 'All patients', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               boys = dict(name = 'Boys', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               girls = dict(name = 'Girls', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               LoF_LoF = dict(name = 'LoF+LoF', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               LoF_Mis = dict(name = 'LoF+Mis', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               Mis_Mis = dict(name = 'Mis+Mis', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               LoF_Het = dict(name = 'LoF+WT/Syn', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               Mis_Het = dict(name = 'Mis+WT/Syn', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []))
 
 
    #ages_last = dict(all = dict(array = [], status = [], median = 0, iqr = 0),
@@ -1266,15 +1267,17 @@ for disease in diseases:
    #            girls = dict(array = [], status = [], median = 0, iqr = 0))
    
    # need to account for the fact that in some cases, the age of death is different from the age at last follow-up
-   ages_surv = dict(all = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               boys = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               girls = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               LoF_LoF = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               LoF_Mis = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               Mis_Mis = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               LoF_Het = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               Mis_Het = dict(array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0)
+   ages_surv = dict(all = dict(name = 'All patients', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               boys = dict(name = 'Boys', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               girls = dict(name = 'Girls', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               LoF_LoF = dict(name = 'LoF+LoF', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               LoF_Mis = dict(name = 'LoF+Mis', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               Mis_Mis = dict(name = 'Mis+Mis', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               LoF_Het = dict(name = 'LoF+WT/Syn', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               Mis_Het = dict(name = 'Mis+WT/Syn', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0)
                )
+
+   variants = []
 
    count_patients = dict(total = 0, girls = 0, boys = 0)
    count_consang = dict(yes = 0, no = 0, missing = 0)
@@ -1371,7 +1374,72 @@ for disease in diseases:
                else:
                   
                   protvartypes["Unknown"] += 1
+
+
+               # treat nucleotidevariant1
+               if 'nucleotidevariant1' in object.keys():
+               
+                  var = object["nucleotidevariant1"].partition("c.")[1] + object["nucleotidevariant1"].partition("c.")[2]
+                  doi = object["doi"]
+                  if 'protvariant1' in object.keys() and object['protvariant1'] is not None:
+                     pvar = object["protvariant1"].partition("p.")[1] + object["protvariant1"].partition("p.")[2]
+                     prefix = object["protvariant1"].partition("p.")[0]
+                  else: 
+                     pvar = ""
+                     prefix = ""
+
+                  #if var is blank (no c. in description)
+                  if not var:
+                     var = object["nucleotidevariant1"]
+
+
+                  #handle case when nucleotidevariant is listed as WT
+                  #handle cases where var is still blank (don't write in this case)
+                  if var and var != "WT":
                   
+                     varitem = dict(cvariant = var, pvariant = pvar, prefix = prefix, DOIs = [object["doi"]], type = object["protvartypes"][0])
+
+                     if var not in [el['cvariant'] for el in variants]:
+
+                        variants.append(varitem)
+
+                     elif len([el for el in variants if el['cvariant'] == var and object["doi"] not in el['DOIs']]) > 0:
+
+                        [el for el in variants if el['cvariant'] == var and object["doi"] not in el['DOIs']][0]['DOIs'].append(object["doi"]) 
+
+
+
+               # treat nucleotidevariant2
+               if 'nucleotidevariant2' in object.keys():
+               
+                  var = object["nucleotidevariant2"].partition("c.")[1] + object["nucleotidevariant2"].partition("c.")[2]
+                  doi = object["doi"]
+                  if 'protvariant2' in object.keys() and object['protvariant2'] is not None:
+                     pvar = object["protvariant2"].partition("p.")[1] + object["protvariant2"].partition("p.")[2]
+                     prefix = object["protvariant2"].partition("p.")[0]
+                  else: 
+                     pvar = ""
+                     prefix = ""
+
+                  #if var is blank (no c. in description)
+                  if not var:
+                     var = object["nucleotidevariant2"]
+
+                  #handle case when nucleotidevariant is listed as WT
+                  if var and var != "WT":
+
+                     varitem = dict(cvariant = var, pvariant = pvar, prefix = prefix, DOIs = [object["doi"]], type = object["protvartypes"][1])
+
+                     if var not in [el['cvariant'] for el in variants]:
+
+                        variants.append(varitem)
+
+                     elif len([el for el in variants if el['cvariant'] == var and object["doi"] not in el['DOIs']]) > 0:
+
+                        [el for el in variants if el['cvariant'] == var and object["doi"] not in el['DOIs']][0]['DOIs'].append(object["doi"]) 
+
+
+   
 
 
             if 'firstsymptomagemonth' in object.keys():
@@ -1427,6 +1495,8 @@ for disease in diseases:
                   except:
                      pass
 
+
+
         
             #elif 'ageatmoleculardiagnostic' in object.keys():
             #   presentVarCount += 1
@@ -1457,6 +1527,8 @@ for disease in diseases:
                   #   print(object["id"], object["alivedeadage"])
                   try:
                      ages_surv["all"]["array"].append(float(object["alivedeadage"]))
+
+                     # Sex
                      if ('sex' in object.keys() and object["sex"] == "F"):
 
                         ages_surv["girls"]["array"].append(float(object["alivedeadage"]))
@@ -1465,6 +1537,8 @@ for disease in diseases:
 
                         ages_surv["boys"]["array"].append(float(object["alivedeadage"]))
 
+                     
+                     # Protvartypes
                      if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
 
                         ages_surv["LoF_LoF"]["array"].append(float(object["alivedeadage"]))
@@ -1486,7 +1560,6 @@ for disease in diseases:
                         
                         ages_surv["Mis_Het"]["array"].append(float(object["alivedeadage"]))
 
-
                   except:
                      print("Exception 128 at, '{0:s}', for patient {1:s}".format(object["alivedeadage"]), object["id"])
                
@@ -1494,12 +1567,17 @@ for disease in diseases:
                   if 'alivedead' in object.keys():
                      try:
                         if object["alivedead"] == "alive":
+                           
                            ages_surv["all"]["status"].append("0")
+                           
+                           
+                           # Sex
                            if ('sex' in object.keys() and object["sex"] == "F"):
                               ages_surv["girls"]["status"].append("0")
                            if ('sex' in object.keys() and object["sex"] == "M"):
                               ages_surv["boys"]["status"].append("0")
                            
+                           # Protvartypes
                            if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
 
                               ages_surv["LoF_LoF"]["status"].append("0")
@@ -1522,14 +1600,18 @@ for disease in diseases:
                               ages_surv["Mis_Het"]["status"].append("0")
 
 
-                           
                         elif object["alivedead"] == "dead": 
+                           
                            ages_surv["all"]["status"].append("1")
+                           
+                           # Sex
                            if ('sex' in object.keys() and object["sex"] == "F"):
                               ages_surv["girls"]["status"].append("1")
                            if ('sex' in object.keys() and object["sex"] == "M"):
                               ages_surv["boys"]["status"].append("1")
                            
+                           
+                           # Protvartypes
                            if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
 
                               ages_surv["LoF_LoF"]["status"].append("1")
@@ -1550,6 +1632,9 @@ for disease in diseases:
                            elif ((object["protvartypes"][0] == 'missense' or object["protvartypes"][1] == 'missense') and object["zygosity"] == 'heterozygous'):
 
                               ages_surv["Mis_Het"]["status"].append("1")
+
+
+
 
                         else:
                            print("Exception 152 at, '{0:s}', for patient {1:s}".format(object["alivedead"]), object["id"])
@@ -1899,6 +1984,8 @@ for disease in diseases:
 
 
 
+
+   
    # 250307: perform survival analysis for age at first symptoms
    # all
    df = pandas.DataFrame({'T': [float(i) for i in ages_first["all"]["array"]], 
@@ -2004,7 +2091,8 @@ for disease in diseases:
       ages_first["Mis_Het"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
       ages_first["Mis_Het"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
 
- 
+   
+
 
  
    #for dict_key, dict_val in ages_first.items():
@@ -2084,30 +2172,14 @@ for disease in diseases:
                              zygosity = zygosity,
                              protvartypes = protvartypes,
                              age_at_first_symp = ages_first,
-                             survival = dict(all_surv_x = ages_surv["all"]["surv_x"],
-                                             all_surv_y = ages_surv["all"]["surv_y"],
-                                             boys_surv_x = ages_surv["boys"]["surv_x"],
-                                             boys_surv_y = ages_surv["boys"]["surv_y"],
-                                             girls_surv_x = ages_surv["girls"]["surv_x"],
-                                             girls_surv_y = ages_surv["girls"]["surv_y"],
-                                             LoF_LoF_surv_x = ages_surv["LoF_LoF"]["surv_x"],
-                                             LoF_LoF_surv_y = ages_surv["LoF_LoF"]["surv_y"],
-                                             LoF_Mis_surv_x = ages_surv["LoF_Mis"]["surv_x"],
-                                             LoF_Mis_surv_y = ages_surv["LoF_Mis"]["surv_y"],
-                                             Mis_Mis_surv_x = ages_surv["Mis_Mis"]["surv_x"],
-                                             Mis_Mis_surv_y = ages_surv["Mis_Mis"]["surv_y"],
-                                             LoF_Het_surv_x = ages_surv["LoF_Het"]["surv_x"],
-                                             LoF_Het_surv_y = ages_surv["LoF_Het"]["surv_y"],
-                                             Mis_Het_surv_x = ages_surv["Mis_Het"]["surv_x"],
-                                             Mis_Het_surv_y = ages_surv["Mis_Het"]["surv_y"]
-                                             )
+                             variants = variants,
+                             survival =  ages_surv                                            )
                               )
-   )
 
 
 
 # Serialize the article dictionnary to json
-json_data = json.dumps(articles, indent = 4)
+json_data = simplejson.dumps(articles, indent = 4, ignore_nan = True)
 # Writing (append) to articles_out.json
 # Check output before copying to articles_DOI.json
 with open("articles_out.json", "w") as outfile:
@@ -2117,7 +2189,7 @@ outfile.close()
 
 
 # Serialize the python dictionnary to json
-json_data = json.dumps(disease_table, indent = 4)
+json_data = simplejson.dumps(disease_table, indent = 4, ignore_nan = True)
 
 # Writing to bdt_out.json
 # Check output before copying to hp_disease_stats.json
@@ -2125,7 +2197,5 @@ with open("bdt_out.json", "w") as outfile:
     outfile.write(json_data)
 
 outfile.close()
-   
-
 
 

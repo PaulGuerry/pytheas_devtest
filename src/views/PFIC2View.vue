@@ -2,7 +2,7 @@
     <div class="w-full grid grid-cols-1 place-items-center mx-auto">
         <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
         <p  class="text-xl  text-gray-400 my-10"> PFIC2 (ABCB11 deficiency) </p>
-        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-3 gap-4 my-10 place-items-center"> 
             <button @click="isBubbleSymptoms = !isBubbleSymptoms"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Symptoms 
             </button> 
@@ -39,6 +39,12 @@
             <template v-if="isOrthologs">
                 <ShowOrthologTable :propData="propData"  :key="propData.branchLevel" />
             </template>
+            <button @click="isVariants = !isVariants"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Variants
+            </button> 
+            <template v-if="isVariants">
+                <PlotVariantDistBar :propData="propData"  :key="propData.branchLevel" />
+            </template>
         </div>
     </div>
 </template>
@@ -46,6 +52,7 @@
 
 import PlotSymptomBubble from '@/components/partials/PlotSymptomBubble.vue';
 import PlotSexRatioBar from '@/components/partials/PlotSexRatioBar.vue';
+import PlotVariantDistBar from '@/components/partials/PlotVariantDistBar.vue';
 import PlotFirstSymptomSurv from '@/components/partials/PlotFirstSymptomSurv.vue';
 import PlotSurvivalScatter from '@/components/partials/PlotSurvivalScatter.vue';
 import PlotConsanguinityBar from '@/components/partials/PlotConsanguinityBar.vue';
@@ -55,12 +62,12 @@ export default {
     name: 'PFIC2',
     components: {
     PlotSymptomBubble, PlotSexRatioBar, PlotFirstSymptomSurv, PlotSurvivalScatter,
-    PlotConsanguinityBar, ShowOrthologTable
+    PlotConsanguinityBar, ShowOrthologTable, PlotVariantDistBar
 },
     data: () => ({
         propData: {gene: "ABCB11", disease: "PFIC2", branchLevel: 3},
         isBubbleSymptoms: false, isSexRatio: false, isFirstSymptoms: false,
-        isSurvival: false, isConsanguinity: false, isOrthologs: false
+        isSurvival: false, isConsanguinity: false, isOrthologs: false, isVariants: false
     }),
 }    
 </script>

@@ -42,6 +42,23 @@
             </div>
         </nav>
     </header>
+    <header class="block lg:hidden">
+        <nav class="flex items-center justify-between py-5 px-10">
+            
+            <div class="flex gap-8 ">
+                <router-link to="/diseases" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
+                    Diseases
+                </router-link>
+                <router-link to="/genes" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
+                    Genes
+                </router-link>
+                <router-link to="/compare" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
+                    Compare
+                </router-link>
+            </div>
+        
+        </nav>
+    </header>
 </template>
 <script>
 export default {

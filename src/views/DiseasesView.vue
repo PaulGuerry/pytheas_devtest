@@ -16,7 +16,7 @@
                 <div class="w-64 h-64 tex-center bg-emerald-600 rounded-full"></div>
             </div>
         </div> -->
-        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
             <button  @mouseover="isPFIC1 = true; tableData.gene = 'ATP8B1'; tableData.disease = 'PFIC1'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC1 = true; tableData.gene = 'ATP8B1'; tableData.disease = 'PFIC1'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC1')"
@@ -221,9 +221,14 @@ export default {
             this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.PFICall = false,
             this.tableData = {
                 gene: "", disease: "", 
-                patientCount: 0, articleCount: 0, 
+                articleCount: 0, 
                 varCount: 0, dataptCount: 0, 
                 completeness: 0.001,
+                patients: {
+                    total: 0,
+                    girls: 0,
+                    boys: 0
+                },
                 zigosity: {
                         homo: 0,
                         hompct: 0.0,
@@ -251,7 +256,7 @@ export default {
         getDiseaseStats() {
             var stats_disease = this.diseaseArray.filter((item) => {return (item.name == this.tableData.disease)})
             if (typeof stats_disease !== 'undefined' && typeof stats_disease[0] !== 'undefined') {
-                if ('patients' in stats_disease[0]) this.tableData.patientCount = stats_disease[0].patients.total;
+                if ('patients' in stats_disease[0]) this.tableData.patients = stats_disease[0].patients;
                 if ('articles' in stats_disease[0]) this.tableData.articleCount = stats_disease[0].articles;
                 if ('variables' in stats_disease[0]) {
                     this.tableData.varCount = stats_disease[0].variables.present;

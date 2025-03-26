@@ -1,5 +1,5 @@
 <template lang="html">
-    <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-5"> 
+    <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-3"> 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>
@@ -8,6 +8,12 @@
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
                         PATIENTS
+                    </th>
+                    <th scope="col" class="px-6 py-1 text-center">
+                        BOYS / GIRLS
+                    </th>
+                    <th scope="col" class="px-6 py-1 text-center">
+                        SEX RATIO
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
                         HOMOZYGOUS
@@ -32,7 +38,13 @@
                         {{ tableData.gene }}
                     </td>
                     <td class="px-6 py-2 text-center">
-                       {{  tableData.patientCount }}
+                       {{  tableData.patients.total }}
+                    </td>
+                    <td class="px-6 py-2 text-center">
+                       {{  tableData.patients.boys }} / {{ tableData.patients.girls }}
+                    </td>
+                    <td class="px-6 py-2 text-center">
+                       {{  sexRatio }}
                     </td>
                     <td class="px-6 py-2 text-center">
                         {{ tableData.zygosity.homo }} ({{ tableData.zygosity.hompct }}%) 
@@ -108,6 +120,22 @@
 <script>
 export default {
     name: "DiseaseStatTable",
+    data() {
+        return this.initialState()
+    },
+    mounted() { 
+        this.reset();
+    },
+    methods: {
+        reset() {
+            Object.assign(this.$data, this.initialState())
+        },
+        initialState() {
+            return {
+                sexRatio: Math.round(this.tableData.patients.boys / this.tableData.patients.girls * 100)/100
+            }
+        }
+    },
     props: {
         tableData: {
             type: Object,
@@ -117,6 +145,11 @@ export default {
                 articleCount: 99, 
                 patientCount: 99, varCount: 99, 
                 dataptCount: 99, completeness: 99.9,
+                patients: {
+                    total: 0,
+                    boys: 0,
+                    girls: 0,
+                },
                 zygosity: {
                     homo: 0, compound: 0, hetero: 0, unknown: 0,
                     hompct: 0.0, compct: 0.0, hetpct: 0.0

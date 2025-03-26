@@ -80,9 +80,9 @@ export default {
                         "textposition": "auto",
                         "hoverinfo": "none",
                         "marker": {
-                            "color": ["#f8717133", "#7dd3fc33"],
+                            "color": ["#bc3c2933", "#0072b533"],
                             "line": {
-                                "color": ["#f87171", "#7dd3fc"],
+                                "color": ["#bc3c29", "#0072b5"],
                                 "width": 1.5
                             }
                         }

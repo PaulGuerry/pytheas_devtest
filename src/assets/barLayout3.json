@@ -1,7 +1,13 @@
 {
     "title": false,
     "barmode": "stack",
+    "barcornerradius": 15,
     "margin": {"t":10, "l":30, "r":10},
+    "xaxis": {
+        "ticksuffix": " ",
+	"tickangle": 60,
+    	"automargin": true
+    },
     "yaxis": {
         "showgrid": false,
 	"showticklabels": false,

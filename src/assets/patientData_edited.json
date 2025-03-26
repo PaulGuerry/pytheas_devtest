@@ -19770,6 +19770,7 @@
         "omim": "615878",
         "doi": "https://doi.org/10.1111/liv.15200",
         "pmid": "35184362",
+	"sex": "F",
         "patients": "Case 3 ",
         "gene": "TJP2",
         "geneomim": "607709",
@@ -20481,6 +20482,7 @@
         "doi": "https://doi.org/10.1007/s00535-017-1423-1",
         "pmid": "29238877",
         "patients": "10_16643",
+	"sex": "M",
         "gene": "TJP2",
         "geneomim": "607709",
         "genehugo": "11828",
@@ -20509,6 +20511,7 @@
         "doi": "https://doi.org/10.1007/s00535-017-1423-1",
         "pmid": "29238877",
         "patients": "9_17374",
+	"sex": "M",
         "gene": "TJP2",
         "geneomim": "607709",
         "genehugo": "11828",
@@ -20536,13 +20539,14 @@
         "omim": "615878",
         "doi": "https://doi.org/10.1007/s00535-017-1423-1",
         "pmid": "29238877",
-        "patients": "9_17374",
+        "patients": "8_17362",
         "gene": "TJP2",
         "geneomim": "607709",
         "genehugo": "11828",
         "firstsymptomagemonth": 612.0,
         "alivedead": "alive",
         "lastnewsageyear": 51.0,
+	"sex": "F",
         "symptoms": [
             "0003155",
             "0030948"
@@ -20565,6 +20569,7 @@
         "doi": "https://doi.org/10.1038/s41598-017-11626-x",
         "pmid": "28924228",
         "patients": "24",
+	"sex": "F",
         "gene": "TJP2",
         "geneomim": "607709",
         "genehugo": "11828",
@@ -20599,6 +20604,7 @@
         "omim": "615878",
         "doi": "https://doi.org/10.1038/s41598-017-11626-x",
         "patients": "25",
+	"sex": "F",
         "gene": "TJP2",
         "geneomim": "607709",
         "genehugo": "11828",
@@ -20634,6 +20640,7 @@
         "omim": "615878",
         "doi": "https://doi.org/10.1038/s41598-017-11626-x",
         "patients": "26",
+	"sex": "F",
         "gene": "TJP2",
         "geneomim": "607709",
         "genehugo": "11828",
@@ -20883,6 +20890,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 3.0,
         "alivedead": "alive",
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -20917,6 +20925,7 @@
         "firstsymptomagemonth": 0.5,
         "alivedead": "alive",
         "lastnewsageyear": 7.0,
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -20949,6 +20958,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 2.0,
         "alivedead": "alive",
+	"sex": "F",
         "symptoms": [
             "0100309",
             "0001396",
@@ -20983,6 +20993,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 2.0,
         "alivedead": "alive",
+	"sex": "F",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21016,6 +21027,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 1.0,
         "alivedead": "alive",
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21049,6 +21061,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 0.25,
         "alivedead": "alive",
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21082,6 +21095,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 2.0,
         "alivedead": "alive",
+	"sex": "F",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21115,6 +21129,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 2.0,
         "alivedead": "alive",
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21148,6 +21163,7 @@
         "consanguinity": "yes",
         "firstsymptomagemonth": 3.0,
         "alivedead": "alive",
+	"sex": "F",
         "symptoms": [
             "0001396",
             "0002093",
@@ -21184,6 +21200,7 @@
         "firstsymptomagemonth": 2.0,
         "alivedead": "dead",
         "lastnewsageyear": 1.08,
+	"sex": "F",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21217,6 +21234,7 @@
         "firstsymptomagemonth": 1.0,
         "alivedead": "alive",
         "lastnewsageyear": 4.0,
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21250,6 +21268,7 @@
         "consanguinity": "no",
         "firstsymptomagemonth": 1.0,
         "alivedead": "alive",
+	"sex": "M",
         "symptoms": [
             "0002611",
             "0001396",
@@ -21271,7 +21290,7 @@
     },
     {
         "id": "PFIC4_049",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21301,7 +21320,7 @@
     },
     {
         "id": "PFIC4_050",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21329,7 +21348,7 @@
     },
     {
         "id": "PFIC4_051",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21360,7 +21379,7 @@
     },
     {
         "id": "PFIC4_052",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "pmid": "12704386",
@@ -21385,7 +21404,7 @@
     },
     {
         "id": "PFIC4_053",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21415,7 +21434,7 @@
     },
     {
         "id": "PFIC4_054",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21444,7 +21463,7 @@
     },
     {
         "id": "PFIC4_055",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21474,7 +21493,7 @@
     },
     {
         "id": "PFIC4_056",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21500,7 +21519,7 @@
     },
     {
         "id": "PFIC4_057",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21526,7 +21545,7 @@
     },
     {
         "id": "PFIC4_058",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21556,7 +21575,7 @@
     },
     {
         "id": "PFIC4_059",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21586,7 +21605,7 @@
     },
     {
         "id": "PFIC4_064",
-        "disease": "PFIC4",
+        "disease": "FHC",
         "omim": "615878",
         "doi": "https://doi.org/10.1038/ng1147",
         "phenotype": "FHC",
@@ -21738,7 +21757,7 @@
         "nucleotidevariant2": "NM_001206977.2:c.526C>T",
         "consanguinity": "yes",
         "sex": "M",
-        "term": "term",
+        "term": 39,
         "ageatmoleculardiagnostic": "0.7",
         "firstsymptomagemonth": 16.0,
         "alivedead": "alive",
