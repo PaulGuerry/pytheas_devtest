@@ -7,10 +7,10 @@
                         GENE
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
-                        PATIENTS
+                        SELECTION
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
-                        BOYS / GIRLS
+                        PATIENTS
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
                         DEATHS
@@ -18,29 +18,52 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="px-6 py-2 text-left">
-                        {{ propData.gene }}
-                    </td>
-                    <td class="px-6 py-2 text-center"> 
-                       {{ patientTotal }}
-                    </td>
-                    <td class="px-6 py-2 text-center">
-                       {{ boyNo }} / {{ girlNo }} 
-                    </td>
-                    <td class="px-6 py-2 text-center">
-                       {{ boysDead }} / {{ girlsDead }}
-                    </td>
-                </tr>
+                <template v-for="(el, i) in scatterSurvival" :key="i">
+                    <tr class="bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td v-if="i==0" class="px-6 py-0.5 text-left">
+                            {{ propData.gene }}
+                        </td>
+                        <td v-if="i>0" class="px-6 py-0.5 text-left">
+                            
+                        </td>
+                        <td class="px-6 py-0.5 text-center"> 
+                           {{ el.name }}
+                        </td>
+                        <td class="px-6 py-0.5 text-center"> 
+                           {{ el.x.length }}
+                        </td>
+                        <td class="px-6 py-0.5 text-center"> 
+                           {{ el.deaths }}
+                        </td>
+                    </tr>
+                </template>
             </tbody>
         </table>
         <div class="mt-10 mb-0 flex flex-row w-full">
-            <div class="w-1/6"></div>
             <div class="chart-container w-full"><VuePlotly :data="scatterSurvival" :layout="survLayout" :config="plotConfig"></VuePlotly></div>
-            <div class="w-1/6"></div>
         </div>
         <div class="mt-0 mb-0 flex flex-row w-full">
             <p class="text-sm text-center w-full">Years of age </p>
+        </div>
+        <div class="w-full grid grid-cols-4 gap-10 mt-10 mb-20 place-items-center"> 
+            <button  class="w-full py-2 text-sm invisible"> Invisible </button>
+            <button  v-if="!selGirlsBoys" @click="reset(); gatherStats('girls', 'boys'); selGirlsBoys = true;"
+                class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> 
+                Girls/Boys 
+            </button> 
+            <button  v-if="selGirlsBoys" @click="reset(); gatherStats('all')" 
+                class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> 
+                Girls/Boys 
+            </button>
+            <button  v-if="!selVarTypes" @click="reset(); gatherStats('LoF_LoF', 'LoF_Mis', 'Mis_Mis', 'LoF_Het', 'Mis_Het'); selVarTypes = true;"
+                class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> 
+                Variant types 
+            </button> 
+            <button  v-if="selVarTypes" @click="reset(); gatherStats('all')" 
+                class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> 
+                Variant types
+            </button>
+            <button  class="w-full py-2 text-sm invisible"> Invisible </button>
         </div>
     </div>
         
@@ -59,7 +82,7 @@ export default {
     },
     mounted() { 
         this.reset();
-        this.gatherStats();    
+        this.gatherStats("all");    
     },
     methods: {
         reset() {
@@ -69,46 +92,34 @@ export default {
             return {
                 diseaseArray: myDiseaseStats,
                 patientTotal: 0,
-                girlNo: 0,
-                boyNo: 0,
-                girlsDead: 0,
-                boysDead: 0,
-                sexRatio: 0,
+                deadTotal: 0,
                 branchLevel: this.propData.branchLevel,
                 survLayout: survLayout1,
+                selGirlsBoys: false, selVarTypes: false,
+                selFirstSymp: false,
+                colors: [
+                    "#374E55FF", "#DF8F44FF", "#00A1D5FF", "#FF4745FF", "#79AF97FF", "#6A6599FF", "#80796BFF"
+                ],
                 scatterSurvival: [ 
-                    {
-                      x:[],
-                      y:[],
-                      name: "Girls",
-                      type: "scatter",
-                      mode: "lines", 
-                      line: {width: 2, color: "#f87171", shape: "hv"}
-                    },
-                    {
-                      x:[],
-                      y:[],
-                      name: "Boys",
-                      type: "scatter",
-                      mode: "lines", 
-                      line: {width: 2, color: "#7dd3fc", shape: "hv"}
-                    }
                 ],
                 plotConfig:{displayModeBar: false}
             }
         },
-        gatherStats() {
-            console.log("gene, ", this.propData.gene)
-            var stats_disease = this.diseaseArray.filter((item) => {return (item.gene == this.propData.gene)})
-            this.patientTotal = stats_disease[0].age_at_last_news.all.array.length 
-            this.girlNo = stats_disease[0].age_at_last_news.girls.array.length
-            this.boyNo = stats_disease[0].age_at_last_news.boys.array.length
-            this.girlsDead = stats_disease[0].age_at_last_news.girls.status.filter((val) => val == 1).length
-            this.boysDead = stats_disease[0].age_at_last_news.boys.status.filter((val) => val == 1).length
-            this.scatterSurvival[0].x = stats_disease[0].survival.girls_surv_x
-            this.scatterSurvival[0].y = stats_disease[0].survival.girls_surv_y
-            this.scatterSurvival[1].x = stats_disease[0].survival.boys_surv_x
-            this.scatterSurvival[1].y = stats_disease[0].survival.boys_surv_y
+        gatherStats(...Args) {
+            var stats_disease = this.diseaseArray.filter(item => item.gene == this.propData.gene)
+            this.patientTotal = stats_disease[0].survival.all.status.length
+            this.deadTotal = stats_disease[0].survival.all.status.filter(item => item == 1).length
+            let i = 0
+            for (var sel of Args) {
+                let survival_el = {x:[], y:[], name: "", deaths: 0, type: "scatter", mode: "lines", line: {width: 2, color: this.colors[i], shape: "hv"}}
+                let stats_sel = stats_disease[0].survival[sel]
+                survival_el.x = stats_sel.surv_x
+                survival_el.y = stats_sel.surv_y
+                survival_el.name = stats_sel.name
+                survival_el.deaths = stats_sel.status.filter(item => item == 1).length
+                this.scatterSurvival.push(survival_el)
+                i++
+            }
         }
     },
     props: {

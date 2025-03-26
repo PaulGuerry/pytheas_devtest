@@ -4,50 +4,52 @@
             <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>
                     <th scope="col" class="px-6 py-1 text-left">
-                        DISEASE
-                    </th>
-                    <th scope="col" class="px-6 py-1 text-left">
                         GENE
+                    </th>
+                    <th scope="col" class="px-6 py-1 text-center">
+                        SELECTION
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
                         PATIENTS
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
-                        AGE AT FIRST SYMPTOMS<sup>*</sup> 
+                        AGE AT FIRST SYMPTOMS<sup>*</sup>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-                v-for="(el, i) in tableStats" :key="i">
-                    <td class="px-6 py-0 text-left">
-                        {{ el.name }}
-                    </td>
-                    <td class="px-6 py-0 text-left italic">
-                        {{ el.gene }}
-                    </td>
-                    <td class="px-6 py-0 text-center"> 
-                       {{ el.patientTotal }}
-                    </td>
-                    <td class="px-6 py-0 text-center">
-                      <p>{{ el.median  }} ({{ el.iqr }}) months</p> 
-                    </td>
-                </tr>
+                <template v-for="(el, i) in scatterSurvival" :key="i">
+                    <tr class="bg-white border-none dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <td v-if="i==0" class="px-6 py-0.5 text-left">
+                            {{ propData.gene }}
+                        </td>
+                        <td v-if="i>0" class="px-6 py-0.5 text-left">
+                            
+                        </td>
+                        <td class="px-6 py-0.5 text-center"> 
+                           {{ el.name }}
+                        </td>
+                        <td class="px-6 py-0.5 text-center"> 
+                           {{ el.x.length }}
+                        </td>
+                        <td class="pr-44 pt-1 pb-0 text-right">
+                            {{ el.median  }} ({{ el.iqr }}) months
+                        </td>
+                    </tr>
+                </template>
                 <tr class="text-xs">
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="text-center py-2"><sup>*</sup>median (IQR)</td>
+                    <td class="text-right py-2 pr-32"><sup>*</sup>median (IQR)</td>
                 </tr>
             </tbody>
         </table>
         <div class="mt-10 mb-0 flex flex-row w-full">
-            <div class="w-1/6"></div>
-            <div class="chart-container w-2/3"><VuePlotly :data="scatterSurvival" :layout="survLayout" :config="plotConfig"></VuePlotly></div>
-            <div class="w-1/6"></div>
+            <div class="chart-container w-full"><VuePlotly :data="scatterSurvival" :layout="survLayout" :config="plotConfig"></VuePlotly></div>
         </div>
         <div class="mt-0 mb-0 flex flex-row w-full">
-            <p class="text-sm text-center w-full">Months of age </p>
+            <p class="text-sm text-center w-full">Years of age </p>
         </div>
     </div>
         
@@ -59,14 +61,14 @@ import survLayout2 from '@/assets/survivalLayout2.json'
 import { VuePlotly } from 'vue3-plotly'
 
 export default {
-    name: "PlotFirstSymptomMulti",
+    name: "PlotSurvivalScatter",
     components: {  VuePlotly },
     data() {
         return this.initialState()
     },
     mounted() { 
         this.reset();
-        this.gatherStats();    
+        this.gatherStats("all");    
     },
     methods: {
         reset() {
@@ -75,52 +77,30 @@ export default {
         initialState() {
             return {
                 diseaseArray: myDiseaseStats,
-                survLayout: survLayout2,
                 patientTotal: 0,
-                girlNo: 0,
-                boyNo: 0,
+                deadTotal: 0,
                 branchLevel: this.propData.branchLevel,
-                tableStats: [],
-                boxAgeAtFirstSymp: [],
-                scatterSurvival: [],
+                survLayout: survLayout2,
+                selGirlsBoys: false, selVarTypes: false,
+                selFirstSymp: false,
+                scatterSurvival: [ 
+                ],
                 plotConfig:{displayModeBar: false}
             }
         },
         gatherStats() {
-            var stats_disease = []
-            //var box_el = {y: [], type: "box", name: "", mode:"lines", line: {width: 2, color: "", shape: "hv"}}
-            var stats_el = {name: "", gene: "", patientTotal: 0, median: 0, iqr: 0}
-            var medians = []
-            var iqrs = []
-            var survival_el = {x:[], y: {}, name: "", type: "scatter", mode:"lines", line: {width: 2, color: "", shape: "hv"}}
             for (var gene of this.propData.genes) {
-                stats_disease = this.diseaseArray.filter((item) => {return (item.gene == gene)})
-                //box_el = {y: {}, type: "box", name: "", mode:"lines", line: {width: 2, color: "", shape: "hv"}}
-                stats_el = {name: "", gene: "", patientTotal: 0, median: 0, iqr: 0}
-                survival_el = {x:[], y: {}, name: "", type: "scatter", mode:"lines", line: {width: 2, color: "", shape: "hv"}}
-                //box_el.y = stats_disease[0].age_at_first_symp.all.array;
-                //box_el.line.color = stats_disease[0].colour
-                //box_el.name = stats_disease[0].name
-                stats_el.name = stats_disease[0].name
-                stats_el.gene = stats_disease[0].gene
-                stats_el.patientTotal = stats_disease[0].age_at_first_symp.all.array.length 
-                stats_el.median = stats_disease[0].age_at_first_symp.all.median
-                medians.push(stats_el.median)
-                stats_el.median = Math.round((stats_el.median * 1) * (1 + Number.EPSILON)) / 1
-                stats_el.iqr = stats_disease[0].age_at_first_symp.all.iqr
-                iqrs.push(stats_el.iqr)
-                stats_el.iqr = Math.round((stats_el.iqr * 1) * (1 + Number.EPSILON)) / 1
-                survival_el.x = stats_disease[0].age_at_first_symp.all.surv_x
-                survival_el.y = stats_disease[0].age_at_first_symp.all.surv_y
-                survival_el.line.color = stats_disease[0].colour
+                var stats_disease = this.diseaseArray.filter(item => item.gene == gene)
+                let survival_el = {x:[], y:[], name: "", median: 0, iqr: 0, type: "scatter", mode: "lines", line: {width: 2, color: "", shape: "hv"}}
+                let stats_sel = stats_disease[0].age_at_first_symp["all"]
+                survival_el.x = stats_sel.surv_x.map(x => x / 12)
+                survival_el.y = stats_sel.surv_y
                 survival_el.name = stats_disease[0].name
-                //this.boxAgeAtFirstSymp.push(box_el)
-                this.tableStats.push(stats_el)
-                console.log(survival_el)
+                survival_el.median = Math.round(stats_sel.median * 10) / 10 
+                survival_el.iqr = Math.round(stats_sel.iqr * 10) / 10 
+                survival_el.color = stats_sel.colour
                 this.scatterSurvival.push(survival_el)
             }
-            //this.boxLayout_alt.yaxis.range[1] = Math.max(...medians) + 2.6 * Math.max(...iqrs)
-            //this.boxLayout_alt.yaxis.autorange = false
         }
     },
     props: {

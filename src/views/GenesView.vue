@@ -16,7 +16,7 @@
                 <div class="w-64 h-64 tex-center bg-emerald-600 rounded-full"></div>
             </div>
         </div> -->
-        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
             <button  @mouseover="isPFIC1 = true; tableData.gene = 'ATP8B1'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC1 = true; tableData.gene = 'ATP8B1'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC1')"

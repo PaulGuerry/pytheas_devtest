@@ -106,13 +106,13 @@
                         REPORTEDNESS IN {{ sel[1] }}
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
-                        REPORTED PRESENT BY
+                        REPORTED PRESENT IN
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
-                        REPORTED ABSENT BY
+                        REPORTED ABSENT IN
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
-                        REPORTED PRESENT + ABSENT BY
+                        REPORTED PRESENT + ABSENT IN
                     </th>
                 </tr>
             </thead>
