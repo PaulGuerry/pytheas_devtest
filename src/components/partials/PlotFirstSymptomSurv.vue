@@ -1,5 +1,5 @@
 <template lang="html">
-    <div  class="w-full py-4 text-xl text-gray-600 col-start-1 col-span-5"> 
+    <div  class="w-full py-4 text-xl text-gray-600 col-start-1 col-span-2 md:col-span-3 lg:col-span-5"> 
         <table class="w-full text-sm text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>
@@ -14,6 +14,9 @@
                     </th>
                     <th scope="col" class="px-6 py-1 text-center">
                         AGE AT FIRST SYMPTOMS<sup>*</sup>
+                    </th>
+                    <th scope="col" class="px-6 py-1 text-center">
+                        
                     </th>
                 </tr>
             </thead>
@@ -32,7 +35,7 @@
                         <td class="px-6 py-0.5 text-center"> 
                            {{ el.x.length }}
                         </td>
-                        <td class="pr-44 pt-1 pb-0 text-right">
+                        <td class="pt-1 pb-0 text-center">
                             {{ el.median  }} ({{ el.iqr }}) months
                         </td>
                     </tr>
@@ -41,7 +44,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="text-right py-2 pr-32"><sup>*</sup>median (IQR)</td>
+                    <td class="text-center py-2"><sup>*</sup>median (IQR)</td>
                 </tr>
             </tbody>
         </table>

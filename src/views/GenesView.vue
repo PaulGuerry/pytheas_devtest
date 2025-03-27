@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
-        <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
+        <img class="w-[100px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg" >
         <p  class="text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a curated repository of clinical data on very rare Mendelian diseases. </p>
         <!-- <div class="w-1/2 grid grid-cols-3 gap-4 my-2 place-items-center"> 
             <div class="w-full my-0 grid place-items-center">
@@ -94,6 +94,13 @@
                 <template v-if="isPFIC11">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
+            <button  @mouseover="isPFICall = true; tableData.gene = 'All PFIC genes';  getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isPFICall = true; tableData.gene = 'All PFIC genes';  getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/PFICall')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> All PFIC genes </button> 
+                <template v-if="isPFICall">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
             <button  @mouseover="isCDG2P = true; tableData.gene = 'TMEM199'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isCDG2P = true; tableData.gene = 'TMEM199'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/CDG2P')"
@@ -162,22 +169,81 @@ export default {
                 diseaseArray: myDiseaseData,
                 isPFIC1: false, isPFIC2: false, isPFIC3: false, isPFIC4: false, isPFIC5: false,
                 isPFIC6: false, isPFIC7: false, isPFIC8: false, isPFIC9: false, isPFIC10: false,
-                isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isFOCADS: false,
-                isARCS: false, isARCS1: false, isARCS2: false,
-                tableData: {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
+                isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isTHESall: false, isFOCADS: false,
+                isARCS: false, isARCS1: false, isARCS2: false, isPFICall: false,
+                tableData: {
+                    gene: "", disease: "", 
+                    patientCount: 0, articleCount: 0, 
+                    varCount: 0, dataptCount: 0, 
+                    completeness: 0.001, 
+                    zygosity: {
+                        homo: 0,
+                        hompct: 0.0,
+                        compound: 0,
+                        compct: 0.0,
+                        hetero: 0,
+                        hetpct: 0.0,
+                        unknown: 0
+                    },
+                    protvartypes: {
+                        LoF_LoF: 0,
+                        LLpct: 0.,
+                        LoF_Mis: 0,
+                        LMpct: 0.,
+                        Mis_Mis: 0,
+                        MMpct: 0.,
+                        LoF_Het: 0,
+                        LHpct: 0.,
+                        Mis_Het: 0,
+                        MHpct: 0.,
+                        Unkown: 0
+                    }
+                } 
             }
         },
         falsify() {
             this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
             this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
-            this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isFOCADS = false,
-            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false,
-            this.tableData = {gene: "", patientCount: 0, articleCount: 0, varCount: 0, dataptCount: 0, completeness: 0.001} 
+            this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
+            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.isPFICall = false,
+            this.tableData = {
+                gene: "", disease: "", 
+                articleCount: 0, 
+                varCount: 0, dataptCount: 0, 
+                completeness: 0.001,
+                patients: {
+                    total: 0,
+                    girls: 0,
+                    boys: 0
+                },
+                zygosity: {
+                        homo: 0,
+                        hompct: 0.0,
+                        compound: 0,
+                        compct: 0.0,
+                        hetero: 0,
+                        hetpct: 0.0,
+                        unknown: 0
+                    },
+                    protvartypes: {
+                        LoF_LoF: 0,
+                        LLpct: 0.,
+                        LoF_Mis: 0,
+                        LMpct: 0.,
+                        Mis_Mis: 0,
+                        MMpct: 0.,
+                        LoF_Het: 0,
+                        LHpct: 0.,
+                        Mis_Het: 0,
+                        MHpct: 0.,
+                        Unkown: 0
+                    }
+            } 
         },
         getDiseaseStats() {
             var stats_disease = this.diseaseArray.filter((item) => {return (item.gene == this.tableData.gene)})
             if (typeof stats_disease !== 'undefined' && typeof stats_disease[0] !== 'undefined') {
-                if ('patients' in stats_disease[0]) this.tableData.patientCount = stats_disease[0].patients.total;
+                if ('patients' in stats_disease[0]) this.tableData.patients = stats_disease[0].patients;
                 if ('articles' in stats_disease[0]) this.tableData.articleCount = stats_disease[0].articles;
                 if ('variables' in stats_disease[0]) {
                     this.tableData.varCount = stats_disease[0].variables.present;
@@ -185,6 +251,8 @@ export default {
                     this.tableData.completeness = this.tableData.completeness.toFixed(1)
                 }
                 if ('datapoints' in stats_disease[0]) this.tableData.dataptCount = stats_disease[0].datapoints;
+                if ('zygosity' in stats_disease[0]) this.tableData.zygosity = stats_disease[0].zygosity;
+                if ('protvartypes' in stats_disease[0]) this.tableData.protvartypes = stats_disease[0].protvartypes;
             }
         }
     }

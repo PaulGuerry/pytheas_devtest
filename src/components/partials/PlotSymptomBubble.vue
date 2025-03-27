@@ -1,5 +1,5 @@
 <template lang="html">
-    <div  class="w-full py-4 text-xl text-gray-600 col-start-1 col-span-5"> 
+    <div  class="w-full py-4 text-xl text-gray-600 col-start-1 col-span-2 md:col-span-3 lg:col-span-5"> 
         <table class="w-full text-sm text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>
@@ -28,9 +28,6 @@
                     <td class="px-6 py-2 text-left">
                         {{ propData.gene }}
                     </td>
-                    <td class="px-6 py-2 text-center">
-                       <input type="number" min=2 step=1 max=6 v-model="branchLevel" class="text-center" @input="$emit('updateBrLvl', branchLevel)">
-                    </td>
                     <td class="px-6 py-2 text-center"> 
                        {{ patientTotal }}
                     </td>
@@ -42,50 +39,54 @@
         </table>
         <template v-if="selAll">
             <div class="my-0 flex flex-row w-full">
-                <div class="chart-container w-full"><VuePlotly :data="bubbleDataSymptoms" :layout="scatterLayout2" :config="plotConfig"></VuePlotly></div>
+                <div class="chart-container w-full"><VuePlotly :data="bubbleDataSymptoms" :layout="scatterLayout3" :config="plotConfig"></VuePlotly></div>
+            </div>
+            <div class="my-0 flex flex-row w-full justify-center">
             </div>
         </template>
         <template v-if="!selAll">
             <div class="my-0 flex flex-row w-full">
-                <div class="chart-container w-full"><VuePlotly :data="bubbleDataSymptomsSel1" :layout="scatterLayout2" :config="plotConfig" :key="bubbleDataSymptomsSel1[0].x.length"></VuePlotly></div>
+                <div class="chart-container w-full"><VuePlotly :data="bubbleDataSymptomsSel1" :layout="scatterLayout3" :config="plotConfig" :key="bubbleDataSymptomsSel1[0].x.length"></VuePlotly></div>
             </div>
         </template>
-        <table class="w-1/2 text-sm text-gray-500 dark:text-gray-400 my-5">
-            <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
-                <tr>
-                    <th class="px-6 py-1 text-left">
-                        COMPARE SELECTIONS
-                    </th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="px-6 py-1 text-left">
-                        <button  v-if="!selGirlsBoys"  
-                            @click="reset(); gatherStats(); selAll = false; selGirlsBoys = true; sel[0] = 'GIRLS'; sel[1] = 'BOYS'; fetchSelection('Girls', 'Boys');  "
-                            class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> Girls/Boys </button> 
-                        <button  v-if="selGirlsBoys" 
-                            @click="reset(); gatherStats()"
-                            class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> &uarr;&uarr; Girls &uarr;&uarr; | &darr;&darr; Boys &darr;&darr; </button>
-                    </td>
-                    <td class="px-6 py-1 text-left">
-                        <button  v-if="!selLoFLoF"  
-                            @click="reset(); gatherStats(); selAll = false; selLoFLoF = true; sel[0] = 'LoF+LoF'; sel[1] = 'Other'; fetchSelection('LoF_LoF', '!LoF_LoF');  "
-                            class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> LoF+LoF/Other </button> 
-                        <button  v-if="selLoFLoF" 
-                            @click="reset(); gatherStats()"
-                            class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> &uarr;&uarr; LoF+LoF &uarr;&uarr; | &darr;&darr; Other &darr;&darr; </button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="my-0 flex flex-row w-full justify-center">
+            <p v-if="selGirlsBoys" class="text-sm text-center py-2 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full "> Girls </p>
+            <p v-if="selLoFLoF" class="text-sm text-center py-2 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full "> Patients with two LoF variants </p>
+            <p v-if="selAges" class="text-sm text-center py-2 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full "> Patients with first symptoms before 5 years of age </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 ld:grid-cols-4 gap-10 mt-10 mb-20 place-items-center"> 
+            <p class="text-sm font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full "> COMPARE: </p>
+            <button  v-if="!selGirlsBoys"  
+                @click="reset(); gatherStats(); selAll = false; selGirlsBoys = true;  sel[0] = 'Girls'; sel[1] = 'Boys'; fetchSelection('Girls', 'Boys');  "
+                class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> Girls/Boys </button> 
+            <button  v-if="selGirlsBoys" 
+                @click="reset(); gatherStats()"
+                class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> Girls/Boys </button>
+            <button  v-if="!selLoFLoF"  
+                @click="reset(); gatherStats(); selAll = false; selLoFLoF = true;  sel[0] = 'LoF+LoF'; sel[1] = '!LoF+LoF'; fetchSelection('LoF_LoF', '!LoF_LoF');  "
+                class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> LoF+LoF/Other </button> 
+            <button  v-if="selLoFLoF" 
+                @click="reset(); gatherStats()"
+                class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> LoF+LoF/Other</button>
+            <button  v-if="!selAges"  
+                @click="reset(); gatherStats(); selAll = false; selAges = true; sel[0] = 'Symptoms before 5 y'; sel[1] = 'Symptoms after 5 y'; fetchSelection('Before5y', 'After5y');  "
+                class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> First symptoms before/after 5 years of age </button> 
+            <button  v-if="selAges" 
+                @click="reset(); gatherStats()"
+                class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> First symptoms before/after 5 years of age </button>
+ 
+        </div>
         <template v-if="!selAll">
             <div class="my-0 flex flex-row w-full">
-                <div class="chart-container w-full"><VuePlotly :data="bubbleDataSymptomsSel2" :layout="scatterLayout2" :config="plotConfig" :key="bubbleDataSymptomsSel2[0].x.length"></VuePlotly></div>
+                <div class="chart-container w-full"><VuePlotly :data="bubbleDataSymptomsSel2" :layout="scatterLayout3" :config="plotConfig" :key="bubbleDataSymptomsSel2[0].x.length"></VuePlotly></div>
             </div>
         </template>
-        <table class="text-xs text-gray-500 dark:text-gray-400">
+        <div class="my-0 flex flex-row w-full justify-center">
+            <p v-if="selGirlsBoys" class="text-sm text-center py-5 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full ">Boys</p>
+            <p v-if="selLoFLoF" class="text-sm text-center py-5 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full "> Patients with other variant combinations </p>
+            <p v-if="selAges" class="text-sm text-center py-5 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full "> Patients with first symptoms after 5 years of age </p>
+        </div>
+        <table class="w-full text-xs text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>
                     <th scope="col" colspan="4" class="px-6 py-10 text-left">
@@ -151,7 +152,7 @@
 <script>
 
 import mySymptomStats from '@/assets/hp_symptom_stats.json'
-import myScatterLayout2 from '@/assets/scatterLayout2.json'
+import myScatterLayout2 from '@/assets/scatterLayout3.json'
 import { VuePlotly } from 'vue3-plotly'
 
 export default {
@@ -171,18 +172,18 @@ export default {
         initialState() {
             return {
                 symptomArray: mySymptomStats,
-                scatterLayout2: myScatterLayout2,
+                scatterLayout3: myScatterLayout2,
                 patientTotal: 0,
                 girlNo: 0,
                 boyNo: 0,
                 sexRatio: 0,
-                sel: ["ALL", "ALL"],
+                sel: ["All", "All"],
                 countsAsReported: [],
                 countsAsReportedSel1: [],
                 countsAsReportedSel2: [],
                 branchLevel: this.propData.branchLevel,
                 selGirlsBoys: false,
-                selLoFLoF: false, selAll: true,
+                selLoFLoF: false, selAll: true, selAges: false,
                 bubbleDataSymptoms: [
                         {
                             "x": [],
@@ -245,7 +246,6 @@ export default {
         },
         gatherStats() {
             var pa_ratio = 5.
-            //console.log("HERE 61")
             //var stats = this.symptomArray.filter((item) => {return (item.gene == this.propData.gene && item.analysis_level == this.propData.branchLevel)})
             var statsAsReported = this.symptomArray.filter((item) => {return (item.gene == this.propData.gene && item.analysis_level == 999 && item.selection == "All")})
             this.countsAsReported = statsAsReported[0].counts
@@ -268,13 +268,10 @@ export default {
                 this.bubbleDataSymptoms[0].text.push(String(statsAsReported[0].counts[i].HPO_term));
                 this.bubbleDataSymptoms[0].marker.color.push(String(statsAsReported[0].counts[i].colour));
                 this.bubbleDataSymptoms[0].marker.line.color.push(String(statsAsReported[0].counts[i].colour).substring(0,7));
-                //console.log(this.bubbleDataSymptoms[0].text[i], this.bubbleDataSymptoms[0].x[i], this.bubbleDataSymptoms[0].y[i], this.bubbleDataSymptoms[0].marker.size[i])
             }
-            //console.log(this.bubbleDataSymptoms[0])
         },
         fetchSelection(sel1, sel2) {
             var pa_ratio = 5.
-            //console.log("HERE 61, selection, ", sel)
             var statsAsReported = this.symptomArray.filter((item) => {return (item.gene == this.propData.gene && item.analysis_level == 999 && item.selection == sel1)})
             this.countsAsReportedSel1 = statsAsReported[0].counts
             statsAsReported = this.symptomArray.filter((item) => {return (item.gene == this.propData.gene && item.analysis_level == 999 && item.selection == sel2)})

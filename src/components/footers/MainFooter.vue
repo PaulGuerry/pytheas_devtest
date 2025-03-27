@@ -65,7 +65,7 @@
         </div> 
     </footer>
     <div class="bg-blue-600 text-white text-center py-3 px-5">
-        <p style="display:inline-block;"> &copy; PytheasDB by GGS 2024. Supported by Mirum. </p>
+        <p style="display:inline-block;"> &copy; PytheasDB by GGS 2025. Supported by Mirum. </p>
     </div>
 </template>
 <script>

@@ -1,8 +1,8 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
-        <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
+        <img class="w-[100px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg" >
         <p  class="text-xl  text-gray-400 mt-10 mb-2"> Select the diseases to compare. </p>
-        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
                 <button  v-if="!selPFIC1"  
                     @click="selPFIC1 = true; tableData.genes.push('ATP8B1')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> PFIC 1 </button> 
@@ -183,6 +183,39 @@
             <template v-if="isConsanguinity">
                 <PlotConsanguinityMulti :propData="tableData"  :key="tableData.genes.length" />
             </template>
+            <button v-if="!isVariants"
+                    @click="isVariants = true"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> Variants
+            </button> 
+            <button v-if="isVariants"
+                    @click="isVariants = false"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> Variants
+            </button>
+            <template v-if="isVariants">
+                <PlotVariantsMulti :propData="tableData"  :key="tableData.genes.length" />
+            </template>
+            <button v-if="!isSymptoms"
+                    @click="isSymptoms = true"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> Symptoms
+            </button> 
+            <button v-if="isSymptoms"
+                    @click="isSymptoms = false"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> Symptoms
+            </button>
+            <template v-if="isSymptoms">
+                <PlotSymptomBubbleMulti :propData="tableData"  :key="tableData.genes.length" />
+            </template>
+            <button v-if="!isSymptomCategories"
+                    @click="isSymptomCategories = true"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> Symptom categories
+            </button>
+            <button v-if="isSymptomCategories"
+                    @click="isSymptomCategories = false"
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> Symptom categories
+            </button>
+            <template v-if="isSymptomCategories">
+                <PlotSymptomBubbleCatMulti :propData="tableData"  :key="tableData.genes.length" />
+            </template>
         </div>
     </div>
 </template>
@@ -193,13 +226,17 @@ import PlotSexRatioMulti from '@/components/partials/PlotSexRatioMulti.vue';
 import PlotFirstSymptomMulti from '@/components/partials/PlotFirstSymptomMulti.vue';
 import PlotSurvivalMulti from '@/components/partials/PlotSurvivalScatterMulti.vue';
 import PlotConsanguinityMulti from '@/components/partials/PlotConsanguinityMulti.vue';
+import PlotVariantsMulti from '@/components/partials/PlotVariantsMulti.vue';
+import PlotSymptomBubbleMulti from '@/components/partials/PlotSymptomBubbleMulti.vue';
+import PlotSymptomBubbleCatMulti from '@/components/partials/PlotSymptomBubbleCatMulti.vue';
 
 
 export default {
     name: "CompareView",
     components: {
         PlotSexRatioMulti, PlotFirstSymptomMulti, PlotSurvivalMulti,
-        PlotConsanguinityMulti
+        PlotConsanguinityMulti, PlotVariantsMulti, PlotSymptomBubbleMulti,
+        PlotSymptomBubbleCatMulti
     },
     data() {
       return this.initialState()
@@ -218,7 +255,8 @@ export default {
                 selPFIC11: false, selCDG2P: false, selTHES1: false, selTHES2: false, 
                 selARCS1: false, selARCS2: false, selARCS: false, selAll: false,
                 selTHESall: false, selFOCADS: false,
-                isBarSymptoms: false, isSexRatio: false, isFirstSymptoms: false, isSurvival: false, isConsanguinity: false, 
+                isBarSymptoms: false, isSexRatio: false, isFirstSymptoms: false, isSurvival: false, 
+                isConsanguinity: false, isVariants: false, isSymptoms: false, isSymptomCategories: false,
                 tableData: {genes: []}
             }
         },
