@@ -1,6 +1,8 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center mx-auto">
-        <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
+        <router-link to="/">
+            <img class="w-[200px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg">
+        </router-link>
         <p  class="text-xl  text-gray-400 my-10"> References </p>
         <table class="text-sm text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
