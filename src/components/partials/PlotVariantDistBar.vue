@@ -118,7 +118,7 @@ export default {
                         }
                     }
                 ],
-                plotConfig:{displayModeBar: false},
+                plotConfig:{displayModeBar: false, responsive: true},
                 tableData: {
                     gene: this.propData.gene, disease: this.propData.disease, 
                     articleCount: 0, 

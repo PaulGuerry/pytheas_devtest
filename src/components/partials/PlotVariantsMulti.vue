@@ -69,7 +69,7 @@ export default {
                         }
                 },
                 barDataZygTypes: [],
-                plotConfig:{displayModeBar: false},
+                plotConfig:{displayModeBar: false, responsive: true},
                 tableData_el: {
                     gene: "", disease: "", 
                     articleCount: 0, 

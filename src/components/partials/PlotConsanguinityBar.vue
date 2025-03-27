@@ -90,7 +90,7 @@ export default {
                         }
                     }
                 ],
-                plotConfig:{displayModeBar: false}
+                plotConfig:{displayModeBar: false, responsive: true}
             }
         },
         gatherStats() {

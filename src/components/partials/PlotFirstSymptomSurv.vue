@@ -111,7 +111,7 @@ export default {
                 ],
                 scatterSurvival: [ 
                 ],
-                plotConfig:{displayModeBar: false}
+                plotConfig:{displayModeBar: false, responsive: true}
             }
         },
         gatherStats(...Args) {

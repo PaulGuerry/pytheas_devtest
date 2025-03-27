@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
         <img class="w-[200px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg" >
-        <p  class="md:text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a curated repository of clinical data on very rare Mendelian diseases. </p>
+        <p  class="md:text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a living review of published clinical data on very rare Mendelian diseases. </p>
         <!-- <div class="w-1/2 grid grid-cols-3 gap-4 my-2 place-items-center"> 
             <div class="w-full my-0 grid place-items-center">
                 <p  class="text-xl text-center text-gray-400 mt-5 mb-0"> <span class="text-blue-600"> 14 </span> diseases </p>
