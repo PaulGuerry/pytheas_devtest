@@ -3,7 +3,7 @@
         <router-link to="/">
             <img class="w-[200px] h-auto md:w-[300px] lg:w-[400px] " src="@/assets/PYTHEAS_Logo.svg">
         </router-link>
-        <p  class="text-xl  text-gray-800 my-20"> If you use PytheasDB, please cite <a href="https://doi.org/10.5582/irdr.2024.01043"> Percheron et al. <span class="italic"> Intractable Rare Dis Res </span> (2024) </a> </p>
+        <p  class="text-xl  text-gray-800 my-20"> If you use PytheasDB, please cite <a href="https://doi.org/10.5582/irdr.2024.01043" class="text-gray-500 font-semibold"> Percheron <span class="italic"> et al. </span>  Intractable Rare Dis Res  (2024) </a> </p>
         <p  class="text-xl  text-gray-800 my-20"> Please send all comments/queries/requests to <span class="font-bold"> contact.pytheasdb@gmail.com </span> </p>
     </div>
 </template>
