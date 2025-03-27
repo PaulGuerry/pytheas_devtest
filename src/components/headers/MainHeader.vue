@@ -42,6 +42,9 @@
     </header>
     <header class="block lg:hidden">
         <nav class="flex items-center justify-between py-5 px-10">
+            <router-link to="/">
+                <img class="w-[50px] h-auto md:w-[100px] lg:w-[200px] " src="@/assets/PYTHEAS_Logo.svg">
+            </router-link>
             
             <div class="flex gap-8 ">
                 <router-link to="/diseases" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
