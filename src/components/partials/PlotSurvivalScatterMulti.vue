@@ -79,7 +79,7 @@ export default {
                 survLayout: survLayout1,
                 scatterSurvival: [],
                 tableStats: [],
-                plotConfig:{displayModeBar: false}
+                plotConfig:{displayModeBar: false, responsive: true}
             }
         },
         gatherStats() {

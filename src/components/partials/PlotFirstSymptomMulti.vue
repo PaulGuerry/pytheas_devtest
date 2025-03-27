@@ -85,7 +85,7 @@ export default {
                 selFirstSymp: false,
                 scatterSurvival: [ 
                 ],
-                plotConfig:{displayModeBar: false}
+                plotConfig:{displayModeBar: false, responsive: true}
             }
         },
         gatherStats() {

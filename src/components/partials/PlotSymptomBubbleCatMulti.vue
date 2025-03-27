@@ -76,7 +76,7 @@ export default {
                 selLoFLoF: false, selAll: true, selAges: false,
                 bubbleDataSymptoms: [],
                 tableStats: [],
-                plotConfig:{displayModeBar: false}
+                plotConfig:{displayModeBar: false, responsive: true}
             }
         },
         gatherStats() {
