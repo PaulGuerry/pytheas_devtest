@@ -40,7 +40,7 @@
             </tbody>
         </table>
         <template v-for="(el, i) of bubbleDataSymptoms" :key="i">
-            <div class="chart-container w-full my-0"><VuePlotly :data="el" :layout="scatterLayout2" :config="plotConfig" :key="el[0].y.length"></VuePlotly></div>
+            <div class="chart-container w-full my-0"><VuePlotly :data="el" :layout="scatterLayout3" :config="plotConfig" :key="el[0].y.length"></VuePlotly></div>
             <div class="my-0 flex flex-row w-full justify-center">
                 <p class="text-sm text-center py-2 font-bold text-gray-700 uppercase bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full mt-5 ">{{ el.disease }}</p>
             </div>
@@ -50,7 +50,7 @@
 <script>
 
 import mySymptomStats from '@/assets/hp_symptom_stats.json'
-import myScatterLayout2 from '@/assets/scatterLayout2.json'
+import myScatterLayout2 from '@/assets/scatterLayout3.json'
 import { VuePlotly } from 'vue3-plotly'
 
 export default {
@@ -70,7 +70,7 @@ export default {
         initialState() {
             return {
                 symptomArray: mySymptomStats,
-                scatterLayout2: myScatterLayout2,
+                scatterLayout3: myScatterLayout2,
                 branchLevel: this.propData.branchLevel,
                 selGirlsBoys: false,
                 selLoFLoF: false, selAll: true, selAges: false,
