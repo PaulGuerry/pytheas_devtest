@@ -126,6 +126,11 @@
     },
     {
         "articlenumber": 26,
+        "articledoi": "https://doi.org/10.1016/s0168-8278(03)00286-1",
+        "disease": "PFIC1"
+    },
+    {
+        "articlenumber": 27,
         "articledoi": "0.1016/s0168-8278(03)00286-1",
         "disease": "PFIC1"
     },
@@ -211,7 +216,7 @@
     },
     {
         "articlenumber": 17,
-        "articledoi": "I https://doi.org/ 10.1055/s-0036-1597912",
+        "articledoi": "https://doi.org/ 10.1055/s-0036-1597912",
         "disease": "PFIC2"
     },
     {
@@ -591,7 +596,7 @@
     },
     {
         "articlenumber": 4,
-        "articledoi": "0.1016/j.ejmg.2023.104709",
+        "articledoi": "https://10.1016/j.ejmg.2023.104709",
         "disease": "CDG2P"
     },
     {
@@ -826,51 +831,56 @@
     },
     {
         "articlenumber": 3,
-        "articledoi": "https://doi.org/10.1002/(SICI)1096-8628(19970211)68:4%3C391::AID-AJMG3%3E3.0.CO;2-P",
+        "articledoi": "https://pubmed.ncbi.nlm.nih.gov/9021008/",
         "disease": "THES"
     },
     {
         "articlenumber": 4,
-        "articledoi": "https://doi.org/10.1097/00005176-200003000-00030",
+        "articledoi": "https://doi.org/10.1002/(SICI)1096-8628(19970211)68:4%3C391::AID-AJMG3%3E3.0.CO;2-P",
         "disease": "THES"
     },
     {
         "articlenumber": 5,
-        "articledoi": "https://doi.org/10.1046/j.1525-1470.2003.20514.x",
+        "articledoi": "https://doi.org/10.1097/00005176-200003000-00030",
         "disease": "THES"
     },
     {
         "articlenumber": 6,
-        "articledoi": "https://doi.org/10.1016/j.jpeds.2004.01.026",
+        "articledoi": "https://doi.org/10.1046/j.1525-1470.2003.20514.x",
         "disease": "THES"
     },
     {
         "articlenumber": 7,
-        "articledoi": "https://doi.org/10.1002/ajmg.a.31583",
+        "articledoi": "https://doi.org/10.1016/j.jpeds.2004.01.026",
         "disease": "THES"
     },
     {
         "articlenumber": 8,
-        "articledoi": "https://doi.org/10.1002/ajmg.a.31634",
+        "articledoi": "https://doi.org/10.1002/ajmg.a.31583",
         "disease": "THES"
     },
     {
         "articlenumber": 9,
-        "articledoi": "https://doi.org/10.1186%2F1750-1172-3-6",
+        "articledoi": "https://doi.org/10.1002/ajmg.a.31634",
         "disease": "THES"
     },
     {
         "articlenumber": 10,
-        "articledoi": "https://doi.org/10.1007/s00431-008-0861-4",
+        "articledoi": "https://doi.org/10.1186%2F1750-1172-3-6",
         "disease": "THES"
     },
     {
         "articlenumber": 11,
-        "articledoi": "https://doi.org/10.1155/2016/9684910",
+        "articledoi": "https://doi.org/10.1007/s00431-008-0861-4",
         "disease": "THES"
     },
     {
         "articlenumber": 12,
+        "articledoi": "https://doi.org/10.1155/2016/9684910",
+        "disease": "THES"
+    },
+    {
+        "articlenumber": 13,
         "articledoi": "http://dx.doi.org/10.18203/2349-3291.ijcp20163698",
         "disease": "THES"
     },
