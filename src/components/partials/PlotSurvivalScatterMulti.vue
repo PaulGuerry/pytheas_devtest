@@ -90,12 +90,12 @@ export default {
                 survival_el = {x:[], y: {}, name: "", type: "scatter", mode:"lines", line: {width: 2, color: "", shape: "hv"}}
                 stats_el = {name: "", gene: "", patientTotal: 0, deadNo: 0}
                 stats_disease = this.diseaseArray.filter((item) => {return (item.gene == gene)})
-                stats_el.patientTotal = stats_disease[0].age_at_last_news.all.status.length 
+                stats_el.patientTotal = stats_disease[0].survival.all.status.length 
                 stats_el.name = stats_disease[0].name
                 stats_el.gene = stats_disease[0].gene
-                stats_el.deadNo = stats_disease[0].age_at_last_news.all.status.filter((val) => val == 1).length
-                survival_el.x = stats_disease[0].survival.all_surv_x
-                survival_el.y = stats_disease[0].survival.all_surv_y
+                stats_el.deadNo = stats_disease[0].survival.all.status.filter((val) => val == 1).length
+                survival_el.x = stats_disease[0].survival.all.surv_x
+                survival_el.y = stats_disease[0].survival.all.surv_y
                 survival_el.line.color = stats_disease[0].colour
                 survival_el.name = stats_disease[0].name
                 this.scatterSurvival.push(survival_el)

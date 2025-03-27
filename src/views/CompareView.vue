@@ -1,6 +1,8 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
-        <img class="w-[100px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg" >
+        <router-link to="/">
+            <img class="w-[200px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg">
+        </router-link>
         <p  class="text-xl  text-gray-400 mt-10 mb-2"> Select the diseases to compare. </p>
         <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
                 <button  v-if="!selPFIC1"  

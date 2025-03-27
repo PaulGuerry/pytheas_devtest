@@ -1,6 +1,8 @@
 <template lang="html">    
     <div class="w-full grid grid-cols-1 place-items-center mx-auto">
-        <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
+        <router-link to="/">
+            <img class="w-[200px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg">
+        </router-link>
         <p  class="text-xl  text-gray-400 my-10"> PFIC2 (ABCB11 deficiency) </p>
         <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
             <button @click="isBubbleSymptoms = !isBubbleSymptoms"
