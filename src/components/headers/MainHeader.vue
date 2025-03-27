@@ -2,9 +2,7 @@
     <header class="hidden lg:block">
         <nav class="flex items-center justify-between py-5 px-10">
             <router-link to="/">
-                <p class="text-3xl font-bold text-gray-500">
-                    Pytheas <span class="text-blue-600"> DB </span>
-                </p>
+                <img class="w-[50px] h-auto md:w-[100px] lg:w-[200px] " src="@/assets/PYTHEAS_Logo.svg">
             </router-link>
             
             <div class="flex gap-8 ">

@@ -28974,8 +28974,8 @@
         }
     },
     {
-        "gene": "AllPFIC",
-        "name": "PFIC",
+        "gene": "All PFIC genes",
+        "name": "PFIC1-11",
         "colour": "#be123c",
         "animals": [],
         "patients": {

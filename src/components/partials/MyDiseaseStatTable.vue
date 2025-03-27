@@ -1,5 +1,5 @@
 <template lang="html">
-    <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-3"> 
+    <div  class="w-full py-4 text-xl text-center text-gray-600 col-start-1 col-span-2 md:col-span-3 lg:col-span-5"> 
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>

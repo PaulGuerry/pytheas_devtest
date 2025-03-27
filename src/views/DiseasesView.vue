@@ -1,6 +1,6 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
-        <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
+        <img class="w-[100px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg" >
         <p  class="text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a curated repository of clinical data on very rare Mendelian diseases. </p>
         <!-- <div class="w-1/2 grid grid-cols-3 gap-4 my-2 place-items-center"> 
             <div class="w-full my-0 grid place-items-center">
@@ -94,8 +94,8 @@
                 <template v-if="isPFIC11">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
-            <button  @mouseover="isPFICall = true; tableData.gene = 'Multiple'; tableData.disease = 'PFIC'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isPFICall = true; tableData.gene = 'Multiple'; tableData.disease = 'PFIC'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isPFICall = true; tableData.gene = 'All PFIC genes'; tableData.disease = 'PFIC1-11'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isPFICall = true; tableData.gene = 'All PFIC genes'; tableData.disease = 'PFIC1-11'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFICall')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC1&#8211;11 </button> 
                 <template v-if="isPFICall">
@@ -189,7 +189,7 @@ export default {
                     patientCount: 0, articleCount: 0, 
                     varCount: 0, dataptCount: 0, 
                     completeness: 0.001, 
-                    zigosity: {
+                    zygosity: {
                         homo: 0,
                         hompct: 0.0,
                         compound: 0,
@@ -229,7 +229,7 @@ export default {
                     girls: 0,
                     boys: 0
                 },
-                zigosity: {
+                zygosity: {
                         homo: 0,
                         hompct: 0.0,
                         compound: 0,

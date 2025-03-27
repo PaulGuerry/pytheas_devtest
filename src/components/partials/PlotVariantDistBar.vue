@@ -1,11 +1,11 @@
 <template lang="html">
-    <div  class="w-full py-4 text-xl text-gray-600 col-start-1 col-span-3"> 
+    <div  class="w-full py-4 text-xl text-gray-600 col-start-1 col-span-2 md:col-span-3 lg:col-span-5"> 
         <MyDiseaseStatTable :tableData="tableData" :key="tableData.patients.total + tableData.patients.boys"/>
         <div class="mt-10 mb-0 flex flex-row w-full">
             <div class="chart-container w-1/2 mx-10"><VuePlotly :data="barDataZygTypes" :layout="barLayout3" :config="plotConfig"></VuePlotly></div>
             <div class="chart-container w-1/2 mx-10"><VuePlotly :data="barDataVarTypes" :layout="barLayout3" :config="plotConfig"></VuePlotly></div>
         </div>
-        <table class="text-xs text-gray-500 dark:text-gray-400">
+        <table class="w-full text-xs text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 bg-white dark:bg-gray-700 dark:text-gray-400 rounded-full">
                 <tr>
                     <th scope="col" colspan="8" class="px-6 py-10 text-left">

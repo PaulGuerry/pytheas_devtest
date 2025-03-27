@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
-        <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
-        <p  class="text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a living review of published clinical data on very rare Mendelian diseases. </p>
+        <img class="w-[100px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg" >
+        <p  class="text-xl  text-gray-400 my-5"> Pytheas <span class="text-blue-600"> DB </span> is a curated repository of clinical data on very rare Mendelian diseases. </p>
         <!-- <div class="w-1/2 grid grid-cols-3 gap-4 my-2 place-items-center"> 
             <div class="w-full my-0 grid place-items-center">
                 <p  class="text-xl text-center text-gray-400 mt-5 mb-0"> <span class="text-blue-600"> 14 </span> diseases </p>
@@ -16,7 +16,7 @@
                 <div class="w-64 h-64 tex-center bg-emerald-600 rounded-full"></div>
             </div>
         </div> -->
-        <div class="w-3/4 grid grid-cols-5 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
             <button  @mouseover="isPFIC1 = true; tableData.gene = 'ATP8B1'; tableData.disease = 'PFIC1'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isPFIC1 = true; tableData.gene = 'ATP8B1'; tableData.disease = 'PFIC1'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFIC1')"
@@ -94,8 +94,8 @@
                 <template v-if="isPFIC11">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template> 
-            <button  @mouseover="isPFICall = true; tableData.gene = 'Multiple'; tableData.disease = 'PFIC'; getDiseaseStats()" @mouseleave="falsify()"  
-                    @touchstart="isPFICall = true; tableData.gene = 'Multiple'; tableData.disease = 'PFIC'; getDiseaseStats()"   @touchend="falsify()" 
+            <button  @mouseover="isPFICall = true; tableData.gene = 'All PFIC genes'; tableData.disease = 'PFIC1-11'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isPFICall = true; tableData.gene = 'All PFIC genes'; tableData.disease = 'PFIC1-11'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/PFICall')"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> PFIC1&#8211;11 </button> 
                 <template v-if="isPFICall">
@@ -189,34 +189,7 @@ export default {
                     patientCount: 0, articleCount: 0, 
                     varCount: 0, dataptCount: 0, 
                     completeness: 0.001, 
-                    zigosity: {
-                        homo: 0,
-                        compound: 0,
-                        hetero: 0,
-                        unknown: 0
-                    },
-                    protvartypes: {
-                        LoF_LoF: 0,
-                        LoF_Mis: 0,
-                        Mis_Mis: 0,
-                        LoF_Het: 0,
-                        Mis_Het: 0,
-                        Unkown: 0
-                    }
-                } 
-            }
-        },
-        falsify() {
-            this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
-            this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
-            this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
-            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.isPFICall = false,
-            this.tableData = {
-                gene: "", disease: "", 
-                patientCount: 0, articleCount: 0, 
-                varCount: 0, dataptCount: 0, 
-                completeness: 0.001,
-                zigosity: {
+                    zygosity: {
                         homo: 0,
                         hompct: 0.0,
                         compound: 0,
@@ -227,10 +200,55 @@ export default {
                     },
                     protvartypes: {
                         LoF_LoF: 0,
+                        LLpct: 0.,
                         LoF_Mis: 0,
+                        LMpct: 0.,
                         Mis_Mis: 0,
+                        MMpct: 0.,
                         LoF_Het: 0,
+                        LHpct: 0.,
                         Mis_Het: 0,
+                        MHpct: 0.,
+                        Unkown: 0
+                    }
+                } 
+            }
+        },
+        falsify() {
+            this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
+            this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
+            this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
+            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.PFICall = false,
+            this.tableData = {
+                gene: "", disease: "", 
+                articleCount: 0, 
+                varCount: 0, dataptCount: 0, 
+                completeness: 0.001,
+                patients: {
+                    total: 0,
+                    girls: 0,
+                    boys: 0
+                },
+                zygosity: {
+                        homo: 0,
+                        hompct: 0.0,
+                        compound: 0,
+                        compct: 0.0,
+                        hetero: 0,
+                        hetpct: 0.0,
+                        unknown: 0
+                    },
+                    protvartypes: {
+                        LoF_LoF: 0,
+                        LLpct: 0.,
+                        LoF_Mis: 0,
+                        LMpct: 0.,
+                        Mis_Mis: 0,
+                        MMpct: 0.,
+                        LoF_Het: 0,
+                        LHpct: 0.,
+                        Mis_Het: 0,
+                        MHpct: 0.,
                         Unkown: 0
                     }
             } 
@@ -238,7 +256,7 @@ export default {
         getDiseaseStats() {
             var stats_disease = this.diseaseArray.filter((item) => {return (item.name == this.tableData.disease)})
             if (typeof stats_disease !== 'undefined' && typeof stats_disease[0] !== 'undefined') {
-                if ('patients' in stats_disease[0]) this.tableData.patientCount = stats_disease[0].patients.total;
+                if ('patients' in stats_disease[0]) this.tableData.patients = stats_disease[0].patients;
                 if ('articles' in stats_disease[0]) this.tableData.articleCount = stats_disease[0].articles;
                 if ('variables' in stats_disease[0]) {
                     this.tableData.varCount = stats_disease[0].variables.present;
@@ -248,12 +266,6 @@ export default {
                 if ('datapoints' in stats_disease[0]) this.tableData.dataptCount = stats_disease[0].datapoints;
                 if ('zygosity' in stats_disease[0]) this.tableData.zygosity = stats_disease[0].zygosity;
                 if ('protvartypes' in stats_disease[0]) this.tableData.protvartypes = stats_disease[0].protvartypes;
-                let val = this.tableData.zygosity.homo / (this.tableData.zygosity.homo + this.tableData.zygosity.compound + this.tableData.zygosity.hetero) * 100
-                this.tableData.zygosity.hompct = val.toFixed(1)
-                val = this.tableData.zygosity.compound / (this.tableData.zygosity.homo + this.tableData.zygosity.compound + this.tableData.zygosity.hetero) * 100
-                this.tableData.zygosity.hetpct = val.toFixed(1)
-                val = this.tableData.zygosity.hetero / (this.tableData.zygosity.homo + this.tableData.zygosity.compound + this.tableData.zygosity.hetero) * 100
-                this.tableData.zygosity.compct = val.toFixed(1)
             }
         }
     }

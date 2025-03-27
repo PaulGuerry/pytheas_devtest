@@ -2,12 +2,18 @@
     <div class="w-full grid grid-cols-1 place-items-center mx-auto">
         <h1 class="text-3xl font-bold text-gray-500"> Pytheas <span class="text-blue-600"> DB </span> </h1> 
         <p  class="text-xl  text-gray-400 my-10"> PFIC1 (ATP8B1 deficiency) </p>
-        <div class="w-3/4 grid grid-cols-3 gap-4 my-10 place-items-center"> 
+        <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
             <button @click="isBubbleSymptoms = !isBubbleSymptoms"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Symptoms 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Symptoms as reported
             </button> 
             <template v-if="isBubbleSymptoms">
-                <PlotSymptomBubble :propData="propData"  :key="propData.branchLevel" @update-br-lvl="(n) => n >= 2 && n <= 6 ? propData.branchLevel = n : propData.branchLevel = 3" />
+                <PlotSymptomBubble :propData="propData"  :key="propData.branchLevel" @update-br-lvl="(n) => n >= 2 && n <= 5 ? propData.branchLevel = n : propData.branchLevel = 2" />
+            </template>
+            <button @click="isSympCategories = !isSympCategories"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Symptom categories 
+            </button> 
+            <template v-if="isSympCategories">
+                <PlotSympCategoriesBubble :propData="propData"  :key="propData.branchLevel" @update-br-lvl="(n) => n >= 2 && n <= 5 ? propData.branchLevel = n : propData.branchLevel = 2" />
             </template>
             <button @click="isSexRatio = !isSexRatio"
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> Sex ratio 
@@ -51,6 +57,7 @@
 <script>
 
 import PlotSymptomBubble from '@/components/partials/PlotSymptomBubble.vue';
+import PlotSympCategoriesBubble from '@/components/partials/PlotSympCategoriesBubble.vue';
 import PlotSexRatioBar from '@/components/partials/PlotSexRatioBar.vue';
 import PlotVariantDistBar from '@/components/partials/PlotVariantDistBar.vue';
 import PlotFirstSymptomSurv from '@/components/partials/PlotFirstSymptomSurv.vue';
@@ -62,11 +69,11 @@ export default {
     name: 'PFIC1',
     components: {
     PlotSymptomBubble, PlotSexRatioBar, PlotFirstSymptomSurv, PlotSurvivalScatter,
-    PlotConsanguinityBar, ShowOrthologTable, PlotVariantDistBar
+    PlotConsanguinityBar, ShowOrthologTable, PlotVariantDistBar, PlotSympCategoriesBubble
 },
     data: () => ({
-        propData: {gene: "ATP8B1", disease: "PFIC1", branchLevel: 3},
-        isBubbleSymptoms: false, isSexRatio: false, isFirstSymptoms: false,
+        propData: {gene: "ATP8B1", disease: "PFIC1", branchLevel: 2},
+        isBubbleSymptoms: false, isSympCategories: false, isSexRatio: false, isFirstSymptoms: false,
         isSurvival: false, isConsanguinity: false, isOrthologs: false, isVariants: false
     }),
 }    

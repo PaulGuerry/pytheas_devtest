@@ -1231,8 +1231,8 @@ diseases = [
       ] 
    ),
    dict(
-      name = "PFIC", 
-      gene = "AllPFIC", 
+      name = "PFIC1-11", 
+      gene = "All PFIC genes", 
       matches = ["PFIC1", "PFIC2", "PFIC3", "PFIC4", "PFIC5", "PFIC6",
                  "PFIC7", "PFIC8", "PFIC9", "MYO5B deficiency", "PFIC11"], 
       colour = colours[19],
