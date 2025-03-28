@@ -4,7 +4,7 @@
             <img class="w-[200px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg">
         </router-link>
         <p  class="w-3/4 md:text-xl  text-gray-400 my-5 text-center"> Pytheas <span class="text-blue-600"> DB </span> is a living review of published clinical data on very rare Mendelian diseases. </p>
-        <div class="w-3/4 hidden lg:block"> 
+        <div class="w-full hidden lg:block place-items-center"> 
             <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
                 <button  @mouseover="isPFIC1 = true; tableData.gene = 'ATP8B1'; tableData.disease = 'PFIC1'; getDiseaseStats()" @mouseleave="falsify()"  
                         @touchstart="isPFIC1 = true; tableData.gene = 'ATP8B1'; tableData.disease = 'PFIC1'; getDiseaseStats()"   @touchend="falsify()" 
@@ -148,7 +148,7 @@
                     </template>
             </div>
         </div>
-        <div class="w-3/4 block lg:hidden"> 
+        <div class="w-full block lg:hidden place-items-center"> 
             <div class="w-3/4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 my-10 place-items-center"> 
                 <button    
                         @click="$router.push('/PFIC1')"
