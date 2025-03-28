@@ -45,7 +45,7 @@
         <div class="mt-0 mb-0 flex flex-row w-full">
             <p class="text-sm text-center w-full">Years of age </p>
         </div>
-        <div class="w-full grid grid-cols-4 gap-10 mt-10 mb-20 place-items-center"> 
+        <div class="w-full grid grid-cols-5 gap-10 mt-10 mb-20 place-items-center"> 
             <button  class="w-full py-2 text-sm invisible"> Invisible </button>
             <button  v-if="!selGirlsBoys" @click="reset(); gatherStats('girls', 'boys'); selGirlsBoys = true;"
                 class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> 
@@ -62,6 +62,14 @@
             <button  v-if="selVarTypes" @click="reset(); gatherStats('all')" 
                 class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> 
                 Variant types
+            </button>
+            <button  v-if="!selPhenType & propData.gene == 'MYO5B'" @click="reset(); gatherStats('PFIC10', 'MVID'); selPhenType = true;"
+                class="w-full py-2 text-sm bg-slate-200 hover:bg-green-100 text-blue-400 rounded-full"> 
+                PFIC10/MVID 
+            </button> 
+            <button  v-if="selPhenType & propData.gene == 'MYO5B'" @click="reset(); gatherStats('all')" 
+                class="w-full py-2 text-sm bg-emerald-600 text-white rounded-full"> 
+                PFIC10/MVID
             </button>
             <button  class="w-full py-2 text-sm invisible"> Invisible </button>
         </div>
