@@ -716,6 +716,22 @@
                     0.96,
                     1.0
                 ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -2227,6 +2243,24 @@
                 ],
                 "median": 5.0,
                 "iqr": 29.0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -3228,6 +3262,22 @@
                     0.9697,
                     1.0
                 ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -5875,6 +5925,24 @@
                 ],
                 "median": 3.0,
                 "iqr": 32.0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -7090,6 +7158,22 @@
                     0.9615,
                     1.0
                 ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -9550,6 +9634,24 @@
                 ],
                 "median": 33.5,
                 "iqr": 24.0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -9967,6 +10069,22 @@
                     0.8333,
                     1.0
                 ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -10875,6 +10993,24 @@
                 ],
                 "median": null,
                 "iqr": 16.75
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -11112,6 +11248,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -11373,6 +11525,24 @@
                 "surv_y": [],
                 "median": 0,
                 "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -11596,6 +11766,22 @@
                 "iqr": 0,
                 "surv_x": [],
                 "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -11746,6 +11932,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -12337,6 +12541,22 @@
                     0.6667,
                     1.0
                 ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -13596,6 +13816,24 @@
                 ],
                 "median": 0.58,
                 "iqr": 2.355
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -13860,6 +14098,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -14144,6 +14398,24 @@
                 "surv_y": [],
                 "median": 0,
                 "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -14412,6 +14684,22 @@
                 "iqr": 0,
                 "surv_x": [],
                 "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -14670,6 +14958,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -15173,6 +15479,99 @@
                 "surv_y": [
                     0.0,
                     0.5,
+                    1.0
+                ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.6,
+                    0.1,
+                    5.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    2.0,
+                    1.6,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.3,
+                    1.5
+                ],
+                "median": 0.1,
+                "iqr": 0.0,
+                "surv_x": [
+                    0.0,
+                    0.1,
+                    0.3,
+                    0.6,
+                    1.5,
+                    1.6,
+                    2.0,
+                    5.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.8605,
+                    0.8837,
+                    0.907,
+                    0.9302,
+                    0.9535,
+                    0.9767,
+                    1.0
+                ]
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [
+                    7.0,
+                    9.0,
+                    7.0,
+                    5.0
+                ],
+                "median": 7.0,
+                "iqr": 1.0,
+                "surv_x": [
+                    0.0,
+                    5.0,
+                    7.0,
+                    9.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.25,
+                    0.75,
                     1.0
                 ]
             }
@@ -16650,6 +17049,206 @@
                 ],
                 "median": null,
                 "iqr": 6.5
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [
+                    0.14,
+                    0.75,
+                    0.58,
+                    0.5,
+                    0.07,
+                    1.0,
+                    11.75,
+                    11.0,
+                    10.0,
+                    0.42,
+                    10.0,
+                    3.5,
+                    1.0,
+                    11.0,
+                    5.0,
+                    0.6,
+                    7.0,
+                    3.0,
+                    5.0,
+                    5.17,
+                    0.2,
+                    0.5,
+                    0.42,
+                    5.0,
+                    0.58,
+                    5.5,
+                    4.0,
+                    12.0,
+                    8.0,
+                    3.0,
+                    0.83,
+                    1.5,
+                    1.17,
+                    10.17,
+                    17.0,
+                    14.5,
+                    13.92,
+                    15.0,
+                    12.5,
+                    16.0,
+                    29.0,
+                    12.0,
+                    0.5,
+                    5.3
+                ],
+                "status": [
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.07,
+                    0.14,
+                    0.2,
+                    0.42,
+                    0.5,
+                    0.58,
+                    0.6,
+                    0.75,
+                    0.83,
+                    1.0,
+                    1.17,
+                    1.5,
+                    3.0,
+                    3.5,
+                    4.0,
+                    5.0,
+                    5.17,
+                    5.3,
+                    5.5,
+                    7.0,
+                    8.0,
+                    10.0,
+                    10.17,
+                    11.0,
+                    11.75,
+                    12.0,
+                    12.5,
+                    13.92,
+                    14.5,
+                    15.0,
+                    16.0,
+                    17.0,
+                    29.0
+                ],
+                "surv_y": [
+                    1.0,
+                    1.0,
+                    0.9767,
+                    0.9767,
+                    0.9291,
+                    0.8576,
+                    0.81,
+                    0.7862,
+                    0.7623,
+                    0.7385,
+                    0.7147,
+                    0.7147,
+                    0.6892,
+                    0.6636,
+                    0.6636,
+                    0.6636,
+                    0.6348,
+                    0.6348,
+                    0.6348,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5396,
+                    0.5396,
+                    0.4625,
+                    0.4625,
+                    0.4625,
+                    0.3469,
+                    0.3469,
+                    0.3469,
+                    0.3469
+                ],
+                "median": 5.0,
+                "iqr": 10.2875
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [
+                    3.0,
+                    15.0,
+                    0.58,
+                    2.3
+                ],
+                "status": [
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.58,
+                    2.3,
+                    3.0,
+                    15.0
+                ],
+                "surv_y": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "median": 2.65,
+                "iqr": 4.13
             }
         }
     },
@@ -16794,6 +17393,22 @@
                 "iqr": 0,
                 "surv_x": [],
                 "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -16885,6 +17500,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -17125,6 +17758,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -17376,6 +18025,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -17848,6 +18515,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -18795,6 +19478,24 @@
                 ],
                 "median": 0.3,
                 "iqr": 6.0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -19273,6 +19974,22 @@
                     0.56
                 ],
                 "median": 0.56,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
                 "iqr": 0,
                 "surv_x": [],
                 "surv_y": []
@@ -20242,6 +20959,24 @@
                 "surv_y": [],
                 "median": 1.67,
                 "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -21138,6 +21873,22 @@
                     0.5,
                     1.0
                 ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
             }
         },
         "variants": [
@@ -23064,6 +23815,24 @@
                 ],
                 "median": 0.985,
                 "iqr": 8.25
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -23318,6 +24087,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -23704,6 +24489,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -24230,6 +25033,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -25688,6 +26507,24 @@
                 "surv_y": [],
                 "median": 0,
                 "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
             }
         }
     },
@@ -25899,6 +26736,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -26187,6 +27040,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -26929,6 +27800,22 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "median": 0,
                 "iqr": 0,
@@ -28965,6 +29852,24 @@
             },
             "Mis_Het": {
                 "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
                 "array": [],
                 "status": [],
                 "surv_x": [],
@@ -31911,6 +32816,99 @@
                     0.9684,
                     0.9789,
                     0.9895,
+                    1.0
+                ]
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.6,
+                    0.1,
+                    5.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    2.0,
+                    1.6,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.3,
+                    1.5
+                ],
+                "median": 0.1,
+                "iqr": 0.0,
+                "surv_x": [
+                    0.0,
+                    0.1,
+                    0.3,
+                    0.6,
+                    1.5,
+                    1.6,
+                    2.0,
+                    5.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.8605,
+                    0.8837,
+                    0.907,
+                    0.9302,
+                    0.9535,
+                    0.9767,
+                    1.0
+                ]
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [
+                    7.0,
+                    9.0,
+                    7.0,
+                    5.0
+                ],
+                "median": 7.0,
+                "iqr": 1.0,
+                "surv_x": [
+                    0.0,
+                    5.0,
+                    7.0,
+                    9.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.25,
+                    0.75,
                     1.0
                 ]
             }
@@ -41020,6 +42018,206 @@
                 ],
                 "median": 6.8,
                 "iqr": 28.0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [
+                    0.14,
+                    0.75,
+                    0.58,
+                    0.5,
+                    0.07,
+                    1.0,
+                    11.75,
+                    11.0,
+                    10.0,
+                    0.42,
+                    10.0,
+                    3.5,
+                    1.0,
+                    11.0,
+                    5.0,
+                    0.6,
+                    7.0,
+                    3.0,
+                    5.0,
+                    5.17,
+                    0.2,
+                    0.5,
+                    0.42,
+                    5.0,
+                    0.58,
+                    5.5,
+                    4.0,
+                    12.0,
+                    8.0,
+                    3.0,
+                    0.83,
+                    1.5,
+                    1.17,
+                    10.17,
+                    17.0,
+                    14.5,
+                    13.92,
+                    15.0,
+                    12.5,
+                    16.0,
+                    29.0,
+                    12.0,
+                    0.5,
+                    5.3
+                ],
+                "status": [
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.07,
+                    0.14,
+                    0.2,
+                    0.42,
+                    0.5,
+                    0.58,
+                    0.6,
+                    0.75,
+                    0.83,
+                    1.0,
+                    1.17,
+                    1.5,
+                    3.0,
+                    3.5,
+                    4.0,
+                    5.0,
+                    5.17,
+                    5.3,
+                    5.5,
+                    7.0,
+                    8.0,
+                    10.0,
+                    10.17,
+                    11.0,
+                    11.75,
+                    12.0,
+                    12.5,
+                    13.92,
+                    14.5,
+                    15.0,
+                    16.0,
+                    17.0,
+                    29.0
+                ],
+                "surv_y": [
+                    1.0,
+                    1.0,
+                    0.9767,
+                    0.9767,
+                    0.9291,
+                    0.8576,
+                    0.81,
+                    0.7862,
+                    0.7623,
+                    0.7385,
+                    0.7147,
+                    0.7147,
+                    0.6892,
+                    0.6636,
+                    0.6636,
+                    0.6636,
+                    0.6348,
+                    0.6348,
+                    0.6348,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5995,
+                    0.5396,
+                    0.5396,
+                    0.4625,
+                    0.4625,
+                    0.4625,
+                    0.3469,
+                    0.3469,
+                    0.3469,
+                    0.3469
+                ],
+                "median": 5.0,
+                "iqr": 10.2875
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [
+                    3.0,
+                    15.0,
+                    0.58,
+                    2.3
+                ],
+                "status": [
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.58,
+                    2.3,
+                    3.0,
+                    15.0
+                ],
+                "surv_y": [
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "median": 2.65,
+                "iqr": 4.13
             }
         }
     }

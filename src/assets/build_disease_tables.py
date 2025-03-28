@@ -1259,7 +1259,10 @@ for disease in diseases:
                LoF_Mis = dict(name = 'LoF+Mis', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
                Mis_Mis = dict(name = 'Mis+Mis', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
                LoF_Het = dict(name = 'LoF+WT/Syn', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
-               Mis_Het = dict(name = 'Mis+WT/Syn', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []))
+               Mis_Het = dict(name = 'Mis+WT/Syn', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               MVID = dict(name = 'MVID', array = [], median = 0, iqr = 0, surv_x = [], surv_y = []),
+               PFIC10 = dict(name = 'PFIC10', array = [], median = 0, iqr = 0, surv_x = [], surv_y = [])
+               )
 
 
    #ages_last = dict(all = dict(array = [], status = [], median = 0, iqr = 0),
@@ -1274,7 +1277,9 @@ for disease in diseases:
                LoF_Mis = dict(name = 'LoF+Mis', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
                Mis_Mis = dict(name = 'Mis+Mis', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
                LoF_Het = dict(name = 'LoF+WT/Syn', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
-               Mis_Het = dict(name = 'Mis+WT/Syn', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0)
+               Mis_Het = dict(name = 'Mis+WT/Syn', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               MVID = dict(name = 'MVID', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0),
+               PFIC10 = dict(name = 'PFIC10', array = [], status = [], surv_x = [], surv_y = [], median = 0, iqr = 0)
                )
 
    variants = []
@@ -1458,6 +1463,24 @@ for disease in diseases:
                      ages_first["boys"]["array"].append(float(object["firstsymptomagemonth"])) 
                   except:
                      pass
+
+
+               # MVID/PFIC10
+               if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" not in object["symptoms"] and "0001396" in object["symptoms"]):
+                  try:
+                     ages_first["PFIC10"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+
+               if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" in object["symptoms"] and "0001396" not in object["symptoms"]):
+
+                  try:
+                     ages_first["MVID"]["array"].append(float(object["firstsymptomagemonth"]))
+                  except:
+                     pass
+
+
+   
         
                if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
 
@@ -1537,6 +1560,17 @@ for disease in diseases:
 
                         ages_surv["boys"]["array"].append(float(object["alivedeadage"]))
 
+
+                     # MVID/PFIC10
+                     if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" not in object["symptoms"] and "0001396" in object["symptoms"]):
+
+                        ages_surv["PFIC10"]["array"].append(float(object["alivedeadage"]))
+
+                     if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" in object["symptoms"] and "0001396" not in object["symptoms"]):
+
+                        ages_surv["MVID"]["array"].append(float(object["alivedeadage"]))
+
+
                      
                      # Protvartypes
                      if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
@@ -1577,6 +1611,17 @@ for disease in diseases:
                            if ('sex' in object.keys() and object["sex"] == "M"):
                               ages_surv["boys"]["status"].append("0")
                            
+                           # MVID/PFIC10
+                           if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" not in object["symptoms"] and "0001396" in object["symptoms"]):
+
+                              ages_surv["PFIC10"]["status"].append("0")
+
+                           if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" in object["symptoms"] and "0001396" not in object["symptoms"]):
+
+                              ages_surv["MVID"]["status"].append("0")
+
+
+
                            # Protvartypes
                            if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
 
@@ -1610,7 +1655,15 @@ for disease in diseases:
                            if ('sex' in object.keys() and object["sex"] == "M"):
                               ages_surv["boys"]["status"].append("1")
                            
-                           
+                           # MVID/PFIC10
+                           if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" not in object["symptoms"] and "0001396" in object["symptoms"]):
+
+                              ages_surv["PFIC10"]["status"].append("1")
+
+                           if (object["disease"] == "MYO5B deficiency" and "symptoms" in object.keys() and "0011473" in object["symptoms"] and "0001396" not in object["symptoms"]):
+
+                              ages_surv["MVID"]["status"].append("1")
+
                            # Protvartypes
                            if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
 
@@ -1781,6 +1834,13 @@ for disease in diseases:
    if len(ages_first["boys"]["array"]) > 0:
       ages_first["boys"]["median"] = numpy.median(ages_first["boys"]["array"])  
 
+   if len(ages_first["MVID"]["array"]) > 0:
+      ages_first["MVID"]["median"] = numpy.median(ages_first["MVID"]["array"])  
+
+   if len(ages_first["PFIC10"]["array"]) > 0:
+      ages_first["PFIC10"]["median"] = numpy.median(ages_first["PFIC10"]["array"])  
+
+
    if len(ages_first["LoF_LoF"]["array"]) > 0:
       ages_first["LoF_LoF"]["median"] = numpy.median(ages_first["LoF_LoF"]["array"])
 
@@ -1803,6 +1863,10 @@ for disease in diseases:
       ages_first["girls"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["girls"]["array"], [75, 25]))
    if len(ages_first["boys"]["array"]) > 1:
       ages_first["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["boys"]["array"], [75, 25]))
+   if len(ages_first["MVID"]["array"]) > 1:
+      ages_first["MVID"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["MVID"]["array"], [75, 25]))
+   if len(ages_first["PFIC10"]["array"]) > 1:
+      ages_first["PFIC10"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["PFIC10"]["array"], [75, 25]))
    if len(ages_first["LoF_LoF"]["array"]) > 1:
       ages_first["LoF_LoF"]["iqr"] = numpy.subtract(*numpy.percentile(ages_first["LoF_LoF"]["array"], [75, 25]))
    if len(ages_first["LoF_Mis"]["array"]) > 1:
@@ -1838,6 +1902,13 @@ for disease in diseases:
    if len(ages_surv["boys"]["array"]) > 0:
       ages_surv["boys"]["median"] = numpy.median(ages_surv["boys"]["array"])     
 
+   if len(ages_surv["MVID"]["array"]) > 0:
+      ages_surv["MVID"]["median"] = numpy.median(ages_surv["MVID"]["array"])   
+
+   if len(ages_surv["PFIC10"]["array"]) > 0:
+      ages_surv["PFIC10"]["median"] = numpy.median(ages_surv["PFIC10"]["array"])     
+
+
    if len(ages_surv["LoF_LoF"]["array"]) > 0:
       ages_surv["LoF_LoF"]["median"] = numpy.median(ages_surv["LoF_LoF"]["array"])  
 
@@ -1860,6 +1931,10 @@ for disease in diseases:
       ages_surv["girls"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["girls"]["array"], [75, 25]))
    if len(ages_surv["boys"]["array"]) > 1:
       ages_surv["boys"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["boys"]["array"], [75, 25]))
+   if len(ages_surv["MVID"]["array"]) > 1:
+      ages_surv["MVID"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["MVID"]["array"], [75, 25]))
+   if len(ages_surv["PFIC10"]["array"]) > 1:
+      ages_surv["PFIC10"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["PFIC10"]["array"], [75, 25]))
    if len(ages_surv["LoF_LoF"]["array"]) > 1:
       ages_surv["LoF_LoF"]["iqr"] = numpy.subtract(*numpy.percentile(ages_surv["LoF_LoF"]["array"], [75, 25]))
    if len(ages_surv["LoF_Mis"]["array"]) > 1:
@@ -1916,6 +1991,34 @@ for disease in diseases:
       kmf.fit(time, status)
       ages_surv["boys"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
       ages_surv["boys"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+   
+   # MVID
+   #print("length array ", len(ages_surv["MVID"]["array"]))
+   #print("length status ", len(ages_surv["MVID"]["status"]))
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["MVID"]["array"]], 
+                          'S': [float(i) for i in ages_surv["MVID"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["MVID"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["MVID"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
+   # PFIC10
+   df = pandas.DataFrame({'T': [float(i) for i in ages_surv["PFIC10"]["array"]], 
+                          'S': [float(i) for i in ages_surv["PFIC10"]["status"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_surv["PFIC10"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_surv["PFIC10"]["surv_y"] = [round(x, 4) for x in kmf.survival_function_['KM_estimate']]
+
 
    # LoF_LoF
    df = pandas.DataFrame({'T': [float(i) for i in ages_surv["LoF_LoF"]["array"]], 
@@ -2025,6 +2128,33 @@ for disease in diseases:
       kmf.fit(time, status)
       ages_first["girls"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
       ages_first["girls"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # PFIC10
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["PFIC10"]["array"]], 
+                          'S': [float(1) for i in ages_first["PFIC10"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["PFIC10"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["PFIC10"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
+   # MVID
+   df = pandas.DataFrame({'T': [float(i) for i in ages_first["MVID"]["array"]], 
+                          'S': [float(1) for i in ages_first["MVID"]["array"]]
+                          })
+   time = df['T']
+   status = df['S']
+   kmf = KaplanMeierFitter()
+   
+   if (len(time) > 1):
+      kmf.fit(time, status)
+      ages_first["MVID"]["surv_x"] = [round(x, 3) for x in kmf.timeline]
+      ages_first["MVID"]["surv_y"] = [round(x, 4) for x in kmf.cumulative_density_['KM_estimate']]
+
 
    # LoF_LoF
    df = pandas.DataFrame({'T': [float(i) for i in ages_first["LoF_LoF"]["array"]], 
