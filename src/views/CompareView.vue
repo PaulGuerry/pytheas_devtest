@@ -147,7 +147,7 @@
             </button> 
             <button v-if="isSexRatio"
                     @click="isSexRatio = false"
-                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> Age at first symptoms 
+                    class="w-full py-4 text-xl bg-emerald-600 text-white rounded-full"> Sex ratio 
             </button>
             <template v-if="isSexRatio">
                 <PlotSexRatioMulti :propData="tableData"  :key="tableData.genes.length" />
