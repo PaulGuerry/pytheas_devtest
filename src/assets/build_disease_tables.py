@@ -2296,7 +2296,7 @@ for disease in diseases:
                              animals = disease['animals'],
                              patients = count_patients,
                              articles = article_count,
-                             datapoints = presentVarCount + symptomCount,
+                             symptom_count = symptomCount,
                              variables = dict(present = presentVarCount, missing = missingVarCount),
                              consanguinous = count_consang, 
                              zygosity = zygosity,
@@ -2307,6 +2307,27 @@ for disease in diseases:
                               )
 
 
+# 250404: get overall counts for patients and variants
+patient_count = 0
+variant_count = 0
+symptom_count = 0
+ages_first_count = 0
+ages_surv_count = 0
+for dis_table_el in disease_table:
+
+   if dis_table_el["name"] != "PFIC1-11" and dis_table_el["name"] != "THES" and dis_table_el["name"] != "ARCS": 
+      patient_count += dis_table_el["patients"]["total"] 
+      variant_count += len(dis_table_el["variants"])
+      symptom_count += dis_table_el["symptom_count"]
+      ages_first_count += len(dis_table_el["age_at_first_symp"]["all"]["array"])
+      ages_surv_count += len(dis_table_el["survival"]["all"]["array"])
+
+
+disease_table.append(dict(PytheasDB_patient_total = patient_count, 
+                          PytheasDB_variant_total = variant_count,
+                          PytheasDB_symptom_total = symptom_count,
+                          PytheasDB_ages_first_total = ages_first_count,
+                          PytheasDB_ages_surv_total = ages_surv_count))
 
 # Serialize the article dictionnary to json
 json_data = simplejson.dumps(articles, indent = 4, ignore_nan = True)
