@@ -1,13 +1,4 @@
 <template lang="html">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-Z1TQ8HNHV1');
-    </script>
     <div class="w-full grid grid-cols-1 place-items-center my-10 mx-auto">
         <router-link to="/">
             <img class="w-[200px] h-auto md:w-[200px] lg:w-[300px] " src="@/assets/PYTHEAS_Logo.svg">
