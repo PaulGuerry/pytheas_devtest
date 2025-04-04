@@ -65,7 +65,7 @@
             "boys": 43
         },
         "articles": 27,
-        "datapoints": 712,
+        "symptom_count": 341,
         "variables": {
             "present": 371,
             "missing": 84
@@ -2339,7 +2339,7 @@
             "boys": 64
         },
         "articles": 24,
-        "datapoints": 996,
+        "symptom_count": 388,
         "variables": {
             "present": 608,
             "missing": 187
@@ -6021,7 +6021,7 @@
             "boys": 54
         },
         "articles": 17,
-        "datapoints": 945,
+        "symptom_count": 395,
         "variables": {
             "present": 550,
             "missing": 175
@@ -9721,7 +9721,7 @@
             "boys": 20
         },
         "articles": 12,
-        "datapoints": 382,
+        "symptom_count": 196,
         "variables": {
             "present": 186,
             "missing": 49
@@ -11071,7 +11071,7 @@
             "boys": 6
         },
         "articles": 3,
-        "datapoints": 188,
+        "symptom_count": 143,
         "variables": {
             "present": 45,
             "missing": 0
@@ -11621,7 +11621,7 @@
             "boys": 1
         },
         "articles": 2,
-        "datapoints": 68,
+        "symptom_count": 48,
         "variables": {
             "present": 20,
             "missing": 0
@@ -12007,7 +12007,7 @@
             "boys": 35
         },
         "articles": 12,
-        "datapoints": 876,
+        "symptom_count": 537,
         "variables": {
             "present": 339,
             "missing": 0
@@ -13885,7 +13885,7 @@
             "boys": 7
         },
         "articles": 2,
-        "datapoints": 112,
+        "symptom_count": 52,
         "variables": {
             "present": 60,
             "missing": 0
@@ -14485,7 +14485,7 @@
             "boys": 6
         },
         "articles": 2,
-        "datapoints": 88,
+        "symptom_count": 38,
         "variables": {
             "present": 50,
             "missing": 0
@@ -15060,7 +15060,7 @@
             "boys": 36
         },
         "articles": 14,
-        "datapoints": 958,
+        "symptom_count": 620,
         "variables": {
             "present": 338,
             "missing": 25
@@ -17291,7 +17291,7 @@
             "boys": 0
         },
         "articles": 1,
-        "datapoints": 9,
+        "symptom_count": 4,
         "variables": {
             "present": 5,
             "missing": 0
@@ -17584,7 +17584,7 @@
             "boys": 7
         },
         "articles": 4,
-        "datapoints": 105,
+        "symptom_count": 63,
         "variables": {
             "present": 42,
             "missing": 3
@@ -18118,7 +18118,7 @@
             "boys": 30
         },
         "articles": 20,
-        "datapoints": 912,
+        "symptom_count": 563,
         "variables": {
             "present": 349,
             "missing": 51
@@ -19556,7 +19556,7 @@
             "boys": 28
         },
         "articles": 24,
-        "datapoints": 820,
+        "symptom_count": 447,
         "variables": {
             "present": 373,
             "missing": 77
@@ -21091,7 +21091,7 @@
             "boys": 68
         },
         "articles": 13,
-        "datapoints": 2314,
+        "symptom_count": 1447,
         "variables": {
             "present": 867,
             "missing": 128
@@ -23884,7 +23884,7 @@
             "boys": 11
         },
         "articles": 1,
-        "datapoints": 379,
+        "symptom_count": 309,
         "variables": {
             "present": 70,
             "missing": 0
@@ -24582,7 +24582,7 @@
             "boys": 45
         },
         "articles": 34,
-        "datapoints": 1755,
+        "symptom_count": 1288,
         "variables": {
             "present": 467,
             "missing": 0
@@ -26585,7 +26585,7 @@
             "boys": 5
         },
         "articles": 2,
-        "datapoints": 167,
+        "symptom_count": 127,
         "variables": {
             "present": 40,
             "missing": 0
@@ -27178,7 +27178,7 @@
             "boys": 90
         },
         "articles": 23,
-        "datapoints": 3423,
+        "symptom_count": 2571,
         "variables": {
             "present": 852,
             "missing": 0
@@ -29890,7 +29890,7 @@
             "boys": 272
         },
         "articles": 0,
-        "datapoints": 5334,
+        "symptom_count": 2762,
         "variables": {
             "present": 2572,
             "missing": 520
@@ -42220,5 +42220,12 @@
                 "iqr": 4.13
             }
         }
+    },
+    {
+        "PytheasDB_patient_total": 915,
+        "PytheasDB_variant_total": 658,
+        "PytheasDB_symptom_total": 5559,
+        "PytheasDB_ages_first_total": 828,
+        "PytheasDB_ages_surv_total": 866
     }
 ]
