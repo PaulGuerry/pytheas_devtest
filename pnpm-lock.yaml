@@ -56,6 +56,9 @@ importers:
       vue-chartjs:
         specifier: ^5.3.1
         version: 5.3.1(chart.js@4.4.3)(vue@3.4.27)
+      vue-gtag:
+        specifier: ^3.2.0
+        version: 3.2.0(vue-router@4.3.2(vue@3.4.27))(vue@3.4.27)
       vue-router:
         specifier: ^4.3.2
         version: 4.3.2(vue@3.4.27)
@@ -4814,6 +4817,15 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
+
+  vue-gtag@3.2.0:
+    resolution: {integrity: sha512-bd3tgSr9DosDXJAeVjqOa6vJfIZiNkWegOfIvsra4ldATHNdf+T9oyXyqXXmX8CERAk9FVqaOVzIKmmv4E2vbA==}
+    peerDependencies:
+      vue: ^3.5.13
+      vue-router: ^4.5.0
+    peerDependenciesMeta:
+      vue-router:
+        optional: true
 
   vue-hot-reload-api@2.3.4:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
@@ -10410,6 +10422,12 @@ snapshots:
       semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
+
+  vue-gtag@3.2.0(vue-router@4.3.2(vue@3.4.27))(vue@3.4.27):
+    dependencies:
+      vue: 3.4.27
+    optionalDependencies:
+      vue-router: 4.3.2(vue@3.4.27)
 
   vue-hot-reload-api@2.3.4: {}
 
