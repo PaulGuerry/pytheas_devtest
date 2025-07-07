@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import configure from "vue-gtag"
+import { configure } from "vue-gtag"
 import './style.css'
 
 // import rubik font using fontsource
