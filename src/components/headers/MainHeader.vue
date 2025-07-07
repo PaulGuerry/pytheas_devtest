@@ -48,9 +48,7 @@
                 </label>
             </div>
         </nav>
-    </header>
-    <header class="block lg:hidden">
-        <!-- Google tag (gtag.js) 
+        <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -58,7 +56,9 @@
           gtag('js', new Date());
             
           gtag('config', 'G-Z1TQ8HNHV1');
-        </script> -->
+        </script>
+    </header>
+    <header class="block lg:hidden">
         <nav class="flex items-center justify-between py-5 px-10">
             <router-link to="/">
                 <img class="w-[50px] h-auto md:w-[100px] lg:w-[200px] " src="@/assets/PYTHEAS_Logo.svg">
@@ -75,8 +75,16 @@
                     Compare
                 </router-link>
             </div>
-        
         </nav>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+            
+          gtag('config', 'G-Z1TQ8HNHV1');
+        </script>
     </header>
 </template>
 <script>
