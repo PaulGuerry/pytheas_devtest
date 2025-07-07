@@ -66,7 +66,6 @@
                 </router-link>
             </div>
         </nav>
-    </header>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
     <script>
@@ -76,6 +75,7 @@
 
       gtag('config', 'G-Z1TQ8HNHV1');
     </script>
+    </header>
 </template>
 <script>
 export default {
