@@ -38,6 +38,15 @@
                     type="text" name="search" placeholder="Search for diseases...">
                 </label>
             </div>
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-Z1TQ8HNHV1');
+            </script>
         </nav>
     </header>
     <header class="block lg:hidden">
@@ -58,6 +67,15 @@
                 </router-link>
             </div>
         </nav>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+            
+          gtag('config', 'G-Z1TQ8HNHV1');
+        </script>
     </header>
 </template>
 <script>
