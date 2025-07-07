@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { createGtag } from "vue-gtag"
+//import { createGtag } from "vue-gtag"
 import './style.css'
 
 // import rubik font using fontsource
@@ -26,12 +26,12 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 // gtag
-const gtag = createGtag({
-  tagId: "G-Z1TQ8HNHV1"
-})
+//const gtag = createGtag({
+//  tagId: "G-Z1TQ8HNHV1"
+//})
 
 /* add icons to the library */
 library.add(faUserSecret, faUser, faCartShopping, faSearch)
 
-createApp(App).use(store).use(router).use(gtag).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
-//createApp(App).use(store).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+//createApp(App).use(store).use(router).use(gtag).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
+createApp(App).use(store).use(router).component('font-awesome-icon', FontAwesomeIcon).mount('#app')
