@@ -25,7 +25,6 @@
                     About
                 </router-link>
             </div>
-
             <div class="relative">
                 <label class="relative block">
                     <span class="sr-only"> Search </span>
@@ -38,16 +37,16 @@
                     type="text" name="search" placeholder="Search for diseases...">
                 </label>
             </div>
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-Z1TQ8HNHV1');
-            </script>
         </nav>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-Z1TQ8HNHV1');
+        </script>
     </header>
     <header class="block lg:hidden">
         <nav class="flex items-center justify-between py-5 px-10">
@@ -67,16 +66,16 @@
                 </router-link>
             </div>
         </nav>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-            
-          gtag('config', 'G-Z1TQ8HNHV1');
-        </script>
     </header>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1TQ8HNHV1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Z1TQ8HNHV1');
+    </script>
 </template>
 <script>
 export default {
