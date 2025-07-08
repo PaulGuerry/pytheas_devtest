@@ -380,44 +380,39 @@ export default {
         addPatient() {
             this.activeID = "PFIC99_99";
             this.tableData.push({
-                id: "PFIC99_99",
+                id: "PFIC99",
                 disease: "PFIC99", 
                 patients: "P15",
                 doi: "https://doi.org/10.1002/hep4.2051", 
                 gene: "ABCB4", 
                 sex: "F", 
-                term: 37,
-                firstsymptomagemonth: 4.0,
+                term: null,
+                firstsymptomagemonth: null,
                 consanguinity: "N",
                 symptoms: [
-                            "xxxxxxx",
-                            "yyyyyyy",
-                            "zzzzzzz"
                 ],
                 absentsymptoms: [
-                            "#######",
-                            "-------"
                 ],
                 treatments: [{
-                    id: "PFIC99_99.t0",
-                    name: "corticosteroid",
-                    type: "anti-inflammatory",
-                    ageatstart_m: 1.0,
-                    duration_m: 5.0,
-                    efficacy: "unclear"  
+                    id: null,
+                    name: null,
+                    type: null,
+                    ageatstart_m: null,
+                    duration_m: null,
+                    efficacy: null  
                 }],
-                nucleotidevariant1: "NG_007374.1(NM_003742.2):c.3767C>T",
-                protvariant1: "NG_007374.1(NP_003733.2):p.(Thr1256Met)",
-                nucleotidevariant2: "WT",
-                protvariant2: "WT",
-                birthweight: 3.0,
-                birthpc: 50,
-                birthheight: 51,
-                lastweightkg: 15,
-                lastheightcm: 100,
-                lastnewsageyear: 12,
-                alivedead: "alive",
-                alivedeadage: 12
+                nucleotidevariant1: null,
+                protvariant1: null,
+                nucleotidevariant2: null,
+                protvariant2: null,
+                birthweight: null,
+                birthpc: null,
+                birthheight: null,
+                lastweightkg: null,
+                lastheightcm: null,
+                lastnewsageyear: null,
+                alivedead: null,
+                alivedeadage: null
             })
         },
         addTreatment() {
@@ -427,22 +422,22 @@ export default {
                 if ("treatments" in this.tableData[i]) {
                     this.tableData[i].treatments.push({
                         id: this.tableData[i].id.concat('.',"t",this.tableData[i].treatments.length.toString()),
-                        name: "corticosteroid",
-                        type: "anti-inflammatory",
-                        ageatstart_m: 1.0,
-                        duration_m: 5.0,
-                        efficacy: "unclear"  
+                        name: null,
+                        type: null,
+                        ageatstart_m: null,
+                        duration_m: null,
+                        efficacy: null
                     })
                 }
                 else {
                     this.tableData[i].treatments = [];
                     this.tableData[i].treatments.push({
                         id: this.tableData[i].id.concat('.',"t",this.tableData[i].treatments.length.toString()),
-                        name: "corticosteroid",
-                        type: "anti-inflammatory",
-                        ageatstart_m: 1.0,
-                        duration_m: 5.0,
-                        efficacy: "unclear"  
+                        name: null,
+                        type: null,
+                        ageatstart_m: null,
+                        duration_m: null,
+                        efficacy: null
                     })
                 }
             }
@@ -470,22 +465,22 @@ export default {
                                 if (typeof patientEntry[0].symptoms == "string") {
                                     patientEntry[0].symptoms = patientEntry[0].symptoms.split(",")
                                 } else {
-                                    patientEntry[0].symptoms = ["xxxxxxx", "yyyyyyy"]
+                                    patientEntry[0].symptoms = []
                                 }
                             }
                         } else {
-                            patientEntry[0].symptoms = ["xxxxxxx", "yyyyyyy"]
+                            patientEntry[0].symptoms = []
                         }
                         if ("absentsymptoms" in patientEntry[0]) {
                             if (!Array.isArray(patientEntry[0].absentsymptoms)) {
                                 if (typeof patientEntry[0].absentsymptoms == "string") {
                                     patientEntry[0].absentsymptoms = patientEntry[0].absentsymptoms.split(",")
                                 } else {
-                                    patientEntry[0].absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                                    patientEntry[0].absentsymptoms = []
                                 }
                             }
                         } else {
-                            patientEntry[0].absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                            patientEntry[0].absentsymptoms = []
                         }
                         
                         //240905: use structuredClone to avoid linking tableData to this.patientData
@@ -512,22 +507,22 @@ export default {
                         if (typeof entry.symptoms == "string") {
                             entry.symptoms = entry.symptoms.split(",")
                         } else {
-                            entry.symptoms = ["xxxxxxx", "yyyyyyy"]
+                            entry.symptoms = []
                         }
                     }
                 } else {
-                    entry.symptoms = ["xxxxxxx", "yyyyyyy"]
+                    entry.symptoms = []
                 }
                 if ("absentsymptoms" in entry) {
                     if (!Array.isArray(entry.absentsymptoms)) {
                         if (typeof entry.absentsymptoms == "string") {
                             entry.absentsymptoms = entry.absentsymptoms.split(",")
                         } else {
-                            entry.absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                            entry.absentsymptoms = []
                         }
                     }
                 } else {
-                    entry.absentsymptoms = ["xxxxxxx", "yyyyyyy"]
+                    entry.absentsymptoms = []
                 }
 
                 //240905: use structuredClone to avoid linking tableData to this.patientData
