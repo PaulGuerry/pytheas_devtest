@@ -343,7 +343,7 @@
                     class="w-full col-start-5 py-4 text-sm bg-emerald-100 hover:bg-emerald-300 text-emerald-800 rounded-full"> VIEW JSON </button> 
                 <template v-if="isViewJSON">
                     <div  class="w-full py-4 text-center text-gray-600 col-start-1 col-span-5"> 
-                        <p text-xs> {{ JSON.stringify(this.tableData, null, 2) }} </p>
+                        <pre text-xs> {{ JSON.stringify(this.tableData, null, 2) }} </pre>
                     </div>
                 </template> 
         </div>              
