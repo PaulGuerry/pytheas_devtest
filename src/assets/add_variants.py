@@ -27,7 +27,8 @@ with open('variant1Data.txt') as fobj:
             variant["p1"] = row[2]
             #print(index, len(row), variant["label"], variant["n1"], variant["p1"])
         else:
-            print("Check input on line ", index, "of variant1Data.txt")
+            #line[:-1] strips last character (newline character) of line 
+            print("Check input, [", line[:-1],"], on line", index+1, "of variant1Data.txt")
 
         variants.append(variant)
 
@@ -40,7 +41,7 @@ with open('variant2Data.txt') as fobj:
             variants[index]["n2"] = row[1]
             variants[index]["p2"] = row[2]
         else:
-            print("Check input on line ", index, "of variant2Data.txt")
+            print("Check input, [", line[:-1],"], on line", index+1, "of variant2Data.txt")
 
 fobj.close()
 

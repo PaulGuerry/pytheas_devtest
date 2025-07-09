@@ -236,22 +236,22 @@
     },
     {
         "articlenumber": 21,
-        "articledoi": "https://doi.org/10.1038/s10038-018-0431-1",
-        "disease": "PFIC2"
-    },
-    {
-        "articlenumber": 22,
         "articledoi": "https://doi.org/10.1002/lt.22074",
         "disease": "PFIC2"
     },
     {
-        "articlenumber": 23,
+        "articlenumber": 22,
         "articledoi": "https://doi.org/10.4103/0971-6866.120813",
         "disease": "PFIC2"
     },
     {
-        "articlenumber": 24,
+        "articlenumber": 23,
         "articledoi": "https://doi.org/10.1097/MPG.0b013e31822f2bda",
+        "disease": "PFIC2"
+    },
+    {
+        "articlenumber": 24,
+        "articledoi": "https://doi.org/10.1186/s13023-024-03080-6",
         "disease": "PFIC2"
     },
     {
