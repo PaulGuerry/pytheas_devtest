@@ -135,6 +135,11 @@
         "disease": "PFIC1"
     },
     {
+        "articlenumber": 28,
+        "articledoi": "https://doi.org/10.1111/cge.70004",
+        "disease": "PFIC1"
+    },
+    {
         "articlenumber": 1,
         "articledoi": "https://doi.org/10.3390/cancers14143421",
         "disease": "PFIC2"
@@ -337,6 +342,11 @@
     {
         "articlenumber": 17,
         "articledoi": "https://doi.org/10.1097/MPG.0b013e31824ef36f",
+        "disease": "PFIC3"
+    },
+    {
+        "articlenumber": 18,
+        "articledoi": "https://doi.org/10.3390/reports8010033",
         "disease": "PFIC3"
     },
     {
