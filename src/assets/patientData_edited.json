@@ -17941,11 +17941,11 @@
         "protvariant1": "NG_007148.1(NP_005594.1):p.(Ser403Tyr)",
         "protvariant2": "NG_007148.1(NP_005594.1):p.(Pro792SerfsTer17)",
         "protvartypes": [
-            "other",
-            "other"
+            "missense",
+            "LoF"
         ],
         "alivedeadage": 24.0,
-        "zygosity": "unknown"
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Okamoto2021_dPt2agg",
@@ -17987,11 +17987,11 @@
         "protvariant1": "NG_007148.1(NP_005594.1):p.(Trp281Arg)",
         "protvariant2": "NG_007148.1(NP_005594.1):p.(Trp281Arg)",
         "protvartypes": [
-            "other",
-            "other"
+            "missense",
+            "missense"
         ],
         "alivedeadage": 15.0,
-        "zygosity": "unknown"
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Okamoto2021_dPt3agg",
@@ -18033,11 +18033,11 @@
         "protvariant1": "NG_007148.1(NP_005594.1):p.(Arg412Pro)",
         "protvariant2": "NG_007148.1(NP_005594.1):p.(Arg412Pro)",
         "protvartypes": [
-            "other",
-            "other"
+            "missense",
+            "missense"
         ],
         "alivedeadage": 18.9,
-        "zygosity": "unknown"
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Okamoto2021_dPt4agg",
@@ -18079,11 +18079,11 @@
         "protvariant1": "NG_007148.1(NP_005594.1):p.(Thr456Met)",
         "protvariant2": "Splice_site(s)_affected",
         "protvartypes": [
-            "other",
-            "other"
+            "missense",
+            "LoF"
         ],
         "alivedeadage": 17.7,
-        "zygosity": "unknown"
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Okamoto2021_dPt5agg",
@@ -18125,11 +18125,11 @@
         "protvariant1": "NG_007148.1(NP_005594.1):p.(Thr456Met)",
         "protvariant2": "NG_007148.1(NP_005594.1):p.(Asp273Gly)",
         "protvartypes": [
-            "other",
-            "other"
+            "missense",
+            "missense"
         ],
         "alivedeadage": 29.6,
-        "zygosity": "unknown"
+        "zygosity": "compound"
     },
     {
         "id": "Okamoto2021_PFIC123_236",
@@ -23885,10 +23885,10 @@
         "protvariant2": "Splice_site(s)_affected",
         "protvartypes": [
             "LoF",
-            "other"
+            "LoF"
         ],
         "alivedeadage": 16.5,
-        "zygosity": "heterozygous",
+        "zygosity": "homozygous",
         "transientsymptoms": [
             "0002904"
         ]
@@ -36543,7 +36543,12 @@
         "transientsymptoms": [
             "0000952",
             "0000989"
-        ]
+        ],
+        "protvartypes": [
+            "missense",
+            "LoF"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC10_Pfister2022_006",
@@ -36631,7 +36636,12 @@
         "alivedeadage": null,
         "transientsymptoms": [
             "0000989"
-        ]
+        ],
+        "protvartypes": [
+            "missense",
+            "LoF"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC11_001",
@@ -54614,7 +54624,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 17.0
+        "alivedeadage": 17.0,
+        "protvartypes": [
+            "other",
+            "other"
+        ],
+        "zygosity": "unknown"
     },
     {
         "id": "PFIC1_Myaga2009_02agg",
@@ -54681,7 +54696,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "dead",
-        "alivedeadage": 15.0
+        "alivedeadage": 15.0,
+        "protvartypes": [
+            "LoF",
+            "missense"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Myaga2009_03agg",
@@ -54783,7 +54803,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 26.4
+        "alivedeadage": 26.4,
+        "protvartypes": [
+            "missense",
+            "missense"
+        ],
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Myaga2009_04agg",
@@ -54876,7 +54901,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 14.3
+        "alivedeadage": 14.3,
+        "protvartypes": [
+            "LoF",
+            "LoF"
+        ],
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Myaga2009_05agg",
@@ -54962,7 +54992,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 11.8
+        "alivedeadage": 11.8,
+        "protvartypes": [
+            "missense",
+            "missense"
+        ],
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Myaga2009_06agg",
@@ -55059,7 +55094,12 @@
         "alivedeadage": 20.0,
         "transientsymptoms": [
             "0002904"
-        ]
+        ],
+        "protvartypes": [
+            "missense",
+            "other"
+        ],
+        "zygosity": "heterozygous"
     },
     {
         "id": "PFIC1_Myaga2009_07agg",
@@ -55143,7 +55183,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 17.3
+        "alivedeadage": 17.3,
+        "protvartypes": [
+            "other",
+            "other"
+        ],
+        "zygosity": "unknown"
     },
     {
         "id": "PFIC1_Myaga2009_08agg",
@@ -55226,7 +55271,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 22.9
+        "alivedeadage": 22.9,
+        "protvartypes": [
+            "other",
+            "other"
+        ],
+        "zygosity": "heterozygous"
     },
     {
         "id": "PFIC1_Myaga2009_09agg",
@@ -55299,7 +55349,12 @@
         "alivedeadage": 17.8,
         "transientsymptoms": [
             "0002028"
-        ]
+        ],
+        "protvartypes": [
+            "LoF",
+            "missense"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Myaga2009_10agg",
@@ -55360,7 +55415,12 @@
         "lastheightcm": null,
         "lastnewsageyear": null,
         "alivedead": "alive",
-        "alivedeadage": 24.7
+        "alivedeadage": 24.7,
+        "protvartypes": [
+            "missense",
+            "missense"
+        ],
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Myaga2009_11agg",
@@ -55423,7 +55483,12 @@
         "alivedeadage": 9.5,
         "transientsymptoms": [
             "0003146"
-        ]
+        ],
+        "protvartypes": [
+            "missense",
+            "missense"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Usui2009_01",
@@ -55543,7 +55608,12 @@
             "0002028",
             "0001508",
             "0003155"
-        ]
+        ],
+        "protvartypes": [
+            "missense",
+            "missense"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Nicastro2011_01",
@@ -55682,7 +55752,12 @@
             "0002028",
             "0003073",
             "0001408"
-        ]
+        ],
+        "protvartypes": [
+            "missense",
+            "missense"
+        ],
+        "zygosity": "compound"
     },
     {
         "id": "PFIC1_Alrab2018_01",
@@ -55805,7 +55880,12 @@
         "transientsymptoms": [
             "0002028",
             "0001403"
-        ]
+        ],
+        "protvartypes": [
+            "LoF",
+            "LoF"
+        ],
+        "zygosity": "homozygous"
     },
     {
         "id": "PFIC1_Alrab2018_02",
@@ -55972,6 +56052,11 @@
             "0030948",
             "0001738",
             "0000989"
-        ]
+        ],
+        "protvartypes": [
+            "other",
+            "other"
+        ],
+        "zygosity": "unknown"
     }
 ]
