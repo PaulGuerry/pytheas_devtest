@@ -39,7 +39,56 @@ for object in patient_dict:
         else: 
           print('Error 34: Unrecognised HPO code, ' + symptom_code + ', for patient ', object['id'] + '.')
 
-    
+  #
+  #250815: specific editing for AlHussaini2021_
+  #        if Hepat++, Splen++, Prurit, HCC, FTT, Rickets, Portal+, CLF, HCC, Cholith, Fract+ not in ['symptoms']
+  #           add them to ['absentsymptoms']
+    if object['id'][:15] == "AlHussaini2021_":
+      print('Found patient ', object['id'])
+      
+      # Hepat++
+      tempstr = "0002240" 
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      # Splen++
+      tempstr = "0001744"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      # etc.
+      tempstr = "0000989"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0001508"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0002748"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0001409"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0100626"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0001402"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0001081"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
+      tempstr = "0002756"
+      if tempstr not in object['symptoms']:
+        if tempstr not in object['absentsymptoms']:
+          object['absentsymptoms'].append(tempstr)
   # also save symptom_codes saved under "biology" key  
   if 'labfindings' in object.keys():
     for symptom_code in object["labfindings"]:

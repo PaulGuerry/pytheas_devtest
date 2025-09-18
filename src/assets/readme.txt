@@ -29,7 +29,7 @@
 
 6. run build_symptom_tables.py
 
-	(over)writes hp_disease_stats.json
+	(over)writes hp_symptom_stats.json
 
  
 
