@@ -1385,6 +1385,7 @@ for disease in diseases:
                if 'nucleotidevariant1' in object.keys():
                
                   var = object["nucleotidevariant1"].partition("c.")[1] + object["nucleotidevariant1"].partition("c.")[2]
+                  if 'doi' not in object.keys(): print("Patient {0:s} has no doi".format(object["id"]))
                   doi = object["doi"]
                   if 'protvariant1' in object.keys() and object['protvariant1'] is not None:
                      pvar = object["protvariant1"].partition("p.")[1] + object["protvariant1"].partition("p.")[2]
