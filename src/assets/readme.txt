@@ -14,8 +14,8 @@
 
 3.1 run add_variants.py (reads patientData_edited.json and variant1Data.txt, variant2Data.txt etc.)
   
-3.2 copy adv_out.json to patientData_edited.txt 
-	check everything is OK and then copy patientData_edited.txt to patientData_raw.txt for next round of additions
+3.2 copy adv_out.json to patientData_edited.json 
+	check everything is OK and then copy patientData_edited.json to patientData_raw.json for next round of additions
 
 
 4. run build_symptom_trees.py (which outputs hp_trees.json, needed by build_disease_tables.py)
