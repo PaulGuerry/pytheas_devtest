@@ -17,7 +17,7 @@ for line in fileinput.input(files="hp_edges.json"):
 HPO_edges_list = json.loads(json_data)
 
 json_data=""
-for line in fileinput.input(files="hp_nodes_modPG.json"):
+for line in fileinput.input(files="hp_nodes.json"):
     json_data = json_data + line
 HPO_nodes_list = json.loads(json_data)
 

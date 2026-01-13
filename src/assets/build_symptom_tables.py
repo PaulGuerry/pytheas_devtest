@@ -103,12 +103,12 @@ for disease in diseases:
                for HPO_code in object["symptoms"]:
 
                  #make corrections here for eg. Cholestasis (0001396 and 0002611)
-                 if HPO_code == "0002611":
-                    #print("Recoding 0002611, Cholestatic liver disease, as 0001396, Cholestasis")
-                    HPO_code = "0001396"
-                 elif HPO_code == "0002041":
-                    #print("Recoding 0002041, Intractable diarrhea, as 0002028, Chronic diarrhea")
-                    HPO_code = "0002028"
+                 #if HPO_code == "0002611":
+                 #   #print("Recoding 0002611, Cholestatic liver disease, as 0001396, Cholestasis")
+                 #   HPO_code = "0001396"
+                 #elif HPO_code == "0002041":
+                 #   #print("Recoding 0002041, Intractable diarrhea, as 0002028, Chronic diarrhea")
+                 #   HPO_code = "0002028"
 
   
                  #find this symptom in the tree 
