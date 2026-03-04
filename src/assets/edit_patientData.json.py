@@ -308,6 +308,12 @@ for object in patient_dict:
   else:
     print('No gene specified for patient {0:s}.'.format(str(object["id"])))
 
+  # 260304: make sure disease field is an array
+  if type(object["disease"]) is not list:
+      disease = []
+      disease.append(object["disease"])
+      object["disease"] = disease
+
 print('{0:4d} lists of symptoms with duplicate entries were corrected.'.format(count_sympdup))
 
 # Serialize the python dictionnary to json

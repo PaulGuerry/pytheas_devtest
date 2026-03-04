@@ -53,7 +53,25 @@ diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "FOCADS", gene = "FOCAD", matches = ["FOCADS"]),
             dict(name = "ARCS1", gene = "VPS33B", matches = ["ARCS1"]),
             dict(name = "ARCS2", gene = "VIPAS39", matches = ["ARCS2"]),
-            dict(name = "ARCS", gene = "VPS33B,VIPAS39", matches = ["ARCS", "ARCS1", "ARCS2"])
+            dict(name = "ARCS", gene = "VPS33B,VIPAS39", matches = ["ARCS", "ARCS1", "ARCS2"]),
+            dict(name = "AARS1 deficiency", gene = "AARS1", matches = ["AARS1 deficiency"]),
+            dict(name = "RARS1 deficiency", gene = "RARS1", matches = ["RARS1 deficiency"]),
+            dict(name = "NARS1 deficiency", gene = "NARS1", matches = ["NARS1 deficiency"]),
+            dict(name = "DARS1 deficiency", gene = "DARS1", matches = ["DARS1 deficiency"]),
+            dict(name = "CARS1 deficiency", gene = "CARS1", matches = ["CARS1 deficiency"]),
+            dict(name = "QARS1 deficiency", gene = "QARS1", matches = ["QARS1 deficiency"]),
+            dict(name = "EPRS1 deficiency", gene = "EPRS1", matches = ["EPRS1 deficiency"]),
+            dict(name = "HARS1 deficiency", gene = "HARS1", matches = ["HARS1 deficiency"]),
+            dict(name = "IARS1 deficiency", gene = "IARS1", matches = ["IARS1 deficiency"]),
+            dict(name = "LARS1 deficiency", gene = "LARS1", matches = ["LARS1 deficiency"]),
+            dict(name = "KARS1 deficiency", gene = "KARS1", matches = ["KARS1 deficiency"]),
+            dict(name = "MARS1 deficiency", gene = "MARS1", matches = ["MARS1 deficiency"]),
+            dict(name = "FARSA deficiency", gene = "FARSA", matches = ["FARSA deficiency"]),
+            dict(name = "FARSB deficiency", gene = "FARSB", matches = ["FARSB deficiency"]),
+            dict(name = "SARS1 deficiency", gene = "SARS1", matches = ["SARS1 deficiency"]),
+            dict(name = "TARS1 deficiency", gene = "TARS1", matches = ["TARS1 deficiency"]),
+            dict(name = "WARS1 deficiency", gene = "WARS1", matches = ["WARS1 deficiency"]),
+            dict(name = "VARS1 deficiency", gene = "VARS1", matches = ["VARS1 deficiency"])
             ]
 
 #diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"])]
@@ -76,7 +94,9 @@ for disease in diseases:
         
          if "gene" in object.keys() and "symptoms" in object.keys():
 
-            if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+            
+	    # https://www.geeksforgeeks.org/python/python-check-if-two-lists-have-any-element-in-common/
+            if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
                count_patients += 1 
                 
                if ("sex" in object.keys() and object["sex"] == "F"):
@@ -245,7 +265,7 @@ for disease in diseases:
             
             if "gene" in object.keys():
 
-               if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+               if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
                    
                   # Only include patients with more than a certain number of symptoms
                   # (i.e cycle current loop if no more than N symptoms in current patient entry)
@@ -254,7 +274,7 @@ for disease in diseases:
                   
                   # Initialize each patient as a row of zeros
                   # .. with the name of the disease as the first column
-                  row = np.array([f"{object['id']:>15}",f"{object['disease']:>10}"])
+                  row = np.array([f"{object['id']:>15}",f"{object['disease'][0]:>10}"])
                   row = np.append(row, np.zeros(unique_symptoms, dtype = 'int'))
                   # np.vstack appends the second argument (array) to the first 
                   symptom_matrix = np.vstack((symptom_matrix, row))
@@ -341,7 +361,7 @@ for disease in diseases:
         
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):
@@ -738,7 +758,7 @@ for disease in diseases:
        
         if "gene" in object.keys():
 
-            if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+            if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
               
                 # Check for Cholestatis and diarrhea doubles
                 if ("0001396" in object["symptoms"] and "0002611" in object["symptoms"]):
@@ -767,7 +787,7 @@ for disease in diseases:
              
                 # Initialize each patient as a row of zeros
                 # .. with the name of the disease as the first column
-                row = np.array([f"{object['id']:>15}",f"{object['disease']:>10}"])
+                row = np.array([f"{object['id']:>15}",f"{object['disease'][0]:>10}"])
                 row = np.append(row, np.zeros(unique_symptoms, dtype = 'int'))
                 # np.vstack appends the second argument (array) to the first 
                 symptom_matrix = np.vstack((symptom_matrix, row))
@@ -829,7 +849,7 @@ for disease in diseases:
 
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):
@@ -1236,7 +1256,7 @@ for disease in diseases:
 
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):
@@ -1642,7 +1662,7 @@ for disease in diseases:
 
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):
@@ -2047,7 +2067,7 @@ for disease in diseases:
 
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):
@@ -2452,7 +2472,7 @@ for disease in diseases:
 
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):
@@ -2857,7 +2877,7 @@ for disease in diseases:
 
       if "gene" in object.keys():
 
-         if (object["disease"] in disease['matches'] and 'symptoms' in object.keys()):
+         if (bool(set(object["disease"]) & set(disease['matches'])) and 'symptoms' in object.keys()):
             count_patients += 1 
              
             if ("sex" in object.keys() and object["sex"] == "F"):

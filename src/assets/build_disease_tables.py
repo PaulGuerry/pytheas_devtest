@@ -20,10 +20,12 @@ patient_list = json.loads(json_data)
 
 # 20 colours taken from https://tailwindcss.com/docs/customizing-colors 
 # starting from neutral and working down, every second row, opacity 300 and 700
-colours = ["#d4d4d4", "#404040", "#fca5a5", "#b91c1c", "#fcd34d", "#b45309", "#bef264", "#4d7c0f",
-           "#6ee7b7", "#047857", "#67e8f9", "#0e7490", "#93c5fd", "#1d4ed8", "#c4b5fd", "#6d28d9",
-           "#f0abfc", "#a21caf", "#fda4af", "#be123c"]
+#colours = ["#d4d4d4", "#404040", "#fca5a5", "#b91c1c", "#fcd34d", "#b45309", "#bef264", "#4d7c0f",
+#           "#6ee7b7", "#047857", "#67e8f9", "#0e7490", "#93c5fd", "#1d4ed8", "#c4b5fd", "#6d28d9",
+#           "#f0abfc", "#a21caf", "#fda4af", "#be123c"]
 
+# https://lospec.com/palette-list/lospec500
+colours = ["#10121c","#2c1e31","#6b2643","#ac2847","#ec273f","#94493a","#de5d3a","#e98537","#f3a833","#4d3533","#6e4c30","#a26d3f","#ce9248","#dab163","#e8d282","#f7f3b7","#1e4044","#006554","#26854c","#5ab552","#9de64e","#008b8b","#62a477","#a6cb96","#d3eed3","#3e3b65","#3859b3","#3388de","#36c5f4","#6dead6","#5e5b8c","#8c78a5","#b0a7b8","#deceed","#9a4d76","#c878af","#cc99ff","#fa6e79","#ffa2ac","#ffd1d5","#f6e8e0","#ffffff"]
 
 diseases = [
    dict(
@@ -1243,6 +1245,240 @@ diseases = [
          ),
      animals = [
       ] 
+   ),
+   dict(
+      name = "AARS1 deficiency", 
+      gene = "AARS1", 
+      matches = ["AARS1 deficiency"], 
+      colour = colours[20],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "RARS1 deficiency", 
+      gene = "RARS1", 
+      matches = ["RARS1 deficiency"], 
+      colour = colours[21],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "NARS1 deficiency", 
+      gene = "NARS1", 
+      matches = ["NARS1 deficiency"], 
+      colour = colours[22],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "DARS1 deficiency", 
+      gene = "DARS1", 
+      matches = ["DARS1 deficiency"], 
+      colour = colours[23],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "CARS1 deficiency", 
+      gene = "CARS1", 
+      matches = ["CARS1 deficiency"], 
+      colour = colours[24],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "QARS1 deficiency", 
+      gene = "QARS1", 
+      matches = ["QARS1 deficiency"], 
+      colour = colours[25],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "EPRS1 deficiency", 
+      gene = "EPRS1", 
+      matches = ["EPRS1 deficiency"], 
+      colour = colours[26],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "HARS1 deficiency", 
+      gene = "HARS1", 
+      matches = ["HARS1 deficiency"], 
+      colour = colours[27],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "IARS1 deficiency", 
+      gene = "IARS1", 
+      matches = ["IARS1 deficiency"], 
+      colour = colours[28],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "LARS1 deficiency", 
+      gene = "LARS1", 
+      matches = ["LARS1 deficiency"], 
+      colour = colours[29],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "KARS1 deficiency", 
+      gene = "KARS1", 
+      matches = ["KARS1 deficiency"], 
+      colour = colours[30],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "MARS1 deficiency", 
+      gene = "MARS1", 
+      matches = ["MARS1 deficiency"], 
+      colour = colours[31],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "FARSA deficiency", 
+      gene = "FARSA", 
+      matches = ["FARSA deficiency"], 
+      colour = colours[32],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "FARSB deficiency", 
+      gene = "FARSB", 
+      matches = ["FARSB deficiency"], 
+      colour = colours[33],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "SARS1 deficiency", 
+      gene = "SARS1", 
+      matches = ["SARS1 deficiency"], 
+      colour = colours[34],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "TARS1 deficiency", 
+      gene = "TARS1", 
+      matches = ["TARS1 deficiency"], 
+      colour = colours[35],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "WARS1 deficiency", 
+      gene = "WARS1", 
+      matches = ["WARS1 deficiency"], 
+      colour = colours[36],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
+      name = "VARS1 deficiency", 
+      gene = "VARS1", 
+      matches = ["VARS1 deficiency"], 
+      colour = colours[37],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
    )
 ]
 
@@ -1307,10 +1543,11 @@ for disease in diseases:
 
    for object in patient_list: 
       
-      #if (disease["name"] == "ARCS1"): print(object["id"])
+      #if (disease["name"] == "RARS1 deficiency"): print(object["id"])
       if ('disease' in object.keys()):
          
-         if (object["disease"] in disease['matches']):
+	 # https://www.geeksforgeeks.org/python/python-check-if-two-lists-have-any-element-in-common/
+         if (bool(set(object["disease"]) & set(disease['matches']))):
 
             # Exception for PFIC, need to exclude pure MVID patients
             if 'phenotype' in object.keys():
@@ -1353,6 +1590,7 @@ for disease in diseases:
                   zygosity["unknown"] += 1
 
 
+            #print(zygosity["hetero"], zygosity["homo"], zygosity["hetero"], zygosity["compound"])
             if 'protvartypes' in object.keys():
 
                if (object["protvartypes"][0] == 'LoF' and object["protvartypes"][1] == 'LoF'):
@@ -1816,6 +2054,7 @@ for disease in diseases:
 
 
    # 250323: add percentage counts for variants
+   #print(zygosity["hetero"], zygosity["homo"], zygosity["hetero"], zygosity["compound"])
    zygosity["hompct"] = math.floor(zygosity["homo"] / (zygosity["homo"] + zygosity["hetero"] + zygosity["compound"]) * 100 * 10) / 10
    zygosity["compct"] = math.floor(zygosity["compound"] / (zygosity["homo"] + zygosity["hetero"] + zygosity["compound"]) * 100 * 10) / 10
    zygosity["hetpct"] = math.floor(zygosity["hetero"] / (zygosity["homo"] + zygosity["hetero"] + zygosity["compound"]) * 100 * 10) / 10
