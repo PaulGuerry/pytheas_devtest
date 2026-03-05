@@ -158,12 +158,26 @@
                     class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> ARCS2 </button> 
                 <template v-if="isARCS2">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
-                </template>
+                </template> 
 	    <button  @mouseover="isAARS1 = true; tableData.gene = 'AARS1'; tableData.disease = 'AARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isAARS1 = true; tableData.gene = 'AARS1'; tableData.disease = 'AARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/AARS1')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> AARS1 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> AARS1 deficiency </button> 
                 <template v-if="isAARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>  
+	    <button  @mouseover="isRARS1 = true; tableData.gene = 'RARS1'; tableData.disease = 'RARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isRARS1 = true; tableData.gene = 'RARS1'; tableData.disease = 'RARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/RARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> RARS1 </button> 
+                <template v-if="isRARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template>
+	    <button  @mouseover="isNARS1 = true; tableData.gene = 'NARS1'; tableData.disease = 'NARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isNARS1 = true; tableData.gene = 'NARS1'; tableData.disease = 'NARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/NARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> NARS1 </button> 
+                <template v-if="isNARS1">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
         </div>
@@ -192,7 +206,8 @@ export default {
                 isPFIC1: false, isPFIC2: false, isPFIC3: false, isPFIC4: false, isPFIC5: false,
                 isPFIC6: false, isPFIC7: false, isPFIC8: false, isPFIC9: false, isPFIC10: false,
                 isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isTHESall: false, isFOCADS: false,
-                isARCS: false, isARCS1: false, isARCS2: false, isPFICall: false, isAARS1: false,
+                isARCS: false, isARCS1: false, isARCS2: false, isPFICall: false, 
+		isAARS1: false, isRARS1: false, isNARS1: false,
                 tableData: {
                     gene: "", disease: "", 
                     patientCount: 0, articleCount: 0, 
@@ -227,7 +242,8 @@ export default {
             this.isPFIC1 = false, this.isPFIC2 = false, this.isPFIC3 = false, this.isPFIC4 = false, this.isPFIC5 = false,
             this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
             this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
-            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.PFICall = false, this.isAARS1: false,
+            this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.PFICall = false, 
+	    this.isAARS1 = false, this.isRARS1 = false, this.isNARS1 = false,
             this.tableData = {
                 gene: "", disease: "", 
                 articleCount: 0, 
