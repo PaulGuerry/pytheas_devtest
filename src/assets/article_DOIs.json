@@ -2156,6 +2156,41 @@
     },
     {
         "articlenumber": 1,
+        "articledoi": "https://doi.org/10.1002/ajmg.a.37973",
+        "disease": [
+            "YARS1 deficiency"
+        ]
+    },
+    {
+        "articlenumber": 2,
+        "articledoi": "https://doi.org/10.3390/genes8120381",
+        "disease": [
+            "YARS1 deficiency"
+        ]
+    },
+    {
+        "articlenumber": 3,
+        "articledoi": "https://doi.org/10.1093/hmg/ddy344",
+        "disease": [
+            "YARS1 deficiency"
+        ]
+    },
+    {
+        "articlenumber": 4,
+        "articledoi": "https://doi.org/10.1038/s41436-018-0140-3",
+        "disease": [
+            "YARS1 deficiency"
+        ]
+    },
+    {
+        "articlenumber": 5,
+        "articledoi": "https://doi.org/10.1007/s00109-021-02124-9",
+        "disease": [
+            "YARS1 deficiency"
+        ]
+    },
+    {
+        "articlenumber": 1,
         "articledoi": "https://doi.org/10.1007/s00439-018-1882-3",
         "disease": [
             "VARS1 deficiency"

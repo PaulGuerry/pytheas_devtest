@@ -1246,7 +1246,6 @@ diseases = [
      animals = [
       ] 
    ),
-   # 260304: added aaRS deficiencies
    dict(
       name = "AARS1 deficiency", 
       gene = "AARS1", 
@@ -1469,10 +1468,23 @@ diseases = [
       ] 
    ),
    dict(
+      name = "YARS1 deficiency", 
+      gene = "YARS1", 
+      matches = ["YARS1 deficiency"], 
+      colour = colours[37],
+      link = "",
+      uniprot = dict(
+         code = "",
+         link = "",
+         ),
+     animals = [
+      ] 
+   ),
+   dict(
       name = "VARS1 deficiency", 
       gene = "VARS1", 
       matches = ["VARS1 deficiency"], 
-      colour = colours[37],
+      colour = colours[38],
       link = "",
       uniprot = dict(
          code = "",

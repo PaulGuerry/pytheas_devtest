@@ -169,15 +169,127 @@
 	    <button  @mouseover="isRARS1 = true; tableData.gene = 'RARS1'; tableData.disease = 'RARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isRARS1 = true; tableData.gene = 'RARS1'; tableData.disease = 'RARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/RARS1')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> RARS1 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> RARS1 deficiency </button> 
                 <template v-if="isRARS1">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
 	    <button  @mouseover="isNARS1 = true; tableData.gene = 'NARS1'; tableData.disease = 'NARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
                     @touchstart="isNARS1 = true; tableData.gene = 'NARS1'; tableData.disease = 'NARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
                     @click="$router.push('/NARS1')"
-                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> NARS1 </button> 
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> NARS1 deficiency </button> 
                 <template v-if="isNARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isDARS1 = true; tableData.gene = 'DARS1'; tableData.disease = 'DARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isDARS1 = true; tableData.gene = 'DARS1'; tableData.disease = 'DARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/DARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> DARS1 deficiency </button> 
+                <template v-if="isDARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isCARS1 = true; tableData.gene = 'CARS1'; tableData.disease = 'CARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isCARS1 = true; tableData.gene = 'CARS1'; tableData.disease = 'CARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/CARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> CARS1 deficiency </button> 
+                <template v-if="isCARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isQARS1 = true; tableData.gene = 'QARS1'; tableData.disease = 'QARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isQARS1 = true; tableData.gene = 'QARS1'; tableData.disease = 'QARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/QARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> QARS1 deficiency </button> 
+                <template v-if="isQARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isEPRS1 = true; tableData.gene = 'EPRS1'; tableData.disease = 'EPRS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isEPRS1 = true; tableData.gene = 'EPRS1'; tableData.disease = 'EPRS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/EPRS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> EPRS1 deficiency </button> 
+                <template v-if="isEPRS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isHARS1 = true; tableData.gene = 'HARS1'; tableData.disease = 'HARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isHARS1 = true; tableData.gene = 'HARS1'; tableData.disease = 'HARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/HARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> HARS1 deficiency </button> 
+                <template v-if="isHARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isIARS1 = true; tableData.gene = 'IARS1'; tableData.disease = 'IARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isIARS1 = true; tableData.gene = 'IARS1'; tableData.disease = 'IARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/IARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> IARS1 deficiency </button> 
+                <template v-if="isIARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isLARS1 = true; tableData.gene = 'LARS1'; tableData.disease = 'LARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isLARS1 = true; tableData.gene = 'LARS1'; tableData.disease = 'LARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/LARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> LARS1 deficiency </button> 
+                <template v-if="isLARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isKARS1 = true; tableData.gene = 'KARS1'; tableData.disease = 'KARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isKARS1 = true; tableData.gene = 'KARS1'; tableData.disease = 'KARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/KARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> KARS1 deficiency </button> 
+                <template v-if="isKARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isMARS1 = true; tableData.gene = 'MARS1'; tableData.disease = 'MARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isMARS1 = true; tableData.gene = 'MARS1'; tableData.disease = 'MARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/MARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> MARS1 deficiency </button> 
+                <template v-if="isMARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isFARSA = true; tableData.gene = 'FARSA'; tableData.disease = 'FARSA deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isFARSA = true; tableData.gene = 'FARSA'; tableData.disease = 'FARSA deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/FARSA')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> FARSA deficiency </button> 
+                <template v-if="isFARSA">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isFARSB = true; tableData.gene = 'FARSB'; tableData.disease = 'FARSB deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isFARSB = true; tableData.gene = 'FARSB'; tableData.disease = 'FARSB deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/FARSB')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> FARSB deficiency </button> 
+                <template v-if="isFARSB">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isSARS1 = true; tableData.gene = 'SARS1'; tableData.disease = 'SARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isSARS1 = true; tableData.gene = 'SARS1'; tableData.disease = 'SARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/SARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> SARS1 deficiency </button> 
+                <template v-if="isSARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isTARS1 = true; tableData.gene = 'TARS1'; tableData.disease = 'TARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isTARS1 = true; tableData.gene = 'TARS1'; tableData.disease = 'TARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/TARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> TARS1 deficiency </button> 
+                <template v-if="isTARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isWARS1 = true; tableData.gene = 'WARS1'; tableData.disease = 'WARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isWARS1 = true; tableData.gene = 'WARS1'; tableData.disease = 'WARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/WARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> WARS1 deficiency </button> 
+                <template v-if="isWARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isYARS1 = true; tableData.gene = 'YARS1'; tableData.disease = 'YARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isYARS1 = true; tableData.gene = 'YARS1'; tableData.disease = 'YARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/YARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> YARS1 deficiency </button> 
+                <template v-if="isYARS1">
+                    <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
+                </template> 
+	    <button  @mouseover="isVARS1 = true; tableData.gene = 'VARS1'; tableData.disease = 'VARS1 deficiency'; getDiseaseStats()" @mouseleave="falsify()"  
+                    @touchstart="isVARS1 = true; tableData.gene = 'VARS1'; tableData.disease = 'VARS1 deficiency'; getDiseaseStats()"   @touchend="falsify()" 
+                    @click="$router.push('/VARS1')"
+                    class="w-full py-4 text-xl bg-slate-200 hover:bg-amber-100 text-blue-400 rounded-full"> VARS1 deficiency </button> 
+                <template v-if="isVARS1">
                     <MyDiseaseStatTable :tableData="tableData" :key="tableData.patientCount + tableData.articleCount"/>
                 </template>
         </div>
@@ -207,7 +319,9 @@ export default {
                 isPFIC6: false, isPFIC7: false, isPFIC8: false, isPFIC9: false, isPFIC10: false,
                 isPFIC11: false, isCDG2P: false, isTHES1: false, isTHES2: false, isTHESall: false, isFOCADS: false,
                 isARCS: false, isARCS1: false, isARCS2: false, isPFICall: false, 
-		isAARS1: false, isRARS1: false, isNARS1: false,
+		isAARS1: false, isRARS1: false, isNARS1: false, isDARS1: false, isCARS1: false, isQARS1: false,
+		isEPRS1: false, isHARS1: false, isIARS1: false, isLARS1: false, isKARS1: false, isMARS1: false,
+		isFARSA: false, isFARSB: false, isSARS1: false, isTARS1: false, isWARS1: false, isYARS1: false, isVARS1: false,
                 tableData: {
                     gene: "", disease: "", 
                     patientCount: 0, articleCount: 0, 
@@ -243,7 +357,9 @@ export default {
             this.isPFIC6 = false, this.isPFIC7 = false, this.isPFIC8 = false, this.isPFIC9 = false, this.isPFIC10 = false,
             this.isPFIC11 = false, this.isCDG2P = false, this.isTHES1 = false, this.isTHES2 = false, this.isTHESall = false, this.isFOCADS = false,
             this.isARCS = false, this.isARCS1 = false, this.isARCS2 = false, this.PFICall = false, 
-	    this.isAARS1 = false, this.isRARS1 = false, this.isNARS1 = false,
+	    this.isAARS1 = false, this.isRARS1 = false, this.isNARS1 = false, this.isDARS1 = false, this.isCARS1 = false, this.isQARS1 = false,
+	    this.isEPRS1 = false, this.isHARS1 = false, this.isIARS1 = false, this.isLARS1 = false, this.isKARS1 = false, this.isMARS1 = false,
+	    this.isFARSA = false, this.isFARSB = false, this.isSARS1 = false, this.isTARS1 = false, this.isWARS1 = false, this.isYARS1 = false, this.isVARS1 = false,
             this.tableData = {
                 gene: "", disease: "", 
                 articleCount: 0, 

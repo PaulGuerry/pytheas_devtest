@@ -58722,9 +58722,621 @@
         }
     },
     {
+        "gene": "YARS1",
+        "name": "YARS1 deficiency",
+        "colour": "#fa6e79",
+        "animals": [],
+        "patients": {
+            "total": 24,
+            "girls": 12,
+            "boys": 11
+        },
+        "articles": 5,
+        "symptom_count": 432,
+        "variables": {
+            "present": 118,
+            "missing": 0
+        },
+        "consanguinous": {
+            "yes": 21,
+            "no": 3,
+            "missing": 0
+        },
+        "zygosity": {
+            "homo": 22,
+            "compound": 2,
+            "hetero": 0,
+            "unknown": 0,
+            "hompct": 91.6,
+            "compct": 8.3,
+            "hetpct": 0.0
+        },
+        "protvartypes": {
+            "LoF_LoF": 0,
+            "LLpct": 0.0,
+            "LoF_Mis": 0,
+            "LMpct": 0.0,
+            "Mis_Mis": 24,
+            "MMpct": 100.0,
+            "LoF_Het": 0,
+            "LHpct": 0.0,
+            "Mis_Het": 0,
+            "MHpct": 0.0,
+            "Unknown": 0
+        },
+        "age_at_first_symp": {
+            "all": {
+                "name": "All patients",
+                "array": [
+                    2.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                "median": 0.1,
+                "iqr": 0.0,
+                "surv_x": [
+                    0.0,
+                    0.1,
+                    2.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.9167,
+                    1.0
+                ]
+            },
+            "boys": {
+                "name": "Boys",
+                "array": [
+                    2.0,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                "median": 0.1,
+                "iqr": 0.475,
+                "surv_x": [
+                    0.0,
+                    0.1,
+                    2.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.75,
+                    1.0
+                ]
+            },
+            "girls": {
+                "name": "Girls",
+                "array": [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                "median": 0.1,
+                "iqr": 0.0,
+                "surv_x": [
+                    0.0,
+                    0.1
+                ],
+                "surv_y": [
+                    0.0,
+                    1.0
+                ]
+            },
+            "LoF_LoF": {
+                "name": "LoF+LoF",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "LoF_Mis": {
+                "name": "LoF+Mis",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "Mis_Mis": {
+                "name": "Mis+Mis",
+                "array": [
+                    2.0,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                "median": 0.1,
+                "iqr": 0.0,
+                "surv_x": [
+                    0.0,
+                    0.1,
+                    2.0
+                ],
+                "surv_y": [
+                    0.0,
+                    0.9167,
+                    1.0
+                ]
+            },
+            "LoF_Het": {
+                "name": "LoF+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "Mis_Het": {
+                "name": "Mis+WT/Syn",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "median": 0,
+                "iqr": 0,
+                "surv_x": [],
+                "surv_y": []
+            }
+        },
+        "variants": [
+            {
+                "cvariant": "c.638C>T",
+                "pvariant": "p.(Pro213Leu)",
+                "prefix": "NM_003680.3(NP_003671.1):",
+                "DOIs": [
+                    "https://doi.org/10.1002/ajmg.a.37973"
+                ],
+                "type": "missense"
+            },
+            {
+                "cvariant": "c.1573G>A",
+                "pvariant": "p.(Gly525Arg)",
+                "prefix": "NM_003680.3(NP_003671.1):",
+                "DOIs": [
+                    "https://doi.org/10.1002/ajmg.a.37973"
+                ],
+                "type": "missense"
+            },
+            {
+                "cvariant": "c.806T>C",
+                "pvariant": "p.(Phe269Ser)",
+                "prefix": "NM_003680.4(NP_003671.1):",
+                "DOIs": [
+                    "https://doi.org/10.3390/genes8120381"
+                ],
+                "type": "missense"
+            },
+            {
+                "cvariant": "c.499C>A",
+                "pvariant": "p.(Pro167Thr)",
+                "prefix": "NM_003680.4(NP_003671.1):",
+                "DOIs": [
+                    "https://doi.org/10.1093/hmg/ddy344"
+                ],
+                "type": "missense"
+            },
+            {
+                "cvariant": "c.789C>A",
+                "pvariant": "p.(Phe263Leu)",
+                "prefix": "NM_003680.3(NP_003671.1):",
+                "DOIs": [
+                    "https://doi.org/10.1038/s41436-018-0140-3"
+                ],
+                "type": "missense"
+            },
+            {
+                "cvariant": "c.1099C>T",
+                "pvariant": "p.(Arg367Trp)",
+                "prefix": "NM_003680.3(NP_003671.1):",
+                "DOIs": [
+                    "https://doi.org/10.1007/s00109-021-02124-9"
+                ],
+                "type": "missense"
+            }
+        ],
+        "survival": {
+            "all": {
+                "name": "All patients",
+                "array": [
+                    10.0,
+                    4.5,
+                    26.0,
+                    0.8,
+                    1.2,
+                    1.5,
+                    2.1,
+                    1.5,
+                    1.7,
+                    5.0,
+                    6.0,
+                    9.0,
+                    5.0,
+                    14.0,
+                    11.0,
+                    7.0,
+                    6.0,
+                    3.0,
+                    4.0,
+                    15.0,
+                    13.0,
+                    4.0
+                ],
+                "status": [
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.8,
+                    1.2,
+                    1.5,
+                    1.7,
+                    2.1,
+                    3.0,
+                    4.0,
+                    4.5,
+                    5.0,
+                    6.0,
+                    7.0,
+                    9.0,
+                    10.0,
+                    11.0,
+                    13.0,
+                    14.0,
+                    15.0,
+                    26.0
+                ],
+                "surv_y": [
+                    1.0,
+                    0.9545,
+                    0.9091,
+                    0.8636,
+                    0.8636,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128
+                ],
+                "median": 5.0,
+                "iqr": 7.425
+            },
+            "boys": {
+                "name": "Boys",
+                "array": [
+                    10.0,
+                    1.2,
+                    1.5,
+                    9.0,
+                    6.0,
+                    3.0,
+                    4.0,
+                    15.0,
+                    13.0,
+                    4.0
+                ],
+                "status": [
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    1.2,
+                    1.5,
+                    3.0,
+                    4.0,
+                    6.0,
+                    9.0,
+                    10.0,
+                    13.0,
+                    15.0
+                ],
+                "surv_y": [
+                    1.0,
+                    0.9,
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8,
+                    0.8
+                ],
+                "median": 5.0,
+                "iqr": 6.5
+            },
+            "girls": {
+                "name": "Girls",
+                "array": [
+                    4.5,
+                    26.0,
+                    0.8,
+                    2.1,
+                    1.5,
+                    1.7,
+                    5.0,
+                    6.0,
+                    5.0,
+                    14.0,
+                    11.0,
+                    7.0
+                ],
+                "status": [
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.8,
+                    1.5,
+                    1.7,
+                    2.1,
+                    4.5,
+                    5.0,
+                    6.0,
+                    7.0,
+                    11.0,
+                    14.0,
+                    26.0
+                ],
+                "surv_y": [
+                    1.0,
+                    0.9167,
+                    0.9167,
+                    0.9167,
+                    0.8148,
+                    0.8148,
+                    0.8148,
+                    0.8148,
+                    0.8148,
+                    0.8148,
+                    0.8148,
+                    0.8148
+                ],
+                "median": 5.0,
+                "iqr": 6.0
+            },
+            "LoF_LoF": {
+                "name": "LoF+LoF",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "LoF_Mis": {
+                "name": "LoF+Mis",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "Mis_Mis": {
+                "name": "Mis+Mis",
+                "array": [
+                    10.0,
+                    4.5,
+                    26.0,
+                    0.8,
+                    1.2,
+                    1.5,
+                    2.1,
+                    1.5,
+                    1.7,
+                    5.0,
+                    6.0,
+                    9.0,
+                    5.0,
+                    14.0,
+                    11.0,
+                    7.0,
+                    6.0,
+                    3.0,
+                    4.0,
+                    15.0,
+                    13.0,
+                    4.0
+                ],
+                "status": [
+                    "0",
+                    "0",
+                    "0",
+                    "1",
+                    "1",
+                    "1",
+                    "1",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0",
+                    "0"
+                ],
+                "surv_x": [
+                    0.0,
+                    0.8,
+                    1.2,
+                    1.5,
+                    1.7,
+                    2.1,
+                    3.0,
+                    4.0,
+                    4.5,
+                    5.0,
+                    6.0,
+                    7.0,
+                    9.0,
+                    10.0,
+                    11.0,
+                    13.0,
+                    14.0,
+                    15.0,
+                    26.0
+                ],
+                "surv_y": [
+                    1.0,
+                    0.9545,
+                    0.9091,
+                    0.8636,
+                    0.8636,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128,
+                    0.8128
+                ],
+                "median": 5.0,
+                "iqr": 7.425
+            },
+            "LoF_Het": {
+                "name": "LoF+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "Mis_Het": {
+                "name": "Mis+WT/Syn",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "MVID": {
+                "name": "MVID",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            },
+            "PFIC10": {
+                "name": "PFIC10",
+                "array": [],
+                "status": [],
+                "surv_x": [],
+                "surv_y": [],
+                "median": 0,
+                "iqr": 0
+            }
+        }
+    },
+    {
         "gene": "VARS1",
         "name": "VARS1 deficiency",
-        "colour": "#fa6e79",
+        "colour": "#ffa2ac",
         "animals": [],
         "patients": {
             "total": 21,
@@ -59516,10 +60128,10 @@
         }
     },
     {
-        "PytheasDB_patient_total": 1422,
-        "PytheasDB_variant_total": 990,
-        "PytheasDB_symptom_total": 13893,
-        "PytheasDB_ages_first_total": 1204,
-        "PytheasDB_ages_surv_total": 1380
+        "PytheasDB_patient_total": 1446,
+        "PytheasDB_variant_total": 996,
+        "PytheasDB_symptom_total": 14325,
+        "PytheasDB_ages_first_total": 1216,
+        "PytheasDB_ages_surv_total": 1402
     }
 ]
