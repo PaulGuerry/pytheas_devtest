@@ -1246,6 +1246,7 @@ diseases = [
      animals = [
       ] 
    ),
+   # 260304: added aaRS deficiencies
    dict(
       name = "AARS1 deficiency", 
       gene = "AARS1", 

@@ -33,6 +33,7 @@ analysis_levels = [2, 3, 4, 5]
 #analysis_levels = [1, 2]   
 symptom_table = []
 
+# 260304: added aaRS deficiencies
 diseases = [dict(name = "PFIC1", gene = "ATP8B1", matches = ["PFIC1"]),
             dict(name = "PFIC2", gene = "ABCB11", matches = ["PFIC2"]),
             dict(name = "PFIC3", gene = "ABCB4", matches = ["PFIC3"]),
