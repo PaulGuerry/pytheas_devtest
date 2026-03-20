@@ -18,6 +18,9 @@
                 <router-link to="/compare" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
                     Compare
                 </router-link>
+                <router-link to="/samplesize" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
+                    Sample sizes
+                </router-link>
                 <router-link to="/sources" class="font-[400] text-lg hover:text-blue-700 transition duration-300 ease-in-out">
                     Sources
                 </router-link>
